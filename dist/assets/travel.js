@@ -2,20 +2,22 @@
 'use strict';
 const data=window.TRAVEL_DATA;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const t=(key,values)=>esc(Copy(key,values));
 let selected='all',view='photos',year='all',search='',activeIndex=0,visible=[],opener=null;
 let closing=false, modalAnimation=null, contentAnimations=[],atlas=null;
 const motionDuration=ms=>matchMedia('(prefers-reduced-motion: reduce)').matches?0:ms;
 const ease='cubic-bezier(.22,.8,.25,1)';
 const $=s=>document.querySelector(s);
+const mediaUrl=path=>path.startsWith('/assets/content/')?path:'/assets/travel/'+path;
 const placeOf=e=>data.places.find(p=>p.id===e.place);
 const mapPlaces=data.mapPlaces||data.places;
 const selection=id=>[...mapPlaces,...data.places].find(p=>p.id===id);
 const matchesSelection=(e,id)=>id==='all'||e.place===id||placeOf(e).country===id;
 const years=[...new Set(data.entries.filter(e=>e.date).map(e=>e.date.slice(0,4)))].sort().reverse();
-const dateLabel=date=>date?date.replaceAll('-','.'):'日期未记录';
-const dateMarkup=e=>e.date?`<time datetime="${e.date}">${dateLabel(e.date)}</time>`:'<span class="undated">日期未记录</span>';
-const journalDate=e=>e.date?`<time datetime="${e.date}"><span>${e.date.slice(0,4)}</span>${e.date.slice(5).replace('-','.')}</time>`:'<div class="journal-date"><span>日期</span>未记录</div>';
-function page(){return `<div class="path">~ / <span>travel/</span></div><div class="travel-heading"><div class="page-head"><div class="travel-eyebrow">A FIELD JOURNAL / 在路上</div><h1>${esc(data.title||'把世界，慢慢收进记忆')}<span class="accent">.</span></h1><p>走过的地方，按下的快门，还有当时没说完的话。</p></div><span class="demo-label">${esc(data.period||'旅行记录')}</span></div>${window.TravelAtlas.markup(data)}<div class="travel-destinations" role="group" aria-label="旅行地点"><button data-destination="all" aria-pressed="true">所有地方 <span>${String(data.entries.length).padStart(2,'0')}</span></button>${data.places.map(p=>`<button data-destination="${p.id}" aria-pressed="false">${p.name} <span>${String(data.entries.filter(e=>e.place===p.id).length).padStart(2,'0')}</span></button>`).join('')}</div><section class="travel-collection" aria-label="旅行相册和日记"><div class="travel-toolbar"><div class="travel-views" role="group" aria-label="展示方式"><button data-view="photos" aria-pressed="${view==='photos'}"><span aria-hidden="true">▦</span> 照片墙</button><button data-view="journal" aria-pressed="${view==='journal'}"><span aria-hidden="true">☷</span> 日记随笔</button></div><div class="travel-tools"><label class="sr-only" for="travel-search">搜索旅行记录</label><input type="search" id="travel-search" placeholder="搜索记忆…" value="${esc(search)}"><label class="sr-only" for="travel-year">筛选年份</label><select id="travel-year"><option value="all">所有年份</option>${years.map(y=>`<option value="${y}" ${year===y?'selected':''}>${y}</option>`).join('')}${data.entries.some(e=>!e.date)?`<option value="undated" ${year==='undated'?'selected':''}>日期未记录</option>`:''}</select></div></div><div id="travel-results" aria-live="polite"></div><div class="travel-end"><span id="travel-count"></span><span>the journey is the destination<span class="accent">_</span></span></div></section><p class="travel-demo-note">${esc(data.period||'')} · ${String(data.entries.length)} 张照片 · siyuan 的旅行相册<br>地图数据：<a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth ↗</a></p><dialog class="travel-dialog" id="travel-dialog" aria-labelledby="memory-title"><div class="memory-shell"><button class="memory-close" id="memory-close" aria-label="关闭旅行记录">×</button><div id="memory-content"></div><div class="memory-navigation"><button id="memory-prev" aria-label="上一条旅行记录">← 上一则</button><span id="memory-counter"></span><button id="memory-next" aria-label="下一条旅行记录">下一则 →</button></div></div></dialog>`}
+const dateLabel=date=>date?date.replaceAll('-','.') : Copy('travel.undated');
+const dateMarkup=e=>e.date?`<time datetime="${e.date}">${dateLabel(e.date)}</time>`:`<span class="undated">${t('travel.undated')}</span>`;
+const journalDate=e=>e.date?`<time datetime="${e.date}"><span>${e.date.slice(0,4)}</span>${e.date.slice(5).replace('-','.')}</time>`:`<div class="journal-date"><span>${t('travel.date')}</span>${t('travel.unrecorded')}</div>`;
+function page(){return `<div class="path">~ / <span>${t('nav.travel')}</span></div><div class="travel-heading"><div class="page-head"><div class="travel-eyebrow">${esc(PAGES.travel.eyebrow)}</div><h1>${esc(PAGES.travel.title)}<span class="accent">.</span></h1><p>${esc(PAGES.travel.lead)}</p></div><span class="demo-label">${esc(data.period||Copy('travel.period'))}</span></div>${window.TravelAtlas.markup(data)}<div class="travel-destinations" role="group" aria-label="${t('travel.destinations')}"><button data-destination="all" aria-pressed="true">${t('travel.allPlaces')} <span>${String(data.entries.length).padStart(2,'0')}</span></button>${data.places.map(p=>`<button data-destination="${p.id}" aria-pressed="false">${esc(p.name)} <span>${String(data.entries.filter(e=>e.place===p.id).length).padStart(2,'0')}</span></button>`).join('')}</div><section class="travel-collection" aria-label="${t('travel.collection')}"><div class="travel-toolbar"><div class="travel-views" role="group" aria-label="${t('travel.views')}"><button data-view="photos" aria-pressed="${view==='photos'}"><span aria-hidden="true">▦</span> ${t('travel.photos')}</button><button data-view="journal" aria-pressed="${view==='journal'}"><span aria-hidden="true">☷</span> ${t('travel.journal')}</button></div><div class="travel-tools"><label class="sr-only" for="travel-search">${t('travel.searchLabel')}</label><input type="search" id="travel-search" placeholder="${t('travel.searchPlaceholder')}" value="${esc(search)}"><label class="sr-only" for="travel-year">${t('travel.yearLabel')}</label><select id="travel-year"><option value="all">${t('travel.allYears')}</option>${years.map(y=>`<option value="${y}" ${year===y?'selected':''}>${y}</option>`).join('')}${data.entries.some(e=>!e.date)?`<option value="undated" ${year==='undated'?'selected':''}>${t('travel.undated')}</option>`:''}</select></div></div><div id="travel-results" aria-live="polite"></div><div class="travel-end"><span id="travel-count"></span><span>${t('travel.end')}<span class="accent">_</span></span></div></section><p class="travel-demo-note">${t('travel.credit',{period:data.period||'',count:data.entries.length})}<br>${t('travel.mapSource')}<a href="${t('travel.mapSourceUrl')}" target="_blank" rel="noopener noreferrer">${t('travel.mapSourceName')}</a></p><dialog class="travel-dialog" id="travel-dialog" aria-labelledby="memory-title"><div class="memory-shell"><button class="memory-close" id="memory-close" aria-label="${t('travel.close')}">×</button><div id="memory-content"></div><div class="memory-navigation"><button id="memory-prev" aria-label="${t('travel.previousLabel')}">${t('travel.previous')}</button><span id="memory-counter"></span><button id="memory-next" aria-label="${t('travel.nextLabel')}">${t('travel.next')}</button></div></div></dialog>`}
 function update(){
   visible=data.entries.filter(e=>matchesSelection(e,selected)
     &&(year==='all'||(year==='undated'?!e.date:e.date.startsWith(year)))
@@ -26,17 +28,17 @@ function update(){
   results.className=view==='photos'?'photo-wall':'journal-list';
   results.innerHTML=visible.length?visible.map((e,i)=>{
     const p=placeOf(e);
-    return view==='photos'?`<button class="photo-memory" data-memory="${i}" aria-label="查看${p.name}的照片记录：${esc(e.title)}"><div class="photo-frame" style="aspect-ratio:${e.ratio}"><img src="/assets/travel/${e.thumb||e.photo}" alt="${esc(e.alt)}" loading="lazy" decoding="async" width="${e.width||900}" height="${e.height||1000}"><span class="photo-open" aria-hidden="true">↗</span><span class="photo-place">${p.name}</span></div><span class="photo-caption"><span>${esc(e.title)}</span>${dateMarkup(e)}</span></button>`
-      :`<button class="journal-memory" data-memory="${i}" aria-label="${e.body.length?'阅读随笔':'查看图记'}：${esc(e.title)}">${journalDate(e)}<div><span class="journal-place">⌖ ${p.name} <span>/ ${p.en}</span></span><h2>${esc(e.title)}</h2><p>${esc(e.excerpt)}</p><span class="journal-read">read this moment ↗</span></div><img src="/assets/travel/${e.thumb||e.photo}" alt="" loading="lazy" decoding="async" width="160" height="160"></button>`;
-  }).join(''):'<div class="travel-empty"><span>没有找到这一段记忆。</span><button id="clear-travel-filters">清除筛选，看看全部足迹 →</button></div>';
-  $('#travel-count').textContent=`${String(visible.length).padStart(2,'0')} ${view==='photos'?'moments':'entries'} / ${selected==='all'?'所有地方':selection(selected).name}`;
+    return view==='photos'?`<button class="photo-memory" data-memory="${i}" aria-label="${t('travel.photoLabel',{place:p.name,title:e.title})}"><div class="photo-frame" style="aspect-ratio:${e.ratio}"><img src="${esc(mediaUrl(e.thumb||e.photo))}" alt="${esc(e.alt)}" loading="lazy" decoding="async" width="${e.width||900}" height="${e.height||1000}"><span class="photo-open" aria-hidden="true">↗</span><span class="photo-place">${esc(p.name)}</span></div><span class="photo-caption"><span>${esc(e.title)}</span>${dateMarkup(e)}</span></button>`
+      :`<button class="journal-memory" data-memory="${i}" aria-label="${t(e.body.length?'travel.readEssay':'travel.readPhoto')}：${esc(e.title)}">${journalDate(e)}<div><span class="journal-place">⌖ ${esc(p.name)} <span>/ ${esc(p.en)}</span></span><h2>${esc(e.title)}</h2><p>${esc(e.excerpt)}</p><span class="journal-read">${t('travel.readMoment')}</span></div><img src="${esc(mediaUrl(e.thumb||e.photo))}" alt="" loading="lazy" decoding="async" width="160" height="160"></button>`;
+  }).join(''):`<div class="travel-empty"><span>${t('travel.empty')}</span><button id="clear-travel-filters">${t('travel.clear')}</button></div>`;
+  $('#travel-count').textContent=Copy('travel.count',{count:String(visible.length).padStart(2,'0'),unit:Copy(view==='photos'?'travel.moments':'travel.entries'),place:selected==='all'?Copy('travel.allPlaces'):selection(selected).name});
   document.querySelectorAll('[data-memory]').forEach(b=>b.addEventListener('click',()=>openMemory(Number(b.dataset.memory),b)));
   $('#clear-travel-filters')?.addEventListener('click',reset);
   document.querySelectorAll('[data-destination]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.destination===selected)));
   atlas?.setSelection(selected);
   document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===view)));
   const p=selection(selected);
-  $('#map-caption').textContent=p?`${p.name} · ${p.id==='unlocated'?'照片地点待补充。':p.country?'点击其他目的地切换记忆。':'点击城市或目的地，继续探索。'}`:'点击国家，展开那里的目的地。';
+  $('#map-caption').textContent=p?`${p.name} · ${Copy(p.id==='unlocated'?'travel.unlocatedCaption':p.country?'travel.destinationCaption':'travel.countryCaption')}`:Copy('travel.worldCaption');
 }
 function reset(){selected='all';year='all';search='';$('#travel-search').value='';$('#travel-year').value='all';update();atlas?.recenter()}
 function selectPlace(id){const unchanged=id===selected;selected=id;update();if(unchanged)atlas?.recenter()}
@@ -57,11 +59,11 @@ function displayMemory(animate=false,direction=1){
     previous.inert=true;
     previous.querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));
   }
-  content.innerHTML=`<div class="memory-photo" style="--memory-image:url('/assets/travel/${encodeURI(e.thumb||e.photo)}')"><img src="/assets/travel/${e.thumb||e.photo}" alt="${esc(e.alt)}">${e.source?`<a class="memory-credit" href="${e.source}" target="_blank" rel="noopener noreferrer">${esc(e.credit)} ↗</a>`:`<span class="memory-credit">${esc(e.credit||'siyuan 的相册')}</span>`}</div><article class="memory-writing"><div class="travel-eyebrow">FIELD NOTES / ${esc(p.en)}</div><h2 id="memory-title">${esc(e.title)}</h2><div class="memory-meta">${dateMarkup(e)}<span>⌖ ${p.name}</span><span>${e.body.length?'随笔':'图记'}</span></div><div class="prose">${e.body.length?e.body.map(p=>`<p>${esc(p)}</p>`).join(''):'<p class="memory-note-empty">这张照片的随笔还没有写下。</p>'}</div><div class="memory-coordinates">${esc(p.name)} · ${dateLabel(e.date)}</div></article>`;
+  content.innerHTML=`<div class="memory-photo" style="--memory-image:url('${esc(mediaUrl(e.thumb||e.photo))}')"><img src="${esc(mediaUrl(e.thumb||e.photo))}" alt="${esc(e.alt)}">${e.source?`<a class="memory-credit" href="${esc(e.source)}" target="_blank" rel="noopener noreferrer">${esc(e.credit)} ↗</a>`:`<span class="memory-credit">${esc(e.credit||Copy('travel.defaultCredit'))}</span>`}</div><article class="memory-writing"><div class="travel-eyebrow">${t('travel.notes',{place:p.en})}</div><h2 id="memory-title">${esc(e.title)}</h2><div class="memory-meta">${dateMarkup(e)}<span>⌖ ${esc(p.name)}</span><span>${t(e.body.length?'travel.essay':'travel.photo')}</span></div><div class="prose">${e.body.length?e.body.map(p=>`<p>${esc(p)}</p>`).join(''):`<p class="memory-note-empty">${t('travel.emptyNote')}</p>`}</div><div class="memory-coordinates">${esc(p.name)} · ${dateLabel(e.date)}</div></article>`;
   if(e.thumb){
     const foreground=content.querySelector('.memory-photo>img');
     const full=new Image();
-    full.src='/assets/travel/'+e.photo;
+    full.src=mediaUrl(e.photo);
     full.decode().then(()=>{if(foreground.isConnected)foreground.src=full.src}).catch(()=>{});
   }
   if(previous){
@@ -84,7 +86,7 @@ function displayMemory(animate=false,direction=1){
   $('#memory-next').disabled=activeIndex===visible.length-1;
   $('#travel-dialog').scrollTop=0;
   // Warm adjacent images so switching never waits on a new image request.
-  [activeIndex-1,activeIndex+1].forEach(i=>{if(visible[i]){const image=new Image();image.src='/assets/travel/'+visible[i].photo}});
+  [activeIndex-1,activeIndex+1].forEach(i=>{if(visible[i]){const image=new Image();image.src=mediaUrl(visible[i].photo)}});
 }
 function openMemory(i,button){
   const d=$('#travel-dialog');

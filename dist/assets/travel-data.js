@@ -1,8 +1,7 @@
-// Personal travel photographs. Web derivatives contain no EXIF or GPS metadata.
+// Generated from content/. Edit that directory, then run the preview or build command.
 window.TRAVEL_DATA = {
   "demo": false,
   "period": "2026.05—10",
-  "title": "走过的地方，留住的日常",
   "places": [
     {
       "id": "como",
@@ -83,7 +82,7 @@ window.TRAVEL_DATA = {
       "country": "china",
       "lat": 22.27,
       "lon": 113.58,
-      "note": "海边、窗景与日常。"
+      "note": "这天是生日，生日快乐"
     },
     {
       "id": "guangzhou",
@@ -169,7 +168,7 @@ window.TRAVEL_DATA = {
   "entries": [
     {
       "id": "undated-f8f0e51d",
-      "place": "danang",
+      "place": "dalat",
       "date": "",
       "time": "",
       "title": "城堡前的背影",

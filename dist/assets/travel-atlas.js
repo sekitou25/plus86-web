@@ -1,17 +1,18 @@
 (() => {
 'use strict';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const t=(key,values)=>esc(Copy(key,values));
 const project=p=>[(p.lon+180)*2.5,(85-p.lat)*2.4];
 const located=p=>p&&Number.isFinite(p.lat)&&Number.isFinite(p.lon);
 const duration=()=>matchMedia('(prefers-reduced-motion: reduce)').matches?0:720;
 
 function markup(data){
-  return `<section class="travel-atlas" aria-label="交互旅行地图">
-    <div class="atlas-topline"><span><span class="status-dot"></span> THE TRAVEL ATLAS</span><span>${String(data.mapPlaces.length).padStart(2,'0')} COUNTRIES · ${String(data.entries.length).padStart(2,'0')} MOMENTS</span></div>
-    <div class="atlas-navigation"><nav id="atlas-breadcrumb" aria-label="地图层级"></nav><div class="atlas-controls" role="group" aria-label="地图缩放"><button type="button" id="atlas-zoom-out" aria-label="缩小地图">−</button><button type="button" id="atlas-zoom-in" aria-label="放大地图">+</button></div></div>
-    <svg class="travel-map atlas-interactive" id="travel-atlas-map" role="group" aria-label="旅行地图，点击国家查看目的地，可拖动与双指缩放"></svg>
-    <div class="atlas-country-list" role="group" aria-label="选择旅行国家">${data.mapPlaces.map(p=>`<button type="button" data-atlas-country="${p.id}" aria-pressed="false">${esc(p.name)} <span>${data.entries.filter(e=>data.places.find(d=>d.id===e.place)?.country===p.id).length}</span><span aria-hidden="true">↗</span></button>`).join('')}<span class="atlas-map-hint">拖动探索 · 双指缩放</span></div>
-    <div class="atlas-bottomline"><span id="map-caption" role="status">点击国家，展开那里的目的地。</span><button type="button" id="map-reset">全部足迹 ↺</button></div>
+  return `<section class="travel-atlas" aria-label="${t('atlas.label')}">
+    <div class="atlas-topline"><span><span class="status-dot"></span> ${t('atlas.title')}</span><span>${t('atlas.count',{countries:String(data.mapPlaces.length).padStart(2,'0'),photos:String(data.entries.length).padStart(2,'0')})}</span></div>
+    <div class="atlas-navigation"><nav id="atlas-breadcrumb" aria-label="${t('atlas.navigation')}"></nav><div class="atlas-controls" role="group" aria-label="${t('atlas.zoom')}"><button type="button" id="atlas-zoom-out" aria-label="${t('atlas.zoomOut')}">−</button><button type="button" id="atlas-zoom-in" aria-label="${t('atlas.zoomIn')}">+</button></div></div>
+    <svg class="travel-map atlas-interactive" id="travel-atlas-map" role="group" aria-label="${t('atlas.map')}"></svg>
+    <div class="atlas-country-list" role="group" aria-label="${t('atlas.country')}">${data.mapPlaces.map(p=>`<button type="button" data-atlas-country="${p.id}" aria-pressed="false">${esc(p.name)} <span>${data.entries.filter(e=>data.places.find(d=>d.id===e.place)?.country===p.id).length}</span><span aria-hidden="true">↗</span></button>`).join('')}<span class="atlas-map-hint">${t('atlas.hint')}</span></div>
+    <div class="atlas-bottomline"><span id="map-caption" role="status">${t('travel.worldCaption')}</span><button type="button" id="map-reset">${t('atlas.reset')}</button></div>
   </section>`;
 }
 
@@ -32,8 +33,8 @@ function create(data,onSelect){
     const p=places.get(feature.id);
     if(!p)return;
     const shape=shapes.append('path').attr('d',feature.path).attr('class','atlas-country').attr('data-country',p.id).attr('fill-rule','evenodd')
-      .attr('role','button').attr('tabindex',0).attr('aria-label',`展开${p.name}的目的地，${counts.get(p.id)}张照片`);
-    shape.append('title').text(`${p.name} · ${counts.get(p.id)} 张照片`);
+      .attr('role','button').attr('tabindex',0).attr('aria-label',Copy('atlas.expandCountry',{place:p.name,count:counts.get(p.id)}));
+    shape.append('title').text(Copy('atlas.photoCount',{place:p.name,count:counts.get(p.id)}));
     shape.on('click',e=>{e.stopPropagation();onSelect(p.id)}).on('keydown',e=>activate(e,p.id));
   });
   const markers=svg.append('g').attr('class','atlas-markers');
@@ -43,7 +44,7 @@ function create(data,onSelect){
   [...data.mapPlaces,...data.places].filter(located).forEach(p=>{
     const isCountry=data.mapPlaces.some(c=>c.id===p.id);
     const marker=(isCountry?countryLayer:destinationLayer).append('g').attr('class',`atlas-marker ${isCountry?'atlas-country-marker':'atlas-place-marker'}`)
-      .attr('data-atlas-place',p.id).attr('role','button').attr('tabindex',-1).attr('aria-label',`${isCountry?'展开':'查看'}${p.name}，${counts.get(p.id)}张照片`);
+      .attr('data-atlas-place',p.id).attr('role','button').attr('tabindex',-1).attr('aria-label',Copy('atlas.marker',{action:Copy(isCountry?'atlas.expand':'atlas.view'),place:p.name,count:counts.get(p.id)}));
     marker.append('line').attr('class','atlas-label-leader');
     marker.append('circle').attr('class','atlas-pin-hit').attr('r',15);
     marker.append('circle').attr('class','atlas-pin-ring').attr('r',8);
@@ -116,11 +117,11 @@ function create(data,onSelect){
     country=id==='all'||!located(p)?null:p.country||p.id;
     const c=places.get(country);
     const breadcrumb=document.querySelector('#atlas-breadcrumb');
-    breadcrumb.innerHTML=`${id==='all'?'<span aria-current="location">世界</span>':'<button type="button" data-atlas-back="all">世界</button>'}${c?`<span class="atlas-crumb-slash">/</span>${id===c.id?`<span aria-current="location">${esc(c.name)}</span>`:`<button type="button" data-atlas-back="${c.id}">${esc(c.name)}</button><span class="atlas-crumb-slash">/</span><span aria-current="location">${esc(p.name)}</span>`}`:p?`<span class="atlas-crumb-slash">/</span><span aria-current="location">${esc(p.name)}</span>`:''}`;
+    breadcrumb.innerHTML=`${id==='all'?`<span aria-current="location">${t('atlas.world')}</span>`:`<button type="button" data-atlas-back="all">${t('atlas.world')}</button>`}${c?`<span class="atlas-crumb-slash">/</span>${id===c.id?`<span aria-current="location">${esc(c.name)}</span>`:`<button type="button" data-atlas-back="${c.id}">${esc(c.name)}</button><span class="atlas-crumb-slash">/</span><span aria-current="location">${esc(p.name)}</span>`}`:p?`<span class="atlas-crumb-slash">/</span><span aria-current="location">${esc(p.name)}</span>`:''}`;
     breadcrumb.querySelectorAll('[data-atlas-back]').forEach(b=>b.addEventListener('click',()=>onSelect(b.dataset.atlasBack)));
     document.querySelectorAll('[data-atlas-country]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.atlasCountry===country)));
     shapes.selectAll('path').classed('is-current',function(){return this.dataset.country===country}).attr('aria-pressed',function(){return String(this.dataset.country===country)});
-    element.setAttribute('aria-label',`旅行地图：${p?p.name:'世界'}。点击国家或目的地查看照片，可拖动与双指缩放。`);
+    element.setAttribute('aria-label',Copy('atlas.currentMap',{place:p?p.name:Copy('atlas.world')}));
     if(width)move(animate);
     schedule();
   }

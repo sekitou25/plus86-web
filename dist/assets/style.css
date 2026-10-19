@@ -97,3 +97,35 @@
 .travel-atlas .atlas-bottomline{min-height:47px}
 @media(max-width:1000px){.atlas-map-hint{width:100%;margin-left:0}.travel-map.atlas-interactive{height:330px}}
 @media(max-width:640px){.atlas-navigation{padding:9px 11px 0;min-height:46px}#atlas-breadcrumb{gap:8px;font-size:10px}.travel-map.atlas-interactive{height:310px}.atlas-country-list{padding:8px 11px 13px;gap:9px}.atlas-country-list button{padding:5px 10px}.atlas-map-hint{width:auto;margin-left:auto;font-size:7px}.travel-atlas .atlas-bottomline{font-size:8px}.atlas-topline{padding-bottom:3px}}
+
+/* Investment notes imported from Notion. */
+.filters{flex-wrap:wrap;row-gap:12px}
+.filters button{white-space:nowrap}
+.article-series{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 24px;padding:14px 0;border-bottom:1px solid var(--border);font-size:11px;color:var(--muted)}
+.article-series>span{margin-right:auto;color:var(--subtle)}
+.article-series a{min-width:25px;text-align:center;padding:2px 3px}
+.article-series a[aria-current=page]{color:var(--cyan);border-bottom:1px solid var(--cyan)}
+.article-toc{margin:0 0 30px;border:1px solid var(--border);padding:14px 18px;font-size:11px;color:var(--subtle)}
+.article-toc summary{cursor:pointer;color:var(--fg)}
+.article-toc summary>span{margin-left:12px;font-size:9px;color:var(--muted)}
+.article-toc ol{margin:15px 0 0;padding-left:23px;line-height:2.2}
+.article-toc button{text-align:left;line-height:1.9;padding:4px 0}
+.article-toc button:hover{color:var(--cyan)}
+.article-prose{overflow-wrap:anywhere}
+.article-prose h2,.article-prose h3{scroll-margin-top:25px}
+.article-prose h3{font-size:15px;font-weight:500;color:var(--fg);margin:30px 0 12px}
+.article-prose ol{padding-left:25px}
+.article-prose pre{max-width:100%;overflow-wrap:normal;white-space:pre}
+.article-prose img{display:block;max-width:100%;height:auto}
+.article-prose hr{border:0;border-top:1px solid var(--border);margin:32px 0}
+.article-table{max-width:100%;overflow-x:auto;margin:26px 0;border:1px solid var(--border)}
+.article-table:focus-visible{outline:1px solid var(--accent);outline-offset:4px}
+.article-table table{width:100%;min-width:460px;border-collapse:collapse;font-size:12px;line-height:1.9}
+.article-table th,.article-table td{text-align:left;vertical-align:top;padding:13px 15px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.article-table th{background:var(--surface);font-weight:500;color:var(--fg)}
+.article-table :is(th,td):last-child{border-right:0}
+.article-table tbody tr:last-child td{border-bottom:0}
+.article-table code{white-space:normal;overflow-wrap:anywhere}
+.article-source{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:38px;padding-top:18px;border-top:1px solid var(--border);font-size:10px;color:var(--muted)}
+.article-source a{color:var(--cyan)}
+@media(max-width:640px){.article-series{gap:8px;font-size:10px}.article-series>span{flex-basis:100%}.article-toc{padding:12px 14px;font-size:10px}.article-table table{font-size:11px}.article-table th,.article-table td{padding:10px 12px}.article-source{font-size:9px}.article-bottom>a{min-width:0;overflow-wrap:anywhere}}
