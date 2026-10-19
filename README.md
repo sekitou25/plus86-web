@@ -1,46 +1,57 @@
 # siyuan · 个人主页与博客
 
-参考终端风格设计的轻量个人站点。采用原生 HTML、CSS、JavaScript，无构建依赖。
+采用原生 HTML、CSS、JavaScript 的静态个人网站。**以后只编辑 `content/`**，详细操作见 [content/README.md](content/README.md)。
 
-## 修改内容
+## 本地运行
 
-- `dist/assets/content.js`：站点昵称、描述、博客文章与正文。
-- `dist/assets/app.js`：自我介绍、近况、外链、页面与 CLI 行为。
-- `dist/assets/style.css`：配色、排版、响应式样式。
-
-博客文章暂为演示内容，旅行相册使用用户提供的真实照片。站点无管理后台；编辑源码即可更新。CLI 为网站内的导航交互，不会执行系统命令。
-
-## 本地预览
+macOS 双击 `preview.command`，或执行：
 
 ```sh
-python3 -m http.server 4173 --directory dist --bind 127.0.0.1
+python3 scripts/preview.py
 ```
 
-打开 http://127.0.0.1:4173 。
+打开终端显示的地址（默认 `http://127.0.0.1:4173/`）。修改、新增和删除内容文件后，网站自动重新生成并刷新。格式错误时保留上次成功的版本，终端会显示出错文件。
 
-## 功能
+预览需要 Node.js 20+；Python 启动器先使用 PATH 中的 Node，再尝试本机 Codex 自带运行时。无需 npm install。已安装 Node 的机器也可以直接运行 `node scripts/dev.mjs`，使用 `--port 4174` 指定端口。
 
-主页原创 ASCII 星球动画；明暗主题记忆；博客分类和搜索；文章阅读进度；关于与近况页面；CLI 导航（help / ls / cd / cat / open / pwd / history / clear / theme / exit），支持 Tab 补全和命令历史。
+## 内容结构
 
-站点由 Sites 私有托管，部署配置在 `.openai/hosting.json`。
+```text
+content/
+  README.md            编辑说明
+  site.json            昵称、标语、社交账号、关注方向
+  interface.json       导航、按钮、提示、无障碍文案
+  pages/*.md           首页、作品集、关于、近况、博客和旅行页介绍
+  posts/**/*.md        自动发现的文章，元信息与正文同处一份文件
+  works/**/*.md        自动发现的作品，含职责、成果、正文与封面
+  travel.json          地点、照片标题、说明与随笔
+  media/               新增图片等附件
+  templates/article.md 新文章模板，不会直接发表
+  en/                  英文页面、作品、旅行与界面文案
+  notion-import.json   原始 Notion 目录信息
+```
 
-## 旅行与随笔
+原有 8 篇 Notion「投资和交易」笔记与 59 条旅行记录已迁入。文章无需登记 manifest；新增或删除文件会更新列表、分类、搜索、首页、数量和 CLI。Notion 内容是本地快照，后续以 content/ 为准，不自动同步。
 
-入口 `#/travel`。交互世界地图、地点与年份筛选、关键词搜索、照片墙与日记时间线、大图与随笔弹窗，支持 Escape 关闭、左右方向键切换。
+## 构建与验证
 
-- `dist/assets/travel-data.js`：地点经纬度、照片、日期、标题、随笔和摄影来源。
-- `dist/assets/travel.js`：旅行页交互。
-- `dist/assets/travel-atlas.js`：本地交互地图；点击国家展开目的地，点击目的地缩放并筛选照片；支持面包屑返回、拖动、双指缩放和缩放按钮。
-- `dist/assets/travel-atlas-data.js`：随网站部署的地理轮廓；城市与区域使用近似中心点，不调用地图服务商。
-- `dist/assets/travel/`：本地照片与世界地图。
-- `sources/TRAVEL-SOURCES.md`：素材来源。
+```sh
+python3 scripts/preview.py --build
+# 或使用 Node
+node scripts/build-content.mjs
+node --test scripts/*.test.mjs
+```
 
-目前为展示页，新增记录通过更新源码完成。原片放在 `travel-materials/01-inbox`，整理清单保存在 `travel-materials/03-organized`；原片目录不进入 Git 或部署包。当前旅行相册有 59 张照片，涵盖 2026 年 5—10 月的意大利、西班牙、中国与越南。照片墙和随笔按拍摄日期从新到旧排列，未记录日期的照片排在末尾并可单独筛选；未确认地点的照片归入「地点待补」，地图不生成推测位置。
+构建会生成 dist/assets/content.js、posts.js、travel-data.js 和 dist/index.html，复制 content/media/，刷新资源版本号及 SHA256SUMS.txt。生成文件应随部署提交，无需手工编辑。旧的 build-notion-posts.mjs 命令会转到统一构建。
 
-## about 社交账号
+src/ 保存页面和标志模板；dist/assets/app.js、travel.js、travel-atlas.js 负责交互；style.css 负责样式。只有修改功能或设计时才需要编辑这些文件。
 
-在 `dist/assets/content.js` 的 `SITE.socials` 中填写 Instagram、Threads、X 的 username 与 url；微信填写 username，页面支持复制微信号。账号尚未填写时显示「待填写」，不生成虚假跳转。
+## 部署
 
-## 标志
+把构建后的 dist/ 作为 Web 服务器的静态目录即可。线上不需要构建服务、数据库、Notion 凭据或地图 API。.openai/hosting.json 是保留的历史 Sites 配置，本地构建不会触发部署。
 
-`dist/assets/daisy.svg` 为透明背景的雏菊标志；`dist/assets/siyuan-logo.svg` 为水平字标；`dist/assets/favicon.svg` 为浏览器图标。页头使用内嵌 SVG，并适配明暗主题。
+原始照片保存在被 Git 忽略的 travel-materials/，不属于发布目录；网站使用已有照片及缩略图衍生文件。地图来源见 sources/TRAVEL-SOURCES.md。
+
+首页为全屏 Hero 与作品集，采用顶部导航；作品随滚动逐项入场，并尊重减少动态效果的系统偏好。支持中文 / EN 切换、语言链接与选择记忆。英文文案在 content/en/；中文学习笔记保留原文，并在英文界面注明语言，支持逐篇添加英文 Markdown。
+
+字体为本地托管的 Fraunces、Inter 和 IBM Plex Mono，许可证随字体保存在 dist/assets/fonts/。支持主题切换、ASCII 星球、博客全文搜索和章节导航、旅行地图、照片墙、日记视图及图片弹窗。CLI 是浏览器内的导航交互。

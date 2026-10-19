@@ -1,21 +1,20 @@
-SIYUAN WEBSITE - FULL BACKUP
+SIYUAN WEBSITE
 
-Contents
-- dist/: deployable static website, local scripts, logos, map data, photo derivatives.
-- travel-materials/: original photographs, journals, import receipts and contact sheets.
-- sources/: map source data and image/source notes.
-- README.md: project editing and deployment information.
-- .openai/hosting.json: existing Sites deployment identity.
+Edit only content/. Read content/README.md for the editing guide.
+New Markdown files in content/posts/ are indexed automatically.
 
-Preview
-From this extracted folder, run:
-  python3 -m http.server 4173 --directory dist --bind 127.0.0.1
-Then open http://127.0.0.1:4173/#/travel
+Preview with automatic indexing and browser reload:
+  python3 scripts/preview.py
+On macOS, you can also double-click preview.command.
 
-Self-hosting
-Use dist/ as the web server document root. No build step, database or map API is required.
-The original-photo folder is backup material; it is not required for website hosting.
+Build for deployment:
+  python3 scripts/preview.py --build
+Deploy dist/ as the server document root. No runtime services are required.
 
-Integrity
-SHA256SUMS.txt lists checksums for every included project file.
-Git internals and macOS Finder metadata are omitted from this portable backup.
+src/: presentation templates. scripts/: offline builder and preview server.
+dist/: generated content and static site assets.
+travel-materials/: ignored original photographs, outside the website.
+.openai/hosting.json: historical Sites deployment identity.
+
+SHA256SUMS.txt lists checksums for included project files. Git internals and
+macOS metadata are omitted. Run a production build to refresh checksums.
