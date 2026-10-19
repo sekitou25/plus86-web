@@ -1,0 +1,246 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "blog": "写作",
+    "travel": "旅行",
+    "now": "近况",
+    "cli": "终端",
+    "work": "作品"
+  },
+  "titles": {
+    "home": "作品与实践",
+    "about": "关于",
+    "blog": "文字与思考",
+    "travel": "旅行与随笔",
+    "now": "此刻",
+    "cli": "Terminal",
+    "notFound": "404",
+    "work": "作品集"
+  },
+  "shell": {
+    "skip": "跳到正文",
+    "home": "{name} 主页",
+    "navigation": "网站导航",
+    "theme": "theme:",
+    "footerAbout": "关于这个小站",
+    "footerNavigation": "更多页面"
+  },
+  "theme": {
+    "light": "切换到浅色模式",
+    "dark": "切换到深色模式"
+  },
+  "home": {
+    "artLabel": "由字符构成的土星，缓缓转动",
+    "artCaption": "fig. 01 — a little universe",
+    "readAbout": "read about me ↗",
+    "latest": "— 最近写下的",
+    "allEntries": "all entries [{count}] ↗"
+  },
+  "tags": {
+    "all": "全部文章",
+    "investment": "投资和交易",
+    "notes": "随笔"
+  },
+  "shortTags": {
+    "investment": "投资"
+  },
+  "blog": {
+    "categories": "文章分类",
+    "all": "all",
+    "searchPlaceholder": "搜索文章…",
+    "searchLabel": "搜索文章",
+    "allYears": "所有年份",
+    "shortcuts": "↑ ↓ navigate   enter open   / search",
+    "empty": "没有找到匹配的文章。试试另一个关键词？",
+    "count": "{count} entries / {tag}"
+  },
+  "article": {
+    "seriesLabel": "{series}章节",
+    "index": "目录",
+    "toc": "本篇目录",
+    "sections": "{count} sections",
+    "source": "Notion 原文 ↗",
+    "createdDate": "日期取自 Notion 创建时间",
+    "recordedDate": "日期取自原文记录",
+    "nextChapter": "下一章 / next",
+    "nextPost": "接着读 / next",
+    "seriesIndex": "学习目录 / index",
+    "backToIndex": "返回学习目录 →",
+    "backHome": "返回花园 →",
+    "back": "← 返回文章目录",
+    "minutes": "约 {minutes} 分钟",
+    "note": "研究札记 · 未完",
+    "notion": "Notion 笔记",
+    "post": "文章",
+    "all": "← 全部文章",
+    "parent": "cd ..",
+    "table": "文章表格",
+    "mention": "Notion 原文",
+    "originalNotice": "这篇文章暂时只有中文原文。"
+  },
+  "social": {
+    "title": "在别处找到我",
+    "path": "~/socials",
+    "visit": "查看主页",
+    "pending": "待填写",
+    "pendingLabel": "{platform}，待填写",
+    "copy": "复制微信号 {account}",
+    "open": "打开 {platform} 主页",
+    "copied": "微信号已复制",
+    "manual": "微信号：{account} · 可手动复制",
+    "platforms": [
+      {
+        "id": "instagram",
+        "name": "Instagram",
+        "mark": "◎",
+        "description": "照片与日常"
+      },
+      {
+        "id": "threads",
+        "name": "Threads",
+        "mark": "@",
+        "description": "零碎的想法"
+      },
+      {
+        "id": "wechat",
+        "name": "WeChat",
+        "mark": "◌",
+        "description": "微信联系"
+      },
+      {
+        "id": "x",
+        "name": "X",
+        "mark": "𝕏",
+        "description": "分享与交流"
+      }
+    ]
+  },
+  "about": {
+    "command": "cat about.json",
+    "nameKey": "name",
+    "focusKey": "focus",
+    "offscreenKey": "offscreen"
+  },
+  "notFound": {
+    "title": "这个文件不在这里。",
+    "lead": "也许它还没有被写下。",
+    "back": "cd ~ / 回到主页 →"
+  },
+  "cli": {
+    "exit": "← back to gui",
+    "label": "{name} terminal",
+    "subtitle": "a digital garden / terminal",
+    "welcome": "Welcome to {name}'s little universe.",
+    "instructions": "输入 help 查看命令 · Tab 自动补全 · ↑↓ 历史记录",
+    "notice": "这是网站导航终端，命令只在当前页面内运行。",
+    "output": "终端输出",
+    "input": "输入命令",
+    "guest": "guest",
+    "hint": "help · ls · open work · cat about.md · theme light · exit",
+    "help": "ls                  列出当前目录\ncd <目录>           进入目录，cd .. 返回上层\ncat <文件>          读取 about.md / now.md / 作品 / 文章\nopen <路径>         打开页面，如 open work\npwd                 查看当前路径\nclear               清空终端\nhistory             查看命令历史\ntheme light|dark     切换主题\nexit                返回图形主页\n\nTab 补全 · ↑↓ 历史 · Ctrl+L 清屏",
+    "rootListing": "work/    blog/    travel/\nabout.md  now.md",
+    "enteredBlog": "进入 blog/，输入 ls 查看文章。",
+    "directoryMissing": "cd: 找不到目录「{path}」。试试 cd blog。",
+    "fileMissing": "cat: 找不到这个文件。输入 ls 查看可用内容。",
+    "pageMissing": "open: 找不到「{path}」。",
+    "localPost": "站内文章",
+    "themeChanged": "theme → {mode}",
+    "themeUsage": "用法：theme light / dark / auto",
+    "unknown": "{command}: 没有这个命令。输入 help 查看可用命令。"
+  },
+  "travel": {
+    "undated": "日期未记录",
+    "date": "日期",
+    "unrecorded": "未记录",
+    "period": "旅行记录",
+    "destinations": "旅行地点",
+    "allPlaces": "所有地方",
+    "collection": "旅行相册和日记",
+    "views": "展示方式",
+    "photos": "照片墙",
+    "journal": "日记随笔",
+    "searchLabel": "搜索旅行记录",
+    "searchPlaceholder": "搜索记忆…",
+    "yearLabel": "筛选年份",
+    "allYears": "所有年份",
+    "end": "the journey is the destination",
+    "credit": "{period} · {count} 张照片 · {name} 的旅行相册",
+    "mapSource": "地图数据：",
+    "mapSourceName": "Natural Earth ↗",
+    "mapSourceUrl": "https://www.naturalearthdata.com/",
+    "close": "关闭旅行记录",
+    "previousLabel": "上一条旅行记录",
+    "previous": "← 上一则",
+    "nextLabel": "下一条旅行记录",
+    "next": "下一则 →",
+    "photoLabel": "查看{place}的照片记录：{title}",
+    "readEssay": "阅读随笔",
+    "readPhoto": "查看图记",
+    "readMoment": "read this moment ↗",
+    "empty": "没有找到这一段记忆。",
+    "clear": "清除筛选，看看全部足迹 →",
+    "moments": "moments",
+    "entries": "entries",
+    "count": "{count} {unit} / {place}",
+    "unlocatedCaption": "照片地点待补充。",
+    "destinationCaption": "点击其他目的地切换记忆。",
+    "countryCaption": "点击城市或目的地，继续探索。",
+    "worldCaption": "点击国家，展开那里的目的地。",
+    "defaultCredit": "{name} 的相册",
+    "notes": "FIELD NOTES / {place}",
+    "essay": "随笔",
+    "photo": "图记",
+    "emptyNote": "这张照片的随笔还没有写下。"
+  },
+  "atlas": {
+    "label": "交互旅行地图",
+    "title": "THE TRAVEL ATLAS",
+    "count": "{countries} COUNTRIES · {photos} MOMENTS",
+    "navigation": "地图层级",
+    "zoom": "地图缩放",
+    "zoomOut": "缩小地图",
+    "zoomIn": "放大地图",
+    "map": "旅行地图，点击国家查看目的地，可拖动与双指缩放",
+    "country": "选择旅行国家",
+    "hint": "拖动探索 · 双指缩放",
+    "reset": "全部足迹 ↺",
+    "expandCountry": "展开{place}的目的地，{count}张照片",
+    "photoCount": "{place} · {count} 张照片",
+    "expand": "展开",
+    "view": "查看",
+    "marker": "{action}{place}，{count}张照片",
+    "world": "世界",
+    "currentMap": "旅行地图：{place}。点击国家或目的地查看照片，可拖动与双指缩放。"
+  },
+  "logos": {
+    "daisy": "{name} · 小雏菊",
+    "wordmark": "{name} · 雏菊字标"
+  },
+  "work": {
+    "indexLabel": "作品目录",
+    "count": "{count} PROJECTS",
+    "read": "查看项目",
+    "back": "← 全部作品",
+    "role": "我的角色",
+    "period": "项目阶段",
+    "stack": "技术与方向",
+    "contents": "项目目录",
+    "next": "下一个项目",
+    "empty": "新的作品，还在路上。",
+    "homeTitle": "— 作品与实践",
+    "homeView": "view selected work ↗",
+    "about": "更多关于我 ↗",
+    "visualLabel": "{title} · {caption}",
+    "sectionLabel": "{number} / {title}",
+    "nextLabel": "继续了解：{title}",
+    "genericCaption": "项目示意",
+    "originalNotice": "此项目的完整记录暂为中文。"
+  },
+  "language": {
+    "label": "语言选择",
+    "chinese": "中文",
+    "english": "EN",
+    "switchTo": "切换至{language}"
+  }
+}

@@ -1,0 +1,434 @@
+{
+  "places": {
+    "como": {
+      "name": "Lake Como",
+      "note": "Lake water, small towns, and gardens on the shore."
+    },
+    "florence": {
+      "name": "Florence",
+      "note": "City roofs, a red dome, and winding streets."
+    },
+    "tuscany": {
+      "name": "Tuscany",
+      "note": "Country hills, fields, and morning mist."
+    },
+    "siena": {
+      "name": "Siena",
+      "note": "Stone streets and church facades."
+    },
+    "rome": {
+      "name": "Rome",
+      "note": "Squares, domes, and the Colosseum."
+    },
+    "sorrento": {
+      "name": "Sorrento",
+      "note": "Blue water along the shore."
+    },
+    "positano": {
+      "name": "Positano",
+      "note": "A bay, boats, and hillside houses."
+    },
+    "seville": {
+      "name": "Seville",
+      "note": "Squares, sunsets, and purple flowers."
+    },
+    "zhuhai": {
+      "name": "Zhuhai",
+      "note": "It was a birthday. Happy birthday."
+    },
+    "guangzhou": {
+      "name": "Guangzhou",
+      "note": "The skyline, greenery, and tennis."
+    },
+    "shenyang": {
+      "name": "Shenyang",
+      "note": "Street snacks and the riverbank."
+    },
+    "danang": {
+      "name": "Da Nang",
+      "note": "Mountain castles and coastal views."
+    },
+    "dalat": {
+      "name": "Da Lat",
+      "note": "Gardens, old buildings, and a highland town."
+    },
+    "unlocated": {
+      "name": "Location pending",
+      "note": "Keep the photograph; add the location later."
+    }
+  },
+  "mapPlaces": {
+    "italy": {
+      "name": "Italy",
+      "note": "Lake Como, Tuscany, Rome, and the coast."
+    },
+    "spain": {
+      "name": "Spain",
+      "note": "Seville."
+    },
+    "china": {
+      "name": "China",
+      "note": "Zhuhai, Guangzhou, and Shenyang."
+    },
+    "vietnam": {
+      "name": "Vietnam",
+      "note": "Da Nang and Da Lat."
+    }
+  },
+  "entries": {
+    "undated-f8f0e51d": {
+      "title": "A silhouette before the castle",
+      "excerpt": "A figure seen from behind near the castle, with people crossing the square.",
+      "alt": "A figure seen from behind near the castle, with people crossing the square",
+      "credit": "Photos by {name}"
+    },
+    "20260502-105346-c75adeb8": {
+      "title": "The shores of Lake Como",
+      "excerpt": "Colorful buildings, a pier, and the waters of Lake Como.",
+      "alt": "Colorful buildings, a pier, and the waters of Lake Como",
+      "credit": "Photos by {name}"
+    },
+    "20260502-105306-4234d4c6": {
+      "title": "A boat on the lake",
+      "excerpt": "Boats on Lake Como, with hills and a town in the distance.",
+      "alt": "Boats on Lake Como, with hills and a town in the distance",
+      "credit": "Photos by {name}"
+    },
+    "20260502-115456-8e4d016e": {
+      "title": "A table by the lake",
+      "excerpt": "A shaded table beside Lake Como, looking out toward the water and mountains.",
+      "alt": "A shaded table beside Lake Como, looking out toward the water and mountains",
+      "credit": "Photos by {name}"
+    },
+    "20260502-130507-cb5408fb": {
+      "title": "An alley to the water",
+      "excerpt": "A narrow lakeside alley opening onto the blue waters of Lake Como.",
+      "alt": "A narrow lakeside alley opening onto the blue waters of Lake Como",
+      "credit": "Photos by {name}"
+    },
+    "20260503-174336-6fede14c": {
+      "title": "Shutters at the street corner",
+      "excerpt": "Buildings and green shutters lining a street in Florence.",
+      "alt": "Buildings and green shutters lining a street in Florence",
+      "credit": "Photos by {name}"
+    },
+    "20260503-175427-c09486df": {
+      "title": "A bell tower against the sky",
+      "excerpt": "Geometric church facades and a blue sky in Florence.",
+      "alt": "Geometric church facades and a blue sky in Florence",
+      "credit": "Photos by {name}"
+    },
+    "20260503-175605-419e3e1e": {
+      "title": "Looking up at the dome",
+      "excerpt": "Looking up from the street at the dome of Florence Cathedral.",
+      "alt": "Looking up from the street at the dome of Florence Cathedral",
+      "credit": "Photos by {name}"
+    },
+    "20260503-180043-4f6d0b02": {
+      "title": "A marble facade",
+      "excerpt": "Colored marble and sculptural details on a church facade in Florence.",
+      "alt": "Colored marble and sculptural details on a church facade in Florence",
+      "credit": "Photos by {name}"
+    },
+    "20260504-100555-19f1c93c": {
+      "title": "A panorama of Florence",
+      "excerpt": "Florence seen from above, with the cathedral dome rising over the city.",
+      "alt": "Florence seen from above, with the cathedral dome rising over the city",
+      "credit": "Photos by {name}"
+    },
+    "20260504-103520-90e188da": {
+      "title": "The red dome of Florence",
+      "excerpt": "Florence Cathedral among the dense roofs of the city.",
+      "alt": "Florence Cathedral among the dense roofs of the city",
+      "credit": "Photos by {name}"
+    },
+    "20260504-170957-6214d23e": {
+      "title": "Green slopes of Tuscany",
+      "excerpt": "Green hills, trees, and clouds over Tuscany.",
+      "alt": "Green hills, trees, and clouds over Tuscany",
+      "credit": "Photos by {name}"
+    },
+    "20260504-173313-a492ab7f": {
+      "title": "Between the hills",
+      "excerpt": "Layers of green Tuscan hills with mountains in the distance.",
+      "alt": "Layers of green Tuscan hills with mountains in the distance",
+      "credit": "Photos by {name}"
+    },
+    "20260505-061130-5477feb4": {
+      "title": "Morning mist",
+      "excerpt": "Houses, trees, and early mist in the Tuscan countryside.",
+      "alt": "Houses, trees, and early mist in the Tuscan countryside",
+      "credit": "Photos by {name}"
+    },
+    "20260505-061144-3f88c6f9": {
+      "title": "A light on a stone wall",
+      "excerpt": "A wall lamp, a wooden door, and flowering vines on a stone wall.",
+      "alt": "A wall lamp, a wooden door, and flowering vines on a stone wall",
+      "credit": "Photos by {name}"
+    },
+    "20260505-113555-7b2d50d5": {
+      "title": "Small yellow flowers",
+      "excerpt": "Yellow wildflowers in a field among the rolling hills of Tuscany.",
+      "alt": "Yellow wildflowers in a field among the rolling hills of Tuscany",
+      "credit": "Photos by {name}"
+    },
+    "20260505-125309-5419f9a8": {
+      "title": "Into the alleys of Siena",
+      "excerpt": "A pedestrian walking along a stone-paved street between buildings in Siena.",
+      "alt": "A pedestrian walking along a stone-paved street between buildings in Siena",
+      "credit": "Photos by {name}"
+    },
+    "20260505-143249-ce258613": {
+      "title": "A church in Siena",
+      "excerpt": "An ornate church facade and rose window in Siena.",
+      "alt": "An ornate church facade and rose window in Siena",
+      "credit": "Photos by {name}"
+    },
+    "20260507-081741-4979b2a1": {
+      "title": "Morning at the Spanish Steps",
+      "excerpt": "The Spanish Steps, flower beds, and the twin-towered church above them in Rome.",
+      "alt": "The Spanish Steps, flower beds, and the twin-towered church above them in Rome",
+      "credit": "Photos by {name}"
+    },
+    "20260507-083752-4222a015": {
+      "title": "A dome beside the square",
+      "excerpt": "A domed church and stone steps beside a square in Rome.",
+      "alt": "A domed church and stone steps beside a square in Rome",
+      "credit": "Photos by {name}"
+    },
+    "20260507-093338-8e6148b3": {
+      "title": "Facing the Pantheon",
+      "excerpt": "The pediment and columns of the Pantheon, with the square in front.",
+      "alt": "The pediment and columns of the Pantheon, with the square in front",
+      "credit": "Photos by {name}"
+    },
+    "20260507-093529-2629bf7a": {
+      "title": "Light through the dome",
+      "excerpt": "Light entering through the circular oculus of the Pantheon in Rome.",
+      "alt": "Light entering through the circular oculus of the Pantheon in Rome",
+      "credit": "Photos by {name}"
+    },
+    "20260507-095209-5f58bff0": {
+      "title": "Looking up at the ceiling",
+      "excerpt": "Paintings and ornamental details inside the dome of a church in Rome.",
+      "alt": "Paintings and ornamental details inside the dome of a church in Rome",
+      "credit": "Photos by {name}"
+    },
+    "20260507-134555-a36ceb95": {
+      "title": "Arches of the Colosseum",
+      "excerpt": "Layers of arches and stone walls at the Colosseum in Rome.",
+      "alt": "Layers of arches and stone walls at the Colosseum in Rome",
+      "credit": "Photos by {name}"
+    },
+    "20260507-143436-101be948": {
+      "title": "Stone and blue sky",
+      "excerpt": "The stone walls of the Colosseum beneath a blue sky.",
+      "alt": "The stone walls of the Colosseum beneath a blue sky",
+      "credit": "Photos by {name}"
+    },
+    "20260507-144313-b314f267": {
+      "title": "Walking around the Colosseum",
+      "excerpt": "The outer walls of the Colosseum and the trees around it.",
+      "alt": "The outer walls of the Colosseum and the trees around it",
+      "credit": "Photos by {name}"
+    },
+    "20260507-155700-ed091385": {
+      "title": "Balconies at the corner",
+      "excerpt": "Buildings, balconies, and a blue sky on a street corner in Rome.",
+      "alt": "Buildings, balconies, and a blue sky on a street corner in Rome",
+      "credit": "Photos by {name}"
+    },
+    "20260507-200234-823f5fd9": {
+      "title": "Blue hour in Rome",
+      "excerpt": "A Roman square and warm-colored buildings at dusk.",
+      "alt": "A Roman square and warm-colored buildings at dusk",
+      "credit": "Photos by {name}"
+    },
+    "20260508-125328-c2bb2756": {
+      "title": "The waters of Sorrento",
+      "excerpt": "A breakwater and blue-green water along the coast of Sorrento.",
+      "alt": "A breakwater and blue-green water along the coast of Sorrento",
+      "credit": "Photos by {name}"
+    },
+    "20260508-161824-31f237f9": {
+      "title": "Small boats on the sea",
+      "excerpt": "Boats moored off Positano with trees along the shore.",
+      "alt": "Boats moored off Positano with trees along the shore",
+      "credit": "Photos by {name}"
+    },
+    "20260508-164453-69c9db62": {
+      "title": "The coast of Positano",
+      "excerpt": "Houses climbing the hillside above the bay in Positano.",
+      "alt": "Houses climbing the hillside above the bay in Positano",
+      "credit": "Photos by {name}"
+    },
+    "20260510-153623-041f6dac": {
+      "title": "A sunny day in Seville",
+      "excerpt": "A sunlit street and red buildings in Seville.",
+      "alt": "A sunlit street and red buildings in Seville",
+      "credit": "Photos by {name}"
+    },
+    "20260510-185303-e82ec574": {
+      "title": "Purple in the treetops",
+      "excerpt": "Purple flowers blooming in the trees of Seville.",
+      "alt": "Purple flowers blooming in the trees of Seville",
+      "credit": "Photos by {name}"
+    },
+    "20260510-210733-f23fbeec": {
+      "title": "Evening at Plaza de España",
+      "excerpt": "Architecture, water, and evening light at Plaza de España in Seville.",
+      "alt": "Architecture, water, and evening light at Plaza de España in Seville",
+      "credit": "Photos by {name}"
+    },
+    "20260510-213429-b36f8fc7": {
+      "title": "Sunset above the rooftops",
+      "excerpt": "City rooftops under a pink sunset in Seville.",
+      "alt": "City rooftops under a pink sunset in Seville",
+      "credit": "Photos by {name}"
+    },
+    "20260511-143208-431ec030": {
+      "title": "Spires beneath a blue sky",
+      "excerpt": "Church spires rising into a blue sky with white clouds in Seville.",
+      "alt": "Church spires rising into a blue sky with white clouds in Seville",
+      "credit": "Photos by {name}"
+    },
+    "20260511-145950-b2aff440": {
+      "title": "A fountain and palm trees",
+      "excerpt": "A white fountain, flower beds, and palm trees in Seville.",
+      "alt": "A white fountain, flower beds, and palm trees in Seville",
+      "credit": "Photos by {name}"
+    },
+    "20260511-175852-322fdebc": {
+      "title": "Flying buttresses",
+      "excerpt": "Stone carvings, spires, and flying buttresses on a church in Seville.",
+      "alt": "Stone carvings, spires, and flying buttresses on a church in Seville",
+      "credit": "Photos by {name}"
+    },
+    "20260814-170956-9c9b2cca": {
+      "title": "A birthday by the window",
+      "excerpt": "Birthday decorations and a dining table beside a window overlooking a courtyard.",
+      "alt": "Birthday decorations and a dining table beside a window overlooking a courtyard",
+      "credit": "Photos by {name}"
+    },
+    "20260814-184826-5d0c361e": {
+      "title": "A window surrounded by green",
+      "excerpt": "Seats, indoor plants, and trees beyond the window.",
+      "alt": "Seats, indoor plants, and trees beyond the window",
+      "credit": "Photos by {name}"
+    },
+    "20260903-131735-eb8d293c": {
+      "title": "Looking up at Canton Tower",
+      "excerpt": "Canton Tower seen through the trees.",
+      "alt": "Canton Tower seen through the trees",
+      "credit": "Photos by {name}"
+    },
+    "20260904-175409-cb8d4856": {
+      "title": "A table beside the sea",
+      "excerpt": "A tea table by a window, with a calm sea in the distance.",
+      "alt": "A tea table by a window, with a calm sea in the distance",
+      "credit": "Photos by {name}"
+    },
+    "20260905-153021-d46ff318": {
+      "title": "A pool and shadows",
+      "excerpt": "Pool water, the shadows of trees, and the sea beyond.",
+      "alt": "Pool water, the shadows of trees, and the sea beyond",
+      "credit": "Photos by {name}"
+    },
+    "20260912-152421-ae0340ed": {
+      "title": "Under the white eaves",
+      "excerpt": "A white building with a red roof and a portrait in the courtyard.",
+      "alt": "A white building with a red roof and a portrait in the courtyard",
+      "credit": "Photos by {name}"
+    },
+    "20260919-205613-1676547f": {
+      "title": "Tennis after dark",
+      "excerpt": "Two tennis rackets leaning together on a court at night.",
+      "alt": "Two tennis rackets leaning together on a court at night",
+      "credit": "Photos by {name}"
+    },
+    "20260926-105852-142c313b": {
+      "title": "Snacks around the table",
+      "excerpt": "Chicken frames, fries, and other snacks spread across a table.",
+      "alt": "Chicken frames, fries, and other snacks spread across a table",
+      "credit": "Photos by {name}"
+    },
+    "20260926-120658-fdd242d5": {
+      "title": "By the river in Shenyang",
+      "excerpt": "A portrait on the riverbank, with a bridge and city buildings in the distance.",
+      "alt": "A portrait on the riverbank, with a bridge and city buildings in the distance",
+      "credit": "Photos by {name}"
+    },
+    "20260929-120906-a955df35": {
+      "title": "A castle in the mist",
+      "excerpt": "Castle walls, spires, and flower beds beneath a cloudy sky.",
+      "alt": "Castle walls, spires, and flower beds beneath a cloudy sky",
+      "credit": "Photos by {name}"
+    },
+    "20260929-140048-f816986a": {
+      "title": "Tracks through the mountains",
+      "excerpt": "Tracks running through mountains wrapped in clouds and mist.",
+      "alt": "Tracks running through mountains wrapped in clouds and mist",
+      "credit": "Photos by {name}"
+    },
+    "20260929-142627-0237bcbc": {
+      "title": "A statue against the sky",
+      "excerpt": "A statue high on a building beneath blue skies and white clouds.",
+      "alt": "A statue high on a building beneath blue skies and white clouds",
+      "credit": "Photos by {name}"
+    },
+    "20260929-143447-acb7cb0e": {
+      "title": "The giant beneath the castle",
+      "excerpt": "A giant sculpture and rocks below colorful buildings.",
+      "alt": "A giant sculpture and rocks below colorful buildings",
+      "credit": "Photos by {name}"
+    },
+    "20260930-073020-604f4076": {
+      "title": "Palm trees and the sea",
+      "excerpt": "Palm trees and a green lawn overlooking the sea.",
+      "alt": "Palm trees and a green lawn overlooking the sea",
+      "credit": "Photos by {name}"
+    },
+    "20261002-075819-2060ca8e": {
+      "title": "A vintage car in the garden",
+      "excerpt": "A vintage car by garden steps, with a lake and hills in the distance.",
+      "alt": "A vintage car by garden steps, with a lake and hills in the distance",
+      "credit": "Photos by {name}"
+    },
+    "20261002-091641-527fd24b": {
+      "title": "A vintage car in Da Lat",
+      "excerpt": "A vintage car parked in front of Dalat Palace.",
+      "alt": "A vintage car parked in front of Dalat Palace",
+      "credit": "Photos by {name}"
+    },
+    "20261002-095605-90640ded": {
+      "title": "A cabin in the leaves",
+      "excerpt": "The doors and windows of a wooden cabin framed by green foliage.",
+      "alt": "The doors and windows of a wooden cabin framed by green foliage",
+      "credit": "Photos by {name}"
+    },
+    "20261003-083624-85a9b575": {
+      "title": "A little house by the pool",
+      "excerpt": "A blue pool, a small white building, and green trees.",
+      "alt": "A blue pool, a small white building, and green trees",
+      "credit": "Photos by {name}"
+    },
+    "20261003-113103-78b89d9f": {
+      "title": "The pink church of Da Lat",
+      "excerpt": "A pink church with red roofs beneath a blue sky.",
+      "alt": "A pink church with red roofs beneath a blue sky",
+      "credit": "Photos by {name}"
+    },
+    "20261007-171936-6cb3070b": {
+      "title": "A sunny day in Guangzhou",
+      "excerpt": "Grass and a lake with the Guangzhou skyline in the distance.",
+      "alt": "Grass and a lake with the Guangzhou skyline in the distance",
+      "credit": "Photos by {name}"
+    },
+    "20261007-173219-100de44b": {
+      "title": "Greenery in the window frame",
+      "excerpt": "Trees and sunlight framed by a polygonal window.",
+      "alt": "Trees and sunlight framed by a polygonal window",
+      "credit": "Photos by {name}"
+    }
+  }
+}

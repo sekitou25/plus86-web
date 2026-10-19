@@ -1,0 +1,246 @@
+{
+  "nav": {
+    "home": "Home",
+    "work": "Work",
+    "about": "About",
+    "blog": "Writing",
+    "travel": "Travel",
+    "now": "Now",
+    "cli": "Terminal"
+  },
+  "titles": {
+    "home": "Selected work",
+    "about": "About",
+    "blog": "Writing",
+    "travel": "Travel & notes",
+    "now": "Now",
+    "cli": "Terminal",
+    "notFound": "404",
+    "work": "Selected work"
+  },
+  "shell": {
+    "skip": "Skip to content",
+    "home": "{name} home",
+    "navigation": "Main navigation",
+    "theme": "theme:",
+    "footerAbout": "About this site",
+    "footerNavigation": "More pages"
+  },
+  "theme": {
+    "light": "Switch to light mode",
+    "dark": "Switch to dark mode"
+  },
+  "home": {
+    "artLabel": "A slowly turning Saturn drawn with characters",
+    "artCaption": "FIG. 01 / A LITTLE UNIVERSE",
+    "readAbout": "read about me ↗",
+    "latest": "— Recent writing",
+    "allEntries": "all entries [{count}] ↗"
+  },
+  "tags": {
+    "all": "All posts",
+    "investment": "Investing & trading",
+    "notes": "Notes"
+  },
+  "shortTags": {
+    "investment": "Investing"
+  },
+  "blog": {
+    "categories": "Post categories",
+    "all": "all",
+    "searchPlaceholder": "Search writing…",
+    "searchLabel": "Search posts",
+    "allYears": "All years",
+    "shortcuts": "↑ ↓ navigate   enter open   / search",
+    "empty": "No matching posts. Try another keyword.",
+    "count": "{count} entries / {tag}"
+  },
+  "article": {
+    "seriesLabel": "{series} chapters",
+    "index": "Index",
+    "toc": "On this page",
+    "sections": "{count} sections",
+    "source": "Original on Notion ↗",
+    "createdDate": "Date from the Notion page creation time",
+    "recordedDate": "Date recorded in the original notes",
+    "nextChapter": "Next chapter",
+    "nextPost": "Read next",
+    "seriesIndex": "Learning guide / index",
+    "backToIndex": "Back to the learning guide →",
+    "backHome": "Back home →",
+    "back": "← All writing",
+    "minutes": "{minutes} min read",
+    "note": "Research notes · In progress",
+    "notion": "Notion notes",
+    "post": "Article",
+    "all": "← All posts",
+    "parent": "cd ..",
+    "table": "Article table",
+    "mention": "Original on Notion",
+    "originalNotice": "This article is currently available in its original Chinese."
+  },
+  "social": {
+    "title": "Find me elsewhere",
+    "path": "~/socials",
+    "visit": "Visit profile",
+    "pending": "Not added yet",
+    "pendingLabel": "{platform}, not added yet",
+    "copy": "Copy WeChat ID {account}",
+    "open": "Open {platform} profile",
+    "copied": "WeChat ID copied",
+    "manual": "WeChat ID: {account} · Copy it manually",
+    "platforms": [
+      {
+        "id": "instagram",
+        "name": "Instagram",
+        "mark": "◎",
+        "description": "Photos & everyday life"
+      },
+      {
+        "id": "threads",
+        "name": "Threads",
+        "mark": "@",
+        "description": "Passing thoughts"
+      },
+      {
+        "id": "wechat",
+        "name": "WeChat",
+        "mark": "◌",
+        "description": "Get in touch"
+      },
+      {
+        "id": "x",
+        "name": "X",
+        "mark": "𝕏",
+        "description": "Ideas & conversations"
+      }
+    ]
+  },
+  "about": {
+    "command": "cat about.json",
+    "nameKey": "name",
+    "focusKey": "focus",
+    "offscreenKey": "offscreen"
+  },
+  "notFound": {
+    "title": "This page is not here.",
+    "lead": "Perhaps it has not been written yet.",
+    "back": "cd ~ / Back home →"
+  },
+  "cli": {
+    "exit": "← back to gui",
+    "label": "{name} terminal",
+    "subtitle": "a digital garden / terminal",
+    "welcome": "Welcome to {name}'s little universe.",
+    "instructions": "Type help for commands · Tab to complete · ↑↓ for history",
+    "notice": "This navigation terminal runs entirely within this website.",
+    "output": "Terminal output",
+    "input": "Enter a command",
+    "guest": "guest",
+    "hint": "help · ls · open work · cat about.md · theme light · exit",
+    "help": "ls                  List the current directory\ncd <directory>      Enter a directory; cd .. goes back\ncat <file>          Read about.md / now.md / work / posts\nopen <path>         Open a page, e.g. open work\npwd                 Show the current path\nclear               Clear the terminal\nhistory             Show command history\ntheme light|dark    Change the theme\nexit                Return to the home page\n\nTab completion · ↑↓ history · Ctrl+L clear",
+    "rootListing": "work/    blog/    travel/\nabout.md  now.md",
+    "enteredBlog": "Entered blog/. Type ls to list posts.",
+    "directoryMissing": "cd: directory “{path}” not found. Try cd blog.",
+    "fileMissing": "cat: file not found. Type ls to see available files.",
+    "pageMissing": "open: “{path}” not found.",
+    "localPost": "Site article",
+    "themeChanged": "theme → {mode}",
+    "themeUsage": "Usage: theme light / dark / auto",
+    "unknown": "{command}: command not found. Type help for available commands."
+  },
+  "travel": {
+    "undated": "Date not recorded",
+    "date": "Date",
+    "unrecorded": "Not recorded",
+    "period": "Travel journal",
+    "destinations": "Travel destinations",
+    "allPlaces": "All places",
+    "collection": "Travel photos & journal",
+    "views": "Display mode",
+    "photos": "Photo wall",
+    "journal": "Journal",
+    "searchLabel": "Search travel notes",
+    "searchPlaceholder": "Search memories…",
+    "yearLabel": "Filter by year",
+    "allYears": "All years",
+    "end": "the journey is the destination",
+    "credit": "{period} · {count} photographs · {name}’s travel album",
+    "mapSource": "Map data: ",
+    "mapSourceName": "Natural Earth ↗",
+    "mapSourceUrl": "https://www.naturalearthdata.com/",
+    "close": "Close travel memory",
+    "previousLabel": "Previous travel memory",
+    "previous": "← Previous",
+    "nextLabel": "Next travel memory",
+    "next": "Next →",
+    "photoLabel": "View {place}: {title}",
+    "readEssay": "Read journal entry",
+    "readPhoto": "View photo notes",
+    "readMoment": "read this moment ↗",
+    "empty": "No memories found here.",
+    "clear": "Clear filters and see all places →",
+    "moments": "moments",
+    "entries": "entries",
+    "count": "{count} {unit} / {place}",
+    "unlocatedCaption": "The photo location is still to be added.",
+    "destinationCaption": "Choose another destination to explore.",
+    "countryCaption": "Choose a city or destination to explore further.",
+    "worldCaption": "Choose a country to explore its destinations.",
+    "defaultCredit": "Photos by {name}",
+    "notes": "FIELD NOTES / {place}",
+    "essay": "Journal",
+    "photo": "Photo notes",
+    "emptyNote": "The story behind this photograph has not been written yet."
+  },
+  "atlas": {
+    "label": "Interactive travel atlas",
+    "title": "THE TRAVEL ATLAS",
+    "count": "{countries} COUNTRIES · {photos} MOMENTS",
+    "navigation": "Map navigation",
+    "zoom": "Map zoom",
+    "zoomOut": "Zoom out",
+    "zoomIn": "Zoom in",
+    "map": "Travel map. Select a country to see destinations; drag or pinch to explore.",
+    "country": "Choose a country",
+    "hint": "Drag to explore · Pinch to zoom",
+    "reset": "All places ↺",
+    "expandCountry": "Explore {place}, {count} photographs",
+    "photoCount": "{place} · {count} photographs",
+    "expand": "Explore ",
+    "view": "View ",
+    "marker": "{action}{place}, {count} photographs",
+    "world": "World",
+    "currentMap": "Travel map: {place}. Select a country or destination to see photos; drag or pinch to explore."
+  },
+  "logos": {
+    "daisy": "{name} · Daisy",
+    "wordmark": "{name} · Daisy wordmark"
+  },
+  "work": {
+    "indexLabel": "Project index",
+    "count": "{count} PROJECTS",
+    "read": "Explore project",
+    "back": "← All work",
+    "role": "My role",
+    "period": "Project period",
+    "stack": "Technology & focus",
+    "contents": "In this project",
+    "next": "Next project",
+    "empty": "More work is on its way.",
+    "homeTitle": "— Work & practice",
+    "homeView": "view selected work ↗",
+    "about": "More about me ↗",
+    "visualLabel": "{title} · {caption}",
+    "sectionLabel": "{number} / {title}",
+    "nextLabel": "Explore next: {title}",
+    "genericCaption": "Project illustration",
+    "originalNotice": "The full project notes are currently available in Chinese."
+  },
+  "language": {
+    "label": "Choose language",
+    "chinese": "中文",
+    "english": "EN",
+    "switchTo": "Switch to {language}"
+  }
+}

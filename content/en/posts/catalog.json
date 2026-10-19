@@ -1,0 +1,41 @@
+{
+  "statarb-learning-guide": {
+    "title": "Statistical Arbitrage: A Six-Chapter Learning Guide",
+    "excerpt": "A reading path covering returns, signals, position sizing, rebalancing, risk, and implementation.",
+    "seriesName": "Statistical arbitrage essentials"
+  },
+  "statarb-01-how-it-makes-money": {
+    "title": "01 · How Does the Strategy Make Money?",
+    "excerpt": "Start with buying and shorting to understand relative-price convergence, profit, loss, and risk.",
+    "seriesName": "Statistical arbitrage essentials"
+  },
+  "statarb-02-signals": {
+    "title": "02 · Turning Relative Value into Trading Signals",
+    "excerpt": "Understand z-scores, pair quality, signal depth, and directional agreement using a shared example.",
+    "seriesName": "Statistical arbitrage essentials"
+  },
+  "statarb-03-position-sizing": {
+    "title": "03 · Turning Signals into Positions",
+    "excerpt": "Translate stock signals into capital and shares, then examine gross exposure, net exposure, and concentration.",
+    "seriesName": "Statistical arbitrage essentials"
+  },
+  "statarb-04-rebalancing": {
+    "title": "04 · Daily Rebalancing and When Not to Trade",
+    "excerpt": "Connect portfolio drift, buffers, entry and exit thresholds, earnings filters, and execution timing.",
+    "seriesName": "Statistical arbitrage essentials"
+  },
+  "statarb-05-performance-and-risk": {
+    "title": "05 · Evaluating Returns, Risk, and Backtest Reliability",
+    "excerpt": "Read equity curves with attention to volatility, drawdowns, costs, and backtest assumptions.",
+    "seriesName": "Statistical arbitrage essentials"
+  },
+  "statarb-06-code-and-execution": {
+    "title": "06 · From Research Code to Execution",
+    "excerpt": "Follow the data, functions, simulation results, and exports through the R notebook.",
+    "seriesName": "Statistical arbitrage essentials"
+  },
+  "triangulated-statistical-arbitrage-notes": {
+    "title": "Triangulated Statistical Arbitrage",
+    "excerpt": "Research questions about pair relationships, mean reversion, signal reliability, concentration, and timing."
+  }
+}

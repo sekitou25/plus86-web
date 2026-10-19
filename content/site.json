@@ -1,0 +1,36 @@
+{
+  "name": "siyuan",
+  "handle": "siyuan",
+  "tagline": "stay curious. keep building",
+  "metaDescription": "{name} 的数字花园。关于代码、阅读与日常的个人主页和博客。",
+  "headerNote": "a personal corner of the internet",
+  "sidebarStatus": "try not to stop",
+  "socials": {
+    "instagram": {
+      "username": "",
+      "url": ""
+    },
+    "threads": {
+      "username": "",
+      "url": ""
+    },
+    "wechat": {
+      "username": ""
+    },
+    "x": {
+      "username": "",
+      "url": ""
+    }
+  },
+  "profile": {
+    "focus": [
+      "plumber - a trading agent",
+      "momentum"
+    ],
+    "offscreen": [
+      "travel",
+      "photos",
+      "notes"
+    ]
+  }
+}
