@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>04 · Daily Rebalancing and When Not to Trade · siyuan</title><meta name="description" content="Connect portfolio drift, buffers, entry and exit thresholds, earnings filters, and execution timing.">
+
+<link rel="alternate" type="text/markdown" href="/read/en/blog/statarb-04-rebalancing.md"><link rel="index" href="/read/index.json">
+<style>body{max-width:54rem;margin:3rem auto;padding:0 1.25rem;font:17px/1.8 system-ui,sans-serif;color:#252525;background:#faf9f5}a{color:#80503c}nav{display:flex;flex-wrap:wrap;gap:1rem}h1,h2,h3,h4{line-height:1.35}h2{margin-top:2.5rem}pre{overflow:auto;padding:1rem;background:#eeece5}code{font-size:.9em}table{border-collapse:collapse;display:block;overflow:auto}th,td{border:1px solid #bbb;padding:.4rem .7rem}img{max-width:100%;height:auto}dt{font-weight:600}dd{margin:0 0 .75rem}blockquote{border-left:3px solid #bca18a;margin-left:0;padding-left:1rem}.notice{padding:1rem;background:#eeece5}</style>
+</head><body><nav><a href="/read/en/index.html">Content index</a> <a href="/?lang=en#/blog/statarb-04-rebalancing">Interactive edition</a> <a href="/read/en/blog/statarb-04-rebalancing.md">Full Markdown</a> <a href="/read/zh/blog/statarb-04-rebalancing.html">中文</a></nav>
+<main><article><header><h1>04 · Daily Rebalancing and When Not to Trade</h1><p><time datetime="2026-10-16">2026-10-16</time></p></header><p class="notice">This article is currently available in its original Chinese.</p><div lang="zh-CN"><p>本篇基于当前可见上下文生成。用户要求按章节连续写完，因此保持前面面向初学者的解释深度；演示数字均为假设。</p>
+<h2 id="section-1" tabindex="-1">这一篇要解决的问题</h2>
+<p>昨天的仓位到了今天为什么会变化？新信号出来后，是否每一点差额都要交易？这一章把价格漂移、交易缓冲、进出场阈值、财报过滤与执行时间放进同一个日常流程。</p>
+<h2 id="section-2" tabindex="-1">正文</h2>
+<p><strong>1 股数不变，仓位比例也会变化</strong></p>
+<p>假设昨天策略净资产为 100,000 美元，持有 X 股票 100 股，每股 50 美元。X 市值为 5,000 美元，占净资产 5%。</p>
+<p>今天 X 涨到 55 美元，其他资产价值不变，忽略费用。股票市值变成 5,500 美元，策略净资产变成 100,500 美元，实际仓位为：</p>
+<pre><code class="language-plain">5,500 ÷ 100,500 ≈ 5.47%
+</code></pre>
+<p>所以，即使没有交易，仓位也会随价格和净资产变化。这叫仓位漂移。每天应先按新价格计算当前仓位，再与新目标比较。</p>
+<p><strong>2 精确追踪目标会产生许多小额交易</strong></p>
+<p>假设目标权重从 5.00% 改到 5.05%，策略净资产仍按 100,000 美元演示，目标金额只增加 50 美元。几十只股票每天都有这种微调，可能产生大量小订单。</p>
+<p>每次交易可能支付佣金、买卖价差和滑点。滑点指实际成交价格与决策时参考价格之间的差异；较大订单还可能推动价格，形成市场冲击。这些成本可能超过小幅调仓带来的信号收益。</p>
+<p>因此，目标与当前仓位有差额，只说明存在调整方向，还要判断差额是否值得交易。</p>
+<p><strong>3 交易缓冲给目标周围留一个不交易区间</strong></p>
+<p>这里必须区分函数版本。本章按本轮查到的公开 <code>rsims</code> 底层函数解释：<code>trade_buffer</code> 是权重区间的总宽度，两侧各取一半；超出区间后调回完整目标。目标为 0 时会清仓，小目标的区间在 0 处截断。<a href="https://raw.githubusercontent.com/Robot-Wealth/rsims/main/src/positionsFromNoTradeBufferMinComm.cpp" target="_blank" rel="noopener noreferrer">底层缓冲函数</a></p>
+<p>例如，目标仓位为 +3%，<code>trade_buffer = 0.025</code>：</p>
+<pre><code class="language-plain">总宽度 = 2.5 个百分点
+两侧各留 = 1.25 个百分点
+不交易区间 = 1.75% 至 4.25%
+</code></pre>
+<div class="article-table" role="region" tabindex="0" aria-label="文章表格"><table><thead><tr><th scope="col">当前实际仓位</th><th scope="col">按该函数如何处理</th></tr></thead><tbody><tr><td>2.00%</td><td>位于区间内，暂不交易</td></tr><tr><td>1.00%</td><td>低于下界，调到约 3.00%</td></tr><tr><td>5.00%</td><td>高于上界，调到约 3.00%</td></tr></tbody></table></div>
+<p>最后的股数还受整股取整、成本和保证金影响。1.25 个百分点以策略净资产为分母，不能读成目标金额的 1.25%，也没有止损线的含义。</p>
+<p>本地 notebook 导出的 <code>deadband.rebalance_to</code> 写成了 <code>band_edge</code>，与上述公开函数的调到目标不同。Notebook 又没有固定依赖的 Git 提交，因此这套算例描述已查看的实现；复现保存结果时必须确认当时安装的函数版本，不能仅凭参数名称判断行为。</p>
+<p><strong>4 缓冲还会影响是否建立小仓位</strong></p>
+<p>假设目标为 +1%，总缓冲宽度仍是 2.5 个百分点。原来的下界为 −0.25%，函数将其截到 0，上界为 2.25%。</p>
+<p>若当前仓位为 0，它已经位于这个区间里，函数可能保持不交易。目标非零，实际持仓仍可能为零。</p>
+<p>反过来，如果目标明确变成 0，该实现会要求清仓。不能假设旧仓位总能被缓冲保护着继续持有。这是信号门槛附近反复进出容易增加交易的一个原因。</p>
+<p><strong>5 缓冲宽度有成本与信号之间的取舍</strong></p>
+<p>缓冲较窄，实际持仓更接近目标，但订单较多。缓冲较宽，订单减少，但实际持仓偏离信号更远，小目标甚至一直无法建立。</p>
+<p>本地 notebook 已保存的同一组缓冲实验为：</p>
+<div class="article-table" role="region" tabindex="0" aria-label="文章表格"><table><thead><tr><th scope="col">trade_buffer</th><th scope="col">历史复合年化收益</th><th scope="col">历史年化波动</th><th scope="col">Sharpe</th></tr></thead><tbody><tr><td>0</td><td>3.75%</td><td>4.11%</td><td>0.92</td></tr><tr><td>0.01</td><td>7.63%</td><td>4.19%</td><td>1.78</td></tr><tr><td>0.025</td><td>8.44%</td><td>4.25%</td><td>1.93</td></tr><tr><td>0.05</td><td>4.37%</td><td>4.19%</td><td>1.04</td></tr><tr><td>0.10</td><td>1.63%</td><td>2.30%</td><td>0.72</td></tr></tbody></table></div>
+<p>这组输出展示了一个中间区域表现较好的历史现象。它没有证明所有资金规模、佣金和未来环境都应该使用 0.025，也没有证明当前依赖版本一定能复现这些数字。</p>
+<p><strong>6 信号门槛先决定是否允许分配仓位</strong></p>
+<p><code>signal_threshold</code> 检查的是股票汇总后的 <code>abs(mean_zscore)</code>。例如门槛为 0.5，平均偏离的绝对值达到 0.5 才满足进入条件。它没有直接检查某一条配对的 z-score，也没有直接检查最后的权重。</p>
+<p>如果进入和退出都用同一条线，信号在 −0.49、−0.51、−0.48、−0.52 之间晃动，就可能反复要求清仓与进入。实际是否成交还取决于缓冲和目标规模。</p>
+<p><strong>7 进入与退出使用不同门槛可以减少来回切换</strong></p>
+<p>Notebook 支持进入门槛 0.5、退出门槛 0.25 这样的设置。这叫 hysteresis，可以理解为给进入和退出留出不同的门槛。</p>
+<div class="article-table" role="region" tabindex="0" aria-label="文章表格"><table><thead><tr><th scope="col">日期</th><th scope="col">mean_zscore</th><th scope="col">信号状态的示意</th></tr></thead><tbody><tr><td>第 1 天</td><td>−0.45</td><td>尚未达到进入门槛</td></tr><tr><td>第 2 天</td><td>−0.60</td><td>达到进入门槛，允许进入</td></tr><tr><td>第 3 天</td><td>−0.40</td><td>已经进入，仍达到较低的保留门槛</td></tr><tr><td>第 4 天</td><td>−0.20</td><td>低于退出门槛，信号清零</td></tr><tr><td>第 5 天</td><td>−0.55</td><td>再次达到进入门槛</td></tr></tbody></table></div>
+<p>表中描述的是信号资格状态，不能直接等同于券商实际已经成交的仓位。代码随后还会重新计算权重并经过交易缓冲。</p>
+<p>在代码的设计说明中，股票离开候选集合会重置这种状态。该机制按信号判断，不能替代亏损限制或事件风险控制。</p>
+<p>较低的退出门槛让仓位保留更久，减少进出切换的同时，也可能继续持有预测能力已经减弱的股票。应联合比较换手、成本、持仓数量与收益，而不是只看 Sharpe。</p>
+<p><strong>8 交易缓冲与不同进出场门槛作用在不同步骤</strong></p>
+<pre><code class="language-plain">信号门槛与状态规则
+    ↓ 决定哪些股票允许有目标仓位
+权重计算
+    ↓ 决定目标比例
+交易缓冲
+    ↓ 决定当前实际持仓是否需要向目标调整
+模拟或真实成交
+</code></pre>
+<p>改变进出场门槛以后，缓冲实验的结果也可能改变。因此，不宜在没有信号门槛的配置里选好缓冲，再直接认定它适合其他配置。</p>
+<p><strong>9 财报过滤试图区分暂时偏离与价值重估</strong></p>
+<p>假设 C 股价上涨，模型认为它偏贵，原本想做空。但 C 刚公布盈利，明显超过市场预期。上涨可能反映新的盈利信息，继续按旧关系做空有风险。</p>
+<p>Notebook 的可选规则检查最近一次盈利意外：如果实际每股收益高于预期，且距离对应事件没有超过设定的交易日窗口，则跳过这只股票的空头。它只处理这一类空头情形，没有对所有重大新闻提供保护。</p>
+<p>代码把盘前、盘中事件与盘后事件分到相应交易日，财报过滤窗口使用交易日编号，而非简单的日历天数。真正复现还要检查原始数据的发布时间与修订历史。</p>
+<p>更重要的是，它会把剩余空头放大，尝试维持原来的空头总规模。例如原本做空 C 20%、D 15%、E 5%，合计 40%。过滤 C 后，D 和 E 剩余合计 20%，各乘以 2，就变成 D 30%、E 10%。</p>
+<p>因此，避开一只股票的事件风险，可能把更多风险集中到其他股票。单股上限与最终实际权重需要一起检查。</p>
+<p><strong>10 借券和成交条件也属于策略实现</strong></p>
+<p>做空需要可借股票，还要考虑借券费用、保证金和分红补偿。卖空股票上涨会造成亏损，潜在损失没有固定上限。<a href="https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-51" target="_blank" rel="noopener noreferrer">SEC 做空说明</a></p>
+<p>回测给某只股票填了借券费率，并没有证明当时一定能借到足够数量。实际执行需要把可借性、额度、费用和最终仓位一起处理，不能只计算一个价格信号。</p>
+<p><strong>11 信息必须先出现，订单才能随后成交</strong></p>
+<p>策略文档描述两条路径：使用收盘前可获得的信号，在收盘前后相应执行；或者取得日终信号后，在下一个交易日执行。文档指出，等待到次日收盘可能损失较多信号优势。</p>
+<p>假设使用今天完整收盘数据计算出信号，却在回测中按今天准确收盘价买入，现实中难以严格实现。收盘前的信号又与最终收盘信号不完全相同。公平的模拟需要让信号时间、提交订单时间和成交价格彼此一致。</p>
+<p>这比简单地把整张目标表滞后一天更细致：使用次日开盘执行，就应匹配次日开盘的可成交价格、跳空和成本；使用收盘前执行，就应匹配当时真正可获得的信号。</p>
+<p><strong>12 一次日常调仓的完整流程</strong></p>
+<ol>
+<li>读取当前真实持仓、现金和策略净资产，确认数据时间。</li>
+<li>取得在决策时已经可用的新信号。</li>
+<li>按深度、质量、一致性和进出场规则生成目标。</li>
+<li>处理财报、公司行动、借券与仓位限制。</li>
+<li>按最新价格计算实际仓位，与目标比较并应用缓冲。</li>
+<li>生成需要买卖的差额，核对金额、股数和保证金。</li>
+<li>执行后读取真实成交和未成交数量，更新实际持仓。</li>
+<li>保存当天的信号、目标、订单、成交、成本和异常原因。</li>
+</ol>
+<p>最后一步让以后能够区分：亏损来自信号本身，还是来自数据、成交与持仓记录的偏差。</p>
+<h2 id="section-3" tabindex="-1">小结</h2>
+<ul>
+<li>价格与净资产变化会导致仓位漂移。</li>
+<li>交易缓冲容忍小偏差，以较少交易换取对目标较低的贴合度。</li>
+<li>信号门槛、不同进出场阈值与交易缓冲分别作用在不同步骤。</li>
+<li>财报过滤和借券约束会改变最终组合，可能提高剩余持仓集中度。</li>
+<li>回测必须保持信息产生与成交的时间顺序，并锁定实际使用的函数版本。</li>
+</ul>
+<h2 id="section-4" tabindex="-1">下一篇预告</h2>
+<p>从净值曲线开始，解释收益、波动、回撤、Sharpe、换手与成本，判断历史回测能支持什么样的未来预期。</p>
+<hr>
+<h2 id="section-5" tabindex="-1">学习反馈</h2>
+<p>你可以写：</p>
+<ol>
+<li>哪里看懂了？</li>
+<li>哪里没看懂？</li>
+<li>哪个地方想展开？</li>
+<li>这个主题和你的真实问题有什么关系？</li>
+</ol>
+<p>请写在这行下面：</p>
+<p><a href="https://app.notion.com/p/3fb6dacbbc7e8101bc5fe9dc5b1dd85b">Original on Notion ↗</a></p></div></article></main></body></html>

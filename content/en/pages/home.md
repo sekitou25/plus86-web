@@ -1,9 +1,9 @@
 ---
-title: "Experience,\nengineered."
+title: "Client engineering.\nAI applications."
 greeting: "I'm {name}."
-heroOverline: "SELECTED WORK / ENGINEERING & CRAFT"
-heroRole: "iOS engineer · Products & systems"
-scrollLabel: "Explore selected work"
+heroOverline: "SOFTWARE ENGINEERING"
+heroRole: "Client development · AI applications"
+scrollLabel: "View projects"
 ---
 
-From music players and AI conversations to WeChat content experiences and an automated trading agent. A selection of products I've worked on, and ideas I'm taking further.
+I've worked on the clients for Qishui Music, Talkie / Xingye, and WeChat Official Accounts, covering playback, messaging, and recommendation feeds. I also research AI agents and automated trading systems.

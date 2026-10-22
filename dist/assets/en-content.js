@@ -3,10 +3,10 @@ window.ENGLISH_CONTENT = {
   "site": {
     "name": "siyuan",
     "handle": "siyuan",
-    "tagline": "stay curious. keep building",
-    "metaDescription": "Selected work by {name}: music players, AI conversations, WeChat content experiences, and an automated trading agent.",
-    "headerNote": "a personal corner of the internet",
-    "sidebarStatus": "try not to stop",
+    "tagline": "software, notes & photographs",
+    "metaDescription": "{name} is a software engineer working on client applications and AI. Selected projects, research notes, and travel photographs.",
+    "headerNote": "software engineer",
+    "sidebarStatus": "personal website",
     "socials": {
       "instagram": {
         "username": "",
@@ -43,18 +43,16 @@ window.ENGLISH_CONTENT = {
       "about": "About",
       "blog": "Writing",
       "travel": "Travel",
-      "now": "Now",
       "cli": "Terminal"
     },
     "titles": {
-      "home": "Selected work",
+      "home": "Projects",
       "about": "About",
       "blog": "Writing",
-      "travel": "Travel & notes",
-      "now": "Now",
+      "travel": "Travel",
       "cli": "Terminal",
       "notFound": "404",
-      "work": "Selected work"
+      "work": "Projects"
     },
     "shell": {
       "skip": "Skip to content",
@@ -70,7 +68,7 @@ window.ENGLISH_CONTENT = {
     },
     "home": {
       "artLabel": "A slowly turning Saturn drawn with characters",
-      "artCaption": "FIG. 01 / A LITTLE UNIVERSE",
+      "artCaption": "FIG. 01 / ASCII SATURN",
       "readAbout": "read about me ↗",
       "latest": "— Recent writing",
       "allEntries": "all entries [{count}] ↗"
@@ -90,7 +88,7 @@ window.ENGLISH_CONTENT = {
       "searchLabel": "Search posts",
       "allYears": "All years",
       "shortcuts": "↑ ↓ navigate   enter open   / search",
-      "empty": "No matching posts. Try another keyword.",
+      "empty": "No matching posts.",
       "count": "{count} entries / {tag}"
     },
     "article": {
@@ -118,7 +116,7 @@ window.ENGLISH_CONTENT = {
       "originalNotice": "This article is currently available in its original Chinese."
     },
     "social": {
-      "title": "Find me elsewhere",
+      "title": "Contact and profiles",
       "path": "~/socials",
       "visit": "Visit profile",
       "pending": "Not added yet",
@@ -138,7 +136,7 @@ window.ENGLISH_CONTENT = {
           "id": "threads",
           "name": "Threads",
           "mark": "@",
-          "description": "Passing thoughts"
+          "description": "Personal notes"
         },
         {
           "id": "wechat",
@@ -150,7 +148,7 @@ window.ENGLISH_CONTENT = {
           "id": "x",
           "name": "X",
           "mark": "𝕏",
-          "description": "Ideas & conversations"
+          "description": "Posts and discussions"
         }
       ]
     },
@@ -161,23 +159,23 @@ window.ENGLISH_CONTENT = {
       "offscreenKey": "offscreen"
     },
     "notFound": {
-      "title": "This page is not here.",
-      "lead": "Perhaps it has not been written yet.",
+      "title": "Page not found",
+      "lead": "Check the address or return to the home page.",
       "back": "cd ~ / Back home →"
     },
     "cli": {
       "exit": "← back to gui",
       "label": "{name} terminal",
-      "subtitle": "a digital garden / terminal",
-      "welcome": "Welcome to {name}'s little universe.",
+      "subtitle": "site navigation / terminal",
+      "welcome": "Site navigation for {name}.",
       "instructions": "Type help for commands · Tab to complete · ↑↓ for history",
       "notice": "This navigation terminal runs entirely within this website.",
       "output": "Terminal output",
       "input": "Enter a command",
       "guest": "guest",
       "hint": "help · ls · open work · cat about.md · theme light · exit",
-      "help": "ls                  List the current directory\ncd \u003cdirectory>      Enter a directory; cd .. goes back\ncat \u003cfile>          Read about.md / now.md / work / posts\nopen \u003cpath>         Open a page, e.g. open work\npwd                 Show the current path\nclear               Clear the terminal\nhistory             Show command history\ntheme light|dark    Change the theme\nexit                Return to the home page\n\nTab completion · ↑↓ history · Ctrl+L clear",
-      "rootListing": "work/    blog/    travel/\nabout.md  now.md",
+      "help": "ls                  List the current directory\ncd \u003cdirectory>      Enter a directory; cd .. goes back\ncat \u003cfile>          Read about.md / work / posts\nopen \u003cpath>         Open a page, e.g. open work\npwd                 Show the current path\nclear               Clear the terminal\nhistory             Show command history\ntheme light|dark    Change the theme\nexit                Return to the home page\n\nTab completion · ↑↓ history · Ctrl+L clear",
+      "rootListing": "work/    blog/    travel/\nabout.md",
       "enteredBlog": "Entered blog/. Type ls to list posts.",
       "directoryMissing": "cd: directory “{path}” not found. Try cd blog.",
       "fileMissing": "cat: file not found. Type ls to see available files.",
@@ -199,49 +197,49 @@ window.ENGLISH_CONTENT = {
       "photos": "Photo wall",
       "journal": "Journal",
       "searchLabel": "Search travel notes",
-      "searchPlaceholder": "Search memories…",
+      "searchPlaceholder": "Search places or notes…",
       "yearLabel": "Filter by year",
       "allYears": "All years",
-      "end": "the journey is the destination",
+      "end": "Travel photographs and notes",
       "credit": "{period} · {count} photographs · {name}’s travel album",
       "mapSource": "Map data: ",
       "mapSourceName": "Natural Earth ↗",
       "mapSourceUrl": "https://www.naturalearthdata.com/",
-      "close": "Close travel memory",
-      "previousLabel": "Previous travel memory",
+      "close": "Close travel record",
+      "previousLabel": "Previous travel record",
       "previous": "← Previous",
-      "nextLabel": "Next travel memory",
+      "nextLabel": "Next travel record",
       "next": "Next →",
       "photoLabel": "View {place}: {title}",
       "readEssay": "Read journal entry",
       "readPhoto": "View photo notes",
-      "readMoment": "read this moment ↗",
-      "empty": "No memories found here.",
-      "clear": "Clear filters and see all places →",
+      "readMoment": "View record ↗",
+      "empty": "No matching travel records.",
+      "clear": "Clear filters →",
       "moments": "moments",
       "entries": "entries",
       "count": "{count} {unit} / {place}",
       "unlocatedCaption": "The photo location is still to be added.",
-      "destinationCaption": "Choose another destination to explore.",
-      "countryCaption": "Choose a city or destination to explore further.",
-      "worldCaption": "Choose a country to explore its destinations.",
+      "destinationCaption": "Choose another destination to view photographs.",
+      "countryCaption": "Choose a city or destination to view records.",
+      "worldCaption": "Choose a country to see its destinations.",
       "defaultCredit": "Photos by {name}",
       "notes": "FIELD NOTES / {place}",
       "essay": "Journal",
       "photo": "Photo notes",
-      "emptyNote": "The story behind this photograph has not been written yet."
+      "emptyNote": "No written note yet."
     },
     "atlas": {
       "label": "Interactive travel atlas",
       "title": "THE TRAVEL ATLAS",
-      "count": "{countries} COUNTRIES · {photos} MOMENTS",
+      "count": "{countries} COUNTRIES · {photos} PHOTOS",
       "navigation": "Map navigation",
       "zoom": "Map zoom",
       "zoomOut": "Zoom out",
       "zoomIn": "Zoom in",
       "map": "Travel map. Select a country to see destinations; drag or pinch to explore.",
       "country": "Choose a country",
-      "hint": "Drag to explore · Pinch to zoom",
+      "hint": "Drag the map · Pinch to zoom",
       "reset": "All places ↺",
       "expandCountry": "Explore {place}, {count} photographs",
       "photoCount": "{place} · {count} photographs",
@@ -258,22 +256,52 @@ window.ENGLISH_CONTENT = {
     "work": {
       "indexLabel": "Project index",
       "count": "{count} PROJECTS",
-      "read": "Explore project",
+      "read": "View project",
       "back": "← All work",
       "role": "My role",
       "period": "Project period",
       "stack": "Technology & focus",
       "contents": "In this project",
       "next": "Next project",
-      "empty": "More work is on its way.",
-      "homeTitle": "— Work & practice",
-      "homeView": "view selected work ↗",
-      "about": "More about me ↗",
+      "empty": "No public projects yet.",
+      "homeTitle": "— Projects",
+      "homeView": "All projects ↗",
+      "about": "About me ↗",
       "visualLabel": "{title} · {caption}",
       "sectionLabel": "{number} / {title}",
-      "nextLabel": "Explore next: {title}",
+      "nextLabel": "Next project: {title}",
       "genericCaption": "Project illustration",
       "originalNotice": "The full project notes are currently available in Chinese."
+    },
+    "caseStudy": {
+      "architecture": "View responsibility map ↓",
+      "results": "Project overview",
+      "recording": "PRODUCT RECORDING",
+      "screenshot": "PRODUCT SCREENSHOT",
+      "play": "Play recording",
+      "expand": "Enlarge screenshot",
+      "close": "Close preview",
+      "previous": "Previous scene",
+      "next": "Next scene",
+      "scenes": "Choose a product scene",
+      "error": "This video could not be played. Try again or open the recording directly.",
+      "openVideo": "Open recording ↗",
+      "try": "Run the demo ↓",
+      "read": "Implementation and tradeoffs ↓",
+      "experience": "Problem",
+      "engineering": "Implementation",
+      "tradeoff": "Tradeoffs",
+      "productEngineering": "IMPLEMENTATION NOTES",
+      "lab": "INTERACTIVE DEMO",
+      "simulation": "Illustrative demo",
+      "scenario": "Demo scenario",
+      "step": "Step",
+      "notes": "Project notes",
+      "notesHint": "Responsibilities, stack, and additional detail",
+      "source": "Media and scope",
+      "watch": "Recordings and screenshots",
+      "retry": "Run again",
+      "mediaStatus": "Showing: {title}"
     },
     "language": {
       "label": "Choose language",
@@ -285,52 +313,42 @@ window.ENGLISH_CONTENT = {
   "pages": {
     "about": {
       "title": "Hello, I'm siyuan",
-      "lead": "Learning quantitative investing, and recording life through photographs and words.",
-      "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">What I&#39;m exploring\u003c/h2>\n\u003cp>I&#39;m learning about statistical arbitrage in US equities and reading papers on momentum, factor investing, and the relationship between trading volume and prices.\u003c/p>\n\u003cp>I want to understand where a strategy&#39;s returns might come from, what risks it takes, which assumptions its backtest depends on, and how code turns those ideas into signals and positions.\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Working through the questions\u003c/h2>\n\u003cp>I prefer concrete explanations: begin with an example, then work through the concepts, formulas, and implementation. When something is unclear, break it into smaller questions and keep going.\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">Beyond research\u003c/h2>\n\u003cp>This site also has room for travel, photographs, and everyday notes. I like bringing a place together with its images and memories, gradually turning them into a personal record.\u003c/p>\n\u003ch2 id=\"section-4\" tabindex=\"-1\">About this site\u003c/h2>\n\u003cp>\u003ca href=\"#/blog\">Writing\u003c/a> holds longer thoughts, \u003ca href=\"#/travel\">travel\u003c/a> collects photographs and notes from the road, and \u003ca href=\"#/now\">now\u003c/a> records what I&#39;m doing recently.\u003c/p>\n",
-      "text": "What I'm exploring I'm learning about statistical arbitrage in US equities and reading papers on momentum, factor investing, and the relationship between trading volume and prices. I want to understand where a strategy's returns might come from, what risks it takes, which assumptions its backtest depends on, and how code turns those ideas into signals and positions. Working through the questions I prefer concrete explanations: begin with an example, then work through the concepts, formulas, and implementation. When something is unclear, break it into smaller questions and keep going. Beyond research This site also has room for travel, photographs, and everyday notes. I like bringing a place together with its images and memories, gradually turning them into a personal record. About this site Writing holds longer thoughts, travel collects photographs and notes from the road, and now records what I'm doing recently.",
-      "note": "The blog includes learning notes from my Notion notebook on investing and trading.",
+      "lead": "Software engineer with five years of experience. I started in iOS, began moving into full-stack work in 2023, and have recently focused on AI applications.",
+      "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">Work\u003c/h2>\n\u003cp>At Qishui Music, I worked on the player and home screen. At MiniMax, I owned messaging, networking infrastructure, and stability work for Talkie / Xingye. I now contribute to the WeChat Official Accounts client.\u003c/p>\n\u003cp>\u003ca href=\"#/work\">Project pages\u003c/a> cover the scope, implementation, and results of that work.\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Research and personal projects\u003c/h2>\n\u003cp>I&#39;m researching US-equity statistical arbitrage, momentum, and factor investing, alongside an automated trading agent called plumber. My notes cover return hypotheses, risk, backtest assumptions, and the implementation of signals and positions.\u003c/p>\n\u003cp>The work is ongoing. Building the system and establishing whether a strategy works require separate validation.\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">Outside work\u003c/h2>\n\u003cp>I keep travel photographs, reading notes, and personal records here.\u003c/p>\n\u003cp>\u003ca href=\"#/blog\">Writing\u003c/a> contains research and learning notes, and \u003ca href=\"#/travel\">travel\u003c/a> organizes photographs by place.\u003c/p>\n",
+      "text": "Work At Qishui Music, I worked on the player and home screen. At MiniMax, I owned messaging, networking infrastructure, and stability work for Talkie / Xingye. I now contribute to the WeChat Official Accounts client. Project pages cover the scope, implementation, and results of that work. Research and personal projects I'm researching US-equity statistical arbitrage, momentum, and factor investing, alongside an automated trading agent called plumber. My notes cover return hypotheses, risk, backtest assumptions, and the implementation of signals and positions. The work is ongoing. Building the system and establishing whether a strategy works require separate validation. Outside work I keep travel photographs, reading notes, and personal records here. Writing contains research and learning notes, and travel organizes photographs by place.",
       "contentLanguage": "en"
     },
     "blog": {
-      "title": "Writing makes a trace",
-      "lead": "Thoughts, experiments, and questions that are still open.",
+      "title": "Writing",
+      "lead": "Research and learning notes, currently focused on quantitative strategies, backtesting, and trading systems.",
       "body": "",
       "text": "",
       "contentLanguage": "en"
     },
     "home": {
-      "title": "Experience,\nengineered.",
+      "title": "Client engineering.\nAI applications.",
       "greeting": "I'm siyuan.",
-      "heroOverline": "SELECTED WORK / ENGINEERING & CRAFT",
-      "heroRole": "iOS engineer · Products & systems",
-      "scrollLabel": "Explore selected work",
-      "body": "\u003cp>From music players and AI conversations to WeChat content experiences and an automated trading agent. A selection of products I&#39;ve worked on, and ideas I&#39;m taking further.\u003c/p>\n",
-      "text": "From music players and AI conversations to WeChat content experiences and an automated trading agent. A selection of products I've worked on, and ideas I'm taking further.",
-      "contentLanguage": "en"
-    },
-    "now": {
-      "title": "Right now",
-      "lead": "A small list that changes with life.",
-      "badge": "Sample content",
-      "note": "A now page records what someone is paying attention to at the moment.\nEdit the content file to make it your own.",
-      "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">Building a digital garden\u003c/h2>\n\u003cp>Turning scattered notes into articles, and giving worthwhile ideas a lasting home.\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Making room for input and quiet\u003c/h2>\n\u003cp>Reading books and trying small tools. Occasionally closing the screen and heading outside.\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">Keeping the work small and the horizon long\u003c/h2>\n\u003cp>Finish a usable version first, then improve it through real use.\u003c/p>\n",
-      "text": "Building a digital garden Turning scattered notes into articles, and giving worthwhile ideas a lasting home. Making room for input and quiet Reading books and trying small tools. Occasionally closing the screen and heading outside. Keeping the work small and the horizon long Finish a usable version first, then improve it through real use.",
+      "heroOverline": "SOFTWARE ENGINEERING",
+      "heroRole": "Client development · AI applications",
+      "scrollLabel": "View projects",
+      "body": "\u003cp>I&#39;ve worked on the clients for Qishui Music, Talkie / Xingye, and WeChat Official Accounts, covering playback, messaging, and recommendation feeds. I also research AI agents and automated trading systems.\u003c/p>\n",
+      "text": "I've worked on the clients for Qishui Music, Talkie / Xingye, and WeChat Official Accounts, covering playback, messaging, and recommendation feeds. I also research AI agents and automated trading systems.",
       "contentLanguage": "en"
     },
     "travel": {
-      "title": "Places passed, moments kept",
-      "lead": "The places I've been, the photographs I took, and the words left unwritten.",
-      "eyebrow": "A FIELD JOURNAL / ON THE ROAD",
+      "title": "Travel",
+      "lead": "Photographs and travel notes, organized by place.",
+      "eyebrow": "PHOTOGRAPHS & NOTES",
       "body": "",
       "text": "",
       "contentLanguage": "en"
     },
     "work": {
-      "title": "Selected work",
+      "title": "Projects",
       "eyebrow": "SELECTED WORK",
-      "lead": "Four projects spanning music, AI conversations, reading, and trading systems.",
-      "closingTitle": "Behind every product, a concrete problem.",
-      "closingText": "A song, a message, a page of content, an execution. I care about making every part work well.",
+      "lead": "Three product-development roles and one personal project in progress. Each page covers my responsibilities, implementation, and results I can share.",
+      "closingTitle": "About me",
+      "closingText": "Work background, current research, and personal notes.",
       "body": "",
       "text": "",
       "contentLanguage": "en"
@@ -345,8 +363,8 @@ window.ENGLISH_CONTENT = {
       "period": "2021.10 — 2023.06",
       "role": "iOS Engineer",
       "category": "Music & playback",
-      "headline": "Building a music experience, from zero to one.",
-      "summary": "Joined Qishui Music at its early stage, owning home-player development, engineering architecture, and the initial App Store release process.",
+      "headline": "Player, home-screen components, and playback performance",
+      "summary": "Worked on Qishui's early client, covering the home player, lyrics, feed, caching, and initial App Store releases.",
       "tags": [
         "Swift",
         "MVVM",
@@ -360,22 +378,22 @@ window.ENGLISH_CONTENT = {
       ],
       "highlights": [
         {
-          "value": "0 → 1",
-          "label": "Early-stage product development"
+          "value": "Audio/video",
+          "label": "Home-screen playback"
         },
         {
           "value": "MVVM",
-          "label": "Component-based home architecture"
+          "label": "Home-screen components"
         },
         {
-          "value": "End to end",
-          "label": "Development through App Store release"
+          "value": "App Store",
+          "label": "Initial releases"
         }
       ],
       "visual": {
         "type": "music",
-        "caption": "Player engineering illustration",
-        "label": "SOUND, IN MOTION",
+        "caption": "Player module illustration",
+        "label": "PLAYER / HOME",
         "title": "Qishui Music",
         "subtitle": "Player / Home",
         "nodes": [
@@ -383,13 +401,366 @@ window.ENGLISH_CONTENT = {
           "Playback",
           "Cache"
         ],
-        "footer": "The engineering behind a song."
+        "footer": "Player, lyrics, and home feed"
       },
       "cover": "",
       "coverAlt": "",
       "coverCaption": "",
-      "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">My role\u003c/h2>\n\u003cp>During Qishui Music&#39;s early development, I owned business iteration and engineering architecture for its home player. The scope included audio and short-video playback, an infinite feed, home-screen UI, krc / lrc lyrics, and the initial store-release process.\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Faster, more reliable playback\u003c/h2>\n\u003cp>Built and maintained the product player on the company&#39;s video-on-demand SDK. Used preloading and pre-rendering to improve first-frame latency, and tuned adaptive bitrate switching and buffering thresholds to address stalls and playback failures.\u003c/p>\n\u003cp>Organized playback metrics and instrumentation, established alerts for core indicators, and built an on-call process to detect and investigate production issues.\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">A home screen built for iteration\u003c/h2>\n\u003cp>Used MVVM and OpenCombine-style message passing to make home-screen capabilities component based. Turned song cells into configurable, reusable UI components for different product scenarios.\u003c/p>\n\u003cp>Separated audio-file caching from business caching, moved database reads off the critical startup path, and migrated data from Core Data to key-value storage. Built a YYCache-based business-cache component and extended it to other product areas.\u003c/p>\n\u003ch2 id=\"section-4\" tabindex=\"-1\">Getting the product into users&#39; hands\u003c/h2>\n\u003cp>Owned the early App Store release workflow: certificates, project configuration, test and store builds, and review submissions. Introduced a certificate pool to simplify developer signing and improve the team&#39;s development experience.\u003c/p>\n",
-      "text": "My role During Qishui Music's early development, I owned business iteration and engineering architecture for its home player. The scope included audio and short-video playback, an infinite feed, home-screen UI, krc / lrc lyrics, and the initial store-release process. Faster, more reliable playback Built and maintained the product player on the company's video-on-demand SDK. Used preloading and pre-rendering to improve first-frame latency, and tuned adaptive bitrate switching and buffering thresholds to address stalls and playback failures. Organized playback metrics and instrumentation, established alerts for core indicators, and built an on-call process to detect and investigate production issues. A home screen built for iteration Used MVVM and OpenCombine-style message passing to make home-screen capabilities component based. Turned song cells into configurable, reusable UI components for different product scenarios. Separated audio-file caching from business caching, moved database reads off the critical startup path, and migrated data from Core Data to key-value storage. Built a YYCache-based business-cache component and extended it to other product areas. Getting the product into users' hands Owned the early App Store release workflow: certificates, project configuration, test and store builds, and review submissions. Introduced a certificate pool to simplify developer signing and improve the team's development experience.",
+      "caseStudy": {
+        "kind": "music",
+        "media": [
+          {
+            "id": "playback",
+            "type": "video",
+            "src": "/assets/content/works/qishui/lyrics.mp4",
+            "poster": "/assets/content/works/qishui/lyrics-poster.jpg"
+          },
+          {
+            "id": "navigation",
+            "type": "video",
+            "src": "/assets/content/works/qishui/player.mp4",
+            "poster": "/assets/content/works/qishui/player-poster.jpg"
+          },
+          {
+            "id": "interaction",
+            "type": "video",
+            "src": "/assets/content/works/qishui/discovery.mp4",
+            "poster": "/assets/content/works/qishui/discovery-poster.jpg"
+          }
+        ],
+        "copy": {
+          "zh": {
+            "eyebrow": "01 / MUSIC & PLAYBACK",
+            "title": "播放器与\n首页工程",
+            "preview": "播放器、歌词与首页 Feed",
+            "previewDetail": "产品录屏 / 当前版本",
+            "outcomeNote": "2021.10—2023.06，参与汽水音乐早期开发，负责首页播放器、组件化、缓存治理与版本发布。",
+            "mediaNote": "录屏为 2026 年产品版本，静音展示。我的职责对应 2021.10—2023.06 的播放器与首页工程，不涵盖画面中的所有功能。",
+            "intro": "我负责过汽水音乐首页播放器的业务开发和工程架构，覆盖音频与短视频、无限 Feed 和歌词。主要工作是播放调优、首页组件化、缓存治理，以及早期版本的商店发布。",
+            "scenes": [
+              {
+                "title": "播放与歌词",
+                "caption": "歌曲封面、歌词、进度与播放状态。",
+                "alt": "汽水音乐播放界面，展示歌曲封面、歌词与进度条",
+                "lens": "状态同步",
+                "insight": "歌词、进度和播放控件需要使用一致的播放状态，避免切歌后显示不同步。"
+              },
+              {
+                "title": "页面切换",
+                "caption": "从歌单进入播放，再返回其他页面。",
+                "alt": "汽水音乐歌单与播放页面切换录屏",
+                "lens": "播放会话",
+                "insight": "页面切换不应重建或中断当前播放会话。播放器状态与页面生命周期需要分开管理。"
+              },
+              {
+                "title": "评论与播放",
+                "caption": "打开评论、返回播放并切换内容。",
+                "alt": "汽水音乐播放页与评论面板交互录屏",
+                "lens": "交互状态",
+                "insight": "打开评论时，需要保留当前歌曲和播放进度，返回后继续显示对应状态。"
+              }
+            ],
+            "storyTitle": "播放性能、组件与缓存",
+            "storyLead": "首页播放器中的三组工作，以及相应的资源和维护成本。",
+            "decisions": [
+              {
+                "title": "首帧与播放稳定性",
+                "experience": "切歌需要等待资源准备、解码和缓冲。首帧慢、卡顿和播放失败需要分别测量和排查。",
+                "engineering": "基于自研点播 SDK，使用预加载与预渲染优化首帧，调整自适应码率和卡顿水位。梳理性能埋点，建立告警与 on-call 机制。",
+                "tradeoff": "预加载会增加流量和内存开销。需要结合首帧、卡顿和失败指标评估收益，不能只看单次播放是否更快。"
+              },
+              {
+                "title": "首页组件化",
+                "experience": "首页同时承载音频、短视频、无限 Feed 和不同格式的歌词，业务迭代需要复用播放与展示组件。",
+                "engineering": "使用 MVVM 和 OpenCombine 风格的消息传递组织首页。将歌曲 Cell 抽象为可配置的通用 UI 组件，供不同业务场景复用。",
+                "tradeoff": "可配置范围需要有边界。共用播放状态，保留业务差异，避免将不同场景的逻辑集中到一个页面。"
+              },
+              {
+                "title": "缓存与启动读取",
+                "experience": "音频文件与业务数据的访问方式不同。启动阶段的数据库读取也会占用关键路径。",
+                "engineering": "隔离音频缓存，统一业务缓存。将启动数据库读取改为异步或延迟执行，推动 Core Data 向 KV 迁移，并基于 YYCache 实现业务缓存组件。",
+                "tradeoff": "缓存划分需要同时考虑读取成本、存储边界和后续维护。数据迁移与启动优化也需要保留兼容和排查手段。"
+              }
+            ],
+            "lab": {
+              "title": "预加载对切歌流程的影响",
+              "lead": "选择资源是否已预加载，再运行一次切歌流程。",
+              "modes": [
+                "未预加载",
+                "已预加载"
+              ],
+              "start": "切换下一首",
+              "running": "正在切歌…",
+              "resume": "继续",
+              "idle": "选择准备状态，点击切换下一首。",
+              "complete": "已进入播放，歌词与进度已同步。",
+              "stalled": "等待资源。",
+              "sample": "PLAYBACK / 演示",
+              "output": "等待播放",
+              "outputRunning": "准备资源",
+              "outputComplete": "播放中",
+              "footnote": "本地流程示意，不连接真实播放器。步骤和动画时长不代表生产实现或性能数据。",
+              "stages": [
+                {
+                  "title": "切歌事件",
+                  "detail": "界面发出切歌事件，开始准备下一首。",
+                  "prepared": "界面发出切歌事件，读取已预加载的资源。"
+                },
+                {
+                  "title": "资源准备",
+                  "detail": "操作后开始请求和准备资源。",
+                  "prepared": "复用操作前已准备的资源。"
+                },
+                {
+                  "title": "解码与缓冲",
+                  "detail": "点播 SDK 解码与缓冲，等待资源可播。",
+                  "prepared": "使用已准备的资源进入可播状态，仍需处理网络和缓冲变化。"
+                },
+                {
+                  "title": "状态同步",
+                  "detail": "更新当前歌曲、歌词、进度与播放控件。",
+                  "prepared": "更新当前歌曲、歌词、进度与播放控件。"
+                }
+              ]
+            },
+            "architecture": {
+              "kicker": "PLAYER / RESPONSIBILITIES",
+              "title": "播放器职责划分",
+              "lead": "首页展示、状态协作和播放基础能力。选择节点查看具体工作。",
+              "selectionLabel": "职责与实现",
+              "defaultNode": "view-model",
+              "diagramLabel": "汽水音乐首页、状态组件和播放基础能力的职责图",
+              "note": "按当时工作范围整理。连线表示协作关系，不是完整生产架构。",
+              "layers": [
+                {
+                  "id": "experience",
+                  "title": "首页展示",
+                  "nodes": [
+                    {
+                      "id": "feed",
+                      "title": "无限 Feed / 歌曲 Cell",
+                      "detail": "负责首页无限 Feed，类 Tiktok 的无限 feed 流、FPS 优化、播放首帧和卡顿优化"
+                    },
+                    {
+                      "id": "lyrics",
+                      "title": "krc / lrc 歌词",
+                      "detail": "负责 krc 与 lrc 歌词能力，处理歌词、播放进度与界面状态的同步。"
+                    },
+                    {
+                      "id": "media",
+                      "title": "音频 / 短视频",
+                      "detail": "负责首页音频与短视频播放相关业务，处理不同媒体形态下的展示与播放状态。"
+                    }
+                  ]
+                },
+                {
+                  "id": "coordination",
+                  "title": "状态与组件",
+                  "nodes": [
+                    {
+                      "id": "view-model",
+                      "title": "MVVM",
+                      "detail": "使用 MVVM 组织首页业务，将界面展示与业务状态分离，支持组件组合与复用。"
+                    },
+                    {
+                      "id": "events",
+                      "title": "OpenCombine 风格消息传递",
+                      "detail": "使用 OpenCombine 风格的消息传递处理组件间事件和播放状态更新。"
+                    }
+                  ]
+                },
+                {
+                  "id": "foundation",
+                  "title": "播放与数据",
+                  "nodes": [
+                    {
+                      "id": "player-sdk",
+                      "title": "点播 SDK / 播放调优",
+                      "detail": "基于自研点播 SDK 搭建业务播放器。通过预加载、预渲染、自适应码率和卡顿水位调节，优化首帧与播放稳定性。"
+                    },
+                    {
+                      "id": "cache",
+                      "title": "音频缓存 / 业务缓存",
+                      "detail": "隔离音频缓存，统一业务缓存。基于 YYCache 实现缓存组件，调整启动数据库读取，并推动 Core Data 向 KV 迁移。"
+                    },
+                    {
+                      "id": "telemetry",
+                      "title": "埋点 / 告警 / On-call",
+                      "detail": "梳理播放性能埋点，建立核心指标告警与 on-call 机制，用于发现和排查线上播放问题。"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "en": {
+            "eyebrow": "01 / MUSIC & PLAYBACK",
+            "title": "Player and\nhome-screen engineering",
+            "preview": "Player, lyrics, and home feed",
+            "previewDetail": "Product recordings / Current version",
+            "outcomeNote": "2021.10–2023.06: early client development, home player, components, caching, and releases.",
+            "mediaNote": "Silent recordings show the product in 2026. My scope covers player and home-screen work during 2021.10–2023.06, not every feature shown.",
+            "intro": "I worked on Qishui Music's home player and client architecture, covering audio, short video, the infinite feed, and lyrics. My main responsibilities were playback tuning, home-screen components, caching, and early App Store releases.",
+            "scenes": [
+              {
+                "title": "Playback and lyrics",
+                "caption": "Artwork, lyrics, progress, and playback state.",
+                "alt": "Qishui playback screen with artwork, lyrics, and a progress bar",
+                "lens": "State synchronization",
+                "insight": "Lyrics, progress, and controls need a consistent playback state, including after a track change."
+              },
+              {
+                "title": "Page navigation",
+                "caption": "Open playback from a playlist, then return to other pages.",
+                "alt": "Recording of navigation between Qishui playlists and playback",
+                "lens": "Playback session",
+                "insight": "Page navigation should not recreate or interrupt the active playback session. Playback state needs to be managed separately from page lifecycles."
+              },
+              {
+                "title": "Comments and playback",
+                "caption": "Open comments, return to playback, and change content.",
+                "alt": "Recording of interactions between Qishui playback and the comments panel",
+                "lens": "Interaction state",
+                "insight": "Opening comments needs to preserve the current track and progress so that the matching state is shown on return."
+              }
+            ],
+            "storyTitle": "Playback performance, components, and caching",
+            "storyLead": "Three areas of home-player work, with their resource and maintenance costs.",
+            "decisions": [
+              {
+                "title": "First frame and playback stability",
+                "experience": "Track changes require resource preparation, decoding, and buffering. First-frame latency, stalls, and failures need separate measurement and investigation.",
+                "engineering": "Used preloading and pre-rendering on the in-house VOD SDK, and tuned adaptive bitrate and buffer thresholds. Organized instrumentation, alerts, and an on-call process.",
+                "tradeoff": "Preloading uses bandwidth and memory. Its benefit needs to be assessed against first-frame latency, stalls, and failures—not a single fast playback attempt."
+              },
+              {
+                "title": "Home-screen components",
+                "experience": "The home screen supports audio, short video, an infinite feed, and different lyric formats. Product changes need reusable playback and presentation components.",
+                "engineering": "Organized the home screen with MVVM and OpenCombine-style messaging. Built configurable song cells for reuse across product scenarios.",
+                "tradeoff": "Configuration needs limits. Shared playback state and scenario-specific behavior need separate responsibilities rather than accumulating in one page."
+              },
+              {
+                "title": "Caching and startup reads",
+                "experience": "Audio files and application data have different access patterns. Database reads can also occupy the startup critical path.",
+                "engineering": "Separated audio and application caching, made startup reads asynchronous or deferred, migrated Core Data to key-value storage, and built a YYCache-based component.",
+                "tradeoff": "Cache boundaries affect read cost, storage, and maintenance. Migration and startup changes also need compatibility and diagnostic support."
+              }
+            ],
+            "lab": {
+              "title": "Preloading in a track-change flow",
+              "lead": "Choose whether resources are preloaded, then run the track change.",
+              "modes": [
+                "Not preloaded",
+                "Preloaded"
+              ],
+              "start": "Play the next track",
+              "running": "Changing track…",
+              "resume": "Continue",
+              "idle": "Choose a preparation state, then change the track.",
+              "complete": "Playback has started. Lyrics and progress are synchronized.",
+              "stalled": "Waiting for resources.",
+              "sample": "PLAYBACK / DEMO",
+              "output": "Waiting to play",
+              "outputRunning": "Preparing resources",
+              "outputComplete": "Playing",
+              "footnote": "A local flow illustration with no connection to a real player. Steps and animation duration do not represent production behavior or performance.",
+              "stages": [
+                {
+                  "title": "Track-change event",
+                  "detail": "The UI requests a track change and begins preparing the next track.",
+                  "prepared": "The UI requests a track change and reads preloaded resources."
+                },
+                {
+                  "title": "Resource preparation",
+                  "detail": "Request and prepare resources after the action.",
+                  "prepared": "Reuse resources prepared before the action."
+                },
+                {
+                  "title": "Decoding and buffering",
+                  "detail": "The VOD SDK decodes and buffers until resources are playable.",
+                  "prepared": "Use prepared resources, while still handling network and buffer changes."
+                },
+                {
+                  "title": "State synchronization",
+                  "detail": "Update the track, lyrics, progress, and playback controls.",
+                  "prepared": "Update the track, lyrics, progress, and playback controls."
+                }
+              ]
+            },
+            "architecture": {
+              "kicker": "PLAYER / RESPONSIBILITIES",
+              "title": "Player responsibilities",
+              "lead": "Home-screen presentation, state coordination, and playback infrastructure. Select a node for details.",
+              "selectionLabel": "Responsibilities and implementation",
+              "defaultNode": "view-model",
+              "diagramLabel": "Responsibility map for Qishui's home screen, state components, and playback infrastructure",
+              "note": "Based on my work at the time. Connections show collaboration, not a complete production architecture.",
+              "layers": [
+                {
+                  "id": "experience",
+                  "title": "Home-screen presentation",
+                  "nodes": [
+                    {
+                      "id": "feed",
+                      "title": "Infinite feed / Song cells",
+                      "detail": "Worked on the infinite home feed and configurable song cells reused across product scenarios."
+                    },
+                    {
+                      "id": "lyrics",
+                      "title": "krc / lrc lyrics",
+                      "detail": "Implemented krc and lrc support and coordinated lyrics with playback progress and UI state."
+                    },
+                    {
+                      "id": "media",
+                      "title": "Audio / Short video",
+                      "detail": "Worked on home-screen audio and short-video playback, including presentation and playback state."
+                    }
+                  ]
+                },
+                {
+                  "id": "coordination",
+                  "title": "State and components",
+                  "nodes": [
+                    {
+                      "id": "view-model",
+                      "title": "MVVM",
+                      "detail": "Used MVVM to separate presentation from business state and support component composition and reuse."
+                    },
+                    {
+                      "id": "events",
+                      "title": "OpenCombine-style messaging",
+                      "detail": "Used OpenCombine-style messaging for component events and playback-state updates."
+                    }
+                  ]
+                },
+                {
+                  "id": "foundation",
+                  "title": "Playback and data",
+                  "nodes": [
+                    {
+                      "id": "player-sdk",
+                      "title": "VOD SDK / Playback tuning",
+                      "detail": "Built the product player on the in-house VOD SDK. Tuned first-frame latency and stability through preloading, pre-rendering, adaptive bitrate, and buffer thresholds."
+                    },
+                    {
+                      "id": "cache",
+                      "title": "Audio / Application caching",
+                      "detail": "Separated audio caching and consolidated application caching. Built a YYCache component, changed startup reads, and migrated Core Data to key-value storage."
+                    },
+                    {
+                      "id": "telemetry",
+                      "title": "Instrumentation / Alerts / On-call",
+                      "detail": "Organized playback instrumentation, alerts, and on-call work for detecting and investigating production issues."
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">My role\u003c/h2>\n\u003cp>During Qishui Music&#39;s early development, I owned business iteration and engineering architecture for its home player. The scope included audio and short-video playback, an infinite feed, home-screen UI, krc / lrc lyrics, and the initial store-release process.\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Playback performance and monitoring\u003c/h2>\n\u003cp>Built and maintained the product player on the company&#39;s video-on-demand SDK. Used preloading and pre-rendering to improve first-frame latency, and tuned adaptive bitrate switching and buffering thresholds to address stalls and playback failures.\u003c/p>\n\u003cp>Organized playback metrics and instrumentation, established alerts for core indicators, and built an on-call process to detect and investigate production issues.\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">Components and caching\u003c/h2>\n\u003cp>Used MVVM and OpenCombine-style message passing to make home-screen capabilities component based. Turned song cells into configurable, reusable UI components for different product scenarios.\u003c/p>\n\u003cp>Separated audio-file caching from business caching, moved database reads off the critical startup path, and migrated data from Core Data to key-value storage. Built a YYCache-based business-cache component and extended it to other product areas.\u003c/p>\n\u003ch2 id=\"section-4\" tabindex=\"-1\">Releases\u003c/h2>\n\u003cp>Owned the early App Store release workflow: certificates, project configuration, test and store builds, and review submissions. Introduced a certificate pool to simplify developer signing and improve the team&#39;s development experience.\u003c/p>\n",
+      "text": "My role During Qishui Music's early development, I owned business iteration and engineering architecture for its home player. The scope included audio and short-video playback, an infinite feed, home-screen UI, krc / lrc lyrics, and the initial store-release process. Playback performance and monitoring Built and maintained the product player on the company's video-on-demand SDK. Used preloading and pre-rendering to improve first-frame latency, and tuned adaptive bitrate switching and buffering thresholds to address stalls and playback failures. Organized playback metrics and instrumentation, established alerts for core indicators, and built an on-call process to detect and investigate production issues. Components and caching Used MVVM and OpenCombine-style message passing to make home-screen capabilities component based. Turned song cells into configurable, reusable UI components for different product scenarios. Separated audio-file caching from business caching, moved database reads off the critical startup path, and migrated data from Core Data to key-value storage. Built a YYCache-based business-cache component and extended it to other product areas. Releases Owned the early App Store release workflow: certificates, project configuration, test and store builds, and review submissions. Introduced a certificate pool to simplify developer signing and improve the team's development experience.",
       "toc": [
         {
           "id": "section-1",
@@ -398,17 +769,17 @@ window.ENGLISH_CONTENT = {
         },
         {
           "id": "section-2",
-          "title": "Faster, more reliable playback",
+          "title": "Playback performance and monitoring",
           "level": 2
         },
         {
           "id": "section-3",
-          "title": "A home screen built for iteration",
+          "title": "Components and caching",
           "level": 2
         },
         {
           "id": "section-4",
-          "title": "Getting the product into users' hands",
+          "title": "Releases",
           "level": 2
         }
       ],
@@ -422,8 +793,8 @@ window.ENGLISH_CONTENT = {
       "period": "2023.06 — 2025.03",
       "role": "Senior iOS Engineer",
       "category": "AI & conversation",
-      "headline": "Making every conversation more immediate and reliable.",
-      "summary": "Owned core messaging, networking infrastructure, and stability improvements for Talkie and Xingye, turning AI conversations into dependable client experiences.",
+      "headline": "IM, streaming messages, and networking infrastructure",
+      "summary": "Owned core IM modules, message latency, list rendering, persistent connections, and networking infrastructure for Talkie and Xingye.",
       "tags": [
         "Swift",
         "IM",
@@ -451,22 +822,485 @@ window.ENGLISH_CONTENT = {
       ],
       "visual": {
         "type": "conversation",
-        "caption": "Messaging architecture illustration",
-        "label": "CONNECTION, CONTINUOUS",
+        "caption": "Messaging and networking modules",
+        "label": "MESSAGING / NETWORKING",
         "title": "Talkie / Xingye",
-        "subtitle": "A conversation, connected.",
+        "subtitle": "Messaging and networking",
         "nodes": [
           "Client",
           "Connection",
           "AI conversation"
         ],
-        "footer": "Streaming · Synchronization · Local persistence"
+        "footer": "Streaming · Synchronization · Persistence"
       },
       "cover": "",
       "coverAlt": "",
       "coverCaption": "",
-      "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">My role\u003c/h2>\n\u003cp>Owned the core IM modules, networking infrastructure, and stability work for the Xingye / Talkie AI chatbot apps. Supported one-to-one and group conversations with AI characters, along with conversation-list management.\u003c/p>\n\u003cp>The messaging layer covered push delivery, offline messages, persistence, acknowledgments, message synchronization and roaming, local database write-back, and consistency checks.\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Improving the entire conversation path\u003c/h2>\n\u003cp>Led end-to-end messaging improvements across the client and server. Changed the message path from write-through to write-back and introduced streaming for upstream and downstream messages over an in-house persistent connection.\u003c/p>\n\u003cp>The work reduced p90 conversation latency by \u003cstrong>610 ms\u003c/strong>. Related project-stage results were a \u003cstrong>1.4%\u003c/strong> increase in retention and a \u003cstrong>10%\u003c/strong> increase in conversation count.\u003c/p>\n\u003cp>Rebuilt the message list with DiffableDataSource, increasing scrolling performance from \u003cstrong>51 to 60 FPS\u003c/strong>. Rendering optimizations reduced memory use by \u003cstrong>22%\u003c/strong> and OOM incidents by \u003cstrong>23%\u003c/strong>.\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">Reliability in the infrastructure\u003c/h2>\n\u003cp>Reduced dependency on Easemob by building persistence, synchronization, and before/after-send callbacks in-house. Combined push and pull strategies with persistent connections to improve message consistency. Conversation availability reached \u003cstrong>99.9%\u003c/strong>, while connection-system SLA rose from an initial 68% and stabilized at \u003cstrong>99.9%\u003c/strong>.\u003c/p>\n\u003cp>Built networking infrastructure with Alamofire and Moya, supporting cache policies, request pools and priorities, custom serialization, connection recovery, and short-request compensation. DNS and weak-network improvements reduced weak-network first-byte time by \u003cstrong>42%\u003c/strong>.\u003c/p>\n\u003ch2 id=\"section-4\" tabindex=\"-1\">From engineering to quality and product outcomes\u003c/h2>\n\u003cp>Explored LLM-assisted UI automation using Poco, WDA, and Claude Sonnet to navigate the app and execute cases. Contributed to new-user retention work through first-feed caching, follow conversion, and deeplink improvements.\u003c/p>\n\u003cp>These results use the measurement scope of the corresponding project period.\u003c/p>\n",
-      "text": "My role Owned the core IM modules, networking infrastructure, and stability work for the Xingye / Talkie AI chatbot apps. Supported one-to-one and group conversations with AI characters, along with conversation-list management. The messaging layer covered push delivery, offline messages, persistence, acknowledgments, message synchronization and roaming, local database write-back, and consistency checks. Improving the entire conversation path Led end-to-end messaging improvements across the client and server. Changed the message path from write-through to write-back and introduced streaming for upstream and downstream messages over an in-house persistent connection. The work reduced p90 conversation latency by 610 ms . Related project-stage results were a 1.4% increase in retention and a 10% increase in conversation count. Rebuilt the message list with DiffableDataSource, increasing scrolling performance from 51 to 60 FPS . Rendering optimizations reduced memory use by 22% and OOM incidents by 23% . Reliability in the infrastructure Reduced dependency on Easemob by building persistence, synchronization, and before/after-send callbacks in-house. Combined push and pull strategies with persistent connections to improve message consistency. Conversation availability reached 99.9% , while connection-system SLA rose from an initial 68% and stabilized at 99.9% . Built networking infrastructure with Alamofire and Moya, supporting cache policies, request pools and priorities, custom serialization, connection recovery, and short-request compensation. DNS and weak-network improvements reduced weak-network first-byte time by 42% . From engineering to quality and product outcomes Explored LLM-assisted UI automation using Poco, WDA, and Claude Sonnet to navigate the app and execute cases. Contributed to new-user retention work through first-feed caching, follow conversion, and deeplink improvements. These results use the measurement scope of the corresponding project period.",
+      "caseStudy": {
+        "kind": "conversation",
+        "media": [
+          {
+            "id": "conversation",
+            "type": "video",
+            "src": "/assets/content/works/talkie/conversation.mp4",
+            "poster": "/assets/content/works/talkie/conversation-poster.jpg"
+          },
+          {
+            "id": "immersive",
+            "type": "image",
+            "src": "/assets/content/works/talkie/immersive.jpg"
+          },
+          {
+            "id": "creation",
+            "type": "image",
+            "src": "/assets/content/works/talkie/creation.jpg"
+          }
+        ],
+        "copy": {
+          "zh": {
+            "eyebrow": "02 / AI & CONVERSATION",
+            "title": "AI 对话的\n消息与网络系统",
+            "preview": "IM、流式消息与网络",
+            "previewDetail": "产品录屏与截图 / 当前版本",
+            "outcomeNote": "指标来自 2023.06—2025.03 项目阶段，采用当时的统计口径。",
+            "mediaNote": "录屏和截图为 2026 年星野产品版本，录屏静音展示。我的职责对应 2023.06—2025.03 的 IM、网络与稳定性工作，不涵盖画面中的所有功能。",
+            "intro": "我负责 Talkie / 星野的 IM 核心模块、网络基础设施和稳定性优化。工作包括降低消息时延、重构消息列表，以及自研长连接、消息同步和持久化能力。",
+            "scenes": [
+              {
+                "title": "对话录屏",
+                "caption": "浏览角色、发送消息并接收回复。",
+                "alt": "星野角色浏览、消息发送和回复录屏",
+                "lens": "发送状态",
+                "insight": "界面需要区分等待、发送和收到回复，反馈要与消息的实际处理状态一致。"
+              },
+              {
+                "title": "对话界面",
+                "caption": "角色视觉、长文本消息和输入区域。",
+                "alt": "星野角色对话界面，展示长文本消息与输入区域",
+                "lens": "列表渲染",
+                "insight": "长文本和图片增加了列表渲染成本。滚动帧率、内存占用和 OOM 需要一起观察。"
+              },
+              {
+                "title": "创作入口",
+                "caption": "当前产品中的智能体、视频、图片与声音创作入口。",
+                "alt": "星野创作页面，展示智能体、视频、图片与声音等入口",
+                "lens": "产品背景",
+                "insight": "截图用于介绍当前产品的内容范围。这些创作功能不属于本页描述的个人工作范围。"
+              }
+            ],
+            "storyTitle": "消息时延、列表性能与连接恢复",
+            "storyLead": "客户端与服务端的改造、项目阶段内的结果，以及需要同时处理的约束。",
+            "decisions": [
+              {
+                "title": "消息关键路径",
+                "experience": "从发送消息到看到回复，需要经过传输、处理和界面更新。单个请求的耗时不能代表整段等待时间。",
+                "engineering": "主导客户端与服务端的消息链路优化，从透写调整为回写，通过自建长连接实现上下行流式输出。对话时延 p90 降低 610 ms；对应阶段留存提升 1.4%，对话数提升 10%。",
+                "tradeoff": "缩短关键路径后，仍需处理持久化和一致性。发送反馈、消息状态与最终处理结果需要能够对应和排查。"
+              },
+              {
+                "title": "消息列表渲染",
+                "experience": "长文本、连续回复和角色视觉增加了列表的渲染成本，需要同时观察滚动帧率和内存。",
+                "engineering": "使用 DiffableDataSource 重构消息流。滚动 FPS 从 51 提升到 60，内存占用降低 22%，OOM 降低 23%。",
+                "tradeoff": "局部更新减少重复渲染，但数据源和消息状态必须保持一致。帧率改善也不能以更高的内存或崩溃成本为代价。"
+              },
+              {
+                "title": "连接恢复与消息同步",
+                "experience": "移动网络变化会中断消息传输。恢复后需要处理遗漏消息、发送状态与本地数据一致性。",
+                "engineering": "自研持久化、同步和发送回调，结合长连接推送、推拉策略与短连补偿。对话可用率达到 99.9%；长连接系统 SLA 从初期 68% 提升并稳定在 99.9%。网络库的 DNS 与弱网优化使弱网首包时间改善 42%。",
+                "tradeoff": "连接恢复和消息同步是不同的问题，需要配合处理。对话可用率与长连接 SLA 也采用不同的统计口径，不能混用。"
+              }
+            ],
+            "lab": {
+              "title": "消息发送与断线恢复",
+              "lead": "选择连接状态，运行发送、回复与同步的示意流程。断线模式需要手动恢复连接。",
+              "modes": [
+                "稳定连接",
+                "模拟断线"
+              ],
+              "start": "发送消息",
+              "running": "处理中…",
+              "resume": "恢复连接并继续",
+              "idle": "选择连接状态，点击发送消息。",
+              "complete": "回复已呈现，状态已同步。",
+              "stalled": "连接中断。点击恢复连接继续。",
+              "sample": "MESSAGING / 演示",
+              "output": "等待发送",
+              "outputRunning": "已发送，等待回复",
+              "outputComplete": "已同步",
+              "footnote": "本地流程示意，不连接模型或生产服务。步骤顺序和动画时长不代表线上协议或性能数据。",
+              "stages": [
+                {
+                  "title": "本地反馈",
+                  "detail": "界面显示发送状态。",
+                  "prepared": "界面显示发送状态。"
+                },
+                {
+                  "title": "消息传输",
+                  "detail": "通过长连接传输消息，跟踪发送与确认状态。",
+                  "prepared": "模拟连接中断。恢复后继续传输与确认流程。"
+                },
+                {
+                  "title": "流式回复",
+                  "detail": "逐步呈现回复，更新消息列表。",
+                  "prepared": "恢复后继续呈现回复。实际产品还需要同步与补偿机制。"
+                },
+                {
+                  "title": "持久化与同步",
+                  "detail": "持久化消息，同步并校验状态。",
+                  "prepared": "同步恢复后的消息，校验本地状态。"
+                }
+              ]
+            },
+            "architecture": {
+              "kicker": "MESSAGING / RESPONSIBILITIES",
+              "title": "消息系统职责划分",
+              "lead": "对话界面、消息处理，以及连接与数据基础设施。选择节点查看实现。",
+              "selectionLabel": "职责与实现",
+              "defaultNode": "connection",
+              "diagramLabel": "Talkie 与星野客户端消息系统的职责图",
+              "note": "按 2023.06—2025.03 工作范围整理，不含模型服务内部设计，也不是完整生产架构。",
+              "layers": [
+                {
+                  "id": "experience",
+                  "title": "对话界面",
+                  "nodes": [
+                    {
+                      "id": "conversations",
+                      "title": "单聊 / 群聊",
+                      "detail": "支持用户与 AI 智能体的单聊和群聊，处理发送反馈与流式回复展示。"
+                    },
+                    {
+                      "id": "sessions",
+                      "title": "会话列表",
+                      "detail": "负责会话列表管理，与消息同步、漫游和本地数据协作。"
+                    }
+                  ]
+                },
+                {
+                  "id": "messaging",
+                  "title": "消息处理",
+                  "nodes": [
+                    {
+                      "id": "rendering",
+                      "title": "消息流 / DiffableDataSource",
+                      "detail": "使用 DiffableDataSource 重构消息流，优化列表渲染。滚动 FPS 从 51 提升到 60，内存占用降低 22%，OOM 降低 23%。"
+                    },
+                    {
+                      "id": "acknowledgments",
+                      "title": "发送状态 / ACK",
+                      "detail": "自研发送前后回调、ACK 和状态追踪相关能力，逐步减少对环信的依赖。"
+                    },
+                    {
+                      "id": "streaming",
+                      "title": "上下行流式消息",
+                      "detail": "改造客户端与服务端消息链路，从透写调整为回写，通过自建长连接实现上下行流式输出。对话时延 p90 降低 610 ms。"
+                    }
+                  ]
+                },
+                {
+                  "id": "infrastructure",
+                  "title": "连接与数据",
+                  "nodes": [
+                    {
+                      "id": "connection",
+                      "title": "自建长连接",
+                      "detail": "建设长连接及重建能力，结合推送、推拉策略与短连补偿。长连接系统 SLA 从初期 68% 提升并稳定在 99.9%。"
+                    },
+                    {
+                      "id": "persistence",
+                      "title": "持久化 / 同步 / 一致性",
+                      "detail": "自研持久化和消息同步，覆盖离线消息、漫游、本地数据库回写与一致性校验。"
+                    },
+                    {
+                      "id": "network",
+                      "title": "Alamofire / Moya 网络库",
+                      "detail": "建设缓存策略、请求池与优先级、自定义序列化和连接恢复等能力。通过 DNS 与弱网优化，使弱网首包时间改善 42%。"
+                    }
+                  ]
+                }
+              ]
+            },
+            "results": {
+              "kicker": "PROJECT METRICS",
+              "title": "优化前后",
+              "lead": "选择指标查看对比。帧率和 SLA 使用原始值；内存与弱网首包只有相对降幅，以优化前为 100 换算。",
+              "beforeLabel": "优化前",
+              "afterLabel": "优化后",
+              "fpsLabel": "FPS",
+              "percentLabel": "%",
+              "indexLabel": "指数",
+              "indexNote": "优化前 = 100，仅表示相对变化，不是 MB 或毫秒。数值越低越好。",
+              "rawNote": "原始数值，数值越高越好。",
+              "note": "统计阶段：2023.06—2025.03。数据不是当前产品实时表现；长连接 SLA 与对话可用率是不同指标。",
+              "data": "metrics.json",
+              "metrics": [
+                {
+                  "id": "scrolling",
+                  "before": 51,
+                  "after": 60,
+                  "axisMax": 60,
+                  "unit": "fps",
+                  "direction": "up",
+                  "title": "列表滚动 FPS",
+                  "description": "使用 DiffableDataSource 重构消息流并优化渲染，滚动帧率从 51 提升到 60 FPS。"
+                },
+                {
+                  "id": "availability",
+                  "before": 68,
+                  "after": 99.9,
+                  "axisMax": 100,
+                  "unit": "percent",
+                  "direction": "up",
+                  "title": "长连接系统 SLA",
+                  "description": "建设连接与同步能力，结合推送、推拉策略和短连补偿。SLA 从初期 68% 提升并稳定在 99.9%。"
+                },
+                {
+                  "id": "memory",
+                  "before": 100,
+                  "after": 78,
+                  "axisMax": 100,
+                  "unit": "index",
+                  "direction": "down",
+                  "title": "内存占用",
+                  "description": "列表渲染优化后内存占用降低 22%，指数由 100 变为 78。同阶段 OOM 降低 23%。"
+                },
+                {
+                  "id": "weak-network",
+                  "before": 100,
+                  "after": 58,
+                  "axisMax": 100,
+                  "unit": "index",
+                  "direction": "down",
+                  "title": "弱网首包时间",
+                  "description": "DNS 与弱网链路优化后，首包时间改善 42%，指数由 100 变为 58。"
+                }
+              ]
+            }
+          },
+          "en": {
+            "eyebrow": "02 / AI & CONVERSATION",
+            "title": "Messaging and networking\nfor AI conversations",
+            "preview": "IM, streaming messages, and networking",
+            "previewDetail": "Recordings and screenshots / Current version",
+            "outcomeNote": "Metrics use the definitions from the 2023.06–2025.03 project period.",
+            "mediaNote": "Recordings and screenshots show Xingye in 2026; recordings are silent. My scope covers IM, networking, and stability during 2023.06–2025.03, not every feature shown.",
+            "intro": "I owned core IM modules, networking infrastructure, and stability work for Talkie / Xingye. This included reducing message latency, rebuilding the message list, and developing persistent connections, synchronization, and persistence in-house.",
+            "scenes": [
+              {
+                "title": "Conversation recording",
+                "caption": "Browse characters, send a message, and receive a reply.",
+                "alt": "Xingye recording of character browsing, message sending, and replies",
+                "lens": "Send state",
+                "insight": "The UI needs distinct waiting, sending, and reply states that match actual message processing."
+              },
+              {
+                "title": "Conversation screen",
+                "caption": "Character imagery, long messages, and the input area.",
+                "alt": "Xingye character conversation with long messages and an input area",
+                "lens": "List rendering",
+                "insight": "Long text and images increase rendering costs. Scrolling FPS, memory use, and OOM incidents need to be considered together."
+              },
+              {
+                "title": "Creation entry points",
+                "caption": "Entry points for characters, video, images, and audio in the current product.",
+                "alt": "Xingye creation page with character, video, image, and audio entry points",
+                "lens": "Product context",
+                "insight": "This screenshot shows the current product's scope. These creation features are outside the personal responsibilities described here."
+              }
+            ],
+            "storyTitle": "Message latency, list performance, and connection recovery",
+            "storyLead": "Client and server changes, results during the project period, and the constraints involved.",
+            "decisions": [
+              {
+                "title": "Message critical path",
+                "experience": "The wait between sending a message and seeing a reply includes transport, processing, and UI updates. A single request's latency does not measure the whole wait.",
+                "engineering": "Led client and server changes from write-through to write-back and introduced upstream and downstream streaming over an in-house persistent connection. p90 conversation latency fell by 610 ms. During the corresponding period, retention increased by 1.4% and conversation count by 10%.",
+                "tradeoff": "A shorter critical path still needs persistence and consistency. Send feedback, message state, and final processing results need to be traceable together."
+              },
+              {
+                "title": "Message-list rendering",
+                "experience": "Long text, continuous replies, and character images increase rendering costs. Scrolling FPS and memory need to be measured together.",
+                "engineering": "Rebuilt the message list with DiffableDataSource. Scrolling improved from 51 to 60 FPS, memory use fell by 22%, and OOM incidents fell by 23%.",
+                "tradeoff": "Partial updates reduce repeated rendering, but the data source and message state must stay consistent. Frame-rate improvements should not come at the cost of memory or crashes."
+              },
+              {
+                "title": "Connection recovery and synchronization",
+                "experience": "Network changes interrupt message transport. Recovery needs to account for missed messages, send status, and local data consistency.",
+                "engineering": "Built persistence, synchronization, and send callbacks in-house, combining push and pull strategies with short-request compensation. Conversation availability reached 99.9%; connection-system SLA rose from 68% to a stable 99.9%. DNS and weak-network changes improved first-byte time by 42%.",
+                "tradeoff": "Recovering a connection and synchronizing messages are separate problems. Conversation availability and connection-system SLA also have different definitions and must not be used interchangeably."
+              }
+            ],
+            "lab": {
+              "title": "Message delivery and connection recovery",
+              "lead": "Choose a connection state and run the send, reply, and synchronization flow. Disconnected mode requires manual recovery.",
+              "modes": [
+                "Stable connection",
+                "Simulate disconnect"
+              ],
+              "start": "Send message",
+              "running": "Processing…",
+              "resume": "Reconnect and continue",
+              "idle": "Choose a connection state, then send a message.",
+              "complete": "Reply displayed. State synchronized.",
+              "stalled": "Disconnected. Reconnect to continue.",
+              "sample": "MESSAGING / DEMO",
+              "output": "Waiting to send",
+              "outputRunning": "Sent, awaiting reply",
+              "outputComplete": "Synchronized",
+              "footnote": "A local illustration with no model or production-service connection. Step order and animation duration do not represent production protocols or performance.",
+              "stages": [
+                {
+                  "title": "Local feedback",
+                  "detail": "Show the sending state.",
+                  "prepared": "Show the sending state."
+                },
+                {
+                  "title": "Message transport",
+                  "detail": "Transmit over the persistent connection and track sending and acknowledgment.",
+                  "prepared": "Simulate a disconnection. Resume transport and acknowledgment after reconnecting."
+                },
+                {
+                  "title": "Streaming reply",
+                  "detail": "Display incoming reply content and update the list.",
+                  "prepared": "Continue displaying the reply after recovery. The real product also needs synchronization and compensation mechanisms."
+                },
+                {
+                  "title": "Persistence and sync",
+                  "detail": "Persist messages, synchronize, and check state.",
+                  "prepared": "Synchronize recovered messages and check local state."
+                }
+              ]
+            },
+            "architecture": {
+              "kicker": "MESSAGING / RESPONSIBILITIES",
+              "title": "Messaging responsibilities",
+              "lead": "Conversation UI, message handling, and connection and data infrastructure. Select a node for details.",
+              "selectionLabel": "Responsibilities and implementation",
+              "defaultNode": "connection",
+              "diagramLabel": "Responsibility map for the Talkie and Xingye client messaging system",
+              "note": "Based on my 2023.06–2025.03 scope. Excludes model-service internals and is not a complete production architecture.",
+              "layers": [
+                {
+                  "id": "experience",
+                  "title": "Conversation UI",
+                  "nodes": [
+                    {
+                      "id": "conversations",
+                      "title": "One-to-one / Group chat",
+                      "detail": "Supported conversations with AI characters, including send feedback and streaming replies."
+                    },
+                    {
+                      "id": "sessions",
+                      "title": "Conversation list",
+                      "detail": "Owned conversation-list work alongside synchronization, roaming, and local data handling."
+                    }
+                  ]
+                },
+                {
+                  "id": "messaging",
+                  "title": "Message handling",
+                  "nodes": [
+                    {
+                      "id": "rendering",
+                      "title": "Message list / DiffableDataSource",
+                      "detail": "Rebuilt the message list and optimized rendering. Scrolling improved from 51 to 60 FPS, memory use fell by 22%, and OOM incidents fell by 23%."
+                    },
+                    {
+                      "id": "acknowledgments",
+                      "title": "Send state / ACK",
+                      "detail": "Built send callbacks, acknowledgments, and state tracking in-house, reducing dependency on Easemob."
+                    },
+                    {
+                      "id": "streaming",
+                      "title": "Upstream / Downstream streaming",
+                      "detail": "Changed the client and server message path from write-through to write-back and added streaming over an in-house persistent connection. p90 latency fell by 610 ms."
+                    }
+                  ]
+                },
+                {
+                  "id": "infrastructure",
+                  "title": "Connections and data",
+                  "nodes": [
+                    {
+                      "id": "connection",
+                      "title": "In-house persistent connection",
+                      "detail": "Built persistent connections and recovery, combining push and pull strategies with short-request compensation. Connection-system SLA rose from 68% to a stable 99.9%."
+                    },
+                    {
+                      "id": "persistence",
+                      "title": "Persistence / Sync / Consistency",
+                      "detail": "Built persistence and synchronization covering offline messages, roaming, database write-back, and consistency checks."
+                    },
+                    {
+                      "id": "network",
+                      "title": "Alamofire / Moya networking",
+                      "detail": "Built cache policies, request pools, priorities, custom serialization, and recovery. DNS and weak-network changes improved first-byte time by 42%."
+                    }
+                  ]
+                }
+              ]
+            },
+            "results": {
+              "kicker": "PROJECT METRICS",
+              "title": "Before and after",
+              "lead": "Select a metric. FPS and SLA use raw values. Memory and weak-network first-byte time use a baseline of 100 because only relative reductions are available.",
+              "beforeLabel": "Before",
+              "afterLabel": "After",
+              "fpsLabel": "FPS",
+              "percentLabel": "%",
+              "indexLabel": "index",
+              "indexNote": "Before = 100. Relative change only, not MB or milliseconds. Lower is better.",
+              "rawNote": "Raw values. Higher is better.",
+              "note": "Measurement period: 2023.06–2025.03, not current live performance. Connection-system SLA and conversation availability are different metrics.",
+              "data": "../../../case-studies/talkie/metrics.json",
+              "metrics": [
+                {
+                  "id": "scrolling",
+                  "before": 51,
+                  "after": 60,
+                  "axisMax": 60,
+                  "unit": "fps",
+                  "direction": "up",
+                  "title": "List scrolling FPS",
+                  "description": "Rebuilt the message list with DiffableDataSource and optimized rendering. Scrolling improved from 51 to 60 FPS."
+                },
+                {
+                  "id": "availability",
+                  "before": 68,
+                  "after": 99.9,
+                  "axisMax": 100,
+                  "unit": "percent",
+                  "direction": "up",
+                  "title": "Connection-system SLA",
+                  "description": "Built connection and synchronization capabilities with push, pull, and short-request compensation. SLA rose from 68% to a stable 99.9%."
+                },
+                {
+                  "id": "memory",
+                  "before": 100,
+                  "after": 78,
+                  "axisMax": 100,
+                  "unit": "index",
+                  "direction": "down",
+                  "title": "Memory use",
+                  "description": "Rendering changes reduced memory use by 22%, taking the index from 100 to 78. OOM incidents fell by 23% during the same period."
+                },
+                {
+                  "id": "weak-network",
+                  "before": 100,
+                  "after": 58,
+                  "axisMax": 100,
+                  "unit": "index",
+                  "direction": "down",
+                  "title": "Weak-network first byte",
+                  "description": "DNS and weak-network changes improved first-byte time by 42%, taking the index from 100 to 58."
+                }
+              ]
+            }
+          }
+        }
+      },
+      "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">My role\u003c/h2>\n\u003cp>Owned the core IM modules, networking infrastructure, and stability work for the Xingye / Talkie AI chatbot apps. Supported one-to-one and group conversations with AI characters, along with conversation-list management.\u003c/p>\n\u003cp>The messaging layer covered push delivery, offline messages, persistence, acknowledgments, message synchronization and roaming, local database write-back, and consistency checks.\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Message latency and list performance\u003c/h2>\n\u003cp>Led end-to-end messaging improvements across the client and server. Changed the message path from write-through to write-back and introduced streaming for upstream and downstream messages over an in-house persistent connection.\u003c/p>\n\u003cp>The work reduced p90 conversation latency by \u003cstrong>610 ms\u003c/strong>. Related project-stage results were a \u003cstrong>1.4%\u003c/strong> increase in retention and a \u003cstrong>10%\u003c/strong> increase in conversation count.\u003c/p>\n\u003cp>Rebuilt the message list with DiffableDataSource, increasing scrolling performance from \u003cstrong>51 to 60 FPS\u003c/strong>. Rendering optimizations reduced memory use by \u003cstrong>22%\u003c/strong> and OOM incidents by \u003cstrong>23%\u003c/strong>.\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">Synchronization and networking\u003c/h2>\n\u003cp>Reduced dependency on Easemob by building persistence, synchronization, and before/after-send callbacks in-house. Combined push and pull strategies with persistent connections to improve message consistency. Conversation availability reached \u003cstrong>99.9%\u003c/strong>, while connection-system SLA rose from an initial 68% and stabilized at \u003cstrong>99.9%\u003c/strong>.\u003c/p>\n\u003cp>Built networking infrastructure with Alamofire and Moya, supporting cache policies, request pools and priorities, custom serialization, connection recovery, and short-request compensation. DNS and weak-network improvements reduced weak-network first-byte time by \u003cstrong>42%\u003c/strong>.\u003c/p>\n\u003ch2 id=\"section-4\" tabindex=\"-1\">UI automation and retention work\u003c/h2>\n\u003cp>Explored LLM-assisted UI automation using Poco, WDA, and Claude Sonnet to navigate the app and execute cases. Contributed to new-user retention work through first-feed caching, follow conversion, and deeplink improvements.\u003c/p>\n\u003cp>These results use the measurement scope of the corresponding project period.\u003c/p>\n",
+      "text": "My role Owned the core IM modules, networking infrastructure, and stability work for the Xingye / Talkie AI chatbot apps. Supported one-to-one and group conversations with AI characters, along with conversation-list management. The messaging layer covered push delivery, offline messages, persistence, acknowledgments, message synchronization and roaming, local database write-back, and consistency checks. Message latency and list performance Led end-to-end messaging improvements across the client and server. Changed the message path from write-through to write-back and introduced streaming for upstream and downstream messages over an in-house persistent connection. The work reduced p90 conversation latency by 610 ms . Related project-stage results were a 1.4% increase in retention and a 10% increase in conversation count. Rebuilt the message list with DiffableDataSource, increasing scrolling performance from 51 to 60 FPS . Rendering optimizations reduced memory use by 22% and OOM incidents by 23% . Synchronization and networking Reduced dependency on Easemob by building persistence, synchronization, and before/after-send callbacks in-house. Combined push and pull strategies with persistent connections to improve message consistency. Conversation availability reached 99.9% , while connection-system SLA rose from an initial 68% and stabilized at 99.9% . Built networking infrastructure with Alamofire and Moya, supporting cache policies, request pools and priorities, custom serialization, connection recovery, and short-request compensation. DNS and weak-network improvements reduced weak-network first-byte time by 42% . UI automation and retention work Explored LLM-assisted UI automation using Poco, WDA, and Claude Sonnet to navigate the app and execute cases. Contributed to new-user retention work through first-feed caching, follow conversion, and deeplink improvements. These results use the measurement scope of the corresponding project period.",
       "toc": [
         {
           "id": "section-1",
@@ -475,17 +1309,17 @@ window.ENGLISH_CONTENT = {
         },
         {
           "id": "section-2",
-          "title": "Improving the entire conversation path",
+          "title": "Message latency and list performance",
           "level": 2
         },
         {
           "id": "section-3",
-          "title": "Reliability in the infrastructure",
+          "title": "Synchronization and networking",
           "level": 2
         },
         {
           "id": "section-4",
-          "title": "From engineering to quality and product outcomes",
+          "title": "UI automation and retention work",
           "level": 2
         }
       ],
@@ -499,8 +1333,8 @@ window.ENGLISH_CONTENT = {
       "period": "From 2025.04",
       "role": "Client Engineer",
       "category": "Content & reading",
-      "headline": "Refining reading and discovery, one screen at a time.",
-      "summary": "Worked on WeChat Official Accounts and the Top Stories recommendation feed, including waterfall layouts and recommendation refresh behavior.",
+      "headline": "Recommendation-feed layouts and click-triggered refresh",
+      "summary": "Contribute to the Official Accounts client, including waterfall layouts and click-triggered refresh in the Top Stories feed.",
       "tags": [
         "Flutter",
         "Swift",
@@ -515,35 +1349,418 @@ window.ENGLISH_CONTENT = {
       "highlights": [
         {
           "value": "Waterfall",
-          "label": "Recommendation-feed presentation"
+          "label": "Feed presentation"
         },
         {
-          "value": "Refresh logic",
-          "label": "Content updates after interaction"
+          "value": "Click refresh",
+          "label": "Content update strategy"
         },
         {
-          "value": "Across stacks",
+          "value": "Client",
           "label": "Flutter / Swift / C++"
         }
       ],
       "visual": {
         "type": "reading",
         "caption": "Recommendation-feed layout illustration",
-        "label": "CONTENT, CONNECTED",
+        "label": "CONTENT / FEED",
         "title": "Official Accounts",
-        "subtitle": "Read & discover",
+        "subtitle": "Recommendation feed",
         "nodes": [
           "Content",
           "Recommend",
           "Read"
         ],
-        "footer": "Top Stories / Content experience"
+        "footer": "Waterfall layouts / Click refresh"
       },
       "cover": "",
       "coverAlt": "",
       "coverCaption": "",
-      "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">My role\u003c/h2>\n\u003cp>Worked on client development for Official Accounts within the WeChat team, contributing capabilities to the Top Stories recommendation feed.\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Work in the recommendation feed\u003c/h2>\n\u003cul>\n\u003cli>Supported waterfall layouts for the Top Stories feed.\u003c/li>\n\u003cli>Added recommendation refresh behavior after user interaction.\u003c/li>\n\u003cli>Delivered product iterations across Flutter, Swift, and C++.\u003c/li>\n\u003c/ul>\n",
-      "text": "My role Worked on client development for Official Accounts within the WeChat team, contributing capabilities to the Top Stories recommendation feed. Work in the recommendation feed Supported waterfall layouts for the Top Stories feed. Added recommendation refresh behavior after user interaction. Delivered product iterations across Flutter, Swift, and C++.",
+      "caseStudy": {
+        "kind": "reading",
+        "media": [
+          {
+            "id": "browsing",
+            "type": "video",
+            "src": "/assets/content/works/wechat/reading.mp4",
+            "poster": "/assets/content/works/wechat/reading-poster.jpg"
+          },
+          {
+            "id": "account",
+            "type": "image",
+            "src": "/assets/content/works/wechat/reading-still-2.jpg"
+          },
+          {
+            "id": "feed",
+            "type": "image",
+            "src": "/assets/content/works/wechat/reading-still-1.jpg"
+          }
+        ],
+        "copy": {
+          "zh": {
+            "eyebrow": "03 / CONTENT & READING",
+            "title": "公众号推荐流\n展示与点击刷新",
+            "preview": "公众号内容流与账号主页",
+            "previewDetail": "录屏与同源截帧 / 当前版本",
+            "outcomeNote": "参与公众号相关客户端开发，支持看一看推荐流的瀑布流展示和推荐点击刷新策略。",
+            "mediaNote": "录屏为 2026 年产品版本，静音展示，截图取自同一视频。我的职责是公众号相关客户端业务、看一看推荐流、瀑布流与点击刷新，不涵盖画面中的所有功能。",
+            "intro": "我在微信参与公众号相关客户端开发，主要涉及看一看推荐流的瀑布流展示和推荐点击刷新策略。项目使用 Flutter、Swift 与 C++。",
+            "scenes": [
+              {
+                "title": "浏览录屏",
+                "caption": "滚动浏览公众号内容流，再进入账号主页。",
+                "alt": "微信公众号内容流滚动与进入账号主页录屏",
+                "lens": "内容布局",
+                "insight": "双列卡片和横向图文出现在同一屏中，需要处理图片比例、标题长度与信息层级的差异。"
+              },
+              {
+                "title": "账号主页",
+                "caption": "账号介绍、内容分类和文章列表。截图取自录屏。",
+                "alt": "公众号账号主页截帧，展示账号介绍、分类与文章列表",
+                "lens": "页面路径",
+                "insight": "录屏展示内容流与账号主页之间的切换。账号主页的全部功能不属于本页描述的个人职责。"
+              },
+              {
+                "title": "内容流截帧",
+                "caption": "双列图文卡片与横向文章列表。",
+                "alt": "公众号内容流截帧，展示双列图文与横向文章卡片",
+                "lens": "卡片差异",
+                "insight": "不同内容的尺寸和信息量有差异。布局规则需要兼顾可浏览的信息量与每张卡片的可读性。"
+              }
+            ],
+            "storyTitle": "布局与刷新策略",
+            "storyLead": "推荐流中内容如何展示，以及点击后的更新方式。",
+            "decisions": [
+              {
+                "title": "瀑布流展示",
+                "experience": "内容的图片比例和标题长度不同。布局需要兼顾信息密度、可读性和滚动浏览。",
+                "engineering": "参与看一看推荐流客户端开发，支持瀑布流展示。",
+                "tradeoff": "展示更多内容会改变卡片尺寸和信息层级。布局需要考虑内容差异，不能只按一屏容纳的数量判断。"
+              },
+              {
+                "title": "推荐点击刷新",
+                "experience": "用户打开内容后，还会返回推荐流。更新内容时，需要考虑原有浏览位置与继续阅读的关系。",
+                "engineering": "增加推荐点击刷新策略，处理点击后的内容更新。",
+                "tradeoff": "刷新范围和触发时机取决于具体产品方案。下方演示只比较“保留列表”与“替换一张卡片”，不复现线上排序和刷新规则。"
+              },
+              {
+                "title": "跨技术栈协作",
+                "experience": "展示、点击和更新涉及不同的客户端实现，需要明确状态和业务职责的边界。",
+                "engineering": "使用 Flutter、Swift 与 C++ 参与公众号相关客户端业务迭代。",
+                "tradeoff": "技术栈说明参与范围，不能据此推断每个画面的模块归属。本页只介绍可公开的职责，不展开内部实现细节。"
+              }
+            ],
+            "lab": {
+              "title": "点击后的内容更新",
+              "lead": "选择一张卡片和处理方式，模拟阅读后返回列表。",
+              "modes": [
+                "保留原列表",
+                "示意点击刷新"
+              ],
+              "start": "模拟阅读并返回",
+              "running": "演示中…",
+              "resume": "继续",
+              "idle": "选择卡片和处理方式，再运行演示。",
+              "complete": "已返回列表，请比较卡片变化。",
+              "stalled": "等待下一步。",
+              "sample": "CONTENT FEED / 示意内容",
+              "output": "等待运行",
+              "outputRunning": "点击 → 阅读 → 返回",
+              "outputComplete": "已返回列表",
+              "footnote": "本地示意，不连接微信或推荐服务。刷新仅替换选中卡片，不代表线上规则；卡片内容与动画均为演示用途。",
+              "feedLabel": "选择示意卡片",
+              "selectedLabel": "已选中",
+              "updatedLabel": "已更新",
+              "retainedLabel": "原内容",
+              "cards": [
+                {
+                  "title": "街区里的小书店",
+                  "category": "城市记录"
+                },
+                {
+                  "title": "一次客户端重构记录",
+                  "category": "开发笔记"
+                },
+                {
+                  "title": "周末的徒步路线",
+                  "category": "旅行"
+                },
+                {
+                  "title": "如何阅读一份回测报告",
+                  "category": "研究笔记"
+                }
+              ],
+              "replacement": {
+                "title": "一份城市步行地图",
+                "category": "新内容"
+              },
+              "stages": [
+                {
+                  "title": "内容点击",
+                  "detail": "打开选中的内容。",
+                  "prepared": "打开选中的内容，记录本次选择。"
+                },
+                {
+                  "title": "阅读",
+                  "detail": "阅读已打开的内容，列表保持不变。",
+                  "prepared": "阅读已打开的内容，准备示意更新。"
+                },
+                {
+                  "title": "返回列表",
+                  "detail": "返回原列表。",
+                  "prepared": "返回时替换选中的示意卡片。"
+                },
+                {
+                  "title": "列表状态",
+                  "detail": "全部卡片保持原样。",
+                  "prepared": "选中位置显示新内容，其他卡片不变。"
+                }
+              ]
+            },
+            "architecture": {
+              "kicker": "CONTENT FEED / RESPONSIBILITIES",
+              "title": "推荐流职责划分",
+              "lead": "展示、点击刷新和客户端协作。选择节点查看工作范围。",
+              "selectionLabel": "职责与说明",
+              "defaultNode": "refresh",
+              "diagramLabel": "公众号相关客户端工作中的内容展示、交互和技术协作职责图",
+              "note": "按已有项目记录整理，表示工作方向与协作关系，不是微信完整生产架构。",
+              "layers": [
+                {
+                  "id": "presentation",
+                  "title": "内容展示",
+                  "nodes": [
+                    {
+                      "id": "feed",
+                      "title": "推荐内容流",
+                      "detail": "参与公众号相关客户端开发，主要涉及看一看推荐流。"
+                    },
+                    {
+                      "id": "waterfall",
+                      "title": "瀑布流布局",
+                      "detail": "支持看一看推荐流的瀑布流展示，处理不同内容在列表中的呈现。"
+                    }
+                  ]
+                },
+                {
+                  "id": "interaction",
+                  "title": "点击与更新",
+                  "nodes": [
+                    {
+                      "id": "intent",
+                      "title": "内容点击",
+                      "detail": "内容点击是阅读入口，也与后续刷新策略相关。展示与更新需要围绕同一次操作保持一致。"
+                    },
+                    {
+                      "id": "refresh",
+                      "title": "推荐点击刷新策略",
+                      "detail": "增加推荐点击刷新策略。具体刷新范围、排序和时机以实际产品方案为准。"
+                    }
+                  ]
+                },
+                {
+                  "id": "implementation",
+                  "title": "客户端协作",
+                  "nodes": [
+                    {
+                      "id": "flutter",
+                      "title": "Flutter",
+                      "detail": "项目技术栈之一，用于公众号相关客户端业务迭代。"
+                    },
+                    {
+                      "id": "native",
+                      "title": "Swift / C++",
+                      "detail": "项目技术栈包括 Swift 与 C++。与 Flutter 一同列出技术覆盖范围，不表示每个页面的具体实现归属。"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "en": {
+            "eyebrow": "03 / CONTENT & READING",
+            "title": "Official Accounts feeds:\nlayouts and click refresh",
+            "preview": "Official Accounts feed and account page",
+            "previewDetail": "Recording and stills / Current version",
+            "outcomeNote": "Contribute to the Official Accounts client, including waterfall layouts and click-triggered refresh in Top Stories.",
+            "mediaNote": "Silent recording of the product in 2026; screenshots come from the same video. My scope covers related client work, Top Stories, waterfall layouts, and click refresh—not every feature shown.",
+            "intro": "I contribute to the WeChat Official Accounts client, primarily on waterfall layouts and click-triggered refresh in the Top Stories feed. The project stack includes Flutter, Swift, and C++.",
+            "scenes": [
+              {
+                "title": "Browsing recording",
+                "caption": "Scroll through the Official Accounts feed, then open an account page.",
+                "alt": "Recording of scrolling the Official Accounts feed and opening an account page",
+                "lens": "Content layout",
+                "insight": "Two-column cards and horizontal articles share a screen, with different image proportions, title lengths, and information hierarchy."
+              },
+              {
+                "title": "Account page",
+                "caption": "Account introduction, categories, and articles. Captured from the recording.",
+                "alt": "Official Account page still with an introduction, categories, and article list",
+                "lens": "Page navigation",
+                "insight": "The recording shows navigation from the feed to an account page. The full account-page feature set is outside the personal scope described here."
+              },
+              {
+                "title": "Feed still",
+                "caption": "Two-column image cards and horizontal articles.",
+                "alt": "Official Accounts feed still with two-column image cards and horizontal articles",
+                "lens": "Card variation",
+                "insight": "Content varies in size and detail. Layout rules need to balance how much fits on screen with the readability of each card."
+              }
+            ],
+            "storyTitle": "Layout and refresh behavior",
+            "storyLead": "Content presentation in the feed and updates after a click.",
+            "decisions": [
+              {
+                "title": "Waterfall layouts",
+                "experience": "Images and title lengths vary. Layout needs to balance information density, readability, and scrolling.",
+                "engineering": "Contribute to the Top Stories client, including waterfall-feed presentation.",
+                "tradeoff": "Showing more content changes card sizes and hierarchy. Layout needs to account for content differences, not just the number of items on a screen."
+              },
+              {
+                "title": "Click-triggered refresh",
+                "experience": "People return to the feed after opening content. Updates need to account for the previous browsing position and continued reading.",
+                "engineering": "Added recommendation refresh behavior after content clicks.",
+                "tradeoff": "Refresh scope and timing depend on the product design. The demo contrasts an unchanged list with one card replacement; it does not reproduce production ranking or refresh rules."
+              },
+              {
+                "title": "Cross-stack work",
+                "experience": "Presentation, clicks, and updates span client implementations with different state and ownership boundaries.",
+                "engineering": "Work across Flutter, Swift, and C++ on related Official Accounts client features.",
+                "tradeoff": "The stack describes the scope of the work, not the implementation of each screen. This page covers responsibilities I can share without internal implementation details."
+              }
+            ],
+            "lab": {
+              "title": "Content updates after a click",
+              "lead": "Choose a card and a behavior, then simulate returning from reading.",
+              "modes": [
+                "Keep the original feed",
+                "Illustrate click refresh"
+              ],
+              "start": "Simulate reading and return",
+              "running": "Running…",
+              "resume": "Continue",
+              "idle": "Choose a card and behavior, then run the demo.",
+              "complete": "Back in the list. Compare the cards.",
+              "stalled": "Waiting for the next step.",
+              "sample": "CONTENT FEED / ILLUSTRATION",
+              "output": "Ready to run",
+              "outputRunning": "Click → Read → Return",
+              "outputComplete": "Back in the list",
+              "footnote": "A local illustration with no WeChat or recommendation-service connection. Refresh replaces only the selected card, not production rules. Content and animation are for demonstration.",
+              "feedLabel": "Choose a demo card",
+              "selectedLabel": "Selected",
+              "updatedLabel": "Updated",
+              "retainedLabel": "Original",
+              "cards": [
+                {
+                  "title": "A neighborhood bookshop",
+                  "category": "City notes"
+                },
+                {
+                  "title": "Notes on a client refactor",
+                  "category": "Development"
+                },
+                {
+                  "title": "A weekend hiking route",
+                  "category": "Travel"
+                },
+                {
+                  "title": "Reading a backtest report",
+                  "category": "Research notes"
+                }
+              ],
+              "replacement": {
+                "title": "A city walking map",
+                "category": "New content"
+              },
+              "stages": [
+                {
+                  "title": "Content click",
+                  "detail": "Open the selected content.",
+                  "prepared": "Open the selected content and record the selection."
+                },
+                {
+                  "title": "Reading",
+                  "detail": "Read the opened content. The list stays unchanged.",
+                  "prepared": "Read the opened content. Prepare the illustrative update."
+                },
+                {
+                  "title": "Return to the list",
+                  "detail": "Return to the original list.",
+                  "prepared": "Replace the selected demo card on return."
+                },
+                {
+                  "title": "List state",
+                  "detail": "All cards remain unchanged.",
+                  "prepared": "New content appears at the selected position. Other cards stay unchanged."
+                }
+              ]
+            },
+            "architecture": {
+              "kicker": "CONTENT FEED / RESPONSIBILITIES",
+              "title": "Feed responsibilities",
+              "lead": "Presentation, click refresh, and client collaboration. Select a node to see the scope.",
+              "selectionLabel": "Responsibilities and notes",
+              "defaultNode": "refresh",
+              "diagramLabel": "Responsibility map for content presentation, interaction, and client collaboration in related Official Accounts work",
+              "note": "Based on the project record. Shows responsibilities and collaboration, not WeChat's complete production architecture.",
+              "layers": [
+                {
+                  "id": "presentation",
+                  "title": "Content presentation",
+                  "nodes": [
+                    {
+                      "id": "feed",
+                      "title": "Recommendation feed",
+                      "detail": "Contribute to the Official Accounts client, primarily on the Top Stories feed."
+                    },
+                    {
+                      "id": "waterfall",
+                      "title": "Waterfall layouts",
+                      "detail": "Support waterfall-feed presentation and the layout of different content in the list."
+                    }
+                  ]
+                },
+                {
+                  "id": "interaction",
+                  "title": "Clicks and updates",
+                  "nodes": [
+                    {
+                      "id": "intent",
+                      "title": "Content click",
+                      "detail": "A content click opens reading and relates to subsequent refresh behavior. Presentation and updates need consistent handling of the same action."
+                    },
+                    {
+                      "id": "refresh",
+                      "title": "Click-triggered refresh",
+                      "detail": "Added recommendation refresh behavior after clicks. Actual refresh scope, ranking, and timing depend on the product design."
+                    }
+                  ]
+                },
+                {
+                  "id": "implementation",
+                  "title": "Client collaboration",
+                  "nodes": [
+                    {
+                      "id": "flutter",
+                      "title": "Flutter",
+                      "detail": "Part of the project stack used for related Official Accounts client iterations."
+                    },
+                    {
+                      "id": "native",
+                      "title": "Swift / C++",
+                      "detail": "The stack includes Swift and C++. Together with Flutter, these describe technical coverage, not the implementation ownership of each page."
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">My role\u003c/h2>\n\u003cp>Contribute to the Official Accounts client, primarily on the Top Stories recommendation feed.\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Recommendation feed\u003c/h2>\n\u003cul>\n\u003cli>Support waterfall layouts for the Top Stories feed.\u003c/li>\n\u003cli>Add click-triggered recommendation refresh.\u003c/li>\n\u003cli>Work across Flutter, Swift, and C++ on client features.\u003c/li>\n\u003c/ul>\n",
+      "text": "My role Contribute to the Official Accounts client, primarily on the Top Stories recommendation feed. Recommendation feed Support waterfall layouts for the Top Stories feed. Add click-triggered recommendation refresh. Work across Flutter, Swift, and C++ on client features.",
       "toc": [
         {
           "id": "section-1",
@@ -552,7 +1769,7 @@ window.ENGLISH_CONTENT = {
         },
         {
           "id": "section-2",
-          "title": "Work in the recommendation feed",
+          "title": "Recommendation feed",
           "level": 2
         }
       ],
@@ -562,12 +1779,12 @@ window.ENGLISH_CONTENT = {
       "slug": "plumber",
       "title": "plumber",
       "order": 4,
-      "company": "Research & engineering practice",
+      "company": "Personal project",
       "period": "In progress",
       "role": "Strategy research & system development",
       "category": "AI & trading",
-      "headline": "Connecting trading ideas into a traceable system.",
-      "summary": "An automated trading AI agent project in progress. Connecting quantitative research with signals, risk constraints, order execution, reconciliation, and monitoring.",
+      "headline": "Research and implementation of an automated trading agent",
+      "summary": "A personal project in development: strategy research, backtesting, IBKR execution, separate ledgers, and local monitoring.",
       "tags": [
         "Python",
         "IBKR",
@@ -581,55 +1798,55 @@ window.ENGLISH_CONTENT = {
       ],
       "highlights": [
         {
-          "value": "Research → run",
-          "label": "Connecting strategies to execution"
+          "value": "IBKR",
+          "label": "Execution adapter"
         },
         {
           "value": "Separate ledgers",
-          "label": "Isolation by strategy and environment"
+          "label": "Strategy and environment isolation"
         },
         {
-          "value": "Traceable",
-          "label": "Logs, reconciliation & monitoring"
+          "value": "Local monitoring",
+          "label": "Status, fills, and logs"
         }
       ],
       "visual": {
         "type": "agent",
         "caption": "Trading-system workflow illustration",
-        "label": "RESEARCH → EXECUTION",
+        "label": "RESEARCH / EXECUTION",
         "title": "plumber",
-        "subtitle": "Automated trading AI agent",
+        "subtitle": "Automated trading agent",
         "nodes": [
           "Research / Signal",
           "Risk checks",
           "Execute / Reconcile"
         ],
-        "footer": "Keep researching. Keep validating."
+        "footer": "Personal project / In development"
       },
       "cover": "",
       "coverAlt": "",
       "coverCaption": "",
-      "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">What I&#39;m building\u003c/h2>\n\u003cp>plumber is an automated trading AI agent project in progress. It starts with strategy research and reproducible backtests, then connects execution, separate ledgers, reconciliation, and a local monitoring interface.\u003c/p>\n\u003cp>Research directions include risk parity, statistical arbitrage, bond seasonality, and order flow. The focus is on whether strategy hypotheses, costs, execution constraints, and parameter decisions can be explained, reproduced, and tested.\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Connecting research to execution\u003c/h2>\n\u003cp>Research notebooks are separated from the execution layer. Shared infrastructure covers IBKR integration, connection heartbeats, safe execution, separate ledgers, and audit records. Configuration and runtime state are isolated by strategy and trading environment.\u003c/p>\n\u003cp>Recording signal generation, orders, fills, and reconciliation makes an execution traceable, beyond its final outcome.\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">Making the running system visible\u003c/h2>\n\u003cp>Building a local monitoring interface for strategy status, positions, equity, fills, and redacted logs. Monitoring is separated from trading services, with explicit environment selection and stop mechanisms.\u003c/p>\n\u003ch2 id=\"section-4\" tabindex=\"-1\">Current focus\u003c/h2>\n\u003cp>Continue testing strategy behavior under costs, fill deviations, and execution failures, and improve the connections between research, execution, and monitoring. Keep a record of hypotheses, constraints, and engineering tradeoffs.\u003c/p>\n",
-      "text": "What I'm building plumber is an automated trading AI agent project in progress. It starts with strategy research and reproducible backtests, then connects execution, separate ledgers, reconciliation, and a local monitoring interface. Research directions include risk parity, statistical arbitrage, bond seasonality, and order flow. The focus is on whether strategy hypotheses, costs, execution constraints, and parameter decisions can be explained, reproduced, and tested. Connecting research to execution Research notebooks are separated from the execution layer. Shared infrastructure covers IBKR integration, connection heartbeats, safe execution, separate ledgers, and audit records. Configuration and runtime state are isolated by strategy and trading environment. Recording signal generation, orders, fills, and reconciliation makes an execution traceable, beyond its final outcome. Making the running system visible Building a local monitoring interface for strategy status, positions, equity, fills, and redacted logs. Monitoring is separated from trading services, with explicit environment selection and stop mechanisms. Current focus Continue testing strategy behavior under costs, fill deviations, and execution failures, and improve the connections between research, execution, and monitoring. Keep a record of hypotheses, constraints, and engineering tradeoffs.",
+      "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">Scope\u003c/h2>\n\u003cp>plumber is an automated trading AI agent in development. It includes research, backtesting, execution, separate ledgers, reconciliation, and local monitoring.\u003c/p>\n\u003cp>Research covers risk parity, statistical arbitrage, bond seasonality, and order flow. Each strategy needs a record of its return hypothesis, costs, execution constraints, and parameter choices.\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Research and execution\u003c/h2>\n\u003cp>Research notebooks are separated from the execution layer. Shared infrastructure covers IBKR integration, connection heartbeats, safe execution, separate ledgers, and audit records. Configuration and runtime state are isolated by strategy and trading environment.\u003c/p>\n\u003cp>The system records signal calculations, orders, fills, and reconciliation for investigating execution differences.\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">Monitoring\u003c/h2>\n\u003cp>Building a local monitoring interface for strategy status, positions, equity, fills, and redacted logs. Monitoring is separated from trading services, with explicit environment selection and stop mechanisms.\u003c/p>\n\u003ch2 id=\"section-4\" tabindex=\"-1\">Open questions\u003c/h2>\n\u003cp>Continue checking the effects of costs, fill deviations, and execution failures. The system remains in development; an implementation does not establish strategy validity or imply a return guarantee.\u003c/p>\n",
+      "text": "Scope plumber is an automated trading AI agent in development. It includes research, backtesting, execution, separate ledgers, reconciliation, and local monitoring. Research covers risk parity, statistical arbitrage, bond seasonality, and order flow. Each strategy needs a record of its return hypothesis, costs, execution constraints, and parameter choices. Research and execution Research notebooks are separated from the execution layer. Shared infrastructure covers IBKR integration, connection heartbeats, safe execution, separate ledgers, and audit records. Configuration and runtime state are isolated by strategy and trading environment. The system records signal calculations, orders, fills, and reconciliation for investigating execution differences. Monitoring Building a local monitoring interface for strategy status, positions, equity, fills, and redacted logs. Monitoring is separated from trading services, with explicit environment selection and stop mechanisms. Open questions Continue checking the effects of costs, fill deviations, and execution failures. The system remains in development; an implementation does not establish strategy validity or imply a return guarantee.",
       "toc": [
         {
           "id": "section-1",
-          "title": "What I'm building",
+          "title": "Scope",
           "level": 2
         },
         {
           "id": "section-2",
-          "title": "Connecting research to execution",
+          "title": "Research and execution",
           "level": 2
         },
         {
           "id": "section-3",
-          "title": "Making the running system visible",
+          "title": "Monitoring",
           "level": 2
         },
         {
           "id": "section-4",
-          "title": "Current focus",
+          "title": "Open questions",
           "level": 2
         }
       ],
@@ -637,6 +1854,98 @@ window.ENGLISH_CONTENT = {
     }
   ],
   "posts": [
+    {
+      "slug": "how-to-be-successful-sam-altman",
+      "title": "Reading Sam Altman's How to Be Successful",
+      "date": "2026-10-20",
+      "tag": "notes",
+      "kind": "article",
+      "minutes": 5,
+      "excerpt": "Reading notes on compounding, leverage, self-belief, and internal motivation, with my reflections on work and trading.",
+      "toc": [
+        {
+          "id": "section-1",
+          "title": "1. Compound yourself",
+          "level": 2
+        },
+        {
+          "id": "section-2",
+          "title": "2. Have almost too much self-belief",
+          "level": 2
+        },
+        {
+          "id": "section-3",
+          "title": "3. Learn to think independently",
+          "level": 2
+        },
+        {
+          "id": "section-4",
+          "title": "4. Get good at “sales”",
+          "level": 2
+        },
+        {
+          "id": "section-5",
+          "title": "5. Make it easy to take risks",
+          "level": 2
+        },
+        {
+          "id": "section-6",
+          "title": "6. Focus",
+          "level": 2
+        },
+        {
+          "id": "section-7",
+          "title": "7. Work hard",
+          "level": 2
+        },
+        {
+          "id": "section-8",
+          "title": "8. Be bold",
+          "level": 2
+        },
+        {
+          "id": "section-9",
+          "title": "9. Be willful",
+          "level": 2
+        },
+        {
+          "id": "section-10",
+          "title": "10. Be hard to compete with",
+          "level": 2
+        },
+        {
+          "id": "section-11",
+          "title": "11. Build a network",
+          "level": 2
+        },
+        {
+          "id": "section-12",
+          "title": "12. You get rich by owning things",
+          "level": 2
+        },
+        {
+          "id": "section-13",
+          "title": "13. Be internally driven",
+          "level": 2
+        }
+      ],
+      "searchText": "Source: How to Be Successful . The excerpts below follow the order of my original notes; my own reflections appear between them. 1. Compound yourself Exponential curves are the key to wealth generation. Pay attention to the growth rate, to the slope. Exponential growth matters. Leverage is crucial: it lets the same amount of work produce more. There are many ways to get this leverage, such as capital, technology, brand, network effects, and managing people. Before using leverage, have something worth amplifying. Become stronger first, then amplify it. adding another zero to whatever you define as your success metric I believe in step changes in progress. They can hurt, but I trust that way of moving forward. 2. Have almost too much self-belief Managing your own morale—and your team’s morale—is one of the greatest challenges of most endeavors. Believing in yourself matters because the road to a goal is long and difficult. You need conviction, almost to the point of talking yourself into it. 3. Learn to think independently First-principles thinking. “I will fail many times, and I will be really right once” 4. Get good at “sales” you also have to be able to convince other people of what you believe. My best advice for communicating clearly is to first make sure your thinking is clear and then use plain, concise language. The best way to be good at sales is to genuinely believe in what you’re selling. Talk face to face. 5. Make it easy to take risks Most people overestimate risk and underestimate reward. This matters especially in trading. We accept a small possible loss in exchange for a larger potential profit. Look for small bets you can make where you lose 1x if you’re wrong but make 100x if it works. Then make a bigger bet in that direction. Keeping your life cheap and flexible for as long as you can is a powerful way to do this We've talked about this. The extreme version of starting a company might mean living somewhere that only covers sleeping and showering, and spending all your time on the work. But the trade-off is obvious. I can't quite do that, though I can move closer to it. 6. Focus Once you have figured out what to do, be unstoppable about getting your small handful of priorities accomplished quickly. 7. Work hard Extreme people get extreme results The earlier conditions still apply: choose work that gives you leverage and can grow exponentially. Working hard in a steel mill does not necessarily bring a good return. work stamina seems to be one of the biggest predictors of long-term success. You need endurance over the long term. 8. Be bold I believe that it’s easier to do a hard startup than an easy startup. People want to be part of something exciting and feel that their work matters. Things that look hard and things that look easy may be equally difficult once you actually do them. So choose something with room for imagination. Things that seem exciting to you will often seem exciting to other people too. 9. Be willful People have an enormous capacity to make things happen. A combination of self-doubt, giving up too early, and not pushing hard enough prevents most people from ever reaching anywhere near their potential. Being willful lets us keep going longer, long enough for luck to go our way. 10. Be hard to compete with The best way to become difficult to compete with is to build up leverage. How? A single skill is easy to replace. The intersection of two or three skills is harder to copy. Build assets that compound: work, a reputation, and relationships. Time is the substance of this moat. Put yourself in positive-sum situations. Create value, and the world can amplify your impact. The quality of your network shapes the opportunities you can reach. Take the initiative to connect with people you can learn from. 11. Build a network An effective way to build a network is to help people as much as you can. I've felt this in my own work. Being the person willing to help, even when it seems a little too accommodating, can pay off over a longer period. One of the best ways to build a network is to develop a reputation for really taking care of the people who work with you 12. You get rich by owning things You get truly rich by owning things that increase rapidly in value. The best way to make things that increase rapidly in value is by making things people want at scale. What does that mean? Find a real need, then meet it in a way whose marginal cost approaches zero. That is the formula for rapidly growing value. 13. Be internally driven This is easy to understand. More importantly, it is a way to keep life from becoming boring. An excerpt worth keeping: The most successful people I know are primarily internally driven; they do what they do to impress themselves and because they feel compelled to make something happen in the world. After you’ve made enough money to buy whatever you want and gotten enough social status that it stops being fun to get more, this is the only force I know of that will continue to drive you to higher levels of performance.",
+      "body": "\u003cp>Source: \u003ca href=\"https://blog.samaltman.com/how-to-be-successful\" target=\"_blank\" rel=\"noopener noreferrer\">How to Be Successful\u003c/a>. The excerpts below follow the order of my original notes; my own reflections appear between them.\u003c/p>\n\u003ch2 id=\"section-1\" tabindex=\"-1\">1. Compound yourself\u003c/h2>\n\u003cblockquote>\n\u003cp>Exponential curves are the key to wealth generation.\u003c/p>\n\u003c/blockquote>\n\u003cp>Pay attention to the growth rate, to the slope. Exponential growth matters.\u003c/p>\n\u003cp>Leverage is crucial: it lets the same amount of work produce more.\u003c/p>\n\u003cblockquote>\n\u003cp>There are many ways to get this leverage, such as capital, technology, brand, network effects, and managing people.\u003c/p>\n\u003c/blockquote>\n\u003cp>Before using leverage, have something worth amplifying. Become stronger first, then amplify it.\u003c/p>\n\u003cblockquote>\n\u003cp>adding another zero to whatever you define as your success metric\u003c/p>\n\u003c/blockquote>\n\u003cp>I believe in step changes in progress. They can hurt, but I trust that way of moving forward.\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">2. Have almost too much self-belief\u003c/h2>\n\u003cblockquote>\n\u003cp>Managing your own morale—and your team’s morale—is one of the greatest challenges of most endeavors.\u003c/p>\n\u003c/blockquote>\n\u003cp>Believing in yourself matters because the road to a goal is long and difficult. You need conviction, almost to the point of talking yourself into it.\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">3. Learn to think independently\u003c/h2>\n\u003cp>First-principles thinking.\u003c/p>\n\u003cblockquote>\n\u003cp>\u003cstrong>“I will fail many times, and I will be really right once”\u003c/strong>\u003c/p>\n\u003c/blockquote>\n\u003ch2 id=\"section-4\" tabindex=\"-1\">4. Get good at “sales”\u003c/h2>\n\u003cblockquote>\n\u003cp>you also have to be able to convince other people of what you believe.\u003c/p>\n\u003cp>My best advice for communicating clearly is to first make sure your thinking is clear and then use plain, concise language.\u003c/p>\n\u003cp>The best way to be good at sales is to genuinely believe in what you’re selling.\u003c/p>\n\u003c/blockquote>\n\u003cp>Talk face to face.\u003c/p>\n\u003ch2 id=\"section-5\" tabindex=\"-1\">5. Make it easy to take risks\u003c/h2>\n\u003cblockquote>\n\u003cp>Most people overestimate risk and underestimate reward.\u003c/p>\n\u003c/blockquote>\n\u003cp>This matters especially in trading. We accept a small possible loss in exchange for a larger potential profit.\u003c/p>\n\u003cblockquote>\n\u003cp>Look for small bets you can make where you lose 1x if you’re wrong but make 100x if it works. Then make a bigger bet in that direction.\u003c/p>\n\u003cp>Keeping your life cheap and flexible for as long as you can is a powerful way to do this\u003c/p>\n\u003c/blockquote>\n\u003cp>We&#39;ve talked about this. The extreme version of starting a company might mean living somewhere that only covers sleeping and showering, and spending all your time on the work. But the trade-off is obvious. I can&#39;t quite do that, though I can move closer to it.\u003c/p>\n\u003ch2 id=\"section-6\" tabindex=\"-1\">6. Focus\u003c/h2>\n\u003cblockquote>\n\u003cp>Once you have figured out what to do, be unstoppable about getting your small handful of priorities accomplished quickly.\u003c/p>\n\u003c/blockquote>\n\u003ch2 id=\"section-7\" tabindex=\"-1\">7. Work hard\u003c/h2>\n\u003cblockquote>\n\u003cp>\u003cstrong>Extreme people get extreme results\u003c/strong>\u003c/p>\n\u003c/blockquote>\n\u003cp>The earlier conditions still apply: choose work that gives you leverage and can grow exponentially. Working hard in a steel mill does not necessarily bring a good return.\u003c/p>\n\u003cblockquote>\n\u003cp>work stamina seems to be one of the biggest predictors of long-term success.\u003c/p>\n\u003c/blockquote>\n\u003cp>You need endurance over the long term.\u003c/p>\n\u003ch2 id=\"section-8\" tabindex=\"-1\">8. Be bold\u003c/h2>\n\u003cblockquote>\n\u003cp>I believe that it’s easier to do a hard startup than an easy startup. People want to be part of something exciting and feel that their work matters.\u003c/p>\n\u003c/blockquote>\n\u003cp>Things that look hard and things that look easy may be equally difficult once you actually do them. So choose something with room for imagination.\u003c/p>\n\u003cblockquote>\n\u003cp>Things that seem exciting to you will often seem exciting to other people too.\u003c/p>\n\u003c/blockquote>\n\u003ch2 id=\"section-9\" tabindex=\"-1\">9. Be willful\u003c/h2>\n\u003cblockquote>\n\u003cp>People have an enormous capacity to make things happen. \u003cstrong>A combination of self-doubt, giving up too early, and not pushing hard enough prevents most people from ever reaching anywhere near their potential.\u003c/strong>\u003c/p>\n\u003c/blockquote>\n\u003cp>Being willful lets us keep going longer, long enough for luck to go our way.\u003c/p>\n\u003ch2 id=\"section-10\" tabindex=\"-1\">10. Be hard to compete with\u003c/h2>\n\u003cblockquote>\n\u003cp>The best way to become difficult to compete with is to build up leverage.\u003c/p>\n\u003c/blockquote>\n\u003cp>How?\u003c/p>\n\u003cul>\n\u003cli>A single skill is easy to replace. The intersection of two or three skills is harder to copy.\u003c/li>\n\u003cli>Build assets that compound: work, a reputation, and relationships. Time is the substance of this moat.\u003c/li>\n\u003cli>Put yourself in positive-sum situations. Create value, and the world can amplify your impact.\u003c/li>\n\u003c/ul>\n\u003cp>\u003cstrong>The quality of your network shapes the opportunities you can reach. Take the initiative to connect with people you can learn from.\u003c/strong>\u003c/p>\n\u003ch2 id=\"section-11\" tabindex=\"-1\">11. Build a network\u003c/h2>\n\u003cblockquote>\n\u003cp>An effective way to build a network is to help people as much as you can.\u003c/p>\n\u003c/blockquote>\n\u003cp>I&#39;ve felt this in my own work. Being the person willing to help, even when it seems a little too accommodating, can pay off over a longer period.\u003c/p>\n\u003cblockquote>\n\u003cp>One of the best ways to build a network is to develop a reputation for really taking care of the people who work with you\u003c/p>\n\u003c/blockquote>\n\u003ch2 id=\"section-12\" tabindex=\"-1\">12. You get rich by owning things\u003c/h2>\n\u003cblockquote>\n\u003cp>You get truly rich by owning things that increase rapidly in value.\u003c/p>\n\u003cp>The best way to make things that increase rapidly in value is by making things people want at scale.\u003c/p>\n\u003c/blockquote>\n\u003cp>What does that mean? Find a real need, then meet it in a way whose marginal cost approaches zero. That is the formula for rapidly growing value.\u003c/p>\n\u003ch2 id=\"section-13\" tabindex=\"-1\">13. Be internally driven\u003c/h2>\n\u003cp>This is easy to understand. More importantly, it is a way to keep life from becoming boring. An excerpt worth keeping:\u003c/p>\n\u003cblockquote>\n\u003cp>The most successful people I know are primarily internally driven; they do what they do to impress themselves and because they feel compelled to make something happen in the world. After you’ve made enough money to buy whatever you want and gotten enough social status that it stops being fun to get more, this is the only force I know of that will continue to drive you to higher levels of performance.\u003c/p>\n\u003c/blockquote>\n",
+      "contentLanguage": "en"
+    },
+    {
+      "slug": "services-the-new-software",
+      "title": "Services: The New Software",
+      "date": "2026-10-20",
+      "tag": "notes",
+      "kind": "article",
+      "minutes": 2,
+      "excerpt": "Notes on selling tools versus delivering outcomes, and where an AI service might start.",
+      "toc": [],
+      "searchText": "Source: Services: The New Software . These are the excerpts I saved; the indented reflections on intelligence, judgment, and data are my own. If you sell the tool, you’re in a race against the model. But if you sell the work, every improvement in the model makes your service faster, cheaper, and harder to compete with. The reason is that software engineering is primarily intelligence work. AI has crossed the threshold where it can do most of the intelligence work autonomously and leave the judgement to humans. Software engineering got there first. It is coming to every single profession. The distinction here is between intelligence work and judgment. The author argues that AI replaces the former first. A copilot sells the tool. An autopilot sells the work. Today’s judgement will become tomorrow’s intelligence. But the starting position matters because it determines where autopilots can win customers now and begin compounding the data that will eventually let them handle judgement too. The head start matters because data is a moat. The right place to start is where outsourcing already exists. One, the company has accepted that this work can be done externally. Two, there’s an existing budget line that can be substituted cleanly. Three, the buyer is already purchasing an outcome. The playbook: companies should start with the outsourced, intelligence-heavy task. Nail distribution. Expand toward the insourced, judgement-heavy work as the AI compounds. The outsourced task is the wedge. The insourced work is the long-term TAM.",
+      "body": "\u003cp>Source: \u003ca href=\"https://sequoiacap.com/article/services-the-new-software/\" target=\"_blank\" rel=\"noopener noreferrer\">Services: The New Software\u003c/a>. These are the excerpts I saved; the indented reflections on intelligence, judgment, and data are my own.\u003c/p>\n\u003cul>\n\u003cli>If you sell the tool, you’re in a race against the model. But if you sell the work, every improvement in the model makes your service faster, cheaper, and harder to compete with.\u003c/li>\n\u003cli>The reason is that software engineering is primarily intelligence work. AI has crossed the threshold where it can do most of the intelligence work autonomously and leave the judgement to humans. Software engineering got there first. It is coming to every single profession.\u003cul>\n\u003cli>The distinction here is between intelligence work and judgment. The author argues that AI replaces the former first.\u003c/li>\n\u003c/ul>\n\u003c/li>\n\u003cli>A copilot sells the tool. An autopilot sells the work.\u003c/li>\n\u003cli>Today’s judgement will become tomorrow’s intelligence. But the starting position matters because it determines where autopilots can win customers now and begin compounding the data that will eventually let them handle judgement too.\u003cul>\n\u003cli>The head start matters because data is a moat.\u003c/li>\n\u003c/ul>\n\u003c/li>\n\u003cli>The right place to start is where outsourcing already exists.\u003cul>\n\u003cli>One, the company has accepted that this work can be done externally.\u003c/li>\n\u003cli>Two, there’s an existing budget line that can be substituted cleanly.\u003c/li>\n\u003cli>Three, the buyer is already purchasing an outcome.\u003c/li>\n\u003c/ul>\n\u003c/li>\n\u003cli>The playbook: companies should start with the outsourced, intelligence-heavy task. Nail distribution. Expand toward the insourced, judgement-heavy work as the AI compounds. The outsourced task is the wedge. The insourced work is the long-term TAM.\u003c/li>\n\u003c/ul>\n",
+      "contentLanguage": "en"
+    },
     {
       "slug": "statarb-learning-guide",
       "title": "Statistical Arbitrage: A Six-Chapter Learning Guide",
@@ -997,6 +2306,181 @@ window.ENGLISH_CONTENT = {
       "searchText": "配对关系如何计算 如何识别这个偏离真的会回归，还是根本性的发生了偏差 如何应对集中性的问题？ 决定信号是否有用是如何计算的？比如存在不一致的情况，或者深度不够 为什么有时间优势 为什么我能有优势做 ZScore: 为什么用标准差，标准差如何计算 基础解释 我们假设",
       "body": "\u003col>\n\u003cli>配对关系如何计算\u003c/li>\n\u003cli>如何识别这个偏离真的会回归，还是根本性的发生了偏差\u003c/li>\n\u003cli>如何应对集中性的问题？\u003c/li>\n\u003cli>决定信号是否有用是如何计算的？比如存在不一致的情况，或者深度不够\u003c/li>\n\u003cli>为什么有时间优势\u003c/li>\n\u003cli>为什么我能有优势做\u003c/li>\n\u003c/ol>\n\u003cp>ZScore:\u003c/p>\n\u003col>\n\u003cli>为什么用标准差，标准差如何计算\u003c/li>\n\u003c/ol>\n\u003ch2 id=\"section-1\" tabindex=\"-1\">基础解释\u003c/h2>\n\u003cp>我们假设\u003c/p>\n",
       "contentLanguage": "zh"
+    },
+    {
+      "slug": "紧张和兴奋",
+      "title": "Nervousness and Excitement",
+      "date": "2026-05-25",
+      "tag": "notes",
+      "kind": "article",
+      "minutes": 3,
+      "excerpt": "A learning note on nervousness, excitement, and emotional reappraisal.",
+      "toc": [
+        {
+          "id": "section-1",
+          "title": "1. Shared physical responses: sympathetic activation",
+          "level": 2
+        },
+        {
+          "id": "section-2",
+          "title": "2. Subtle differences in physical experience",
+          "level": 2
+        },
+        {
+          "id": "section-3",
+          "title": "Nervousness: defense and contraction",
+          "level": 3
+        },
+        {
+          "id": "section-4",
+          "title": "Excitement: approach and expansion",
+          "level": 3
+        },
+        {
+          "id": "section-5",
+          "title": "Reframing the emotion",
+          "level": 2
+        }
+      ],
+      "searchText": "A well-known, counterintuitive observation about these two emotions is that in terms of physiological indicators alone, anxiety or fear and excitement are almost identical . Both are high-arousal emotions. They share the body's alarm system, the sympathetic nervous system . When either emotion arrives, the brain sounds the alarm, releasing adrenaline and cortisol and preparing the body for action. Despite this overlap, a closer look at extreme reactions, subtle differences, and what happens afterward reveals differences in where the body places its emphasis: 1. Shared physical responses: sympathetic activation Whether you are nervous about giving a presentation tomorrow or excited to ride a roller coaster, the body can produce the following core responses: A faster heartbeat and higher blood pressure: more blood is pumped to deliver oxygen to the muscles. Faster, shallower breathing: taking in more oxygen in preparation for what might happen. Dilated pupils: seeing the surroundings more clearly and taking in more visual information. Slower digestion: blood is redirected to the skeletal muscles, and digestion temporarily takes a back seat. This is why either emotion can leave your stomach feeling strange. 2. Subtle differences in physical experience Although the underlying activation is similar, how we interpret it and the subsequent adjustments in muscles and blood vessels can produce different sensations: Nervousness: defense and contraction Nervousness arises when the body perceives a potential threat or punishment . Its physical response leans toward fight, flight, or freeze : Vasoconstriction and a colder skin surface: blood vessels in the skin and extremities constrict, reducing potential blood loss in a coming “fight.” This is why nervousness can bring cold hands and feet or a pale face . Muscle stiffness or trembling: excessive muscle tension can cause involuntary shaking, such as trembling hands, weak knees, or an unsteady voice. Digestive urgency: severe nervousness can prompt the body to empty its load quickly, with an urgent need to use the bathroom, diarrhea, or stomach cramps—the familiar “knot in the stomach.” Cold sweat: the palms and forehead can become clammy, with eccrine sweat serving cooling and grip-related functions. Excitement: approach and expansion Excitement arises when the body perceives a potential reward or opportunity . Its physical response leans toward an approach system : Vasodilation and a warmer skin surface: blood flows toward the face and torso, and metabolism speeds up. This can bring flushed cheeks, warmth, and a little sweating , rather than a cold sweat. Energy and restlessness: the muscles feel energized but are usually less rigid than in nervousness. There may be more small movements , fidgeting, pacing, or faster speech. A sense of openness in the chest: the heart is still racing, but the sensation may feel warm and outward-moving rather than tight or oppressive. Reframing the emotion The original note describes more than 80% overlap between these physical responses, linking that similarity to a psychological strategy known as anxiety reappraisal . When someone is extremely nervous, repeatedly saying “calm down” may not help much: the body's high-arousal state—a heart rate above 120, for example—is far from the low-arousal state associated with calm, around 70. Saying “I'm excited!” instead offers another interpretation of the same signals. A racing heart and quick breathing can be read as “I'm ready to win” rather than “I'm about to mess this up.” Reinterpreting those sensations can turn defensive stress into an impulse to act.",
+      "body": "\u003cp>A well-known, counterintuitive observation about these two emotions is that \u003cstrong>in terms of physiological indicators alone, anxiety or fear and excitement are almost identical\u003c/strong>.\u003c/p>\n\u003cp>Both are \u003cstrong>high-arousal\u003c/strong> emotions. They share the body&#39;s alarm system, the \u003cstrong>sympathetic nervous system\u003c/strong>. When either emotion arrives, the brain sounds the alarm, releasing adrenaline and cortisol and preparing the body for action.\u003c/p>\n\u003cp>Despite this overlap, a closer look at extreme reactions, subtle differences, and what happens afterward reveals differences in where the body places its emphasis:\u003c/p>\n\u003ch2 id=\"section-1\" tabindex=\"-1\">1. Shared physical responses: sympathetic activation\u003c/h2>\n\u003cp>Whether you are nervous about giving a presentation tomorrow or excited to ride a roller coaster, the body can produce the following core responses:\u003c/p>\n\u003cul>\n\u003cli>\u003cstrong>A faster heartbeat and higher blood pressure:\u003c/strong> more blood is pumped to deliver oxygen to the muscles.\u003c/li>\n\u003cli>\u003cstrong>Faster, shallower breathing:\u003c/strong> taking in more oxygen in preparation for what might happen.\u003c/li>\n\u003cli>\u003cstrong>Dilated pupils:\u003c/strong> seeing the surroundings more clearly and taking in more visual information.\u003c/li>\n\u003cli>\u003cstrong>Slower digestion:\u003c/strong> blood is redirected to the skeletal muscles, and digestion temporarily takes a back seat. This is why either emotion can leave your stomach feeling strange.\u003c/li>\n\u003c/ul>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">2. Subtle differences in physical experience\u003c/h2>\n\u003cp>Although the underlying activation is similar, \u003cstrong>how we interpret it\u003c/strong> and the subsequent adjustments in muscles and blood vessels can produce different sensations:\u003c/p>\n\u003ch3 id=\"section-3\" tabindex=\"-1\">Nervousness: defense and contraction\u003c/h3>\n\u003cp>Nervousness arises when the body perceives a \u003cstrong>potential threat or punishment\u003c/strong>. Its physical response leans toward \u003cstrong>fight, flight, or freeze\u003c/strong>:\u003c/p>\n\u003cul>\n\u003cli>\u003cstrong>Vasoconstriction and a colder skin surface:\u003c/strong> blood vessels in the skin and extremities constrict, reducing potential blood loss in a coming “fight.” This is why nervousness can bring \u003cstrong>cold hands and feet or a pale face\u003c/strong>.\u003c/li>\n\u003cli>\u003cstrong>Muscle stiffness or trembling:\u003c/strong> excessive muscle tension can cause involuntary shaking, such as trembling hands, weak knees, or an unsteady voice.\u003c/li>\n\u003cli>\u003cstrong>Digestive urgency:\u003c/strong> severe nervousness can prompt the body to empty its load quickly, with an urgent need to use the bathroom, diarrhea, or stomach cramps—the familiar “knot in the stomach.”\u003c/li>\n\u003cli>\u003cstrong>Cold sweat:\u003c/strong> the palms and forehead can become clammy, with eccrine sweat serving cooling and grip-related functions.\u003c/li>\n\u003c/ul>\n\u003ch3 id=\"section-4\" tabindex=\"-1\">Excitement: approach and expansion\u003c/h3>\n\u003cp>Excitement arises when the body perceives a \u003cstrong>potential reward or opportunity\u003c/strong>. Its physical response leans toward an \u003cstrong>approach system\u003c/strong>:\u003c/p>\n\u003cul>\n\u003cli>\u003cstrong>Vasodilation and a warmer skin surface:\u003c/strong> blood flows toward the face and torso, and metabolism speeds up. This can bring \u003cstrong>flushed cheeks, warmth, and a little sweating\u003c/strong>, rather than a cold sweat.\u003c/li>\n\u003cli>\u003cstrong>Energy and restlessness:\u003c/strong> the muscles feel energized but are usually less rigid than in nervousness. There may be \u003cstrong>more small movements\u003c/strong>, fidgeting, pacing, or faster speech.\u003c/li>\n\u003cli>\u003cstrong>A sense of openness in the chest:\u003c/strong> the heart is still racing, but the sensation may feel warm and outward-moving rather than tight or oppressive.\u003c/li>\n\u003c/ul>\n\u003ch2 id=\"section-5\" tabindex=\"-1\">Reframing the emotion\u003c/h2>\n\u003cp>The original note describes more than 80% overlap between these physical responses, linking that similarity to a psychological strategy known as \u003cstrong>anxiety reappraisal\u003c/strong>.\u003c/p>\n\u003cp>When someone is extremely nervous, repeatedly saying “calm down” may not help much: the body&#39;s high-arousal state—a heart rate above 120, for example—is far from the low-arousal state associated with calm, around 70.\u003c/p>\n\u003cp>Saying \u003cstrong>“I&#39;m excited!”\u003c/strong> instead offers another interpretation of the same signals. A racing heart and quick breathing can be read as “I&#39;m ready to win” rather than “I&#39;m about to mess this up.” Reinterpreting those sensations can turn defensive stress into an impulse to act.\u003c/p>\n",
+      "contentLanguage": "en"
+    },
+    {
+      "slug": "反脆弱：从不确定性中获益",
+      "title": "Antifragile: Things That Gain from Disorder",
+      "date": "2026-02-27",
+      "tag": "notes",
+      "kind": "article",
+      "minutes": 4,
+      "excerpt": "Notes from Taleb on stress, local errors, small units, and the asymmetry between downside and upside.",
+      "toc": [
+        {
+          "id": "section-1",
+          "title": "Chapter 1 · Damocles' Sword and the Hydra",
+          "level": 2
+        },
+        {
+          "id": "section-2",
+          "title": "Chapter 2 · Overcompensation and Overreaction Everywhere",
+          "level": 2
+        },
+        {
+          "id": "section-3",
+          "title": "Chapter 4 · What Kills Me Makes Others Stronger",
+          "level": 2
+        },
+        {
+          "id": "section-4",
+          "title": "Chapter 5 · Open-Air Markets and Office Buildings",
+          "level": 2
+        },
+        {
+          "id": "section-5",
+          "title": "Chapter 9 · Fat Tony and the Promoters of Fragility",
+          "level": 2
+        },
+        {
+          "id": "section-6",
+          "title": "Chapter 10 · Seneca's Downside and Upside",
+          "level": 2
+        },
+        {
+          "id": "section-7",
+          "title": "Chapter 11 · Never Marry a Rock Star",
+          "level": 2
+        }
+      ],
+      "searchText": "Nassim Nicholas Taleb These passages are translated from the excerpts saved in my Chinese notes, not quoted from the published English edition. Chapter headings are translated from those notes as well. Chapter 1 · Damocles' Sword and the Hydra ◆ In the end, what matters is the strength of the thread holding the sword, not the wealth and power of the person enjoying the feast. ◆ The important point is that depriving a system of stress, or of significant stressors, is not necessarily good. It can even be very harmful. Chapter 2 · Overcompensation and Overreaction Everywhere ◆ Most people's spare time goes to waste: it leaves them idle, lazy, and unwilling to learn. Once they become busy, they often become more active in other tasks too. Overreaction appears here again. Chapter 4 · What Kills Me Makes Others Stronger ◆ The unit does not grow stronger in response to stress. Instead, it dies. But a transfer of benefits takes place: other units survive, and the characteristics of those survivors improve the collective. ◆ We are talking about local errors rather than errors of the whole, small errors rather than severe and destructive ones. This helps distinguish good systems from bad ones. Good systems, such as aviation, have small errors that are independent, or even negatively correlated: one error reduces the probability of future errors. This is one way to distinguish an antifragile environment from fragile ones, such as highly internally correlated modern economic life in the era of “the world is flat.” ◆ After a mistake, those who fail often do not reflect or investigate. They feel embarrassed and cannot tolerate criticism. They try to explain away the mistake instead of enriching themselves with new information and beginning again. ◆ They are bound to care more about securing antifragility, or at least some robustness, for themselves. But that is not compatible with the collective interest or the interest of the economy as a whole. Here is the problem: the properties of the aggregate are not the properties of its parts. The whole may actually prefer its parts to be harmed. ◆ Nature wants to survive as a whole, rather than preserve every species. Each species, in turn, wants its individuals to be fragile, especially after reproduction, so the species can evolve through selection. The transfer of fragility from species to individuals is necessary for the survival of the whole. Chapter 5 · Open-Air Markets and Office Buildings ◆ This is a central illusion in life: believing that randomness is risky and bad, and that removing randomness will remove risk. ◆ Artificially removing randomness produces something like John's income: clear and stable, but fragile. It cannot withstand a large shock and can drop to zero at any time, though someone born in a welfare state might receive unemployment benefits. Natural randomness produces something more like George's income: it can withstand very large shocks, but it comes with daily fluctuations. Notice, too, that volatility can improve the system—which is how antifragility arises. ◆ Switzerland is like George's income. It is stable because there is variation and noise at every level. A taxi driver's daily earnings fluctuate, but annual earnings may differ little. Similarly, Switzerland remains stable overall because its cantons together form a robust system. ◆ Smallness has a certain beauty in many other respects. Small units taken together are more antifragile than a large entity. Large things are, in fact, destined to break apart; this is a mathematical property. ◆ Survival depends on the interaction between adaptability and environmental conditions. ◆ Machiavelli wrote that amid murders and civil wars, our republic grew stronger and citizens learned virtue. Small disturbances and anxieties nourish the soul. What allows a people to flourish is not peace, but freedom. Chapter 9 · Fat Tony and the Promoters of Fragility ◆ Curiosity is antifragile, much like an addiction: the more you satisfy it, the stronger it becomes. Chapter 10 · Seneca's Downside and Upside ◆ Preparing the mind for the worst can be more useful than some forms of psychotherapy, because the worst outcome of the risks I take becomes clear and definite, with harm that is limited and known. But when everything is going well, it is hard to keep up this practice of mentally reducing one's attachment—and that is precisely when it is needed most. Chapter 11 · Never Marry a Rock Star ◆ Antifragility combines initiative with conservative paranoia: remove the downside, protect yourself against extreme harm, and let the upside, or positive Black Swans, take its course. We have seen Seneca's asymmetry: to make the upside outweigh the downside, one need only reduce exposure to extreme harm, including emotional harm, rather than improve the middle.",
+      "body": "\u003cp>Nassim Nicholas Taleb\u003c/p>\n\u003cp>These passages are translated from the excerpts saved in my Chinese notes, not quoted from the published English edition. Chapter headings are translated from those notes as well.\u003c/p>\n\u003ch2 id=\"section-1\" tabindex=\"-1\">Chapter 1 · Damocles&#39; Sword and the Hydra\u003c/h2>\n\u003cp>◆ In the end, what matters is the strength of the thread holding the sword, not the wealth and power of the person enjoying the feast.\u003c/p>\n\u003cp>◆ The important point is that depriving a system of stress, or of significant stressors, is not necessarily good. It can even be very harmful.\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Chapter 2 · Overcompensation and Overreaction Everywhere\u003c/h2>\n\u003cp>◆ Most people&#39;s spare time goes to waste: it leaves them idle, lazy, and unwilling to learn. Once they become busy, they often become more active in other tasks too. Overreaction appears here again.\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">Chapter 4 · What Kills Me Makes Others Stronger\u003c/h2>\n\u003cp>◆ The unit does not grow stronger in response to stress. Instead, it dies. But a transfer of benefits takes place: other units survive, and the characteristics of those survivors improve the collective.\u003c/p>\n\u003cp>◆ We are talking about local errors rather than errors of the whole, small errors rather than severe and destructive ones. This helps distinguish good systems from bad ones. Good systems, such as aviation, have small errors that are independent, or even negatively correlated: one error reduces the probability of future errors. This is one way to distinguish an antifragile environment from fragile ones, such as highly internally correlated modern economic life in the era of “the world is flat.”\u003c/p>\n\u003cp>◆ After a mistake, those who fail often do not reflect or investigate. They feel embarrassed and cannot tolerate criticism. They try to explain away the mistake instead of enriching themselves with new information and beginning again.\u003c/p>\n\u003cp>◆ They are bound to care more about securing antifragility, or at least some robustness, for themselves. But that is not compatible with the collective interest or the interest of the economy as a whole. Here is the problem: the properties of the aggregate are not the properties of its parts. The whole may actually prefer its parts to be harmed.\u003c/p>\n\u003cp>◆ Nature wants to survive as a whole, rather than preserve every species. Each species, in turn, wants its individuals to be fragile, especially after reproduction, so the species can evolve through selection. The transfer of fragility from species to individuals is necessary for the survival of the whole.\u003c/p>\n\u003ch2 id=\"section-4\" tabindex=\"-1\">Chapter 5 · Open-Air Markets and Office Buildings\u003c/h2>\n\u003cp>◆ This is a central illusion in life: believing that randomness is risky and bad, and that removing randomness will remove risk.\u003c/p>\n\u003cp>◆ Artificially removing randomness produces something like John&#39;s income: clear and stable, but fragile. It cannot withstand a large shock and can drop to zero at any time, though someone born in a welfare state might receive unemployment benefits. Natural randomness produces something more like George&#39;s income: it can withstand very large shocks, but it comes with daily fluctuations. Notice, too, that volatility can improve the system—which is how antifragility arises.\u003c/p>\n\u003cp>◆ Switzerland is like George&#39;s income. It is stable because there is variation and noise at every level. A taxi driver&#39;s daily earnings fluctuate, but annual earnings may differ little. Similarly, Switzerland remains stable overall because its cantons together form a robust system.\u003c/p>\n\u003cp>◆ Smallness has a certain beauty in many other respects. Small units taken together are more antifragile than a large entity. Large things are, in fact, destined to break apart; this is a mathematical property.\u003c/p>\n\u003cp>◆ Survival depends on the interaction between adaptability and environmental conditions.\u003c/p>\n\u003cp>◆ Machiavelli wrote that amid murders and civil wars, our republic grew stronger and citizens learned virtue. Small disturbances and anxieties nourish the soul. What allows a people to flourish is not peace, but freedom.\u003c/p>\n\u003ch2 id=\"section-5\" tabindex=\"-1\">Chapter 9 · Fat Tony and the Promoters of Fragility\u003c/h2>\n\u003cp>◆ Curiosity is antifragile, much like an addiction: the more you satisfy it, the stronger it becomes.\u003c/p>\n\u003ch2 id=\"section-6\" tabindex=\"-1\">Chapter 10 · Seneca&#39;s Downside and Upside\u003c/h2>\n\u003cp>◆ Preparing the mind for the worst can be more useful than some forms of psychotherapy, because the worst outcome of the risks I take becomes clear and definite, with harm that is limited and known. But when everything is going well, it is hard to keep up this practice of mentally reducing one&#39;s attachment—and that is precisely when it is needed most.\u003c/p>\n\u003ch2 id=\"section-7\" tabindex=\"-1\">Chapter 11 · Never Marry a Rock Star\u003c/h2>\n\u003cp>◆ Antifragility combines initiative with conservative paranoia: remove the downside, protect yourself against extreme harm, and let the upside, or positive Black Swans, take its course. We have seen Seneca&#39;s asymmetry: to make the upside outweigh the downside, one need only reduce exposure to extreme harm, including emotional harm, rather than improve the middle.\u003c/p>\n",
+      "contentLanguage": "en"
+    },
+    {
+      "slug": "魔术师",
+      "title": "The Magician",
+      "date": "2026-02-27",
+      "tag": "notes",
+      "kind": "article",
+      "minutes": 2,
+      "excerpt": "Excerpts from Colm Tóibín's novel, on writing, desire, family, and a writer's responsibilities.",
+      "toc": [
+        {
+          "id": "section-1",
+          "title": "Chapter 1 · Lübeck, 1891",
+          "level": 2
+        },
+        {
+          "id": "section-2",
+          "title": "Chapter 3 · Munich, 1893",
+          "level": 2
+        },
+        {
+          "id": "section-3",
+          "title": "Chapter 4 · Munich, 1905",
+          "level": 2
+        },
+        {
+          "id": "section-4",
+          "title": "Chapter 9 · Küsnacht, 1934",
+          "level": 2
+        },
+        {
+          "id": "section-5",
+          "title": "Chapter 18 · Los Angeles, 1950",
+          "level": 2
+        }
+      ],
+      "searchText": "Colm Tóibín These passages are translated from the excerpts saved in my Chinese notes, not quoted from the published English edition. Chapter 1 · Lübeck, 1891 ◆ “In Paraty, if you see three people, one will be talking and the other two laughing, and all of them will be wearing white.” “Are they telling jokes?” Heinrich asked. “They just laugh. That's how they are.” “But what are they laughing at?” “Darling, I don't know. But that's how they are. Sometimes I can still hear that laughter at night, coming on the wind.” Chapter 3 · Munich, 1893 ◆ How strange, he thought, that both of them wrote fiction every day while thinking about other things, drawing strength from them and feeding their imaginations. He wondered whether his father, while signing contracts, visiting banks, and looking for investment partners, had always been thinking about private matters that made his breathing quicken. Chapter 4 · Munich, 1905 ◆ “And me? I want two things, but they pull in opposite directions. I want fame on the stage, travel around the world, an exciting life. I also want a family and quiet years. But I can't have both. And you—you only want what you already have. You're the only one of us like that.” Chapter 9 · Küsnacht, 1934 ◆ If Erika could be angry, he would show her what real anger was. If she could speak out, he could be more eloquent still. He did not tell Katia what he planned. He would do it alone. ◆ Readers often complained that his sentences were too long and his style too elevated. This time, he decided, his prose would soar even higher. He would address the Nazis with every system at his command. He would speak in the tones used by writers before the Nazis existed, standing above them on the ground of the German language itself. He would throw clause after clause, subordinate clauses nested within subordinate clauses, at those who inspired fear and disgust in people who believed in freedom and progress. He would ask, as though entitled to an answer, how the so-called leader had reduced Germany in just four years to a country that could no longer be accurately described. He would ask, as though no one could answer, how a writer accustomed to taking responsibility for words could remain silent while this soul-destroying regime threatened an entire continent. Chapter 18 · Los Angeles, 1950 ◆ Although he lived in poverty and needed support, Heinrich never lost the capacity for pride. He continued to believe that his work mattered and that the causes he supported had extraordinary value.",
+      "body": "\u003cp>Colm Tóibín\u003c/p>\n\u003cp>These passages are translated from the excerpts saved in my Chinese notes, not quoted from the published English edition.\u003c/p>\n\u003ch2 id=\"section-1\" tabindex=\"-1\">Chapter 1 · Lübeck, 1891\u003c/h2>\n\u003cp>◆ “In Paraty, if you see three people, one will be talking and the other two laughing, and all of them will be wearing white.” “Are they telling jokes?” Heinrich asked. “They just laugh. That&#39;s how they are.” “But what are they laughing at?” “Darling, I don&#39;t know. But that&#39;s how they are. Sometimes I can still hear that laughter at night, coming on the wind.”\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Chapter 3 · Munich, 1893\u003c/h2>\n\u003cp>◆ How strange, he thought, that both of them wrote fiction every day while thinking about other things, drawing strength from them and feeding their imaginations. He wondered whether his father, while signing contracts, visiting banks, and looking for investment partners, had always been thinking about private matters that made his breathing quicken.\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">Chapter 4 · Munich, 1905\u003c/h2>\n\u003cp>◆ “And me? I want two things, but they pull in opposite directions. I want fame on the stage, travel around the world, an exciting life. I also want a family and quiet years. But I can&#39;t have both. And you—you only want what you already have. You&#39;re the only one of us like that.”\u003c/p>\n\u003ch2 id=\"section-4\" tabindex=\"-1\">Chapter 9 · Küsnacht, 1934\u003c/h2>\n\u003cp>◆ If Erika could be angry, he would show her what real anger was. If she could speak out, he could be more eloquent still. He did not tell Katia what he planned. He would do it alone.\u003c/p>\n\u003cp>◆ Readers often complained that his sentences were too long and his style too elevated. This time, he decided, his prose would soar even higher. He would address the Nazis with every system at his command. He would speak in the tones used by writers before the Nazis existed, standing above them on the ground of the German language itself. He would throw clause after clause, subordinate clauses nested within subordinate clauses, at those who inspired fear and disgust in people who believed in freedom and progress. He would ask, as though entitled to an answer, how the so-called leader had reduced Germany in just four years to a country that could no longer be accurately described. He would ask, as though no one could answer, how a writer accustomed to taking responsibility for words could remain silent while this soul-destroying regime threatened an entire continent.\u003c/p>\n\u003ch2 id=\"section-5\" tabindex=\"-1\">Chapter 18 · Los Angeles, 1950\u003c/h2>\n\u003cp>◆ Although he lived in poverty and needed support, Heinrich never lost the capacity for pride. He continued to believe that his work mattered and that the causes he supported had extraordinary value.\u003c/p>\n",
+      "contentLanguage": "en"
+    },
+    {
+      "slug": "有限与无限的游戏：一个哲学家眼中的竞技世界",
+      "title": "Finite and Infinite Games",
+      "date": "2026-02-26",
+      "tag": "notes",
+      "kind": "article",
+      "minutes": 4,
+      "excerpt": "Notes from James P. Carse on winning and continuing, roles and freedom, power and strength.",
+      "toc": [
+        {
+          "id": "section-1",
+          "title": "Chapter 1 · There Are at Least Two Kinds of Games, Part I",
+          "level": 2
+        },
+        {
+          "id": "section-2",
+          "title": "Chapter 1 · There Are at Least Two Kinds of Games, Part II",
+          "level": 2
+        }
+      ],
+      "searchText": "James P. Carse These passages are translated from the excerpts saved in my Chinese notes, not quoted from the published English edition. Section headings follow the Chinese notes. Chapter 1 · There Are at Least Two Kinds of Games, Part I ◆ There are at least two kinds of games. One may be called finite; the other, infinite. A finite game is played to win, while an infinite game is played to keep the game going. ◆ We can therefore say that finite games have temporal boundaries, which all players must agree on. But players must also agree on boundaries of space and number: the game must take place on a defined field with a defined set of participants. ◆ Only one person or team can win a finite game, though the other participants may receive rankings at its end. ◆ Infinite and finite games are alike in one respect only: if players participate, they do so freely. If they must participate, their participation loses its meaning. ◆ In fact, the only purpose of an infinite game is to prevent the game from ending, keeping every participant in play. ◆ Every finite game involves some degree of self-concealment. Players must deliberately forget that participation is voluntary; otherwise, competition and effort will fall away. ◆ With enough practice, we come to believe that we are the people our roles have shaped, and we lead others to believe it too. As Shaw put it, the nature of acting makes us see not this woman as Ophelia, but Ophelia as this woman. ◆ This is true of every role. Someone can enter the role of a mother only voluntarily. Yet the person playing that role must, with the appropriate seriousness, set aside her freedom in order to act as the role requires. ◆ “To believe is to know that one believes, and to know that one believes is not to believe.” —Sartre If no amount of concealment can hide the concealment itself, the question becomes how seriously we can take this self-concealment, and how far we can go to bring others into the performance with us. Chapter 1 · There Are at Least Two Kinds of Games, Part II ◆ A finite game is dramatic only temporarily. Each player wants to make the better outcome inevitable and thereby eliminate the drama. Finite players want to become master players, so technically perfect that nothing can surprise them, so thoroughly trained that they can foresee every move from the outset. The true master plays as though the game were already over, following a script whose every detail is known before the action takes place. ◆ Infinite play is paradoxical, just as finite play is contradictory. The infinite player's purpose is to continue play, not to play for oneself. The contradiction of finite play is that players seek to end the game for their own sake. The paradox of infinite play is that players want others to continue. Only by letting others keep playing can they continue themselves. Infinite players perform best when they have the least influence over whether the game will continue. That is why they enter it as mortals. The joy and laughter of infinite play come from trying to begin something we cannot end. ◆ Power is determined by the outcome of a game. A person does not win because they are powerful; they become powerful by winning. If someone already had enough power to win before the game began, what followed would not be a game at all. ◆ A person can possess power only through a recognized title, through the ritual respect of others. Power is never one's own. From this perspective, it reveals the contradiction inherent in every finite game: I can possess power only by stopping play, by showing that the game is over. I can therefore have only the power others give me. Power is conferred by the audience after the game has ended. Power is contradictory and scripted. ◆ Strength is contradictory. I have strength not because the outcome of competing with others allows me to force them to do what I want, but because I can allow them to do what they want while competing with me.",
+      "body": "\u003cp>James P. Carse\u003c/p>\n\u003cp>These passages are translated from the excerpts saved in my Chinese notes, not quoted from the published English edition. Section headings follow the Chinese notes.\u003c/p>\n\u003ch2 id=\"section-1\" tabindex=\"-1\">Chapter 1 · There Are at Least Two Kinds of Games, Part I\u003c/h2>\n\u003cp>◆ There are at least two kinds of games. One may be called finite; the other, infinite. A finite game is played to win, while an infinite game is played to keep the game going.\u003c/p>\n\u003cp>◆ We can therefore say that finite games have temporal boundaries, which all players must agree on. But players must also agree on boundaries of space and number: the game must take place on a defined field with a defined set of participants.\u003c/p>\n\u003cp>◆ Only one person or team can win a finite game, though the other participants may receive rankings at its end.\u003c/p>\n\u003cp>◆ Infinite and finite games are alike in one respect only: if players participate, they do so freely. If they must participate, their participation loses its meaning.\u003c/p>\n\u003cp>◆ In fact, the only purpose of an infinite game is to prevent the game from ending, keeping every participant in play.\u003c/p>\n\u003cp>◆ Every finite game involves some degree of self-concealment. Players must deliberately forget that participation is voluntary; otherwise, competition and effort will fall away.\u003c/p>\n\u003cp>◆ With enough practice, we come to believe that we are the people our roles have shaped, and we lead others to believe it too. As Shaw put it, the nature of acting makes us see not this woman as Ophelia, but Ophelia as this woman.\u003c/p>\n\u003cp>◆ This is true of every role. Someone can enter the role of a mother only voluntarily. Yet the person playing that role must, with the appropriate seriousness, set aside her freedom in order to act as the role requires.\u003c/p>\n\u003cp>◆ “To believe is to know that one believes, and to know that one believes is not to believe.” —Sartre\u003c/p>\n\u003cp>If no amount of concealment can hide the concealment itself, the question becomes how seriously we can take this self-concealment, and how far we can go to bring others into the performance with us.\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Chapter 1 · There Are at Least Two Kinds of Games, Part II\u003c/h2>\n\u003cp>◆ A finite game is dramatic only temporarily. Each player wants to make the better outcome inevitable and thereby eliminate the drama. Finite players want to become master players, so technically perfect that nothing can surprise them, so thoroughly trained that they can foresee every move from the outset. The true master plays as though the game were already over, following a script whose every detail is known before the action takes place.\u003c/p>\n\u003cp>◆ Infinite play is paradoxical, just as finite play is contradictory. The infinite player&#39;s purpose is to continue play, not to play for oneself. The contradiction of finite play is that players seek to end the game for their own sake. The paradox of infinite play is that players want others to continue. Only by letting others keep playing can they continue themselves.\u003c/p>\n\u003cp>Infinite players perform best when they have the least influence over whether the game will continue. That is why they enter it as mortals.\u003c/p>\n\u003cp>The joy and laughter of infinite play come from trying to begin something we cannot end.\u003c/p>\n\u003cp>◆ Power is determined by the outcome of a game. A person does not win because they are powerful; they become powerful by winning. If someone already had enough power to win before the game began, what followed would not be a game at all.\u003c/p>\n\u003cp>◆ A person can possess power only through a recognized title, through the ritual respect of others. Power is never one&#39;s own. From this perspective, it reveals the contradiction inherent in every finite game: I can possess power only by stopping play, by showing that the game is over. I can therefore have only the power others give me. Power is conferred by the audience after the game has ended.\u003c/p>\n\u003cp>Power is contradictory and scripted.\u003c/p>\n\u003cp>◆ Strength is contradictory. I have strength not because the outcome of competing with others allows me to force them to do what I want, but because I can allow them to do what they want while competing with me.\u003c/p>\n",
+      "contentLanguage": "en"
+    },
+    {
+      "slug": "2666",
+      "title": "2666",
+      "date": "2026-02-23",
+      "tag": "notes",
+      "kind": "article",
+      "minutes": 2,
+      "excerpt": "Notes on Morini, Norton, and why the novel spends so long on the critics' romantic lives.",
+      "toc": [
+        {
+          "id": "section-1",
+          "title": "Why does Morini feel like crying when he goes to see Liz?",
+          "level": 2
+        },
+        {
+          "id": "section-2",
+          "title": "Why spend hundreds of pages watching professors fall in love?",
+          "level": 2
+        }
+      ],
+      "searchText": "Books · Reading notes Why does Morini feel like crying when he goes to see Liz? Morini wants to cry because the visit to London forces him, in a particularly cruel way, to recognize his own limitations . The despair of the body. Morini has multiple sclerosis and is gradually losing control of his body. In London, with Norton, he feels the pain of being alive more intensely than ever. He loves Norton, but knows that his body has already withdrawn from the “competition.” Watching Pelletier and Espinoza, so full of life, able to run and embrace as they please, he experiences a kind of physical desolation . He wants to cry because he sees himself as a soul imprisoned in a failing body. The collapse of an ideal. Of the four, Morini is the most sensitive and the closest to poetry. For him, the London visit carries a kind of end-of-the-world romanticism. But inside Norton's everyday life, abstract literary discussions become concrete moments of awkward care and silence. He realizes that literature and the life of the mind cannot bridge the body's divide . His urge to cry comes from discovering that something beautiful, such as his love for Norton, is powerless against reality. Why spend hundreds of pages watching professors fall in love? To establish a measure of “civilization” before destroying it. Bolaño first needs to build an extremely civilized, refined, even slightly affected world. The four critics live a typical First World life: they worry about the authenticity of manuscripts, the elegance of rhetoric, clean hotel sheets, and who loves whom more. Only after that world has been given enough substance can their arrival in Santa Teresa, with its raw, brutal, seemingly senseless violence , make the collapse of civilization hit so hard. It is like being shown a beautiful piece of porcelain before seeing it thrown into the mud and crushed. To show the intellectual's “spiritual impotence.” Their love for Archimboldi is a substitute . They spend their energy on complicated romances and academic disputes, avoiding reality. Through this long account, Bolaño shows how absorbed these supposedly leading intellectuals are in games of self-dramatization , before they encounter real suffering and danger. The length itself reveals the emptiness of their lives: having nothing else to do, they circle around the details of their feelings.",
+      "body": "\u003cp>Books · Reading notes\u003c/p>\n\u003ch2 id=\"section-1\" tabindex=\"-1\">Why does Morini feel like crying when he goes to see Liz?\u003c/h2>\n\u003cp>Morini wants to cry because the visit to London forces him, in a particularly cruel way, to \u003cstrong>recognize his own limitations\u003c/strong>.\u003c/p>\n\u003cul>\n\u003cli>\u003cstrong>The despair of the body.\u003c/strong> Morini has multiple sclerosis and is gradually losing control of his body. In London, with Norton, he feels the pain of \u003cstrong>being alive\u003c/strong> more intensely than ever. He loves Norton, but knows that his body has already withdrawn from the “competition.” Watching Pelletier and Espinoza, so full of life, able to run and embrace as they please, he experiences a kind of \u003cstrong>physical desolation\u003c/strong>. He wants to cry because he sees himself as a soul imprisoned in a failing body.\u003c/li>\n\u003cli>\u003cstrong>The collapse of an ideal.\u003c/strong> Of the four, Morini is the most sensitive and the closest to poetry. For him, the London visit carries a kind of end-of-the-world romanticism. But inside Norton&#39;s everyday life, abstract literary discussions become concrete moments of awkward care and silence. He realizes that \u003cstrong>literature and the life of the mind cannot bridge the body&#39;s divide\u003c/strong>. His urge to cry comes from discovering that something beautiful, such as his love for Norton, is powerless against reality.\u003c/li>\n\u003c/ul>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Why spend hundreds of pages watching professors fall in love?\u003c/h2>\n\u003cul>\n\u003cli>\u003cstrong>To establish a measure of “civilization” before destroying it.\u003c/strong> Bolaño first needs to build an \u003cstrong>extremely civilized, refined, even slightly affected\u003c/strong> world. The four critics live a typical First World life: they worry about the authenticity of manuscripts, the elegance of rhetoric, clean hotel sheets, and who loves whom more. Only after that world has been given enough substance can their arrival in Santa Teresa, with its \u003cstrong>raw, brutal, seemingly senseless violence\u003c/strong>, make the collapse of civilization hit so hard. It is like being shown a beautiful piece of porcelain before seeing it thrown into the mud and crushed.\u003c/li>\n\u003cli>\u003cstrong>To show the intellectual&#39;s “spiritual impotence.”\u003c/strong> Their love for Archimboldi is a \u003cstrong>substitute\u003c/strong>. They spend their energy on complicated romances and academic disputes, avoiding reality. Through this long account, Bolaño shows how absorbed these supposedly leading intellectuals are in \u003cstrong>games of self-dramatization\u003c/strong>, before they encounter real suffering and danger. The length itself reveals the \u003cstrong>emptiness\u003c/strong> of their lives: having nothing else to do, they circle around the details of their feelings.\u003c/li>\n\u003c/ul>\n",
+      "contentLanguage": "en"
     }
   ],
   "travel": {

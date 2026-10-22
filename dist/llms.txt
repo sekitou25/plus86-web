@@ -1,0 +1,74 @@
+# siyuan
+
+> siyuan，软件工程师。这里记录客户端与 AI 应用开发、个人项目、研究笔记和旅行照片。
+
+This is a personal portfolio, research notebook, and travel journal. The text editions below contain the same published content as the interactive website and require no JavaScript. They are public, human-readable editions, not private or extra resume material.
+
+## Entry points
+
+- [中文内容目录](/read/zh/index.html)
+- [English content index](/read/en/index.html)
+- [Structured content index](/read/index.json)
+- [Complete text, both languages](/llms-full.txt)
+
+## Reading notes
+
+- Each HTML page links to its Markdown edition and language counterpart.
+- English pages with Chinese-only bodies are explicitly labeled; sourceLanguage in the index records this.
+- Project metrics are historical, with their original scope, units, and caveats. Architecture nodes, all metrics, demo modes, and demo stages are expanded as text.
+- Demo flows are illustrative, not production integrations. Media descriptions are not complete video transcripts.
+- Read the linked documents for content; this directory does not guarantee that every crawler will retrieve or index them.
+
+## 中文
+
+- [客户端工程与 AI 应用开发](/read/zh/index.md): home
+- [你好，我是 siyuan](/read/zh/about.md): about
+- [项目](/read/zh/work.md): work
+- [写作](/read/zh/blog.md): blog
+- [旅行](/read/zh/travel.md): travel
+- [读 Sam Altman《如何成功》](/read/zh/blog/how-to-be-successful-sam-altman.md): post
+- [服务：新的软件](/read/zh/blog/services-the-new-software.md): post
+- [统计套利入门 六章学习目录](/read/zh/blog/statarb-learning-guide.md): post
+- [统计套利入门 01 策略靠什么赚钱](/read/zh/blog/statarb-01-how-it-makes-money.md): post
+- [统计套利入门 02 怎样把相对便宜和贵变成交易信号](/read/zh/blog/statarb-02-signals.md): post
+- [统计套利入门 03 怎样把信号变成实际仓位](/read/zh/blog/statarb-03-position-sizing.md): post
+- [统计套利入门 04 每天怎样调仓以及为什么有时应该不交易](/read/zh/blog/statarb-04-rebalancing.md): post
+- [统计套利入门 05 怎样判断收益风险以及回测是否可信](/read/zh/blog/statarb-05-performance-and-risk.md): post
+- [统计套利入门 06 读懂整份代码以及从研究走到实际执行](/read/zh/blog/statarb-06-code-and-execution.md): post
+- [Triangulated Statistical Arbitrage](/read/zh/blog/triangulated-statistical-arbitrage-notes.md): post
+- [紧张和兴奋](/read/zh/blog/%E7%B4%A7%E5%BC%A0%E5%92%8C%E5%85%B4%E5%A5%8B.md): post
+- [反脆弱：从不确定性中获益](/read/zh/blog/%E5%8F%8D%E8%84%86%E5%BC%B1%EF%BC%9A%E4%BB%8E%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E4%B8%AD%E8%8E%B7%E7%9B%8A.md): post
+- [魔术师](/read/zh/blog/%E9%AD%94%E6%9C%AF%E5%B8%88.md): post
+- [有限与无限的游戏：一个哲学家眼中的竞技世界](/read/zh/blog/%E6%9C%89%E9%99%90%E4%B8%8E%E6%97%A0%E9%99%90%E7%9A%84%E6%B8%B8%E6%88%8F%EF%BC%9A%E4%B8%80%E4%B8%AA%E5%93%B2%E5%AD%A6%E5%AE%B6%E7%9C%BC%E4%B8%AD%E7%9A%84%E7%AB%9E%E6%8A%80%E4%B8%96%E7%95%8C.md): post
+- [2666](/read/zh/blog/2666.md): post
+- [汽水音乐播放器](/read/zh/work/qishui-music.md): project
+- [Talkie / 星野](/read/zh/work/talkie-xingye.md): project
+- [微信 · 公众号](/read/zh/work/wechat-official-accounts.md): project
+- [plumber](/read/zh/work/plumber.md): project
+
+## English
+
+- [Client engineering. AI applications.](/read/en/index.md): home
+- [Hello, I'm siyuan](/read/en/about.md): about
+- [Projects](/read/en/work.md): work
+- [Writing](/read/en/blog.md): blog
+- [Travel](/read/en/travel.md): travel
+- [Reading Sam Altman's How to Be Successful](/read/en/blog/how-to-be-successful-sam-altman.md): post
+- [Services: The New Software](/read/en/blog/services-the-new-software.md): post
+- [Statistical Arbitrage: A Six-Chapter Learning Guide](/read/en/blog/statarb-learning-guide.md): post — body in zh
+- [01 · How Does the Strategy Make Money?](/read/en/blog/statarb-01-how-it-makes-money.md): post — body in zh
+- [02 · Turning Relative Value into Trading Signals](/read/en/blog/statarb-02-signals.md): post — body in zh
+- [03 · Turning Signals into Positions](/read/en/blog/statarb-03-position-sizing.md): post — body in zh
+- [04 · Daily Rebalancing and When Not to Trade](/read/en/blog/statarb-04-rebalancing.md): post — body in zh
+- [05 · Evaluating Returns, Risk, and Backtest Reliability](/read/en/blog/statarb-05-performance-and-risk.md): post — body in zh
+- [06 · From Research Code to Execution](/read/en/blog/statarb-06-code-and-execution.md): post — body in zh
+- [Triangulated Statistical Arbitrage](/read/en/blog/triangulated-statistical-arbitrage-notes.md): post — body in zh
+- [Nervousness and Excitement](/read/en/blog/%E7%B4%A7%E5%BC%A0%E5%92%8C%E5%85%B4%E5%A5%8B.md): post
+- [Antifragile: Things That Gain from Disorder](/read/en/blog/%E5%8F%8D%E8%84%86%E5%BC%B1%EF%BC%9A%E4%BB%8E%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E4%B8%AD%E8%8E%B7%E7%9B%8A.md): post
+- [The Magician](/read/en/blog/%E9%AD%94%E6%9C%AF%E5%B8%88.md): post
+- [Finite and Infinite Games](/read/en/blog/%E6%9C%89%E9%99%90%E4%B8%8E%E6%97%A0%E9%99%90%E7%9A%84%E6%B8%B8%E6%88%8F%EF%BC%9A%E4%B8%80%E4%B8%AA%E5%93%B2%E5%AD%A6%E5%AE%B6%E7%9C%BC%E4%B8%AD%E7%9A%84%E7%AB%9E%E6%8A%80%E4%B8%96%E7%95%8C.md): post
+- [2666](/read/en/blog/2666.md): post
+- [Qishui Music Player](/read/en/work/qishui-music.md): project
+- [Talkie / Xingye](/read/en/work/talkie-xingye.md): project
+- [WeChat · Official Accounts](/read/en/work/wechat-official-accounts.md): project
+- [plumber](/read/en/work/plumber.md): project

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>plumber · siyuan</title><meta name="description" content="A personal project in development: strategy research, backtesting, IBKR execution, separate ledgers, and local monitoring.">
+
+<link rel="alternate" type="text/markdown" href="/read/en/work/plumber.md"><link rel="index" href="/read/index.json">
+<style>body{max-width:54rem;margin:3rem auto;padding:0 1.25rem;font:17px/1.8 system-ui,sans-serif;color:#252525;background:#faf9f5}a{color:#80503c}nav{display:flex;flex-wrap:wrap;gap:1rem}h1,h2,h3,h4{line-height:1.35}h2{margin-top:2.5rem}pre{overflow:auto;padding:1rem;background:#eeece5}code{font-size:.9em}table{border-collapse:collapse;display:block;overflow:auto}th,td{border:1px solid #bbb;padding:.4rem .7rem}img{max-width:100%;height:auto}dt{font-weight:600}dd{margin:0 0 .75rem}blockquote{border-left:3px solid #bca18a;margin-left:0;padding-left:1rem}.notice{padding:1rem;background:#eeece5}</style>
+</head><body><nav><a href="/read/en/index.html">Content index</a> <a href="/?lang=en#/work/plumber">Interactive edition</a> <a href="/read/en/work/plumber.md">Full Markdown</a> <a href="/read/zh/work/plumber.html">中文</a></nav>
+<main><article><header><h1>plumber</h1></header><div lang="en"><p>Research and implementation of an automated trading agent</p><p>A personal project in development: strategy research, backtesting, IBKR execution, separate ledgers, and local monitoring.</p><h2>Metadata</h2><dl><dt>Company</dt><dd>Personal project</dd><dt>My role</dt><dd>Strategy research &amp; system development</dd><dt>Project period</dt><dd>In progress</dd><dt>Technology &amp; focus</dt><dd>Python / IBKR / Strategy research / Execution &amp; monitoring</dd><dt>Category</dt><dd>AI &amp; trading</dd></dl><ul><li>Research &amp; backtesting</li><li>Execution &amp; reconciliation</li><li>Local monitoring</li></ul><p>plumber</p><ul><li>Research / Signal</li><li>Risk checks</li><li>Execute / Reconcile</li></ul><h2>Project overview</h2><dl><dt>Execution adapter</dt><dd>IBKR</dd><dt>Strategy and environment isolation</dt><dd>Separate ledgers</dd><dt>Status, fills, and logs</dt><dd>Local monitoring</dd></dl><h2 id="section-1" tabindex="-1">Scope</h2>
+<p>plumber is an automated trading AI agent in development. It includes research, backtesting, execution, separate ledgers, reconciliation, and local monitoring.</p>
+<p>Research covers risk parity, statistical arbitrage, bond seasonality, and order flow. Each strategy needs a record of its return hypothesis, costs, execution constraints, and parameter choices.</p>
+<h2 id="section-2" tabindex="-1">Research and execution</h2>
+<p>Research notebooks are separated from the execution layer. Shared infrastructure covers IBKR integration, connection heartbeats, safe execution, separate ledgers, and audit records. Configuration and runtime state are isolated by strategy and trading environment.</p>
+<p>The system records signal calculations, orders, fills, and reconciliation for investigating execution differences.</p>
+<h2 id="section-3" tabindex="-1">Monitoring</h2>
+<p>Building a local monitoring interface for strategy status, positions, equity, fills, and redacted logs. Monitoring is separated from trading services, with explicit environment selection and stop mechanisms.</p>
+<h2 id="section-4" tabindex="-1">Open questions</h2>
+<p>Continue checking the effects of costs, fill deviations, and execution failures. The system remains in development; an implementation does not establish strategy validity or imply a return guarantee.</p>
+</div></article></main></body></html>

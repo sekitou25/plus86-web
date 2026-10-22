@@ -4,6 +4,8 @@ import {dirname, join, relative, resolve, extname, basename, sep} from 'node:pat
 import {fileURLToPath} from 'node:url';
 import {renderMarkdown, escapeHtml} from './markdown.mjs';
 import {loadEnglish} from './localize-content.mjs';
+import {loadCaseStudyCopy} from './case-study-copy.mjs';
+import {buildMachineContent,injectMachineContent,staleMachineFiles} from './machine-content.mjs';
 
 export const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const hash = data => createHash('sha256').update(data).digest('hex');
@@ -53,6 +55,51 @@ async function jsonFile(path) {
 const validDate = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0,10)===value;
 function requireText(value, label) { if (typeof value !== 'string' || !value.trim()) throw new Error(`${label} 需要填写文字`); }
 function checkUrl(value, label) { if (value && !/^https?:\/\/[^\s]+$/i.test(value)) throw new Error(`${label} 需要填写 http(s) 链接`); }
+
+async function loadCaseStudy(value, workPath, directory) {
+  if (value === undefined) return undefined;
+  if (typeof value !== 'string') throw new Error(`${relative(directory,workPath)}: caseStudy 需要 JSON 文件路径`);
+  const path=resolve(dirname(workPath),value),label=relative(directory,path);
+  if (!path.startsWith(join(directory,'works')+sep)||extname(path)!=='.json') throw new Error('caseStudy 需要位于 content/works/ 中的 JSON 文件');
+  const data=await jsonFile(path);
+  if(!['music','conversation','reading'].includes(data.kind)||!Array.isArray(data.media)||!data.media.length)throw new Error(`${label}: caseStudy 需要 kind 和 media`);
+  const ids=new Set();
+  const asset=async value=>{
+    if(typeof value!=='string'||!value.startsWith('media/'))throw new Error(`${label}: 媒体文件请放在 content/media/`);
+    const path=resolve(directory,value);
+    if(!path.startsWith(join(directory,'media')+sep))throw new Error(`${label}: 媒体文件不能超出 content/media/`);
+    if(!(await stat(path)).isFile())throw new Error(`${label}: 媒体路径需要指向文件`);
+    return '/assets/content/'+relative(join(directory,'media'),path).split(sep).map(encodeURIComponent).join('/');
+  };
+  for(const media of data.media){
+    if(typeof media.id!=='string'||!/^[a-z][a-z0-9-]*$/.test(media.id)||ids.has(media.id))throw new Error(`${label}: 重复或无效的媒体 id`);
+    if(!['image','video'].includes(media.type))throw new Error(`${label}: media.type 使用 image 或 video`);
+    if(media.type==='video'&&!media.poster)throw new Error(`${label}: 视频需要 poster 封面`);
+    media.src=await asset(media.src);
+    if(media.poster)media.poster=await asset(media.poster);
+    ids.add(media.id);
+  }
+  for(const language of ['zh','en']){
+    const reference=data.copy?.[language];
+    const copy=typeof reference==='string'?await loadCaseStudyCopy(reference,path,directory,[...ids],{parseDocument}):reference;
+    if(!copy)throw new Error(`${label}: 缺少 ${language} 案例文案`);
+    data.copy[language]=copy;
+    for(const key of ['eyebrow','title','intro','preview','previewDetail','mediaNote','outcomeNote','storyTitle','storyLead'])requireText(copy[key],`${label}: ${language}.${key}`);
+    if(copy.scenes?.length!==data.media.length)throw new Error(`${label}: 场景文案与媒体数量不一致`);
+    for(const scene of copy.scenes)for(const key of ['title','caption','alt','lens','insight'])requireText(scene[key],`${label}: ${language}.scenes.${key}`);
+    if(!Array.isArray(copy.decisions)||!copy.decisions.length)throw new Error(`${label}: 缺少案例分析`);
+    for(const decision of copy.decisions)for(const key of ['title','experience','engineering','tradeoff'])requireText(decision[key],`${label}: ${language}.decisions.${key}`);
+    if(copy.lab?.modes?.length!==2||copy.lab?.stages?.length!==4)throw new Error(`${label}: 交互演示需要两个场景与四个步骤`);
+    for(const key of ['title','lead','start','running','resume','idle','complete','stalled','sample','output','outputRunning','outputComplete','footnote'])requireText(copy.lab[key],`${label}: ${language}.lab.${key}`);
+    for(const stage of copy.lab.stages)for(const key of ['title','detail','prepared'])requireText(stage[key],`${label}: ${language}.lab.stages.${key}`);
+    if(data.kind==='reading'){
+      for(const key of ['feedLabel','selectedLabel','updatedLabel','retainedLabel'])requireText(copy.lab[key],`${label}: ${language}.lab.${key}`);
+      if(!Array.isArray(copy.lab.cards)||copy.lab.cards.length!==4)throw new Error(`${label}: 阅读演示需要四张内容卡片`);
+      for(const card of [...copy.lab.cards,copy.lab.replacement||{}])for(const key of ['title','category'])requireText(card[key],`${label}: ${language}.lab.cards.${key}`);
+    }
+  }
+  return data;
+}
 
 export async function loadContent(directory = join(root,'content')) {
   const site = await jsonFile(join(directory,'site.json'));
@@ -118,7 +165,7 @@ export async function loadContent(directory = join(root,'content')) {
     const rendered=renderMarkdown(interpolate(body,site),documents,{labels:ui.article,resolveLink:resolveLink(path)});
     pages[key]={...fields,body:rendered.html,text:rendered.searchText};
   }
-  for(const name of ['home','about','now','blog','travel','work'])if(!pages[name])throw new Error(`缺少 content/pages/${name}.md`);
+  for(const name of ['home','about','blog','travel','work'])if(!pages[name])throw new Error(`缺少 content/pages/${name}.md`);
   const works=[],workSlugs=new Set();
   for(const path of await walk(join(directory,'works'))){
     if(extname(path).toLowerCase()!=='.md'||basename(path).toLowerCase()==='readme.md')continue;
@@ -146,7 +193,8 @@ export async function loadContent(directory = join(root,'content')) {
       requireText(meta.coverAlt,name+' coverAlt');
     }
     const rendered=renderMarkdown(body,documents,{labels:ui.article,resolveLink:resolveLink(path)});
-    works.push({slug,title,order:meta.order??1000,company:meta.company||'',period:meta.period||'',role:meta.role||'',category:meta.category||'',headline:meta.headline||'',summary:meta.summary||'',tags:meta.tags||[],focus:meta.focus||[],highlights,visual,cover,coverAlt:meta.coverAlt||'',coverCaption:meta.coverCaption||'',body:rendered.html,text:rendered.searchText,toc:rendered.toc});
+    const caseStudy=await loadCaseStudy(meta.caseStudy,path,directory);
+    works.push({slug,title,order:meta.order??1000,company:meta.company||'',period:meta.period||'',role:meta.role||'',category:meta.category||'',headline:meta.headline||'',summary:meta.summary||'',tags:meta.tags||[],focus:meta.focus||[],highlights,visual,cover,coverAlt:meta.coverAlt||'',coverCaption:meta.coverCaption||'',...(caseStudy?{caseStudy}:{}),body:rendered.html,text:rendered.searchText,toc:rendered.toc});
     workSlugs.add(slug);
   }
   works.sort((a,b)=>a.order-b.order||a.slug.localeCompare(b.slug));
@@ -184,7 +232,9 @@ async function atomicWrite(path, data) {
 }
 const scriptData = value => JSON.stringify(value,null,2).replace(/</g,'\\u003c');
 export async function build({integrity=true}={}) {
-  const {site,ui,pages,posts,travel,works,english}=await loadContent();
+  const content=await loadContent();
+  const {site,ui,pages,posts,travel,works,english}=content;
+  const machine=buildMachineContent(content);
   const generated='// Generated from content/. Edit that directory, then run the preview or build command.\n';
   const outputs=new Map([
     ['assets/content.js',generated+'window.SITE = '+scriptData(site)+';\nwindow.PAGES = '+scriptData(pages)+';\nwindow.COPY = '+scriptData(ui)+';\nwindow.Copy = (path, values = {}) => { const value = path.split(".").reduce((v,k)=>v?.[k],window.COPY); if(typeof value !== "string") throw new Error("Missing copy: "+path); const variables={...window.SITE,...values}; return value.replace(/\\{(\\w+)\\}/g,(match,key)=>Object.hasOwn(variables,key)?variables[key]:match); };\n'],
@@ -193,6 +243,7 @@ export async function build({integrity=true}={}) {
   ]);
   outputs.set('assets/content.js',outputs.get('assets/content.js')+'window.WORKS = '+scriptData(works)+';\n');
   outputs.set('assets/en-content.js',generated+'window.ENGLISH_CONTENT = '+scriptData(english)+';\n');
+  for(const [path,data] of machine.outputs)outputs.set(path,data);
   const variables={site,ui,postCount:String(posts.length).padStart(2,'0'),workCount:String(works.length).padStart(2,'0')};
   const fillTemplate=template=>template.replace(/\{\{([\w.]+)\}\}/g,(_,key)=>{
     const value=key.split('.').reduce((v,k)=>v?.[k],variables);
@@ -201,7 +252,7 @@ export async function build({integrity=true}={}) {
   });
   for(const name of ['daisy','siyuan-logo'])outputs.set('assets/'+name+'.svg',fillTemplate(await readFile(join(root,'src/assets/'+name+'.template.svg'),'utf8')));
   // Validate and prepare all data before replacing the last working website.
-  let index=fillTemplate(await readFile(join(root,'src/index.template.html'),'utf8'));
+  let index=injectMachineContent(fillTemplate(await readFile(join(root,'src/index.template.html'),'utf8')),machine);
   for(const match of [...index.matchAll(/(?:src|href)="(\/assets\/[^"?]+)(?:\?v=[^"]*)?"/g)]){
     const path=match[1].slice(1),data=outputs.get(path)??await readFile(join(root,'dist',path));
     index=index.replace(match[0],match[0].replace(/(\/assets\/[^"?]+)(?:\?v=[^"]*)?/,'$1?v='+hash(data).slice(0,12)));
@@ -212,6 +263,9 @@ export async function build({integrity=true}={}) {
   // Remove stale generated media so deleted content is absent from the next deployment.
   const outputMedia=join(root,'dist/assets/content');
   await mkdir(outputMedia,{recursive:true});
+  let previousMachine;
+  try{previousMachine=JSON.parse(await readFile(join(root,'dist/read/index.json'),'utf8'))}catch(error){if(error.code!=='ENOENT')throw error}
+  for(const path of staleMachineFiles(previousMachine,machine.outputs))await rm(join(root,'dist',path),{force:true});
   for(const path of await walk(outputMedia))if(!outputs.has(relative(join(root,'dist'),path)))await rm(path);
   for(const [path,data] of outputs)await atomicWrite(join(root,'dist',path),data);
   await atomicWrite(join(root,'dist/index.html'),index);

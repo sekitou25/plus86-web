@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>03 · Turning Signals into Positions · siyuan</title><meta name="description" content="Translate stock signals into capital and shares, then examine gross exposure, net exposure, and concentration.">
+
+<link rel="alternate" type="text/markdown" href="/read/en/blog/statarb-03-position-sizing.md"><link rel="index" href="/read/index.json">
+<style>body{max-width:54rem;margin:3rem auto;padding:0 1.25rem;font:17px/1.8 system-ui,sans-serif;color:#252525;background:#faf9f5}a{color:#80503c}nav{display:flex;flex-wrap:wrap;gap:1rem}h1,h2,h3,h4{line-height:1.35}h2{margin-top:2.5rem}pre{overflow:auto;padding:1rem;background:#eeece5}code{font-size:.9em}table{border-collapse:collapse;display:block;overflow:auto}th,td{border:1px solid #bbb;padding:.4rem .7rem}img{max-width:100%;height:auto}dt{font-weight:600}dd{margin:0 0 .75rem}blockquote{border-left:3px solid #bca18a;margin-left:0;padding-left:1rem}.notice{padding:1rem;background:#eeece5}</style>
+</head><body><nav><a href="/read/en/index.html">Content index</a> <a href="/?lang=en#/blog/statarb-03-position-sizing">Interactive edition</a> <a href="/read/en/blog/statarb-03-position-sizing.md">Full Markdown</a> <a href="/read/zh/blog/statarb-03-position-sizing.html">中文</a></nav>
+<main><article><header><h1>03 · Turning Signals into Positions</h1><p><time datetime="2026-10-16">2026-10-16</time></p></header><p class="notice">This article is currently available in its original Chinese.</p><div lang="zh-CN"><p>上一篇：<a href="/read/en/blog/statarb-02-signals.html">统计套利入门 02 怎样把相对便宜和贵变成交易信号</a></p>
+<p>本篇基于当前可见上下文生成。沿用前两篇的解释深度，所有股票、价格、分数和收益情景均为教学假设。</p>
+<h2 id="section-1" tabindex="-1">这一篇要解决的问题</h2>
+<p>拿到股票信号以后，怎样选出候选股票、决定买入或做空的金额，并理解总敞口、净敞口、杠杆与集中风险？本篇用 10 万美元的策略净资产完整计算一遍。</p>
+<h2 id="section-2" tabindex="-1">正文</h2>
+<p><strong>1 先确定分配给这套策略的资金</strong></p>
+<p>假设当前分配给这套策略的净资产是 100,000 美元。后面的权重都相对于这笔策略资金计算。</p>
+<p>如果整个账户有 500,000 美元，只分配 100,000 美元给这套策略，策略里的 5% 仓位对应 5,000 美元。计算时必须分清策略资金与整个账户资金。</p>
+<p>Notebook 中 <code>initial_cash</code> 是回测的初始资金；模拟使用 <code>capitalise_profits = TRUE</code>，收益会再投入，所以之后的目标金额会随策略净资产变化。净资产从 100,000 变为 110,000 美元时，5% 目标对应 5,500 美元。</p>
+<p><strong>2 先选候选股票，再分配资金</strong></p>
+<p>上一章把配对数据汇总成每只股票每天的信号。实际可能有几百只股票，<code>universe_size = 100</code> 表示先选出约定数量的候选股票。</p>
+<p>本地 <code>run_backtest()</code> 的筛选分两步：先选择配对深度门槛，再按平均配对质量排序。</p>
+<p>深度门槛会尝试 1、2、3、4、5。假设当天：</p>
+<div class="article-table" role="region" tabindex="0" aria-label="文章表格"><table><thead><tr><th scope="col">至少需要多少条配对记录</th><th scope="col">符合要求的股票数</th></tr></thead><tbody><tr><td>1</td><td>280</td></tr><tr><td>2</td><td>190</td></tr><tr><td>3</td><td>125</td></tr><tr><td>4</td><td>85</td></tr><tr><td>5</td><td>60</td></tr></tbody></table></div>
+<p>如果需要 100 只股票，门槛 4 和 5 都凑不够。代码在能留下至少 100 只股票的门槛中选择最高的 3，然后把剩下的 125 只按 <code>mean_quality</code> 从高到低排序，取前 100 只。</p>
+<p>对应的关键代码为：</p>
+<pre><code class="language-r">filter(n_tickers &gt;= universe_size) %&gt;%
+group_by(date) %&gt;%
+summarise(min_depth = max(min_depth), .groups = &quot;drop&quot;)
+</code></pre>
+<p>候选筛选主要看深度与质量，没有在这里直接取绝对 z-score 最大的 100 只股票。</p>
+<p>材料有一处需要区分：Markdown 文档把深度门槛写成取满足数量条件的最小值，本地实际代码使用 <code>max(min_depth)</code>。本章按实际代码解释，即选能凑够数量的最高门槛。</p>
+<p><strong>3 候选数量与非零持仓数量不同</strong></p>
+<p>候选股票后面还可能因信号门槛、一致性规则、收购日期或财报规则得到 0 权重。因此选出 100 只候选股票，最终不保证每只都持仓。</p>
+<p>这会影响集中度。如果很多股票被清零，剩余股票在重新分配权重时可能获得更大比例。</p>
+<p>本篇先把候选筛选以后的步骤看清楚。进出场门槛和财报过滤的具体规则留到下一篇。</p>
+<p><strong>4 先算一个带方向的综合分数</strong></p>
+<p>以 <code>cons_quality</code> 权重方案为例：</p>
+<pre><code class="language-plain">综合偏离分数 s = cw_smooth × mean_quality
+</code></pre>
+<p>上一章 A 的 <code>cw_smooth</code> 约为 −0.72735，<code>mean_quality</code> 为 0.625，所以综合分数约为 −0.45459。负分数仍表示偏低的方向，正分数表示偏高的方向。</p>
+<p><code>cons_step_quality</code> 的对应路径使用 <code>cw_step × mean_quality</code>，增加了一致性过低时的清零规则。本篇集中演示一个方案的资金换算。</p>
+<p>为了方便手算，下面另用一组整齐的演示分数。它们表示已经完成前面处理的综合分数，不再沿用上一章 A 的具体数值：</p>
+<div class="article-table" role="region" tabindex="0" aria-label="文章表格"><table><thead><tr><th scope="col">股票</th><th scope="col">综合偏离分数 s</th><th scope="col">模型方向</th></tr></thead><tbody><tr><td>A</td><td>−4</td><td>买入</td></tr><tr><td>B</td><td>−2</td><td>买入</td></tr><tr><td>C</td><td>+3</td><td>做空</td></tr><tr><td>D</td><td>+1</td><td>做空</td></tr></tbody></table></div>
+<p>这里仅用四只股票演示计算，持仓会非常集中；实际策略材料讨论的是更大的股票集合。</p>
+<p><strong>5 用绝对值之和把分数换成权重</strong></p>
+<p>本地 <code>cons_quality</code> 分支的核心公式为：</p>
+<pre><code class="language-r">weight = -(cw_smooth * mean_quality) /
+  sum(abs(cw_smooth * mean_quality), na.rm = TRUE)
+</code></pre>
+<p>可以拆成两步理解：</p>
+<pre><code class="language-plain">第一步：把所有综合分数的绝对值加起来
+       4 + 2 + 3 + 1 = 10
+
+第二步：每只股票的分数先取相反数，再除以 10
+</code></pre>
+<p>前面的负号负责转换方向：偏低的负分数变成正持仓，偏高的正分数变成负持仓。</p>
+<div class="article-table" role="region" tabindex="0" aria-label="文章表格"><table><thead><tr><th scope="col">股票</th><th scope="col">权重计算</th><th scope="col">目标权重</th></tr></thead><tbody><tr><td>A</td><td>−(−4) ÷ 10</td><td>+40%</td></tr><tr><td>B</td><td>−(−2) ÷ 10</td><td>+20%</td></tr><tr><td>C</td><td>−(+3) ÷ 10</td><td>−30%</td></tr><tr><td>D</td><td>−(+1) ÷ 10</td><td>−10%</td></tr></tbody></table></div>
+<p>正权重表示买入，负权重表示做空。所有权重的绝对值之和为 100%。</p>
+<p>分母用绝对值，是为了把买入与做空的持仓规模都算进去。正负直接相加会抵消，不适合用来控制组合的总名义规模。</p>
+<p>这一步常叫归一化：保留分数之间的相对比例，让它们对应一个规定的总规模。在至少有一个有效非零分数的条件下，基础权重的绝对值合计为 1。</p>
+<p>还有一个值得注意的性质：如果当天所有分数同比例减半，分子和分母同时减半，权重不变。这条公式分配相对强弱，没有自动根据全体信号一起变弱而缩小总仓位；信号门槛和独立的风险预算因而仍有作用。</p>
+<p><strong>6 把目标权重换成金额和股数</strong></p>
+<p>当前策略净资产为 100,000 美元，因此：</p>
+<pre><code class="language-plain">目标持仓金额 = 目标权重 × 当前策略净资产
+</code></pre>
+<p>假设教学例子的价格如下，且暂时按这些价格计算，不考虑成本和成交变化：</p>
+<div class="article-table" role="region" tabindex="0" aria-label="文章表格"><table><thead><tr><th scope="col">股票</th><th scope="col">目标权重</th><th scope="col">目标名义金额</th><th scope="col">每股价格</th><th scope="col">目标股数</th></tr></thead><tbody><tr><td>A</td><td>+40%</td><td>买入 40,000 美元</td><td>50 美元</td><td>+800 股</td></tr><tr><td>B</td><td>+20%</td><td>买入 20,000 美元</td><td>100 美元</td><td>+200 股</td></tr><tr><td>C</td><td>−30%</td><td>做空 30,000 美元</td><td>75 美元</td><td>−400 股</td></tr><tr><td>D</td><td>−10%</td><td>做空 10,000 美元</td><td>25 美元</td><td>−400 股</td></tr></tbody></table></div>
+<p>负股数表示卖空后仍需买回并归还的股票数量。这里的数字恰好能够整除，实际还要处理整股或零股、可借股票和成交价格。</p>
+<p><strong>7 总敞口衡量两边合计持仓规模</strong></p>
+<p>本例多头金额为 60,000 美元，空头名义金额为 40,000 美元。</p>
+<p>总敞口的比例为：</p>
+<pre><code class="language-plain">总敞口 gross =（多头金额 + 空头名义金额）÷ 策略净资产
+             =（60,000 + 40,000）÷ 100,000
+             = 100%
+</code></pre>
+<p>空头金额在这里按正的规模相加，因为它也会带来盈亏与风险。总敞口表示股票持仓的总名义规模相对于净资产有多大。</p>
+<p><strong>8 净敞口衡量多空金额相差多少</strong></p>
+<p>净敞口的比例为：</p>
+<pre><code class="language-plain">净敞口 net =（多头金额 − 空头名义金额）÷ 策略净资产
+           =（60,000 − 40,000）÷ 100,000
+           = +20%
+</code></pre>
+<p>可以理解为，按金额抵消之后，组合还剩相当于净资产 20% 的多头差额。</p>
+<p>本策略没有强制多头与空头各占一半。综合信号可以自然形成 60% 多头、40% 空头，也可能形成其他比例。</p>
+<p>净敞口不能单独描述风险。下面两种组合的净敞口都为 +20%，总规模却差很多：</p>
+<div class="article-table" role="region" tabindex="0" aria-label="文章表格"><table><thead><tr><th scope="col">多头比例</th><th scope="col">空头名义比例</th><th scope="col">总敞口</th><th scope="col">净敞口</th></tr></thead><tbody><tr><td>60%</td><td>40%</td><td>100%</td><td>+20%</td></tr><tr><td>160%</td><td>140%</td><td>300%</td><td>+20%</td></tr></tbody></table></div>
+<p>此外，股票对市场与行业变化的敏感度不同，金额相抵不保证风险完全抵消。净敞口也不能直接当作组合对大盘的 beta。</p>
+<p><strong>9 用盈亏情景看见风险</strong></p>
+<p>在持仓数量不变、忽略成本和融资影响的一段期间，股票端的组合盈亏可以写成：</p>
+<pre><code class="language-plain">组合盈亏 = 策略起始净资产 × Σ（起始权重 × 各股票收益率）
+</code></pre>
+<p>例如，假设这四只股票恰好都上涨 10%：多头赚 6,000 美元，空头亏 4,000 美元，合计赚 2,000 美元，也就是起始净资产的 2%。这是所有股票涨幅相同这一特定假设的结果。</p>
+<p>再看不利情景：A、B 都跌 10%，C、D 却都涨 10%。多头亏 6,000 美元，空头亏 4,000 美元，合计亏 10,000 美元，即 10%。</p>
+<p>即使把金额配成多头 50%、空头 50%，遇到买入端下跌、做空端上涨，也仍然会亏损。</p>
+<p>权重相同的两只股票还可能有完全不同的波动和相关性，因此这条按信号比例分配名义金额的公式，没有自动让每只股票承担相同风险，也没有单独完成行业和相关性约束。</p>
+<p><strong>10 本地 leverage 参数怎样改变规模</strong></p>
+<p>代码后面执行：</p>
+<pre><code class="language-r">mutate(weight = weight * leverage)
+</code></pre>
+<p>如果将 <code>leverage</code> 从 1 改为 2，上述每个目标权重都乘 2：</p>
+<div class="article-table" role="region" tabindex="0" aria-label="文章表格"><table><thead><tr><th scope="col">项目</th><th scope="col">leverage = 1</th><th scope="col">leverage = 2</th></tr></thead><tbody><tr><td>A 权重</td><td>+40%</td><td>+80%</td></tr><tr><td>B 权重</td><td>+20%</td><td>+40%</td></tr><tr><td>C 权重</td><td>−30%</td><td>−60%</td></tr><tr><td>D 权重</td><td>−10%</td><td>−20%</td></tr><tr><td>多头名义金额</td><td>60,000 美元</td><td>120,000 美元</td></tr><tr><td>空头名义金额</td><td>40,000 美元</td><td>80,000 美元</td></tr><tr><td>总敞口</td><td>100%</td><td>200%</td></tr><tr><td>净敞口</td><td>+20%</td><td>+40%</td></tr></tbody></table></div>
+<p>所以，本地的 1 倍表示基础股票总敞口约为净资产的 1 倍；如果多头和空头各为净资产的 100%，总敞口就是 200%。</p>
+<p>在相同起始净资产、相同股价变动、期间不调仓且忽略成本的比较中，仓位翻倍会使股票端盈亏翻倍。刚才两边各自不利变动 10% 的情景，1 倍亏 10,000 美元，2 倍亏 20,000 美元。</p>
+<p>实际复合收益、成本和资金约束不会严格按这个比例变化。使用保证金还可能面临追加资金与强制平仓；券商可能在未事先通知的情况下卖出证券以处理保证金不足。<a href="https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-29" target="_blank" rel="noopener noreferrer">SEC 对保证金账户的解释</a></p>
+<p><strong>11 把持仓敞口与现金余额分开</strong></p>
+<p>按最简现金记账，忽略成本，本例初始净资产 100,000 美元，买多花出 60,000 美元，卖空收到 40,000 美元：</p>
+<pre><code class="language-plain">账面现金 = 100,000 − 60,000 + 40,000 = 80,000 美元
+
+净资产 = 现金 80,000 + 多头股票 60,000 − 空头负债 40,000
+       = 100,000 美元
+</code></pre>
+<p>卖空收到的现金有归还股票的义务与之对应，没有增加净资产。80,000 美元也不能直接解释为可自由提取的余额，实际可交易或可提取金额取决于保证金、持仓和券商规则。</p>
+<p>因此，股票总敞口达到 100% 不要求账面现金为零。这里的 <code>leverage</code> 是股票仓位乘数，也不能直接用它算出现金贷款金额；需要继续看资金余额和融资规则。</p>
+<p><strong>12 仓位上限处理单只股票过大的问题</strong></p>
+<p>四只股票的演示组合中，A 一只占 40%。如果 A 独自下跌 20%，其余价格不变，A 就让账户亏 8,000 美元，即净资产的 8%。</p>
+<p>材料提供了单股权重上限。Notebook 末尾示例把上限写成 <code>5 / universe_size</code>，如果设定的候选数量为 100，上限就是 5%，对应 100,000 美元策略资金下的 5,000 美元。这里的 N 取设定的候选数量，不能随意改读成当天实际非零持仓数。</p>
+<p>如果一只 5% 多头下跌 20%，单独造成的损失约为净资产的 1%，忽略其他持仓与成本。这说明上限如何降低单个名字的影响，不能保证组合最大损失。</p>
+<p>仓位上限也有可行性条件。只有四只非零持仓时，每只最多 5%，合计最多只能有 20% 的总敞口；要同时维持 100% 总敞口与 5% 上限，至少需要 20 个非零持仓，且多头与空头各自也要有足够的股票承接金额。</p>
+<p>外部 <code>apply_max_weight_ls()</code> 尝试限制权重，同时保持原来的多空两边规模。它在达到迭代上限、仍有仓位超限时，只发出 warning，没有强制阻止结果继续返回。因此，设置参数以后仍需核对实际生成的权重；实际持仓还会受到价格漂移和交易缓冲影响。<a href="https://raw.githubusercontent.com/RWLab/rwlab-helpers/master/R/statarb_helpers.R" target="_blank" rel="noopener noreferrer">辅助函数源代码</a></p>
+<p><strong>13 目标仓位与下单数量还有一步距离</strong></p>
+<p>前面算的是希望持有多少股。真正要下单多少，要与当前持仓比较：</p>
+<pre><code class="language-plain">理想交易股数 = 目标股数 − 当前股数
+</code></pre>
+<p>例如 A 的目标为 +800 股，当前已经持有 +600 股，精确调到目标只需再买 200 股。C 的目标为 −400 股，当前为 −300 股，精确调整需要再卖空 100 股。</p>
+<p>策略还会使用交易缓冲，不一定把每个小差额都交易掉。下一篇进入每日执行过程，解释什么情况下需要调仓，以及为什么有时故意不交易能提高成本后的表现。</p>
+<h2 id="section-3" tabindex="-1">小结</h2>
+<ul>
+<li>先按深度和质量筛选候选股票，最终非零持仓数可能更少。</li>
+<li>分数决定方向与相对比例，基础权重通过分数绝对值之和归一化。</li>
+<li>目标金额等于权重乘以策略净资产，再根据价格换算股数。</li>
+<li>总敞口将多头和空头规模相加，净敞口将两者相减；两者都不能单独概括全部风险。</li>
+<li>杠杆放大持仓与盈亏，单股上限限制集中度，实际交易仍要考虑保证金、价格变化与交易缓冲。</li>
+</ul>
+<h2 id="section-4" tabindex="-1">下一篇预告</h2>
+<p>一次完整的日常调仓：旧仓位怎样随价格变化，什么时候触发交易缓冲，进场与离场为何用不同阈值，以及财报和借券如何影响执行。</p>
+<hr>
+<h2 id="section-5" tabindex="-1">学习反馈</h2>
+<p>你可以写：</p>
+<ol>
+<li>哪里看懂了？</li>
+<li>哪里没看懂？</li>
+<li>哪个地方想展开？</li>
+<li>这个主题和你的真实问题有什么关系？</li>
+</ol>
+<p>请写在这行下面：</p>
+<p><a href="https://app.notion.com/p/3fb6dacbbc7e810db7a8ce7a3768f8d8">Original on Notion ↗</a></p></div></article></main></body></html>

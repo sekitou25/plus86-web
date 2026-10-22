@@ -1,10 +1,10 @@
 {
   "name": "siyuan",
   "handle": "siyuan",
-  "tagline": "stay curious. keep building",
-  "metaDescription": "{name} 的数字花园。关于代码、阅读与日常的个人主页和博客。",
-  "headerNote": "a personal corner of the internet",
-  "sidebarStatus": "try not to stop",
+  "tagline": "software, notes & photographs",
+  "metaDescription": "{name}，软件工程师。这里记录客户端与 AI 应用开发、个人项目、研究笔记和旅行照片。",
+  "headerNote": "software engineer",
+  "sidebarStatus": "personal website",
   "socials": {
     "instagram": {
       "username": "",

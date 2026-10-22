@@ -1,0 +1,6 @@
+[
+  {"id":"scrolling","before":51,"after":60,"axisMax":60,"unit":"fps","direction":"up"},
+  {"id":"availability","before":68,"after":99.9,"axisMax":100,"unit":"percent","direction":"up"},
+  {"id":"memory","before":100,"after":78,"axisMax":100,"unit":"index","direction":"down"},
+  {"id":"weak-network","before":100,"after":58,"axisMax":100,"unit":"index","direction":"down"}
+]

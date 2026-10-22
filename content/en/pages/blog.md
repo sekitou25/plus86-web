@@ -1,4 +1,4 @@
 ---
-title: "Writing makes a trace"
-lead: "Thoughts, experiments, and questions that are still open."
+title: "Writing"
+lead: "Research and learning notes, currently focused on quantitative strategies, backtesting, and trading systems."
 ---

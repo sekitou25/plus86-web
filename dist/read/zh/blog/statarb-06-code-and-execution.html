@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>统计套利入门 06 读懂整份代码以及从研究走到实际执行 · siyuan</title><meta name="description" content="把数据、函数、模拟结果和导出文件串起来，逐段读完整份 R notebook，并记录复现前的核对问题。">
+
+<link rel="alternate" type="text/markdown" href="/read/zh/blog/statarb-06-code-and-execution.md"><link rel="index" href="/read/index.json">
+<style>body{max-width:54rem;margin:3rem auto;padding:0 1.25rem;font:17px/1.8 system-ui,sans-serif;color:#252525;background:#faf9f5}a{color:#80503c}nav{display:flex;flex-wrap:wrap;gap:1rem}h1,h2,h3,h4{line-height:1.35}h2{margin-top:2.5rem}pre{overflow:auto;padding:1rem;background:#eeece5}code{font-size:.9em}table{border-collapse:collapse;display:block;overflow:auto}th,td{border:1px solid #bbb;padding:.4rem .7rem}img{max-width:100%;height:auto}dt{font-weight:600}dd{margin:0 0 .75rem}blockquote{border-left:3px solid #bca18a;margin-left:0;padding-left:1rem}.notice{padding:1rem;background:#eeece5}</style>
+</head><body><nav><a href="/read/zh/index.html">内容目录</a> <a href="/?lang=zh#/blog/statarb-06-code-and-execution">交互版</a> <a href="/read/zh/blog/statarb-06-code-and-execution.md">Markdown 全文</a> <a href="/read/en/blog/statarb-06-code-and-execution.html">English</a></nav>
+<main><article><header><h1>统计套利入门 06 读懂整份代码以及从研究走到实际执行</h1><p><time datetime="2026-10-16">2026-10-16</time></p></header><div lang="zh-CN"><p>本篇基于当前可见上下文生成。它完成本轮六章讲解，依据本地 notebook、策略说明和本轮可读的公开辅助函数作静态核对。已保存输出属于作者此前的运行结果；完整复现还需要对应的数据权限、数据快照与依赖版本。</p>
+<h2 id="section-1" tabindex="-1">这一篇要解决的问题</h2>
+<p>把前五章连接成一条完整的数据与交易流程，知道每个函数负责什么、输出文件表示什么，以及这份实现中哪些细节仍需要验证。</p>
+<h2 id="section-2" tabindex="-1">正文</h2>
+<p><strong>1 先把 notebook 看成一条处理表格的流水线</strong></p>
+<p>虽然文件扩展名为 <code>.ipynb</code>，它使用的编程语言是 R。Notebook 把说明、代码、表格和图表放在同一个文件中，可以分段运行。</p>
+<p>整个过程可以先读成：</p>
+<pre><code class="language-plain">加载函数和外部数据
+    ↓
+建立股票层面的基础信号表
+    ↓
+按一个参数组合生成目标仓位
+    ↓
+把目标、价格和成本交给模拟器
+    ↓
+计算净资产、成本和绩效
+    ↓
+比较参数，再记录最终配置与输出文件
+</code></pre>
+<p>这份 notebook 的核心工作是研究与模拟。真实券商的订单提交、撤单、成交回报和断线恢复，需要另有执行系统来完成。</p>
+<p><strong>2 开头的 source 和数据加载分别做什么</strong></p>
+<p>R 的 <code>source()</code> 会读取并执行另一个 R 文件，让里面定义的函数可以使用。本地 notebook 从外部加载库初始化、统计套利辅助函数和导出辅助函数。</p>
+<p>这解释了为什么某些函数在 notebook 里只看到名字，没有看到函数体：其实现位于外部文件或安装的包中。复现需要把这些版本一起记录，不能只保存 notebook。</p>
+<p>主要输入数据为：</p>
+<div class="article-table" role="region" tabindex="0" aria-label="文章表格"><table><thead><tr><th scope="col">对象</th><th scope="col">内容</th><th scope="col">用途</th></tr></thead><tbody><tr><td><code>spreads</code></td><td>配对、偏离指标、质量排名</td><td>构建股票信号</td></tr><tr><td><code>prices</code></td><td>股票与日期对应的价格</td><td>模拟持仓价值与交易</td></tr><tr><td><code>acquisitions</code></td><td>部分收购或退市相关日期</td><td>处理对应日期的权重</td></tr><tr><td><code>short_borrow</code></td><td>历史借券相关记录</td><td>估计空头成本</td></tr><tr><td><code>bills</code></td><td>短期国债利率数据</td><td>生成每日资金利率输入</td></tr><tr><td><code>earnings</code></td><td>盈利实际值、预期值及时间信息</td><td>财报意外过滤</td></tr></tbody></table></div>
+<p>外部加载函数使用数据认证。原始配对选择和质量排名的完整研究过程，没有在这些本地文件里展开。它们是本策略能否成立的重要输入。</p>
+<p><strong>3 build_signal_base 把配对表变成股票表</strong></p>
+<p>这个函数先按 <code>QUALITY_THRESHOLD</code> 筛选配对，展开成两个方向的股票记录，再按日期与股票汇总深度、平均偏离、质量加权偏离、平均质量和一致性。</p>
+<p>输出的一行，可以理解为“某一天，A 股票得到怎样的一组综合观察”。</p>
+<p>这一步计算量较大，而许多参数实验使用同一批基础信号，因此代码只建立一次。它给结果附加质量门槛属性；若后续要求使用另一门槛，会提示重新建立基础表，避免把不同筛选条件混用。</p>
+<p><strong>4 run_backtest 是总调度函数</strong></p>
+<p>可以把它理解为：把一份配置交给这个函数，它会按这份配置走完信号到绩效的过程。</p>
+<p>按本地代码顺序，主要步骤为：</p>
+<ol>
+<li>解析进场与退出门槛，检查退出门槛不高于进场门槛。</li>
+<li>检查基础信号的质量门槛与本次要求一致。</li>
+<li>动态选择深度门槛，并按质量选择候选股票。</li>
+<li>根据深度与一致性生成 <code>cw_smooth</code> 和 <code>cw_step</code>。</li>
+<li>处理收购相关日期与信号资格状态。</li>
+<li>选择权重方案，生成基础目标权重 <code>sw</code>。</li>
+<li>在收购日清零对应权重；按配置应用财报空头过滤与缩放。</li>
+<li>将目标与价格合并，补上未持有股票的 0 权重。</li>
+<li>应用 <code>leverage</code>，再尝试处理单股权重上限。</li>
+<li>整理价格、目标、利率与借券费率，交给模拟器。</li>
+<li>从模拟的实际持仓与交易结果计算净资产、成本和指标。</li>
+</ol>
+<p>因此，“某个参数怎样影响结果”应沿着函数实际读取它的位置来判断，不能只按参数名字猜。</p>
+<p><strong>5 为什么把表格变成矩阵</strong></p>
+<p>上游表格通常长这样：</p>
+<pre><code class="language-plain">日期       股票    价格    权重
+第 1 天    A       50     +0.03
+第 1 天    B      100     −0.02
+第 2 天    A       51     +0.02
+</code></pre>
+<p>模拟器更方便接收这样的宽矩阵：每一行是同一天，每一列是同一只股票，第一列放日期。</p>
+<p>代码分别准备复权价格、未复权价格和目标权重。复权价格用于保持历史收益计算的一致性，未复权价格参与实际股数相关的费用换算。实盘订单则必须按真实可成交价格与股数处理，历史复权价格不能直接当作订单价格。</p>
+<p>几个矩阵必须同时满足：日期对齐、股票列对齐、每列代表相同股票。借券费率向量也必须与列顺序匹配。本地代码特意把股票列排序，防止股票的成本被错误套到另一列。</p>
+<p>辅助数据中可能有用于评价未来表现的前瞻收益列。未来收益可以作为事后评估目标；把它用于当时的信号或筛选，就会引入当时不可能知道的信息。本地展示的权重公式没有直接使用这些前瞻收益列。</p>
+<p><strong>6 模拟器怎样逐日推进</strong></p>
+<p>它需要知道当前价格、当前持仓、目标权重、现金、成本和交易缓冲。可以用下面的易读伪代码理解：</p>
+<pre><code class="language-plain">对每个交易日：
+    用今天价格重新计算旧持仓价值
+    计入资金利息和借券影响
+    得到当前净资产
+    根据目标与缓冲决定需要的股数
+    处理取整、费用和模拟的保证金约束
+    更新持仓与现金
+    保存当日结果
+</code></pre>
+<p>真实借券可用量、交易暂停、订单排队和个别股票的保证金要求，比这类模拟更复杂。模型处理了一部分约束，仍需要确认它们是否对应自己的执行条件。</p>
+<p>公开 R 模拟器也明确把目标日期与交易价格的正确对齐留给调用者负责。因此，提供格式正确的矩阵，还没有证明交易时间假设合理。<a href="https://raw.githubusercontent.com/Robot-Wealth/rsims/master/R/min_commission_backtest.R" target="_blank" rel="noopener noreferrer">模拟器源代码</a></p>
+<p><strong>7 run_backtest 返回哪些东西</strong></p>
+<div class="article-table" role="region" tabindex="0" aria-label="文章表格"><table><thead><tr><th scope="col">返回字段</th><th scope="col">内容</th><th scope="col">读它时要注意</th></tr></thead><tbody><tr><td><code>results</code></td><td>每日各股票的持仓与交易明细</td><td>只有 <code>keep_results = TRUE</code> 才返回</td></tr><tr><td><code>nav</code></td><td>每日净资产与本地计算的日收益</td><td>包含资金与持仓变化的结果</td></tr><tr><td><code>costs</code></td><td>佣金、利息、借券的每日汇总</td><td>费用与收入的符号不同</td></tr><tr><td><code>daily</code></td><td>持仓数量、总敞口、集中度与换手</td><td>来自缓冲与模拟执行后的结果</td></tr><tr><td><code>weights</code></td><td>函数中的 <code>sw</code> 基础目标表</td><td>位于后续杠杆和上限处理之前</td></tr><tr><td><code>metrics</code></td><td>CAGR、波动、回撤、Sharpe 等</td><td>需核对计算口径</td></tr></tbody></table></div>
+<p>从目标推导的持仓与模拟器实际成交形成的持仓，可能因缓冲、取整和约束不同而出现差异。研究时应同时看目标与实际结果。</p>
+<p><strong>8 参数实验怎样阅读</strong></p>
+<p>后面的股票数量、仓位上限、信号门槛、缓冲、进出场门槛、杠杆、资金规模和财报窗口实验，大多是在固定其他条件时改变一个因素。</p>
+<p>例如比较 40、60、80、100 只股票，是在指定的其他条件下看股票数量的影响。比较完以后，不能把每个单独实验里的最好参数拼起来，就引用其中某一行作为拼接配置的成绩。需要按完整的新配置重新运行。</p>
+<p>有些步骤存在交互：信号门槛改变实际持仓数量，持仓数量影响集中度和最低佣金，缓冲又改变哪些小仓位能建立。这也是 notebook 另做进出场门槛与缓冲联合实验的原因。</p>
+<p><strong>9 文档默认值、函数默认值与末尾示例要分开</strong></p>
+<div class="article-table" role="region" tabindex="0" aria-label="文章表格"><table><thead><tr><th scope="col">配置项</th><th scope="col">Markdown 模型组合</th><th scope="col">本地函数默认值</th><th scope="col">末尾 CHOSEN 示例</th></tr></thead><tbody><tr><td>权重方案</td><td><code>cons_quality</code></td><td><code>cons_quality</code></td><td><code>cons_step_quality</code></td></tr><tr><td>信号进入门槛</td><td>文档描述为 1</td><td>0</td><td>0.5</td></tr><tr><td>退出门槛</td><td>文档没有独立列出</td><td>默认等于进入门槛</td><td>0.25</td></tr><tr><td>财报过滤窗口</td><td>模型参数表未单列启用值</td><td>0，关闭</td><td>10 个交易日</td></tr><tr><td>单股上限</td><td>无</td><td>0，关闭</td><td><code>5 / 100 = 5%</code></td></tr></tbody></table></div>
+<p>这几套配置可以同时出现在同一份材料里，但它们对应的收益不能混用。</p>
+<p>末尾 CHOSEN 明确是展示输出形状的示例。它展示怎样记录一个选择，无法替代对个人资金、费用和操作条件的评估。</p>
+<p><strong>10 最后的文件分别有什么用途</strong></p>
+<div class="article-table" role="region" tabindex="0" aria-label="文章表格"><table><thead><tr><th scope="col">输出</th><th scope="col">用途</th></tr></thead><tbody><tr><td><code>&lt;strategy&gt;_definition.json</code></td><td>记录配置、波动估计、缓冲单位、历史范围和部分版本信息</td></tr><tr><td><code>&lt;strategy&gt;_weights.parquet</code></td><td>保存按股票和日期排列的目标表，便于组合研究</td></tr><tr><td><code>&lt;strategy&gt;_fit.rds</code></td><td>可选，保存 R 回测对象，便于重新分析</td></tr><tr><td>收益流文件</td><td>给多策略组合计算波动和相关性使用，具体格式由辅助函数决定</td></tr></tbody></table></div>
+<p>定义文件的 <code>budget</code> 为 <code>NULL</code>，表示整个账户分配多少风险给这套策略，还要在组合层面决定。</p>
+<p>其中的 envelope 来自历史模拟分位数，给总敞口、最大单股、换手和日盈亏提供参考标尺。历史 99.6% 分位没有保证未来同样有 99.6% 的覆盖率，也没有自动变成止损或最大损失承诺。</p>
+<p><strong>11 静态阅读发现的具体复现问题</strong></p>
+<p>这些观察说明还需核对的实现边界，不能单靠它们判断全部历史结果是否有效：</p>
+<div class="article-table" role="region" tabindex="0" aria-label="文章表格"><table><thead><tr><th scope="col">观察</th><th scope="col">代码依据与影响</th></tr></thead><tbody><tr><td>深度筛选说明与实现不同</td><td>文档写最小满足门槛，本地代码取最大满足门槛，应按实际配置比较</td></tr><tr><td>缓冲的导出说明与公开实现不同</td><td>导出写调到区间边缘；本轮公开底层实现越界后调到目标，并把参数读为区间总宽度，需核对运行版本</td></tr><tr><td>导出权重的位置早于杠杆和上限</td><td><code>weights = sw</code>，后面导出 <code>fit$weights</code>；模拟器接收的却是后续变换后的 <code>sim_wts</code></td></tr><tr><td>上限处理有未收敛警告</td><td>已保存输出出现仍超上限的 warning，不能只看设置的 5% 参数</td></tr><tr><td>借券成本有补齐假设</td><td>已保存输出报告 23 个 ticker 缺失借券数据并使用均值，真实成本与可借性需要另外确认</td></tr><tr><td>状态函数需要匹配依赖</td><td>Notebook 调用 <code>hold_state()</code>，本地未定义；本轮可读的公开统计套利辅助文件也未见该定义，需要确认实际加载来源与版本</td></tr><tr><td>参数名字不保证生效</td><td><code>consistency_approach</code> 在本地 <code>run_backtest()</code> 中只出现在函数参数列表；实际信号选择主要由权重分支控制</td></tr><tr><td>全局变量未自动覆盖所有调用</td><td>部分实验没有传入 <code>WEIGHTING_SCHEME</code>，会继续使用函数默认方案，改上方变量不足以证明所有实验一起改变</td></tr><tr><td><code>cost_free</code> 的含义有限</td><td>本地分支关闭佣金和借券输入，但利率矩阵仍传入模拟器，不能把这个名字当作全部资金影响都归零</td></tr></tbody></table></div>
+<p>尤其要展开第三条。假设基础 <code>sw</code> 的总敞口为 1 倍，后面设置 <code>leverage = 2</code>，模拟器会使用 2 倍权重，但 <code>fit$weights</code> 仍返回原来的 <code>sw</code>。若下游把导出表直接当作这次模拟最终使用的目标，就会出现规模偏差；应用上限时也存在同类区别。</p>
+<p>是否由下游再次施加这些变换，需要查看组合与执行层契约。仅凭当前导出文件说明，不能默认两张表已经一致。</p>
+<p>借券费率方面，本地使用跨多年的历史数据汇总每只股票的分位数。它适合表达一类成本压力假设，但不能代表历史每一天当时已知的费率，更没有表达每天能借到多少股票。</p>
+<p>这些问题分别属于说明一致性、依赖版本、数据假设与输出契约。应保留原材料，明确使用哪一套定义，再对照结果验证。</p>
+<p><strong>12 怎样从读懂代码走向可信复现</strong></p>
+<p>可以分成四个阶段，每个阶段增加的证据不同：</p>
+<p>第一，固定研究输入。保存具体代码提交、包版本、数据快照、价格调整方式、信息时间和完整参数。这样同一结果才有机会再次计算出来。</p>
+<p>第二，检查资金与交易记账。用几只股票的小例子验证多空盈亏、费用符号、现金、净资产、缓冲、清仓与权重上限。然后对完整样本重算，而不是只看最终一张图。</p>
+<p>第三，观察模拟执行与真实环境的差异。把每天生成的目标与实际市场条件对照，记录借券限制、预计成交、成交价格偏差和操作耗时。这个阶段主要检验流程是否能够实现假设中的策略。</p>
+<p>第四，再评估资金部署。根据完整账户风险预算、保证金、实际成本与结果稳定性决定规模，并持续记录模型与执行差异。模拟或很短一段观察得到盈利，仍不足以单独证明长期优势。</p>
+<p>数据过期、持仓无法对账、无法确认订单状态，与正常的策略回撤是不同问题。把它们分别记录，才能判断应恢复流程、调整假设，还是重新研究信号。</p>
+<p><strong>13 读完六章后应能解释的完整逻辑</strong></p>
+<p>这套策略尝试发现股票相对历史关系的短期偏离。它把多组配对的意见汇总到单只股票，结合深度、一致性和配对质量分配多空仓位，再通过缓冲与过滤规则控制交易。</p>
+<p>收益成立需要三个环节同时有效：上游信号确实能预测后续相对表现，仓位与风险处理能够保留这种优势，执行成本与资金约束没有把优势耗尽。</p>
+<p>研究代码展示了后两个环节中的许多实现，也使用了外部提供的上游信号。原始信号的形成、完整的样本外证据与真实执行验证，仍然决定未来是否值得配置资金。</p>
+<h2 id="section-3" tabindex="-1">小结</h2>
+<ul>
+<li>Notebook 是一条从外部数据到信号、目标、模拟和绩效的流水线。</li>
+<li>输入时间、价格标度、矩阵顺序和费用符号决定结果是否可信。</li>
+<li>参数实验、CHOSEN 示例与文档模型组合必须分别记录。</li>
+<li>导出目标与模拟最终权重的位置差异，是需要核对的具体实现问题。</li>
+<li>六章帮助读懂策略与实现；可信收益判断还需要数据、版本和真实执行证据。</li>
+</ul>
+<h2 id="section-4" tabindex="-1">下一篇预告</h2>
+<p>本轮六章讲解已经写完。后续可以根据具体问题回到某一章，用小规模演算、逐行代码核对或复现研究继续加深，不必重复整套课程。</p>
+<hr>
+<h2 id="section-5" tabindex="-1">学习反馈</h2>
+<p>你可以写：</p>
+<ol>
+<li>哪里看懂了？</li>
+<li>哪里没看懂？</li>
+<li>哪个地方想展开？</li>
+<li>这个主题和你的真实问题有什么关系？</li>
+</ol>
+<p>请写在这行下面：</p>
+<p><a href="https://app.notion.com/p/3fb6dacbbc7e81098ef8d876cfbe2af3">Notion 原文 ↗</a></p></div></article></main></body></html>

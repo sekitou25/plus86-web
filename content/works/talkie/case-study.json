@@ -1,0 +1,25 @@
+{
+  "kind": "conversation",
+  "media": [
+    {
+      "id": "conversation",
+      "type": "video",
+      "src": "media/works/talkie/conversation.mp4",
+      "poster": "media/works/talkie/conversation-poster.jpg"
+    },
+    {
+      "id": "immersive",
+      "type": "image",
+      "src": "media/works/talkie/immersive.jpg"
+    },
+    {
+      "id": "creation",
+      "type": "image",
+      "src": "media/works/talkie/creation.jpg"
+    }
+  ],
+  "copy": {
+    "zh": "../../case-studies/talkie",
+    "en": "../../en/case-studies/talkie"
+  }
+}

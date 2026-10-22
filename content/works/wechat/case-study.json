@@ -1,0 +1,25 @@
+{
+  "kind": "reading",
+  "media": [
+    {
+      "id": "browsing",
+      "type": "video",
+      "src": "media/works/wechat/reading.mp4",
+      "poster": "media/works/wechat/reading-poster.jpg"
+    },
+    {
+      "id": "account",
+      "type": "image",
+      "src": "media/works/wechat/reading-still-2.jpg"
+    },
+    {
+      "id": "feed",
+      "type": "image",
+      "src": "media/works/wechat/reading-still-1.jpg"
+    }
+  ],
+  "copy": {
+    "zh": "../../case-studies/wechat",
+    "en": "../../en/case-studies/wechat"
+  }
+}

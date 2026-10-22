@@ -1,0 +1,27 @@
+{
+  "kind": "music",
+  "media": [
+    {
+      "id": "playback",
+      "type": "video",
+      "src": "media/works/qishui/lyrics.mp4",
+      "poster": "media/works/qishui/lyrics-poster.jpg"
+    },
+    {
+      "id": "navigation",
+      "type": "video",
+      "src": "media/works/qishui/player.mp4",
+      "poster": "media/works/qishui/player-poster.jpg"
+    },
+    {
+      "id": "interaction",
+      "type": "video",
+      "src": "media/works/qishui/discovery.mp4",
+      "poster": "media/works/qishui/discovery-poster.jpg"
+    }
+  ],
+  "copy": {
+    "zh": "../../case-studies/qishui",
+    "en": "../../en/case-studies/qishui"
+  }
+}

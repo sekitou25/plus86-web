@@ -1,34 +1,34 @@
 ---
 slug: "plumber"
 title: "plumber"
-company: "Research & engineering practice"
+company: "Personal project"
 period: "In progress"
 role: "Strategy research & system development"
 category: "AI & trading"
-headline: "Connecting trading ideas into a traceable system."
-summary: "An automated trading AI agent project in progress. Connecting quantitative research with signals, risk constraints, order execution, reconciliation, and monitoring."
+headline: "Research and implementation of an automated trading agent"
+summary: "A personal project in development: strategy research, backtesting, IBKR execution, separate ledgers, and local monitoring."
 tags: ["Python", "IBKR", "Strategy research", "Execution & monitoring"]
 focus: ["Research & backtesting", "Execution & reconciliation", "Local monitoring"]
-highlights: [{"value": "Research → run", "label": "Connecting strategies to execution"}, {"value": "Separate ledgers", "label": "Isolation by strategy and environment"}, {"value": "Traceable", "label": "Logs, reconciliation & monitoring"}]
-visual: {"caption": "Trading-system workflow illustration", "label": "RESEARCH → EXECUTION", "title": "plumber", "subtitle": "Automated trading AI agent", "nodes": ["Research / Signal", "Risk checks", "Execute / Reconcile"], "footer": "Keep researching. Keep validating."}
+highlights: [{"value": "IBKR", "label": "Execution adapter"}, {"value": "Separate ledgers", "label": "Strategy and environment isolation"}, {"value": "Local monitoring", "label": "Status, fills, and logs"}]
+visual: {"caption": "Trading-system workflow illustration", "label": "RESEARCH / EXECUTION", "title": "plumber", "subtitle": "Automated trading agent", "nodes": ["Research / Signal", "Risk checks", "Execute / Reconcile"], "footer": "Personal project / In development"}
 ---
 
-## What I'm building
+## Scope
 
-plumber is an automated trading AI agent project in progress. It starts with strategy research and reproducible backtests, then connects execution, separate ledgers, reconciliation, and a local monitoring interface.
+plumber is an automated trading AI agent in development. It includes research, backtesting, execution, separate ledgers, reconciliation, and local monitoring.
 
-Research directions include risk parity, statistical arbitrage, bond seasonality, and order flow. The focus is on whether strategy hypotheses, costs, execution constraints, and parameter decisions can be explained, reproduced, and tested.
+Research covers risk parity, statistical arbitrage, bond seasonality, and order flow. Each strategy needs a record of its return hypothesis, costs, execution constraints, and parameter choices.
 
-## Connecting research to execution
+## Research and execution
 
 Research notebooks are separated from the execution layer. Shared infrastructure covers IBKR integration, connection heartbeats, safe execution, separate ledgers, and audit records. Configuration and runtime state are isolated by strategy and trading environment.
 
-Recording signal generation, orders, fills, and reconciliation makes an execution traceable, beyond its final outcome.
+The system records signal calculations, orders, fills, and reconciliation for investigating execution differences.
 
-## Making the running system visible
+## Monitoring
 
 Building a local monitoring interface for strategy status, positions, equity, fills, and redacted logs. Monitoring is separated from trading services, with explicit environment selection and stop mechanisms.
 
-## Current focus
+## Open questions
 
-Continue testing strategy behavior under costs, fill deviations, and execution failures, and improve the connections between research, execution, and monitoring. Keep a record of hypotheses, constraints, and engineering tradeoffs.
+Continue checking the effects of costs, fill deviations, and execution failures. The system remains in development; an implementation does not establish strategy validity or imply a return guarantee.

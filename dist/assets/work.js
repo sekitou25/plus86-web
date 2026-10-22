@@ -10,6 +10,7 @@ const wave='<svg viewBox="0 0 120 32" fill="none" aria-hidden="true"><path d="M2
 const pipeline='<svg viewBox="0 0 160 90" fill="none" aria-hidden="true"><path d="M12 18h45a12 12 0 0 1 12 12v30a12 12 0 0 0 12 12h67M12 72h25a12 12 0 0 0 12-12V30a12 12 0 0 1 12-12h87" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="18" r="5" fill="currentColor"/><circle cx="148" cy="72" r="5" fill="currentColor"/><circle cx="12" cy="72" r="5" stroke="currentColor" stroke-width="2"/><circle cx="148" cy="18" r="5" stroke="currentColor" stroke-width="2"/></svg>';
 
 function artwork(work){
+  if(work.caseStudy&&window.CaseStudy)return window.CaseStudy.preview(work);
   if(work.cover)return `<figure class="work-visual work-cover"><img src="${esc(work.cover)}" alt="${esc(work.coverAlt)}" loading="lazy" decoding="async">${work.coverCaption?`<figcaption>${esc(work.coverCaption)}</figcaption>`:''}</figure>`;
   const v=work.visual,nodes=v.nodes||[];
   let graphic='';
@@ -32,9 +33,11 @@ function overview(){
 function detail(slug){
   const w=works.find(w=>w.slug===slug);if(!w)return null;
   const index=works.indexOf(w),next=works[(index+1)%works.length];
+  if(w.caseStudy&&window.CaseStudy)return window.CaseStudy.page(w,{index,next});
   return `<article class="work-page work-detail"><div class="path">~ / <span>${t('nav.work')} ${esc(w.slug)}</span></div><a class="back-link" href="#/work">${t('work.back')}</a><header class="work-case-head"><div class="work-eyebrow"><span>${number(index)} <span class="work-meta-slash">/</span> ${esc(w.category)}</span><span>${esc(w.company)}</span></div><h1>${esc(w.title)}</h1><p class="work-case-headline">${esc(w.headline)}</p><p class="work-case-summary">${esc(w.summary)}</p><dl class="work-case-meta">${[['role',w.role],['period',w.period]].filter(([,value])=>value).map(([key,value])=>`<div><dt>${t('work.'+key)}</dt><dd>${esc(value)}</dd></div>`).join('')}${w.tags.length?`<div><dt>${t('work.stack')}</dt><dd>${w.tags.map(esc).join(' / ')}</dd></div>`:''}</dl></header>${artwork(w)}${w.highlights.length?`<dl class="work-results">${w.highlights.map(h=>`<div><dt>${esc(h.label)}</dt><dd>${esc(h.value)}</dd></div>`).join('')}</dl>`:''}${I18N.language==='en'&&w.contentLanguage==='zh'?`<p class="content-language-note">${t('work.originalNotice')}</p>`:''}<div class="work-case-reading"><div class="prose article-prose work-case-body" lang="${w.contentLanguage==='zh'?'zh-CN':document.documentElement.lang}">${w.body}</div>${w.toc.length?`<nav class="work-case-toc" aria-label="${t('work.contents')}"><span>${t('work.contents')}</span>${w.toc.map(item=>`<button type="button" data-work-section="${item.id}">${esc(item.title)}</button>`).join('')}</nav>`:''}</div><nav class="work-case-footer" aria-label="${t('work.indexLabel')}"><a href="#/work">${t('work.back')}</a>${works.length>1?`<a href="${url(next)}" aria-label="${t('work.nextLabel',{title:next.title})}"><span>${t('work.next')}</span><strong>${esc(next.title)} <span aria-hidden="true">↗</span></strong></a>`:''}</nav></article>`;
 }
 function mount(){
+  window.CaseStudy?.mount();
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!reduced&&typeof IntersectionObserver!=='undefined'){
     revealObserver=new IntersectionObserver(entries=>{
@@ -68,6 +71,6 @@ function mount(){
     heading?.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});heading?.focus({preventScroll:true});
   }));
 }
-function unmount(){observer?.disconnect();observer=null;revealObserver?.disconnect();revealObserver=null}
+function unmount(){window.CaseStudy?.unmount();observer?.disconnect();observer=null;revealObserver?.disconnect();revealObserver=null}
 window.Work={page:slug=>slug?detail(slug):overview(),homePreview,mount,unmount};
 })();

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Statistical Arbitrage: A Six-Chapter Learning Guide · siyuan</title><meta name="description" content="A reading path covering returns, signals, position sizing, rebalancing, risk, and implementation.">
+
+<link rel="alternate" type="text/markdown" href="/read/en/blog/statarb-learning-guide.md"><link rel="index" href="/read/index.json">
+<style>body{max-width:54rem;margin:3rem auto;padding:0 1.25rem;font:17px/1.8 system-ui,sans-serif;color:#252525;background:#faf9f5}a{color:#80503c}nav{display:flex;flex-wrap:wrap;gap:1rem}h1,h2,h3,h4{line-height:1.35}h2{margin-top:2.5rem}pre{overflow:auto;padding:1rem;background:#eeece5}code{font-size:.9em}table{border-collapse:collapse;display:block;overflow:auto}th,td{border:1px solid #bbb;padding:.4rem .7rem}img{max-width:100%;height:auto}dt{font-weight:600}dd{margin:0 0 .75rem}blockquote{border-left:3px solid #bca18a;margin-left:0;padding-left:1rem}.notice{padding:1rem;background:#eeece5}</style>
+</head><body><nav><a href="/read/en/index.html">Content index</a> <a href="/?lang=en#/blog/statarb-learning-guide">Interactive edition</a> <a href="/read/en/blog/statarb-learning-guide.md">Full Markdown</a> <a href="/read/zh/blog/statarb-learning-guide.html">中文</a></nav>
+<main><article><header><h1>Statistical Arbitrage: A Six-Chapter Learning Guide</h1><p><time datetime="2026-10-16">2026-10-16</time></p></header><p class="notice">This article is currently available in its original Chinese.</p><div lang="zh-CN"><p>这套六章讲解面向投资初学者，依据 Triangulated Stat Arb 策略说明和 R notebook，解释收益来源、信号、仓位、日常交易、风险与代码实现。六章正文已完成，可按下面顺序阅读。</p>
+<h2 id="section-1" tabindex="-1">阅读顺序</h2>
+<ol>
+<li><a href="/read/en/blog/statarb-01-how-it-makes-money.html">统计套利入门 01 策略靠什么赚钱</a>：从买入与做空开始，理解相对价格回归怎样产生盈亏。</li>
+<li><a href="/read/en/blog/statarb-02-signals.html">统计套利入门 02 怎样把相对便宜和贵变成交易信号</a>：用数字解释 z-score、配对质量、深度与意见一致性。</li>
+<li><a href="/read/en/blog/statarb-03-position-sizing.html">统计套利入门 03 怎样把信号变成实际仓位</a>：把信号变成金额与股数，理解总敞口、净敞口、杠杆和集中度。</li>
+<li><a href="/read/en/blog/statarb-04-rebalancing.html">统计套利入门 04 每天怎样调仓以及为什么有时应该不交易</a>：理解仓位漂移、交易缓冲、不同进出场门槛、财报与执行时间。</li>
+<li><a href="/read/en/blog/statarb-05-performance-and-risk.html">统计套利入门 05 怎样判断收益风险以及回测是否可信</a>：解释复合收益、波动、回撤、Sharpe、换手、成本和回测可信度。</li>
+<li><a href="/read/en/blog/statarb-06-code-and-execution.html">统计套利入门 06 读懂整份代码以及从研究走到实际执行</a>：把整份代码串起来，区分配置、模拟结果与导出文件，并记录复现问题。</li>
+</ol>
+<h2 id="section-2" tabindex="-1">怎样使用这些章节</h2>
+<p>先理解每章的数字例子，再对照代码。示例金额和参数用于讲解计算；历史绩效明确标为材料中的已保存输出。各章末尾保留学习反馈区，可以记录不清楚的地方。</p>
+<h2 id="section-3" tabindex="-1">阅读时保留的三个边界</h2>
+<ul>
+<li>上游配对与质量排名来自外部数据，本地文件没有展示完整的信号研究生产流程。</li>
+<li>历史模型收益、风险尺度调整后的展示与未来可实现收益需要分别判断。</li>
+<li>第六章记录了缓冲版本、权重导出位置、借券补齐和依赖函数等静态核对问题；完整复现仍需数据快照与匹配版本。</li>
+</ul>
+<p>本轮完成了讲解与静态阅读，课程内容可以作为后续核对数据和实现的依据。</p>
+<p><a href="https://app.notion.com/p/3fb6dacbbc7e81dea566f821d5b7aa7e">Original on Notion ↗</a></p></div></article></main></body></html>

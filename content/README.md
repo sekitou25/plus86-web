@@ -2,17 +2,25 @@
 
 页面、文章、按钮提示、站点信息和旅行文案都从 `content/` 生成。用任意编辑器打开这个文件夹即可，不用修改代码或维护文章列表。
 
+## 文案约定
+
+这次统一后的写法以事实为主：标题直接说明主题，正文写职责、实现、结果和取舍。避免用排比、口号或抽象赞语代替工作内容，不替自己下“专业”“可靠”“有品位”的结论。
+
+项目中区分个人职责与产品现状、阶段指标与实时数据、生产功能与本地演示。没有数据时不补造数字。中英文共享事实和指标，可以分别调整表达。
+
+参考 [OpenAI 公司介绍](https://openai.com/about/) 的直接陈述和 [Anthropic 工程页面](https://www.anthropic.com/engineering) 对具体问题的组织方式，不照搬品牌口号。原有研究文章和旅行记录保留作者自己的写法。
+
 | 想修改的内容 | 文件 |
 | --- | --- |
 | 昵称、标语、浏览器简介、社交账号、关注方向 | `site.json` |
 | 首页介绍 | `pages/home.md` |
 | 关于我的介绍 | `pages/about.md` |
-| 最近在做的事 | `pages/now.md` |
 | 博客标题、简介 | `pages/blog.md` |
 | 旅行页标题、简介 | `pages/travel.md` |
 | 每篇文章的标题、日期、摘要和正文 | `posts/` 内对应的 `.md` |
 | 作品集标题、开场介绍与结尾 | `pages/work.md` |
 | 每个作品的介绍、职责、成果、配图 | `works/` 内对应的 `.md` |
+| 汽水、Talkie、公众号案例页的开场、场景、工程决策与交互说明 | `case-studies/qishui/`、`case-studies/talkie/`、`case-studies/wechat/` 内的 `.md` |
 | 地点名称、照片标题、说明、随笔、日期 | `travel.json` |
 | 导航、按钮、搜索、空状态、地图和终端提示 | `interface.json` |
 | 新增图片等附件 | `media/` |
@@ -21,6 +29,8 @@
 `notion-import.json` 只记录原始目录信息，不是文章索引。现有 8 篇 Notion 笔记已经成为本地文件，后续以本目录为准，不会被 Notion 自动覆盖。
 
 作品集的详细修改方式见 `works/README.md`。新增作品只需复制 `templates/work.md` 到 `works/` 并编辑，保存后自动进入网站。
+
+汽水、Talkie 与公众号的交互案例文案另见 [case-studies/README.md](case-studies/README.md)。每个项目按 `overview.md`、`scenes.md`、`decisions.md`、`demo.md` 拆分，架构图文案在 `architecture.md`；Talkie 的对比图文案在 `results.md`，数据在中英文共用的 `metrics.json`。中文和英文文案独立编辑。
 
 首页现在以 Hero 开场，下滑展示作品。Hero 文案在 `pages/home.md`，作品区介绍在 `pages/work.md`。顶部支持中文 / EN 切换；英文修改方式见 `en/README.md`。
 
@@ -99,3 +109,7 @@ JSON 只改冒号右侧的值，保留双引号、逗号和括号；最后一项
 ## 准备发布
 
 在项目根目录执行 `python3 scripts/preview.py --build`（或 `node scripts/build-content.mjs`），然后将 `dist/` 部署到静态服务器。线上不需要 Node、Python、Notion 账号或数据库。生成的 `dist/` 无需手工修改。
+
+构建也会自动更新供搜索工具和大模型读取的独立 HTML、Markdown、`llms.txt`、全文汇总和结构化目录。不需要维护第二份文案，主导航与原有交互不变。具体地址见项目根目录 README 的「机器可读内容」。草稿、删除的文章及 `sources/` 归档不会进入这些公开文字版。
+
+正式部署后，可在 `site.json` 中添加 `url` 字段，填写网站完整根地址，构建时会一并生成 sitemap 与 canonical。尚未部署时可以不填。

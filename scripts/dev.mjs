@@ -1,4 +1,5 @@
 import http from 'node:http';
+import {createReadStream} from 'node:fs';
 import {readFile, stat, realpath} from 'node:fs/promises';
 import {join, resolve, relative, extname, sep} from 'node:path';
 import {build, root, walk} from './build-content.mjs';
@@ -10,7 +11,7 @@ let previous=await fingerprint(),busy=false;
 await build({integrity:false});
 const clients=new Set(),directory=await realpath(join(root,'dist'));
 const reloadScript=`<script>(()=>{const events=new EventSource('/__content_events');events.addEventListener('change',()=>location.reload());events.addEventListener('build-error',event=>console.warn(event.data));})();</script>`;
-const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.jpg':'image/jpeg','.jpeg':'image/jpeg','.png':'image/png','.webp':'image/webp','.gif':'image/gif','.json':'application/json; charset=utf-8','.woff2':'font/woff2','.ttf':'font/ttf','.mp4':'video/mp4'};
+const mime={'.html':'text/html; charset=utf-8','.md':'text/markdown; charset=utf-8','.txt':'text/plain; charset=utf-8','.xml':'application/xml; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.jpg':'image/jpeg','.jpeg':'image/jpeg','.png':'image/png','.webp':'image/webp','.gif':'image/gif','.json':'application/json; charset=utf-8','.woff2':'font/woff2','.ttf':'font/ttf','.mp4':'video/mp4'};
 const server=http.createServer(async(request,response)=>{
   try{
     const url=new URL(request.url,'http://localhost');
@@ -23,8 +24,23 @@ const server=http.createServer(async(request,response)=>{
     const path=resolve(directory,'.'+decodeURIComponent(url.pathname==='/'?'/index.html':url.pathname));
     const actual=await realpath(path);
     if(!actual.startsWith(directory+sep)){response.writeHead(403);response.end();return}
+    if(extname(actual).toLowerCase()==='.mp4'){
+      const {size}=await stat(actual),range=request.headers.range;
+      let start=0,end=size-1;
+      if(range){
+        const match=/^bytes=(\d*)-(\d*)$/.exec(range);
+        if(!match||(!match[1]&&!match[2])){response.writeHead(416,{'Content-Range':`bytes */${size}`});response.end();return}
+        if(!match[1])start=Math.max(0,size-Number(match[2]));
+        else{start=Number(match[1]);if(match[2])end=Math.min(size-1,Number(match[2]));}
+        if(!Number.isSafeInteger(start)||!Number.isSafeInteger(end)||start>=size||start>end||(!match[1]&&Number(match[2])===0)){response.writeHead(416,{'Content-Range':`bytes */${size}`});response.end();return}
+      }
+      response.writeHead(range?206:200,{'Content-Type':'video/mp4','Cache-Control':'no-store','Accept-Ranges':'bytes','Content-Length':end-start+1,...(range?{'Content-Range':`bytes ${start}-${end}/${size}`}:{})});
+      if(request.method==='HEAD'){response.end();return}
+      const stream=createReadStream(actual,{start,end});
+      stream.on('error',()=>response.destroy());response.on('close',()=>stream.destroy());stream.pipe(response);return;
+    }
     let bytes=await readFile(actual);
-    if(extname(actual)==='.html')bytes=Buffer.from(bytes.toString().replace('</body>',reloadScript+'</body>'));
+    if(actual===join(directory,'index.html'))bytes=Buffer.from(bytes.toString().replace('</body>',reloadScript+'</body>'));
     response.writeHead(200,{'Content-Type':mime[extname(actual)]||'application/octet-stream','Cache-Control':'no-store'});
     response.end(request.method==='HEAD'?undefined:bytes);
   }catch(error){response.writeHead(error.code==='ENOENT'?404:400);response.end('Not found')}

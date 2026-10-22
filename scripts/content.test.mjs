@@ -45,11 +45,11 @@ test('site identity, UI copy and page prose are loaded only from content',async 
   site.name='新的昵称';await writeFile(join(path,'site.json'),JSON.stringify(site));
   const ui=JSON.parse(await readFile(join(path,'interface.json'),'utf8'));
   ui.blog.empty='自己填写的空状态';await writeFile(join(path,'interface.json'),JSON.stringify(ui));
-  await writeFile(join(path,'pages/now.md'),'---\ntitle: 自己的近况\nlead: 最近在学习\n---\n\n## 新计划\n\n自己写的新段落。');
+  await writeFile(join(path,'pages/blog.md'),'---\ntitle: 自己的页面\nlead: 最近在学习\n---\n\n## 新计划\n\n自己写的新段落。');
   const result=await loadContent(path);
   assert.equal(result.site.name,'新的昵称');assert.equal(result.ui.blog.empty,'自己填写的空状态');
   assert.equal(result.pages.home.greeting,'我是 新的昵称。');assert.equal(result.pages.about.title,'你好，我是 新的昵称');
-  assert.match(result.pages.now.body,/自己写的新段落/);
+  assert.match(result.pages.blog.body,/自己写的新段落/);
   assert.ok(result.travel.entries.every(e=>e.credit==='新的昵称 的相册'));
 });
 
@@ -69,10 +69,25 @@ test('invalid content fails with file information before replacing a valid site'
 
 test('all original photos, tables and code remain in the central collection',async()=>{
   const {posts,travel}=await loadContent();
-  assert.equal(posts.length,8);assert.equal(travel.entries.length,59);
-  assert.equal(posts.reduce((n,p)=>n+(p.body.match(/<table>/g)||[]).length,0),29);
-  assert.equal(posts.reduce((n,p)=>n+(p.body.match(/<pre><code/g)||[]).length,0),36);
-  assert.ok(posts.every(p=>p.sourceUrl));
+  const imported=posts.filter(p=>p.sourceUrl?.startsWith('https://app.notion.com/'));
+  assert.equal(imported.length,8);assert.equal(travel.entries.length,59);
+  assert.equal(imported.reduce((n,p)=>n+(p.body.match(/<table>/g)||[]).length,0),29);
+  assert.equal(imported.reduce((n,p)=>n+(p.body.match(/<pre><code/g)||[]).length,0),36);
+  assert.ok(imported.every(p=>p.sourceUrl));
+});
+
+test('removed now page is absent from both languages, navigation and terminal',async()=>{
+  const content=await loadContent();
+  for(const {pages,ui} of [content,content.english]){
+    assert.equal(pages.now,undefined);
+    assert.equal(ui.nav.now,undefined);assert.equal(ui.titles.now,undefined);
+    assert.doesNotMatch(ui.cli.help+ui.cli.rootListing,/now\.md/);
+    assert.doesNotMatch(pages.about.body,/#\/now/);
+  }
+  const template=await readFile(join(root,'src/index.template.html'),'utf8');
+  assert.doesNotMatch(template,/#\/now|nav\.now/);
+  const app=await readFile(join(root,'dist/assets/app.js'),'utf8');
+  assert.doesNotMatch(app,/PAGES\.now|section==='now'|arg==='now\.md'|'travel','now'|'about\.md','now\.md'/);
 });
 
 test('portfolio discovers, orders and removes new works without a manual index',async t=>{
@@ -106,4 +121,91 @@ test('portfolio metadata rejects duplicate routes and does not embed resume cont
   assert.doesNotMatch(JSON.stringify(result.works),/\b\d{11}\b|@gmail\.com|Mobile Documents|\.local\.toml/);
   await writeFile(join(path,'works/duplicate.md'),'---\ntitle: 重复作品\nslug: plumber\n---\n\n正文。');
   await assert.rejects(loadContent(path),/重复的作品 slug/);
+});
+
+test('case studies share local media in both languages and reject unsafe or incomplete media',async t=>{
+  const path=await fixture(t),content=await loadContent(path);
+  const music=content.works.find(w=>w.slug==='qishui-music');
+  assert.equal(music.caseStudy.media.length,3);
+  assert.match(music.caseStudy.media[0].src,/^\/assets\/content\/works\/qishui\/.+\.mp4$/);
+  assert.deepEqual(content.english.works.find(w=>w.slug===music.slug).caseStudy.media,music.caseStudy.media);
+  const file=join(path,'works/qishui/case-study.json'),original=JSON.parse(await readFile(file,'utf8'));
+  const save=async mutate=>{const data=structuredClone(original);mutate(data);await writeFile(file,JSON.stringify(data));};
+  await save(data=>{data.media[0].src='media/../../site.json';});
+  await assert.rejects(loadContent(path),/媒体文件不能超出 content\/media/);
+  await save(data=>{delete data.media[0].poster;});
+  await assert.rejects(loadContent(path),/视频需要 poster/);
+  await save(data=>{data.media[1].id=data.media[0].id;});
+  await assert.rejects(loadContent(path),/重复或无效的媒体 id/);
+  await writeFile(file,JSON.stringify(original));
+  const scenes=join(path,'en/case-studies/qishui/scenes.md'),source=await readFile(scenes,'utf8');
+  await writeFile(scenes,source.slice(0,source.lastIndexOf('\n## ')));
+  await assert.rejects(loadContent(path),/场景文案与媒体数量不一致/);
+});
+
+test('Markdown case-study edits update only the intended language and do not publish extra works',async t=>{
+  const path=await fixture(t),before=await loadContent(path);
+  const overview=join(path,'case-studies/talkie/overview.md');
+  const intro='这是手动修改后的介绍。\n\n保留第二段，便于继续编辑。';
+  const source=await readFile(overview,'utf8'),header=source.slice(0,source.indexOf('\n---\n',4)+5);
+  await writeFile(overview,header+'\n'+intro+'\n');
+  const decisions=join(path,'case-studies/talkie/decisions.md'),prose=await readFile(decisions,'utf8');
+  await writeFile(decisions,prose.replace('## '+before.works.find(work=>work.slug==='talkie-xingye').caseStudy.copy.zh.decisions[0].title,'## 自己填写的工程决策'));
+  const sceneFile=join(path,'case-studies/talkie/scenes.md'),sceneSource=await readFile(sceneFile,'utf8');
+  const sceneStart=sceneSource.indexOf('\n## '),sceneBlocks=sceneSource.slice(sceneStart).split(/(?=\n## )/).filter(Boolean);
+  await writeFile(sceneFile,sceneSource.slice(0,sceneStart)+sceneBlocks.reverse().join(''));
+  const after=await loadContent(path),work=after.works.find(w=>w.slug==='talkie-xingye');
+  assert.equal(work.caseStudy.copy.zh.intro,intro);
+  assert.equal(work.caseStudy.copy.zh.decisions[0].title,'自己填写的工程决策');
+  assert.deepEqual(work.caseStudy.copy.zh.scenes,before.works.find(w=>w.slug===work.slug).caseStudy.copy.zh.scenes);
+  assert.deepEqual(work.caseStudy.copy.en,before.works.find(w=>w.slug===work.slug).caseStudy.copy.en);
+  assert.deepEqual(after.works.map(w=>w.slug),before.works.map(w=>w.slug));
+  await writeFile(decisions,prose.replace('### 工程实现','## 工程实现'));
+  await assert.rejects(loadContent(path),/case-studies\/talkie\/decisions.md.*###/);
+});
+
+test('architecture copy is editable and comparison charts share validated source data',async t=>{
+  const path=await fixture(t),content=await loadContent(path);
+  const talkie=content.works.find(work=>work.slug==='talkie-xingye').caseStudy.copy;
+  assert.equal(talkie.zh.architecture.layers.length,3);
+  assert.ok(talkie.zh.architecture.layers.flatMap(layer=>layer.nodes).some(node=>node.id===talkie.zh.architecture.defaultNode));
+  const numeric=copy=>copy.results.metrics.map(({id,before,after,axisMax,unit,direction})=>({id,before,after,axisMax,unit,direction}));
+  assert.deepEqual(numeric(talkie.zh),numeric(talkie.en));
+  const file=join(path,'case-studies/talkie/architecture.md'),original=await readFile(file,'utf8');
+  await writeFile(file,original.replace('### connection | 自建长连接','### connection | 自己修改的连接模块'));
+  const changed=(await loadContent(path)).works.find(work=>work.slug==='talkie-xingye').caseStudy.copy;
+  assert.equal(changed.zh.architecture.layers.flatMap(layer=>layer.nodes).find(node=>node.id==='connection').title,'自己修改的连接模块');
+  assert.deepEqual(changed.en.architecture,talkie.en.architecture);
+  await writeFile(file,original.replace('defaultNode: "connection"','defaultNode: "missing-node"'));
+  await assert.rejects(loadContent(path),/architecture.md.*defaultNode/);
+  await writeFile(file,original);
+  const dataFile=join(path,'case-studies/talkie/metrics.json'),data=JSON.parse(await readFile(dataFile,'utf8'));
+  await writeFile(dataFile,JSON.stringify(data.map((metric,i)=>i===0?{...metric,after:metric.axisMax+1}:metric)));
+  await assert.rejects(loadContent(path),/results.md.*有效坐标范围/);
+  await writeFile(dataFile,JSON.stringify(data.map(metric=>metric.unit==='index'?{...metric,before:90}:metric)));
+  await assert.rejects(loadContent(path),/优化前 100/);
+});
+
+test('WeChat shares recording stills, keeps copy editable and validates the reading explainer',async t=>{
+  const path=await fixture(t),content=await loadContent(path);
+  const work=content.works.find(work=>work.slug==='wechat-official-accounts');
+  assert.equal(content.works.length,4);assert.equal(work.caseStudy.kind,'reading');
+  assert.equal(work.caseStudy.media.length,3);
+  assert.match(work.caseStudy.media[0].src,/\/works\/wechat\/reading\.mp4$/);
+  assert.deepEqual(content.english.works.find(item=>item.slug===work.slug).caseStudy.media,work.caseStudy.media);
+  assert.equal(work.caseStudy.copy.zh.lab.cards.length,4);
+  assert.equal(work.caseStudy.copy.zh.architecture.layers.length,3);
+  assert.equal(work.caseStudy.copy.zh.results,undefined);
+  assert.doesNotMatch(JSON.stringify(work),/reading-original|xwechat_files|wxid_/);
+  const overview=join(path,'case-studies/wechat/overview.md'),source=await readFile(overview,'utf8');
+  await writeFile(overview,source.replace(/^title:.*$/m,'title: "自己修改的开场"'));
+  const demo=join(path,'case-studies/wechat/demo.md'),original=await readFile(demo,'utf8');
+  await writeFile(demo,original.replace(work.caseStudy.copy.zh.lab.cards[0].title,'自己修改的示意卡片'));
+  const updated=(await loadContent(path)).works.find(item=>item.slug===work.slug).caseStudy.copy;
+  assert.match(updated.zh.title,/自己修改的开场/);
+  assert.equal(updated.zh.lab.cards[0].title,'自己修改的示意卡片');
+  assert.deepEqual(updated.en,work.caseStudy.copy.en);
+  const cards=JSON.stringify(work.caseStudy.copy.zh.lab.cards);
+  await writeFile(demo,original.replace(cards,JSON.stringify(work.caseStudy.copy.zh.lab.cards.slice(0,3))));
+  await assert.rejects(loadContent(path),/阅读演示需要四张内容卡片/);
 });

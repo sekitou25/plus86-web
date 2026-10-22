@@ -1,23 +1,22 @@
 ---
 title: "Hello, I'm {name}"
-lead: "Learning quantitative investing, and recording life through photographs and words."
-note: "The blog includes learning notes from my Notion notebook on investing and trading."
+lead: "Software engineer with five years of experience. I started in iOS, began moving into full-stack work in 2023, and have recently focused on AI applications."
 ---
 
-## What I'm exploring
+## Work
 
-I'm learning about statistical arbitrage in US equities and reading papers on momentum, factor investing, and the relationship between trading volume and prices.
+At Qishui Music, I worked on the player and home screen. At MiniMax, I owned messaging, networking infrastructure, and stability work for Talkie / Xingye. I now contribute to the WeChat Official Accounts client.
 
-I want to understand where a strategy's returns might come from, what risks it takes, which assumptions its backtest depends on, and how code turns those ideas into signals and positions.
+[Project pages](#/work) cover the scope, implementation, and results of that work.
 
-## Working through the questions
+## Research and personal projects
 
-I prefer concrete explanations: begin with an example, then work through the concepts, formulas, and implementation. When something is unclear, break it into smaller questions and keep going.
+I'm researching US-equity statistical arbitrage, momentum, and factor investing, alongside an automated trading agent called plumber. My notes cover return hypotheses, risk, backtest assumptions, and the implementation of signals and positions.
 
-## Beyond research
+The work is ongoing. Building the system and establishing whether a strategy works require separate validation.
 
-This site also has room for travel, photographs, and everyday notes. I like bringing a place together with its images and memories, gradually turning them into a personal record.
+## Outside work
 
-## About this site
+I keep travel photographs, reading notes, and personal records here.
 
-[Writing](#/blog) holds longer thoughts, [travel](#/travel) collects photographs and notes from the road, and [now](#/now) records what I'm doing recently.
+[Writing](#/blog) contains research and learning notes, and [travel](#/travel) organizes photographs by place.

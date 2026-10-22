@@ -1,9 +1,9 @@
 ---
-title: "把体验做细，\n把系统做稳。"
+title: "客户端工程与\nAI 应用开发"
 greeting: "我是 {name}。"
-heroOverline: SELECTED WORK / ENGINEERING & CRAFT
-heroRole: iOS 工程师 · 产品与系统
-scrollLabel: 向下探索作品
+heroOverline: SOFTWARE ENGINEERING
+heroRole: 客户端开发 · AI 应用
+scrollLabel: 查看项目
 ---
 
-从音乐播放器、AI 对话，到微信内容体验与自动交易 Agent。这里记录我参与过的产品，以及正在推进的探索。
+我参与过汽水音乐、Talkie / 星野和微信公众号的客户端开发，做过播放器、消息系统和推荐流。目前也在研究 AI Agent 与自动交易系统。

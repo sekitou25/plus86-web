@@ -34,7 +34,7 @@ test('every saved article retains all tables and fenced code blocks', async () =
   const {readdir}=await import('node:fs/promises');
   const files=(await readdir(directory)).filter(file=>file.endsWith('.md'));
   const manifest={posts:await Promise.all(files.map(async file=>({...parseDocument(await readFile(new URL(file,directory),'utf8')).meta,file})))};
-  assert.equal(manifest.posts.length, 8);
+  assert.equal(manifest.posts.filter(post=>post.format==='notion').length, 8);
   for (const page of manifest.posts) {
     const {body:markdown} = parseDocument(await readFile(new URL(page.file,directory),'utf8'));
     const {html} = renderNotion(markdown, manifest.posts);

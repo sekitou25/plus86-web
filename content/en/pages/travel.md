@@ -1,5 +1,5 @@
 ---
-title: "Places passed, moments kept"
-lead: "The places I've been, the photographs I took, and the words left unwritten."
-eyebrow: "A FIELD JOURNAL / ON THE ROAD"
+title: "Travel"
+lead: "Photographs and travel notes, organized by place."
+eyebrow: "PHOTOGRAPHS & NOTES"
 ---
