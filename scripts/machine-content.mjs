@@ -65,6 +65,12 @@ function projectBody(work,data,language){
       return heading(3,metric.title)+fields([[r.beforeLabel,metric.before+' '+unit],[r.afterLabel,metric.after+' '+unit]])+p(metric.description);
     }).join('');
   }
+  if(copy.evidence){
+    const e=copy.evidence,r=e.run;
+    html+=heading(2,e.title)+p(e.lead)+p(e.environmentLabel)+p(`${r.date} / ${r.device} / ${r.os} / ${r.appName} ${r.appVersion}`);
+    html+=fields([[e.executedLabel,r.executed],[e.recordingsLabel,r.recordings],[e.durationLabel,Math.floor(r.durationSeconds/60)+':'+String(r.durationSeconds%60).padStart(2,'0')],[e.infraLabel,r.infrastructureErrors],[e.modelLabel,r.modelCalls]]);
+    html+=r.outcomes.map(item=>heading(3,item.title+' / '+item.count)+p(item.description)).join('')+p(e.note);
+  }
   html+=heading(2,copy.storyTitle)+p(copy.storyLead)+copy.decisions.map(decision=>heading(3,decision.title)+fields([
     [ui.caseStudy.experience,decision.experience],[ui.caseStudy.engineering,decision.engineering],[ui.caseStudy.tradeoff,decision.tradeoff]
   ])).join('');
@@ -73,6 +79,7 @@ function projectBody(work,data,language){
   html+=lab.stages.map((stage,index)=>heading(3,`${index+1}. ${stage.title}`)+fields([[n.normal,stage.detail],[n.comparison,stage.prepared]])).join('');
   // Include every textual state, not just the state mounted by the interactive UI.
   html+=heading(3,n.state)+fields(Object.entries(lab).filter(([key,value])=>typeof value==='string'&&!['title','lead','footnote'].includes(key)));
+  if(lab.verdicts)html+=list(lab.verdicts)+list(lab.completions);
   if(lab.cards)html+=heading(3,n.cards)+list(lab.cards.map(card=>card.title+' / '+card.category));
   if(lab.replacement)html+=heading(3,n.replacement)+p(lab.replacement.title+' / '+lab.replacement.category);
   return html+heading(2,ui.caseStudy.notes)+work.body;

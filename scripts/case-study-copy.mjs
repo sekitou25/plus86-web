@@ -44,7 +44,7 @@ export async function loadCaseStudyCopy(reference,manifest,directory,mediaIds,{p
   const required=(meta,keys,label)=>{
     for(const key of keys)if(typeof meta[key]!=='string'||!meta[key].trim())throw new Error(`${label}: ${key} 需要文字`);
   };
-  let architecture,results;
+  let architecture,results,evidence;
   const architectureDocument=await document('architecture.md',true);
   if(architectureDocument){
     const {meta,body,label}=architectureDocument,nodeIds=new Set(),layerIds=new Set();
@@ -89,5 +89,23 @@ export async function loadCaseStudyCopy(reference,manifest,directory,mediaIds,{p
     if(text.size!==metrics.length)throw new Error(`${label}: 图表文案与数据数量不一致`);
     results={...meta,metrics:metrics.map(metric=>({...metric,...text.get(metric.id)}))};
   }
-  return {...overview.meta,intro:overview.body.trim(),scenes:mediaIds.map(id=>sceneMap.get(id)),storyTitle:decisionDocument.meta.title,storyLead:decisionDocument.meta.lead,decisions,lab:{...labDocument.meta,stages},...(architecture?{architecture}:{}),...(results?{results}:{})};
+  const evidenceDocument=await document('evidence.md',true);
+  if(evidenceDocument){
+    const {meta,body,label}=evidenceDocument;
+    required(meta,['kicker','title','lead','note','environmentLabel','executedLabel','recordingsLabel','durationLabel','infraLabel','modelLabel','data'],label);
+    const path=resolve(folder,meta.data);
+    if(!allowed.some(root=>path.startsWith(root+sep))||!path.endsWith('.json'))throw new Error(`${label}: 运行数据需要使用 case-studies/ 中的 JSON 文件`);
+    let run;try{run=JSON.parse(await readFile(path,'utf8'));}catch(error){throw new Error(`${relative(directory,path)}: ${error.message}`);}
+    const validDate=typeof run.date==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(run.date)&&!Number.isNaN(Date.parse(run.date))&&new Date(run.date).toISOString().slice(0,10)===run.date;
+    if(!validDate)throw new Error(`${label}: 运行日期无效`);
+    required(run,['device','os','appName','appVersion'],label);
+    const counts=['durationSeconds','executed','recordings','infrastructureErrors','modelCalls'];
+    if(counts.some(key=>!Number.isSafeInteger(run[key])||run[key]<0)||run.executed===0||run.durationSeconds===0||run.recordings>run.executed||run.infrastructureErrors>run.executed)throw new Error(`${label}: 运行数值或证据数量无效`);
+    const ids=['passed','failed','inconclusive'];
+    if(!Array.isArray(run.outcomes)||run.outcomes.length!==ids.length||run.outcomes.some((item,index)=>item.id!==ids[index]||!Number.isSafeInteger(item.count)||item.count<0)||run.outcomes.reduce((n,item)=>n+item.count,0)!==run.executed)throw new Error(`${label}: 结论数量必须与实际执行总数一致`);
+    const descriptions=sections(body,2,label).map(section=>({...labeled(section.title,label),description:section.body}));
+    if(descriptions.length!==ids.length||descriptions.some((item,index)=>item.id!==ids[index]||!item.description.trim()))throw new Error(`${label}: 请保留 passed、failed、inconclusive 三类结论文案`);
+    evidence={...meta,run:{...run,outcomes:run.outcomes.map((item,index)=>({...item,...descriptions[index]}))}};
+  }
+  return {...overview.meta,intro:overview.body.trim(),scenes:mediaIds.map(id=>sceneMap.get(id)),storyTitle:decisionDocument.meta.title,storyLead:decisionDocument.meta.lead,decisions,lab:{...labDocument.meta,stages},...(architecture?{architecture}:{}),...(results?{results}:{}),...(evidence?{evidence}:{})};
 }

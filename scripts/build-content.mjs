@@ -62,7 +62,7 @@ async function loadCaseStudy(value, workPath, directory) {
   const path=resolve(dirname(workPath),value),label=relative(directory,path);
   if (!path.startsWith(join(directory,'works')+sep)||extname(path)!=='.json') throw new Error('caseStudy 需要位于 content/works/ 中的 JSON 文件');
   const data=await jsonFile(path);
-  if(!['music','conversation','reading'].includes(data.kind)||!Array.isArray(data.media)||!data.media.length)throw new Error(`${label}: caseStudy 需要 kind 和 media`);
+  if(!['music','conversation','reading','qa'].includes(data.kind)||!Array.isArray(data.media)||!data.media.length)throw new Error(`${label}: caseStudy 需要 kind 和 media`);
   const ids=new Set();
   const asset=async value=>{
     if(typeof value!=='string'||!value.startsWith('media/'))throw new Error(`${label}: 媒体文件请放在 content/media/`);
@@ -92,6 +92,12 @@ async function loadCaseStudy(value, workPath, directory) {
     if(copy.lab?.modes?.length!==2||copy.lab?.stages?.length!==4)throw new Error(`${label}: 交互演示需要两个场景与四个步骤`);
     for(const key of ['title','lead','start','running','resume','idle','complete','stalled','sample','output','outputRunning','outputComplete','footnote'])requireText(copy.lab[key],`${label}: ${language}.lab.${key}`);
     for(const stage of copy.lab.stages)for(const key of ['title','detail','prepared'])requireText(stage[key],`${label}: ${language}.lab.stages.${key}`);
+    if(data.kind==='qa'){
+      requireText(copy.mediaTitle,`${label}: ${language}.mediaTitle`);
+      if(!Array.isArray(copy.previewNodes)||copy.previewNodes.length!==3||copy.previewNodes.some(value=>typeof value!=='string'||!value.trim()))throw new Error(`${label}: QA 封面需要三个流程标签`);
+      for(const key of ['verdicts','completions'])if(!Array.isArray(copy.lab[key])||copy.lab[key].length!==2||copy.lab[key].some(value=>typeof value!=='string'||!value.trim()))throw new Error(`${label}: QA 演示需要两种 ${key}`);
+      if(!copy.evidence)throw new Error(`${label}: QA 案例需要运行数据与结论范围`);
+    }
     if(data.kind==='reading'){
       for(const key of ['feedLabel','selectedLabel','updatedLabel','retainedLabel'])requireText(copy.lab[key],`${label}: ${language}.lab.${key}`);
       if(!Array.isArray(copy.lab.cards)||copy.lab.cards.length!==4)throw new Error(`${label}: 阅读演示需要四张内容卡片`);
