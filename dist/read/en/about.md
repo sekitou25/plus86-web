@@ -25,8 +25,18 @@ I keep travel photographs, reading notes, and personal records here.
 
 [Writing](/read/en/blog.html) contains research and learning notes, and [travel](/read/en/travel.html) organizes photographs by place.
 
+Email: [wendaoliu40@gmail.com](mailto:wendaoliu40@gmail.com).
+
 - **Name**: siyuan
 
 - **Focus**: plumber - a trading agent / momentum
 
 - **Offscreen**: travel / photos / notes
+
+- **instagram**: https://www.instagram.com/ryandrinkscoffee/
+
+- **threads**: https://www.threads.com/@ryandrinkscoffee
+
+- **wechat**: LumenAnnex
+
+- **x**: https://x.com/MidnightAckX

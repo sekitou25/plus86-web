@@ -1,25 +1,26 @@
 {
   "name": "siyuan",
   "handle": "siyuan",
+  "email": "wendaoliu40@gmail.com",
   "tagline": "software, notes & photographs",
   "metaDescription": "{name}，软件工程师。这里记录客户端与 AI 应用开发、个人项目、研究笔记和旅行照片。",
   "headerNote": "software engineer",
   "sidebarStatus": "personal website",
   "socials": {
     "instagram": {
-      "username": "",
-      "url": ""
+      "username": "ryandrinkscoffee",
+      "url": "https://www.instagram.com/ryandrinkscoffee/"
     },
     "threads": {
-      "username": "",
-      "url": ""
+      "username": "ryandrinkscoffee",
+      "url": "https://www.threads.com/@ryandrinkscoffee"
     },
     "wechat": {
-      "username": ""
+      "username": "LumenAnnex"
     },
     "x": {
-      "username": "",
-      "url": ""
+      "username": "MidnightAckX",
+      "url": "https://x.com/MidnightAckX"
     }
   },
   "profile": {

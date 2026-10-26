@@ -3,25 +3,26 @@ window.ENGLISH_CONTENT = {
   "site": {
     "name": "siyuan",
     "handle": "siyuan",
+    "email": "wendaoliu40@gmail.com",
     "tagline": "software, notes & photographs",
     "metaDescription": "{name} is a software engineer working on client applications and AI. Selected projects, research notes, and travel photographs.",
     "headerNote": "software engineer",
     "sidebarStatus": "personal website",
     "socials": {
       "instagram": {
-        "username": "",
-        "url": ""
+        "username": "ryandrinkscoffee",
+        "url": "https://www.instagram.com/ryandrinkscoffee/"
       },
       "threads": {
-        "username": "",
-        "url": ""
+        "username": "ryandrinkscoffee",
+        "url": "https://www.threads.com/@ryandrinkscoffee"
       },
       "wechat": {
-        "username": ""
+        "username": "LumenAnnex"
       },
       "x": {
-        "username": "",
-        "url": ""
+        "username": "MidnightAckX",
+        "url": "https://x.com/MidnightAckX"
       }
     },
     "profile": {
@@ -314,8 +315,8 @@ window.ENGLISH_CONTENT = {
     "about": {
       "title": "Hello, I'm siyuan",
       "lead": "Software engineer with five years of experience. I started in iOS, began moving into full-stack work in 2023, and have recently focused on AI applications.",
-      "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">Work\u003c/h2>\n\u003cp>At Qishui Music, I worked on the player and home screen. At MiniMax, I owned messaging, networking infrastructure, and stability work for Talkie / Xingye. I now contribute to the WeChat Official Accounts client.\u003c/p>\n\u003cp>\u003ca href=\"#/work\">Project pages\u003c/a> cover the scope, implementation, and results of that work.\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Research and personal projects\u003c/h2>\n\u003cp>I&#39;m researching US-equity statistical arbitrage, momentum, and factor investing, alongside an automated trading agent called plumber. My notes cover return hypotheses, risk, backtest assumptions, and the implementation of signals and positions.\u003c/p>\n\u003cp>The work is ongoing. Building the system and establishing whether a strategy works require separate validation.\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">Outside work\u003c/h2>\n\u003cp>I keep travel photographs, reading notes, and personal records here.\u003c/p>\n\u003cp>\u003ca href=\"#/blog\">Writing\u003c/a> contains research and learning notes, and \u003ca href=\"#/travel\">travel\u003c/a> organizes photographs by place.\u003c/p>\n",
-      "text": "Work At Qishui Music, I worked on the player and home screen. At MiniMax, I owned messaging, networking infrastructure, and stability work for Talkie / Xingye. I now contribute to the WeChat Official Accounts client. Project pages cover the scope, implementation, and results of that work. Research and personal projects I'm researching US-equity statistical arbitrage, momentum, and factor investing, alongside an automated trading agent called plumber. My notes cover return hypotheses, risk, backtest assumptions, and the implementation of signals and positions. The work is ongoing. Building the system and establishing whether a strategy works require separate validation. Outside work I keep travel photographs, reading notes, and personal records here. Writing contains research and learning notes, and travel organizes photographs by place.",
+      "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">Work\u003c/h2>\n\u003cp>At Qishui Music, I worked on the player and home screen. At MiniMax, I owned messaging, networking infrastructure, and stability work for Talkie / Xingye. I now contribute to the WeChat Official Accounts client.\u003c/p>\n\u003cp>\u003ca href=\"#/work\">Project pages\u003c/a> cover the scope, implementation, and results of that work.\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">Research and personal projects\u003c/h2>\n\u003cp>I&#39;m researching US-equity statistical arbitrage, momentum, and factor investing, alongside an automated trading agent called plumber. My notes cover return hypotheses, risk, backtest assumptions, and the implementation of signals and positions.\u003c/p>\n\u003cp>The work is ongoing. Building the system and establishing whether a strategy works require separate validation.\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">Outside work\u003c/h2>\n\u003cp>I keep travel photographs, reading notes, and personal records here.\u003c/p>\n\u003cp>\u003ca href=\"#/blog\">Writing\u003c/a> contains research and learning notes, and \u003ca href=\"#/travel\">travel\u003c/a> organizes photographs by place.\u003c/p>\n\u003cp>Email: \u003ca href=\"mailto:wendaoliu40@gmail.com\">wendaoliu40@gmail.com\u003c/a>.\u003c/p>\n",
+      "text": "Work At Qishui Music, I worked on the player and home screen. At MiniMax, I owned messaging, networking infrastructure, and stability work for Talkie / Xingye. I now contribute to the WeChat Official Accounts client. Project pages cover the scope, implementation, and results of that work. Research and personal projects I'm researching US-equity statistical arbitrage, momentum, and factor investing, alongside an automated trading agent called plumber. My notes cover return hypotheses, risk, backtest assumptions, and the implementation of signals and positions. The work is ongoing. Building the system and establishing whether a strategy works require separate validation. Outside work I keep travel photographs, reading notes, and personal records here. Writing contains research and learning notes, and travel organizes photographs by place. Email: wendaoliu40@gmail.com .",
       "contentLanguage": "en"
     },
     "blog": {

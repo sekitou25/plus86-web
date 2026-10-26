@@ -20,3 +20,5 @@ The work is ongoing. Building the system and establishing whether a strategy wor
 I keep travel photographs, reading notes, and personal records here.
 
 [Writing](#/blog) contains research and learning notes, and [travel](#/travel) organizes photographs by place.
+
+Email: [{email}](mailto:{email}).

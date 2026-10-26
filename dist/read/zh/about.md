@@ -30,8 +30,18 @@ P.S 在交易上尝试了很多方法，price action、ICT、etc。最终还是�
 
 [写作](/read/zh/blog.html) 主要是研究与学习笔记，[旅行](/read/zh/travel.html) 记录一些看过的风景。
 
+邮箱：[wendaoliu40@gmail.com](mailto:wendaoliu40@gmail.com)。
+
 - **Name**: siyuan
 
 - **Focus**: plumber - a trading agent / momentum
 
 - **Offscreen**: travel / photos / notes
+
+- **instagram**: https://www.instagram.com/ryandrinkscoffee/
+
+- **threads**: https://www.threads.com/@ryandrinkscoffee
+
+- **wechat**: LumenAnnex
+
+- **x**: https://x.com/MidnightAckX
