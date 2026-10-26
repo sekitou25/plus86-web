@@ -92,7 +92,7 @@ test('removed now page is absent from both languages, navigation and terminal',a
 
 test('portfolio discovers, orders and removes new works without a manual index',async t=>{
   const path=await fixture(t),initial=await loadContent(path);
-  assert.deepEqual(initial.works.map(w=>w.slug),['qishui-music','talkie-xingye','wechat-official-accounts','visual-agent']);
+  assert.deepEqual(initial.works.map(w=>w.slug),['visual-agent','talkie-xingye','qishui-music','wechat-official-accounts']);
   await mkdir(join(path,'works/nested'));
   const file=join(path,'works/nested/new-work.md');
   await writeFile(file,'---\ntitle: 新作品\norder: 0\n---\n\n## 我的贡献\n\n一项新的实践。');

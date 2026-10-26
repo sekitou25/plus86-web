@@ -34,6 +34,26 @@ function readerLinks(html,language){
 }
 const link=(url,title)=>`<a href="${esc(url)}">${esc(title)}</a>`;
 
+function professionalProfile(data,language){
+  const home=data.pages.home;
+  return heading(3,language==='zh'?'个人简介':'Professional profile')
+    +p(data.pages.about.lead)+p(home.heroSpecialty)+home.body
+    +heading(4,home.heroStandardLabel)+p(home.heroStandard);
+}
+
+function professionalContacts(data,language){
+  const items=[];
+  if(data.site.email)items.push(link('mailto:'+data.site.email,(language==='zh'?'邮箱':'Email')+': '+data.site.email));
+  for(const platform of data.ui.social.platforms){
+    const profile=data.site.socials?.[platform.id];
+    if(!profile?.url&&!profile?.username)continue;
+    const account=profile.username?(platform.id==='wechat'?profile.username:'@'+profile.username.replace(/^@/,'')):profile.url;
+    const text=platform.name+': '+account;
+    items.push(profile.url?link(profile.url,text):esc(text));
+  }
+  return heading(3,data.ui.social.title)+(items.length?`<ul>${items.map(item=>`<li>${item}</li>`).join('')}</ul>`:'');
+}
+
 function projectBody(work,data,language){
   const n=names[language],ui=data.ui,copy=work.caseStudy?.copy[language];
   let html=p(work.headline)+p(work.summary)+heading(2,n.metadata)+fields([
@@ -197,13 +217,25 @@ export function buildMachineContent(content){
   }
   const index={version:1,site:content.site.name,siteUrl:origin||null,languages:LANGUAGES,counts:{posts:content.posts.length,works:content.works.length,travel:content.travel.entries.length,fullyTranslatedEnglishPosts:content.english.posts.filter(post=>post.contentLanguage==='en').length},documents:documents.map(({body,...doc})=>doc)};
   outputs.set('read/index.json',scriptSafe(index)+'\n');
-  const introduction=`# ${content.site.name}\n\n> ${content.site.metaDescription.replace(/\{name\}/g,content.site.name)}\n\nThis is a personal portfolio, research notebook, and travel journal. The text editions below contain the same published content as the interactive website and require no JavaScript. They are public, human-readable editions, not private or extra resume material.\n\n`;
-  let llms=introduction+'## Entry points\n\n- [中文内容目录](/read/zh/index.html)\n- [English content index](/read/en/index.html)\n- [Structured content index](/read/index.json)\n- [Complete text, both languages](/llms-full.txt)\n\n## Reading notes\n\n- Each HTML page links to its Markdown edition and language counterpart.\n- English pages with Chinese-only bodies are explicitly labeled; sourceLanguage in the index records this.\n- Project metrics are historical, with their original scope, units, and caveats. Architecture nodes, all metrics, demo modes, and demo stages are expanded as text.\n- Demo flows are illustrative, not production integrations. Media descriptions are not complete video transcripts.\n- Read the linked documents for content; this directory does not guarantee that every crawler will retrieve or index them.\n';
+  const introduction=`# ${content.site.displayName||content.site.name}\n\n> ${content.pages.home.heroRole}\n\n`;
+  let llms=introduction+'[完整工作介绍（中英文） / Full professional profile and projects](/llms-full.txt)\n';
+  let full=introduction;
   for(const language of LANGUAGES){
-    llms+=`\n## ${language==='zh'?'中文':'English'}\n\n`+documents.filter(doc=>doc.language===language).map(doc=>`- [${doc.title.replace(/\n/g,' ')}](${doc.markdown}): ${doc.kind}${doc.sourceLanguage!==language?' — body in '+doc.sourceLanguage:''}`).join('\n')+'\n';
+    const data=language==='zh'?content:content.english,workPage=data.pages.work,guide=workPage.llmsGuide;
+    if(typeof guide!=='string'||!guide.trim())throw new Error(`content/${language==='en'?'en/':''}pages/work.md: llmsGuide 需要填写工作阅读指引`);
+    const start=`\n## ${language==='zh'?'中文':'English'}\n\n${guide}\n\n${htmlToMarkdown(professionalProfile(data,language))}\n`;
+    const contacts=htmlToMarkdown(professionalContacts(data,language));
+    const overview=htmlToMarkdown(heading(3,data.ui.nav.work)+p(workPage.lead));
+    const projects=data.works.map((work,index)=>{
+      const url=readerPath(language,'project',work.slug,'md');
+      return `#### ${index+1}. [${work.title.replace(/\n/g,' ')}](${url})\n\n${htmlToMarkdown(p(data.ui.work.role+': '+work.role)+p(work.headline)+p(work.summary))}`;
+    }).join('\n');
+    llms+=start+overview+'\n'+projects+'\n'+contacts;
+    const details=data.works.map(work=>outputs.get(outputKey(readerPath(language,'project',work.slug,'md'))));
+    full+=start+overview+details.map(markdown=>'\n---\n\n'+markdown).join('\n')+'\n'+contacts;
   }
   outputs.set('llms.txt',llms);
-  outputs.set('llms-full.txt',introduction+documents.map(doc=>`\n---\n\n${outputs.get(outputKey(doc.markdown))}`).join('\n'));
+  outputs.set('llms-full.txt',full);
   outputs.set('robots.txt','User-agent: *\nAllow: /\n'+(origin?`\nSitemap: ${origin}/sitemap.xml\n`:''));
   if(origin)outputs.set('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+['/',...documents.map(doc=>doc.html)].map(path=>`<url><loc>${esc(origin+path)}</loc></url>`).join('\n')+'\n</urlset>\n');
   const home=byKey.get('zh:home:');

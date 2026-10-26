@@ -19,6 +19,7 @@
 | 旅行页标题、简介 | `pages/travel.md` |
 | 每篇文章的标题、日期、摘要和正文 | `posts/` 内对应的 `.md` |
 | 作品集标题、开场介绍与结尾 | `pages/work.md` |
+| 大模型阅读工作的指引 | `pages/work.md` 的 `llmsGuide`，英文在 `en/pages/work.md` |
 | 每个作品的介绍、职责、成果、配图 | `works/` 内对应的 `.md` |
 | 汽水、Talkie、公众号案例页的开场、场景、工程决策与交互说明 | `case-studies/qishui/`、`case-studies/talkie/`、`case-studies/wechat/` 内的 `.md` |
 | 地点名称、照片标题、说明、随笔、日期 | `travel.json` |
@@ -112,6 +113,6 @@ JSON 只改冒号右侧的值，保留双引号、逗号和括号；最后一项
 
 在项目根目录执行 `python3 scripts/preview.py --build`（或 `node scripts/build-content.mjs`），然后将 `dist/` 部署到静态服务器。线上不需要 Node、Python、Notion 账号或数据库。生成的 `dist/` 无需手工修改。
 
-构建也会自动更新供搜索工具和大模型读取的独立 HTML、Markdown、`llms.txt`、全文汇总和结构化目录。不需要维护第二份文案，主导航与原有交互不变。具体地址见项目根目录 README 的「机器可读内容」。草稿、删除的文章及 `sources/` 归档不会进入这些公开文字版。
+构建也会自动更新供搜索工具和大模型读取的独立 HTML、Markdown、`llms.txt`、全文汇总和结构化目录。`llms.txt` 与 `llms-full.txt` 只聚焦职业简介、交付标准、作品和公开联系方式；简介来自首页与关于页的 `lead`，作品来自 `works/`，联系方式来自 `site.json`。文章和旅行仍有独立文字版，保留在综合目录中。具体地址见项目根目录 README 的「机器可读内容」。草稿、删除的文章及 `sources/` 归档不会进入这些公开文字版。
 
 正式部署后，可在 `site.json` 中添加 `url` 字段，填写网站完整根地址，构建时会一并生成 sitemap 与 canonical。尚未部署时可以不填。

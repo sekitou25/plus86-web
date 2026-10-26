@@ -49,12 +49,14 @@ node --test scripts/*.test.mjs
 
 构建会同时生成不依赖 JavaScript 的文字版，与交互页面共用 `content/`，不在主导航中增加入口，也不针对不同访问者返回不同内容。
 
-- `/llms.txt`：中英文内容目录，链接到每一份 Markdown。
-- `/llms-full.txt`：完整的中英文文字汇总，适合下载后阅读；内容较长，也可按目录逐篇读取。
+- `/llms.txt`：聚焦工作的中英文阅读入口，包含个人简介、交付标准、按作品集顺序排列的项目摘要与详情链接，以及公开联系方式。
+- `/llms-full.txt`：中英文职业简介和全部作品详情的全文汇总，保留技术方案、指标口径与工程取舍。
 - `/read/index.json`：带类型、日期、语言、正文语言及 HTML / Markdown 地址的结构化目录。
 - `/read/zh/index.html`、`/read/en/index.html`：不运行脚本也能阅读的目录。
 - `/read/{zh|en}/blog.html`、`work.html`、`about.html`、`travel.html`：独立的栏目页。
 - `/read/{zh|en}/blog/{slug}.html`、`work/{slug}.html`：每篇文章和每个作品的完整 HTML；同路径 `.md` 为 Markdown。
+
+`llms.txt` 和 `llms-full.txt` 聚焦个人工作介绍，不收录文章、投资研究或旅行记录，也不链接综合目录。简介与交付标准共用首页文案、关于页的 `lead`；联系方式共用 `site.json`。阅读指引在 `content/pages/work.md` 的 `llmsGuide`，英文对应 `content/en/pages/work.md`。作品顺序与网站一致。综合文字版和 `/read/index.json` 仍包含网站所有公开内容。
 
 首页初始 HTML 也包含正文和真实目录链接，脚本加载后由原有界面接管。HTML 头部包含机器目录和语言版入口。作品文字版展开所有架构节点、图表数据、工程记录、演示场景及步骤，保留指标口径、素材归属和说明性演示边界；视频只有现有场景说明，不会自动生成或补造完整转写。旅行文字版包含所有已发布照片的说明、地点和随笔。
 

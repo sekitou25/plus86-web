@@ -118,11 +118,9 @@ test('the initial home response has real content and discovery links without add
   assert.throws(()=>injectMachineContent('<html></html>',result),/Missing template marker/);
 });
 
-test('the directory, full text and rewritten article links point to generated files, including Chinese routes',async()=>{
+test('the reader directory and rewritten article links point to generated files, including Chinese routes',async()=>{
   const content=await loadContent(),result=buildMachineContent(content);
   for(const doc of result.index.documents){
-    assert.ok(result.outputs.get('llms.txt').includes(doc.markdown));
-    assert.ok(result.outputs.get('llms-full.txt').includes(result.outputs.get(key(doc.markdown))));
     assert.ok(doc.html.startsWith('/read/'+doc.language+'/'));assert.doesNotMatch(doc.html,/#/);
     for(const [,url] of result.outputs.get(key(doc.html)).matchAll(/href="(\/read\/[^"#]+)"/g))assert.ok(result.outputs.has(key(url)),url);
   }
@@ -130,6 +128,41 @@ test('the directory, full text and rewritten article links point to generated fi
   const chinese=readerPath('en','post','魔术师');
   assert.match(chinese,/%E9/);assert.ok(result.outputs.has(key(chinese)));
   assert.doesNotMatch(result.outputs.get('llms.txt'),/original-posts|archived-pages|now\.md|#\/now/);
+});
+
+test('LLM reading guides focus on professional identity, ordered projects and current contact details',async()=>{
+  const content=await loadContent();
+  for(const data of [content,content.english]){
+    data.pages.about.body+='<p>UNRELATED_ABOUT_BODY</p>';
+    data.posts[0].body+='<p>UNRELATED_ARTICLE_BODY</p>';
+    data.travel.entries[0].body.push('UNRELATED_TRAVEL_BODY');
+    data.site.email='updated-contact@example.com';
+    data.site.socials.wechat.username='UpdatedWechat';
+  }
+  const result=buildMachineContent(content),llms=result.outputs.get('llms.txt'),full=result.outputs.get('llms-full.txt');
+  const allowed=new Set();
+  for(const language of ['zh','en']){
+    const data=language==='zh'?content:content.english;
+    for(const output of [llms,full]){
+      for(const value of [data.pages.about.lead,data.pages.home.heroStandard,data.pages.work.llmsGuide])assert.ok(output.includes(value),value);
+      assert.match(output,/mailto:updated-contact@example.com/);assert.match(output,/UpdatedWechat/);
+      for(const profile of Object.values(data.site.socials)){
+        if(profile.username)assert.ok(output.includes(profile.username));
+        if(profile.url)assert.ok(output.includes(profile.url));
+      }
+    }
+    const positions=data.works.map(work=>{
+      const path=readerPath(language,'project',work.slug,'md');allowed.add(path);
+      assert.ok(full.includes(get(result,language,'project',work.slug,'md')),work.slug+': complete case study');
+      return llms.indexOf(path);
+    });
+    assert.ok(positions.every((position,index)=>position>=0&&(!index||position>positions[index-1])));
+  }
+  for(const output of [llms,full])assert.doesNotMatch(output,/UNRELATED_|\/read\/index\.json|\/read\/(?:zh|en)\/(?:index|about|blog|travel)[./]|statistical arbitrage|统计套利|plumber/);
+  for(const [,url] of llms.matchAll(/\]\((\/read\/[^)]+)\)/g))assert.ok(allowed.has(url),url);
+  assert.match(get(result,'zh','about'),/UNRELATED_ABOUT_BODY/);
+  assert.match(get(result,'zh','post',content.posts[0].slug),/UNRELATED_ARTICLE_BODY/);
+  assert.match(get(result,'zh','travel'),/UNRELATED_TRAVEL_BODY/);
 });
 
 test('new posts update every reading edition while drafts and removals disappear',async t=>{
