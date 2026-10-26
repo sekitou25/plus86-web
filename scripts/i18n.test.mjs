@@ -4,14 +4,14 @@ import {readFile,writeFile,cp,mkdtemp,rm} from 'node:fs/promises';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import vm from 'node:vm';
-import {loadContent,root,parseDocument} from './build-content.mjs';
+import {loadContent,root,parseDocument,interpolate} from './build-content.mjs';
 
 async function fixture(t){const path=await mkdtemp(join(tmpdir(),'plus86-i18n-'));await cp(join(root,'content'),path,{recursive:true});t.after(()=>rm(path,{recursive:true,force:true}));return path}
 
 test('English translates pages and all four cases while preserving routes and shared assets',async()=>{
   const base=await loadContent(),en=base.english;
   assert.equal(en.ui.nav.work,'Work');
-  assert.equal(en.pages.home.title,parseDocument(await readFile(join(root,'content/en/pages/home.md'),'utf8')).meta.title);
+  assert.equal(en.pages.home.title,interpolate(parseDocument(await readFile(join(root,'content/en/pages/home.md'),'utf8')).meta.title,en.site));
   assert.deepEqual(en.works.map(w=>w.slug),base.works.map(w=>w.slug));
   assert.ok(en.works.every(w=>w.contentLanguage==='en'&&w.body));
   assert.doesNotMatch(en.works.map(w=>w.title+w.body+JSON.stringify(w.visual)).join(''),/\p{Script=Han}/u);

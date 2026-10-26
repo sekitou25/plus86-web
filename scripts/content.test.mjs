@@ -42,13 +42,13 @@ test('local links and media work for Chinese filenames and nested articles',asyn
 test('site identity, UI copy and page prose are loaded only from content',async t=>{
   const path=await fixture(t);
   const site=JSON.parse(await readFile(join(path,'site.json'),'utf8'));
-  site.name='新的昵称';await writeFile(join(path,'site.json'),JSON.stringify(site));
+  site.name='新的昵称';site.displayName='新名字';await writeFile(join(path,'site.json'),JSON.stringify(site));
   const ui=JSON.parse(await readFile(join(path,'interface.json'),'utf8'));
   ui.blog.empty='自己填写的空状态';await writeFile(join(path,'interface.json'),JSON.stringify(ui));
   await writeFile(join(path,'pages/blog.md'),'---\ntitle: 自己的页面\nlead: 最近在学习\n---\n\n## 新计划\n\n自己写的新段落。');
   const result=await loadContent(path);
   assert.equal(result.site.name,'新的昵称');assert.equal(result.ui.blog.empty,'自己填写的空状态');
-  assert.equal(result.pages.home.greeting,'我是 新的昵称。');assert.equal(result.pages.about.title,'你好，我是 新的昵称');
+  assert.equal(result.pages.home.heroName,'新名字。');assert.equal(result.pages.home.title,'Hi，我是新名字。');assert.equal(result.pages.about.title,'你好，我是 新的昵称');
   assert.match(result.pages.blog.body,/自己写的新段落/);
   assert.ok(result.travel.entries.every(e=>e.credit==='新的昵称 的相册'));
 });

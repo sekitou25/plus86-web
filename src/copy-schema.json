@@ -179,5 +179,6 @@
   "language.label": "string",
   "language.chinese": "string",
   "language.english": "string",
-  "language.switchTo": "string"
+  "language.switchTo": "string",
+  "home.artHint": "string"
 }

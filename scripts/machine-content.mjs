@@ -90,10 +90,10 @@ function travelBody(data,language){
 
 function pageBody(kind,data,language){
   const page=data.pages[kind],n=names[language];
-  let html=p(page.lead)+p(page.greeting)+page.body;
+  let html=p(page.lead)+p(kind==='home'?page.heroSpecialty:page.greeting)+page.body;
   const works=()=>data.works.map(work=>`<li>${link(readerPath(language,'project',work.slug),work.title)}${p(work.headline)+p(work.summary)}</li>`).join('');
   const posts=()=>data.posts.map(post=>`<li>${link(readerPath(language,'post',post.slug),post.title)} — ${esc(post.date)}${p(post.excerpt)}</li>`).join('');
-  if(kind==='home')html+=heading(2,data.ui.nav.about)+p(data.pages.about.lead)+`<p>${link(readerPath(language,'about'),data.ui.nav.about)}</p>`;
+  if(kind==='home')html+=heading(2,page.heroStandardLabel)+p(page.heroStandard)+heading(2,data.ui.nav.about)+p(data.pages.about.lead)+`<p>${link(readerPath(language,'about'),data.ui.nav.about)}</p>`;
   if(['home','work'].includes(kind))html+=heading(2,data.ui.nav.work)+`<ul>${works()}</ul>`+p(data.pages.work.closingText);
   if(['home','blog'].includes(kind))html+=heading(2,data.ui.nav.blog)+`<ul>${posts()}</ul>`;
   if(kind==='home')html+=heading(2,data.ui.nav.travel)+p(data.pages.travel.lead)+`<p>${link(readerPath(language,'travel'),data.ui.nav.travel)}</p>`;

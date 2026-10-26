@@ -1,6 +1,7 @@
 // Generated from content/. Edit that directory, then run the preview or build command.
 window.SITE = {
   "name": "siyuan",
+  "displayName": "思源",
   "handle": "siyuan",
   "email": "wendaoliu40@gmail.com",
   "tagline": "software, notes & photographs",
@@ -50,13 +51,17 @@ window.PAGES = {
     "text": ""
   },
   "home": {
-    "title": "客户端工程与\nAI 应用开发",
-    "greeting": "我是 siyuan。",
-    "heroOverline": "SOFTWARE ENGINEERING",
-    "heroRole": "客户端开发 · AI 应用",
+    "title": "Hi，我是思源。",
+    "greeting": "Hi，我是",
+    "heroName": "思源。",
+    "heroSpecialty": "专精于客户端工程\n与 AI 应用开发。",
+    "heroOverline": "SOFTWARE ENGINEER",
+    "heroRole": "客户端工程 · AI 应用",
+    "heroStandardLabel": "我的交付标准",
+    "heroStandard": "比预期多走一步。让体验有品味、细节有品质，代码也清晰、可靠，经得起长期维护。",
     "scrollLabel": "查看项目",
-    "body": "\u003cp>我参与过汽水音乐、Talkie / 星野和微信公众号的客户端开发，做过播放器、消息系统和推荐流。目前也在研究 AI Agent 与自动交易系统。\u003c/p>\n",
-    "text": "我参与过汽水音乐、Talkie / 星野和微信公众号的客户端开发，做过播放器、消息系统和推荐流。目前也在研究 AI Agent 与自动交易系统。"
+    "body": "\u003cp>我是一名软件工程师，参与过汽水音乐、Talkie / 星野与微信公众号的客户端开发。从播放器、消息系统到 AI Agent，我把想法做成可用的产品。\u003c/p>\n",
+    "text": "我是一名软件工程师，参与过汽水音乐、Talkie / 星野与微信公众号的客户端开发。从播放器、消息系统到 AI Agent，我把想法做成可用的产品。"
   },
   "travel": {
     "title": "旅行",
@@ -106,11 +111,12 @@ window.COPY = {
     "dark": "切换到深色模式"
   },
   "home": {
-    "artLabel": "由字符构成的土星，缓缓转动",
-    "artCaption": "FIG. 01 / ASCII SATURN",
+    "artLabel": "由代码字符组成的「源」字，呼应思源与源代码",
+    "artCaption": "源 · 思源与源代码",
     "readAbout": "关于我 ↗",
     "latest": "— 最近的文章",
-    "allEntries": "全部文章 [{count}] ↗"
+    "allEntries": "全部文章 [{count}] ↗",
+    "artHint": "移动鼠标探索"
   },
   "tags": {
     "all": "全部文章",

@@ -2,6 +2,7 @@
 window.ENGLISH_CONTENT = {
   "site": {
     "name": "siyuan",
+    "displayName": "Siyuan",
     "handle": "siyuan",
     "email": "wendaoliu40@gmail.com",
     "tagline": "software, notes & photographs",
@@ -68,11 +69,12 @@ window.ENGLISH_CONTENT = {
       "dark": "Switch to dark mode"
     },
     "home": {
-      "artLabel": "A slowly turning Saturn drawn with characters",
-      "artCaption": "FIG. 01 / ASCII SATURN",
+      "artLabel": "Yuan, drawn with code characters: a name and a source",
+      "artCaption": "YUAN / NAME & SOURCE CODE",
       "readAbout": "read about me ↗",
       "latest": "— Recent writing",
-      "allEntries": "all entries [{count}] ↗"
+      "allEntries": "all entries [{count}] ↗",
+      "artHint": "Move your cursor"
     },
     "tags": {
       "all": "All posts",
@@ -327,13 +329,17 @@ window.ENGLISH_CONTENT = {
       "contentLanguage": "en"
     },
     "home": {
-      "title": "Client engineering.\nAI applications.",
-      "greeting": "I'm siyuan.",
-      "heroOverline": "SOFTWARE ENGINEERING",
-      "heroRole": "Client development · AI applications",
+      "title": "Hi, I'm Siyuan.",
+      "greeting": "Hi, I'm",
+      "heroName": "Siyuan.",
+      "heroSpecialty": "Specializing in client engineering\nand AI applications.",
+      "heroOverline": "SOFTWARE ENGINEER",
+      "heroRole": "Client engineering · AI applications",
+      "heroStandardLabel": "MY STANDARD",
+      "heroStandard": "Go beyond the brief. Bring taste to the experience, care to the details, and clarity and reliability to code built to last.",
       "scrollLabel": "View projects",
-      "body": "\u003cp>I&#39;ve worked on the clients for Qishui Music, Talkie / Xingye, and WeChat Official Accounts, covering playback, messaging, and recommendation feeds. I also research AI agents and automated trading systems.\u003c/p>\n",
-      "text": "I've worked on the clients for Qishui Music, Talkie / Xingye, and WeChat Official Accounts, covering playback, messaging, and recommendation feeds. I also research AI agents and automated trading systems.",
+      "body": "\u003cp>I&#39;m a software engineer who&#39;s worked on Qishui Music, Talkie / Xingye and WeChat Official Accounts. From players and messaging systems to AI agents, I turn ideas into working products.\u003c/p>\n",
+      "text": "I'm a software engineer who's worked on Qishui Music, Talkie / Xingye and WeChat Official Accounts. From players and messaging systems to AI agents, I turn ideas into working products.",
       "contentLanguage": "en"
     },
     "travel": {

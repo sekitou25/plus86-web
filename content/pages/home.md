@@ -1,9 +1,13 @@
 ---
-title: "客户端工程与\nAI 应用开发"
-greeting: "我是 {name}。"
-heroOverline: SOFTWARE ENGINEERING
-heroRole: 客户端开发 · AI 应用
+title: "Hi，我是{displayName}。"
+greeting: "Hi，我是"
+heroName: "{displayName}。"
+heroSpecialty: "专精于客户端工程\n与 AI 应用开发。"
+heroOverline: SOFTWARE ENGINEER
+heroRole: 客户端工程 · AI 应用
+heroStandardLabel: 我的交付标准
+heroStandard: "比预期多走一步。让体验有品味、细节有品质，代码也清晰、可靠，经得起长期维护。"
 scrollLabel: 查看项目
 ---
 
-我参与过汽水音乐、Talkie / 星野和微信公众号的客户端开发，做过播放器、消息系统和推荐流。目前也在研究 AI Agent 与自动交易系统。
+我是一名软件工程师，参与过汽水音乐、Talkie / 星野与微信公众号的客户端开发。从播放器、消息系统到 AI Agent，我把想法做成可用的产品。

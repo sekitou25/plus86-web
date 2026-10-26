@@ -7,17 +7,21 @@ This is a personal portfolio, research notebook, and travel journal. The text ed
 
 ---
 
-# 客户端工程与
-AI 应用开发
+# Hi，我是思源。
 
 语言: zh
 正文语言: zh
 
 [交互版](/?lang=zh#/) · [HTML](/read/zh/index.html)
 
-我是 siyuan。
+专精于客户端工程
+与 AI 应用开发。
 
-我参与过汽水音乐、Talkie / 星野和微信公众号的客户端开发，做过播放器、消息系统和推荐流。目前也在研究 AI Agent 与自动交易系统。
+我是一名软件工程师，参与过汽水音乐、Talkie / 星野与微信公众号的客户端开发。从播放器、消息系统到 AI Agent，我把想法做成可用的产品。
+
+## 我的交付标准
+
+比预期多走一步。让体验有品味、细节有品质，代码也清晰、可靠，经得起长期维护。
 
 ## 关于
 
@@ -4139,17 +4143,21 @@ plumber 是开发中的自动交易 AI Agent，包含策略研究、回测、交
 
 ---
 
-# Client engineering.
-AI applications.
+# Hi, I'm Siyuan.
 
 Language: en
 Body language: en
 
 [Interactive edition](/?lang=en#/) · [HTML](/read/en/index.html)
 
-I'm siyuan.
+Specializing in client engineering
+and AI applications.
 
-I've worked on the clients for Qishui Music, Talkie / Xingye, and WeChat Official Accounts, covering playback, messaging, and recommendation feeds. I also research AI agents and automated trading systems.
+I'm a software engineer who's worked on Qishui Music, Talkie / Xingye and WeChat Official Accounts. From players and messaging systems to AI agents, I turn ideas into working products.
+
+## MY STANDARD
+
+Go beyond the brief. Bring taste to the experience, care to the details, and clarity and reliability to code built to last.
 
 ## About
 

@@ -21,7 +21,7 @@ This is a personal portfolio, research notebook, and travel journal. The text ed
 
 ## 中文
 
-- [客户端工程与 AI 应用开发](/read/zh/index.md): home
+- [Hi，我是思源。](/read/zh/index.md): home
 - [你好，我是 siyuan](/read/zh/about.md): about
 - [项目](/read/zh/work.md): work
 - [写作](/read/zh/blog.md): blog
@@ -48,7 +48,7 @@ This is a personal portfolio, research notebook, and travel journal. The text ed
 
 ## English
 
-- [Client engineering. AI applications.](/read/en/index.md): home
+- [Hi, I'm Siyuan.](/read/en/index.md): home
 - [Hello, I'm siyuan](/read/en/about.md): about
 - [Projects](/read/en/work.md): work
 - [Writing](/read/en/blog.md): blog

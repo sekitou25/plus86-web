@@ -1,9 +1,13 @@
 ---
-title: "Client engineering.\nAI applications."
-greeting: "I'm {name}."
-heroOverline: "SOFTWARE ENGINEERING"
-heroRole: "Client development · AI applications"
+title: "Hi, I'm {displayName}."
+greeting: "Hi, I'm"
+heroName: "{displayName}."
+heroSpecialty: "Specializing in client engineering\nand AI applications."
+heroOverline: "SOFTWARE ENGINEER"
+heroRole: "Client engineering · AI applications"
+heroStandardLabel: "MY STANDARD"
+heroStandard: "Go beyond the brief. Bring taste to the experience, care to the details, and clarity and reliability to code built to last."
 scrollLabel: "View projects"
 ---
 
-I've worked on the clients for Qishui Music, Talkie / Xingye, and WeChat Official Accounts, covering playback, messaging, and recommendation feeds. I also research AI agents and automated trading systems.
+I'm a software engineer who's worked on Qishui Music, Talkie / Xingye and WeChat Official Accounts. From players and messaging systems to AI agents, I turn ideas into working products.

@@ -29,11 +29,12 @@
     "dark": "切换到深色模式"
   },
   "home": {
-    "artLabel": "由字符构成的土星，缓缓转动",
-    "artCaption": "FIG. 01 / ASCII SATURN",
+    "artLabel": "由代码字符组成的「源」字，呼应思源与源代码",
+    "artCaption": "源 · 思源与源代码",
     "readAbout": "关于我 ↗",
     "latest": "— 最近的文章",
-    "allEntries": "全部文章 [{count}] ↗"
+    "allEntries": "全部文章 [{count}] ↗",
+    "artHint": "移动鼠标探索"
   },
   "tags": {
     "all": "全部文章",

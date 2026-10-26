@@ -1,14 +1,18 @@
-# Client engineering.
-AI applications.
+# Hi, I'm Siyuan.
 
 Language: en
 Body language: en
 
 [Interactive edition](/?lang=en#/) · [HTML](/read/en/index.html)
 
-I'm siyuan.
+Specializing in client engineering
+and AI applications.
 
-I've worked on the clients for Qishui Music, Talkie / Xingye, and WeChat Official Accounts, covering playback, messaging, and recommendation feeds. I also research AI agents and automated trading systems.
+I'm a software engineer who's worked on Qishui Music, Talkie / Xingye and WeChat Official Accounts. From players and messaging systems to AI agents, I turn ideas into working products.
+
+## MY STANDARD
+
+Go beyond the brief. Bring taste to the experience, care to the details, and clarity and reliability to code built to last.
 
 ## About
 

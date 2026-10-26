@@ -29,11 +29,12 @@
     "dark": "Switch to dark mode"
   },
   "home": {
-    "artLabel": "A slowly turning Saturn drawn with characters",
-    "artCaption": "FIG. 01 / ASCII SATURN",
+    "artLabel": "Yuan, drawn with code characters: a name and a source",
+    "artCaption": "YUAN / NAME & SOURCE CODE",
     "readAbout": "read about me ↗",
     "latest": "— Recent writing",
-    "allEntries": "all entries [{count}] ↗"
+    "allEntries": "all entries [{count}] ↗",
+    "artHint": "Move your cursor"
   },
   "tags": {
     "all": "All posts",
