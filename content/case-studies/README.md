@@ -21,7 +21,7 @@
 - 汽水的名称、公司、职责、时间、技术栈、成果数字、总览卡片简介与完整工程记录：[01-qishui.md](../works/01-qishui.md)。
 - Talkie 的同类内容：[02-talkie-xingye.md](../works/02-talkie-xingye.md)。
 - 微信的名称、公司、职责、时间、技术栈、总览简介与完整记录：[03-wechat.md](../works/03-wechat.md)；详情页五份文案见上表。
-- plumber 的作品介绍仍直接编辑 `../works/04-plumber.md`。
+- Visual Agent 的介绍在 `../works/04-visual-agent.md`，完整案例文案在 `visual-agent/`；英文在 `../en/case-studies/visual-agent/`。`evidence.md` 编辑历史回归的解释，`evidence.json` 保存中英文共用的原始数据。`demo.md` 的 `verdicts` 和 `completions` 对应两种断言的演示结果。
 - 通用按钮和小标题（例如「播放录屏」「体验目标」「工程实现」）：`../interface.json` 中的 `work` 与 `caseStudy`；英文在 `../en/interface.json`。
 
 ## overview.md：开场与封面

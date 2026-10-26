@@ -11,6 +11,8 @@ Software engineer with five years of experience. I started in iOS, began moving 
 
 At Qishui Music, I worked on the player and home screen. At MiniMax, I owned messaging, networking infrastructure, and stability work for Talkie / Xingye. I now contribute to the WeChat Official Accounts client.
 
+I also designed and built [Visual Agent](/read/en/work/visual-agent.html) end to end, connecting product knowledge, iOS device execution and reviewable test evidence.
+
 [Project pages](/read/en/work.html) cover the scope, implementation, and results of that work.
 
 ## Research and personal projects
@@ -29,7 +31,7 @@ Email: [wendaoliu40@gmail.com](mailto:wendaoliu40@gmail.com).
 
 - **Name**: siyuan
 
-- **Focus**: plumber - a trading agent / momentum
+- **Focus**: Visual Agent - visual regression / momentum
 
 - **Offscreen**: travel / photos / notes
 

@@ -1,0 +1,26 @@
+{
+  "date": "2026-08-11",
+  "device": "iPhone 16 Pro Simulator",
+  "os": "iOS 18.2",
+  "appVersion": "1.2.0+2026080402",
+  "durationSeconds": 310,
+  "executed": 32,
+  "recordings": 32,
+  "infrastructureErrors": 0,
+  "modelCalls": 0,
+  "outcomes": [
+    {
+      "id": "passed",
+      "count": 18
+    },
+    {
+      "id": "failed",
+      "count": 1
+    },
+    {
+      "id": "inconclusive",
+      "count": 13
+    }
+  ],
+  "appName": "Doku"
+}

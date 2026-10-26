@@ -27,7 +27,7 @@ window.SITE = {
   },
   "profile": {
     "focus": [
-      "plumber - a trading agent",
+      "Visual Agent - visual regression",
       "momentum"
     ],
     "offscreen": [
@@ -41,8 +41,8 @@ window.PAGES = {
   "about": {
     "title": "你好，我是 siyuan",
     "lead": "软件工程师，有 5 年开发经验。早期主要做 iOS 客户端，2023 年起逐步转向全栈，最近关注 AI 应用开发。",
-    "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">关于我的工作\u003c/h2>\n\u003cp>我在多家科技公司任职开发工程师，包括字节跳动、腾讯、minimax：\u003c/p>\n\u003cul>\n\u003cli>字节跳动的汽水音乐 0-1 开发，负责播放器和音乐播放体验\u003c/li>\n\u003cli>在 MiniMax 负责 Talkie / 星野的消息系统、网络基础设施和稳定性优化\u003c/li>\n\u003cli>目前在腾讯微信参与公众号相关开发，开发 iOS、Android、ohos 平台\u003c/li>\n\u003c/ul>\n\u003cp>\u003ca href=\"#/work\">项目页\u003c/a> 中记录了具体的工作范围、实现和结果。\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">研究与个人项目\u003c/h2>\n\u003cp>最近在研究美股统计套利、动量策略和因子投资，也在开发自动交易 Agent plumber。研究笔记会记录收益假设、风险、回测条件，以及信号和仓位的实现方式。\nP.S 在交易上尝试了很多方法，price action、ICT、etc。最终还是回归了数学和概率本身\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">工作之外\u003c/h2>\n\u003cp>我会在这里整理旅行照片、阅读笔记和日常记录。\u003c/p>\n\u003cp>\u003ca href=\"#/blog\">写作\u003c/a> 主要是研究与学习笔记，\u003ca href=\"#/travel\">旅行\u003c/a> 记录一些看过的风景。\u003c/p>\n\u003cp>邮箱：\u003ca href=\"mailto:wendaoliu40@gmail.com\">wendaoliu40@gmail.com\u003c/a>。\u003c/p>\n",
-    "text": "关于我的工作 我在多家科技公司任职开发工程师，包括字节跳动、腾讯、minimax： 字节跳动的汽水音乐 0-1 开发，负责播放器和音乐播放体验 在 MiniMax 负责 Talkie / 星野的消息系统、网络基础设施和稳定性优化 目前在腾讯微信参与公众号相关开发，开发 iOS、Android、ohos 平台 项目页 中记录了具体的工作范围、实现和结果。 研究与个人项目 最近在研究美股统计套利、动量策略和因子投资，也在开发自动交易 Agent plumber。研究笔记会记录收益假设、风险、回测条件，以及信号和仓位的实现方式。 P.S 在交易上尝试了很多方法，price action、ICT、etc。最终还是回归了数学和概率本身 工作之外 我会在这里整理旅行照片、阅读笔记和日常记录。 写作 主要是研究与学习笔记， 旅行 记录一些看过的风景。 邮箱： wendaoliu40@gmail.com 。"
+    "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">关于我的工作\u003c/h2>\n\u003cp>我在多家科技公司任职开发工程师，包括字节跳动、腾讯、minimax：\u003c/p>\n\u003cul>\n\u003cli>字节跳动的汽水音乐 0-1 开发，负责播放器和音乐播放体验\u003c/li>\n\u003cli>在 MiniMax 负责 Talkie / 星野的消息系统、网络基础设施和稳定性优化\u003c/li>\n\u003cli>目前在腾讯微信参与公众号相关开发，开发 iOS、Android、ohos 平台\u003c/li>\n\u003c/ul>\n\u003cp>此外，我整体设计并开发了 \u003ca href=\"#/work/visual-agent\">Visual Agent\u003c/a>，把业务知识、iOS 设备执行与可复核的测试证据连成一条回归链路。\u003c/p>\n\u003cp>\u003ca href=\"#/work\">项目页\u003c/a> 中记录了具体的工作范围、实现和结果。\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">研究与个人项目\u003c/h2>\n\u003cp>最近在研究美股统计套利、动量策略和因子投资，也在开发自动交易 Agent plumber。研究笔记会记录收益假设、风险、回测条件，以及信号和仓位的实现方式。\nP.S 在交易上尝试了很多方法，price action、ICT、etc。最终还是回归了数学和概率本身\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">工作之外\u003c/h2>\n\u003cp>我会在这里整理旅行照片、阅读笔记和日常记录。\u003c/p>\n\u003cp>\u003ca href=\"#/blog\">写作\u003c/a> 主要是研究与学习笔记，\u003ca href=\"#/travel\">旅行\u003c/a> 记录一些看过的风景。\u003c/p>\n\u003cp>邮箱：\u003ca href=\"mailto:wendaoliu40@gmail.com\">wendaoliu40@gmail.com\u003c/a>。\u003c/p>\n",
+    "text": "关于我的工作 我在多家科技公司任职开发工程师，包括字节跳动、腾讯、minimax： 字节跳动的汽水音乐 0-1 开发，负责播放器和音乐播放体验 在 MiniMax 负责 Talkie / 星野的消息系统、网络基础设施和稳定性优化 目前在腾讯微信参与公众号相关开发，开发 iOS、Android、ohos 平台 此外，我整体设计并开发了 Visual Agent ，把业务知识、iOS 设备执行与可复核的测试证据连成一条回归链路。 项目页 中记录了具体的工作范围、实现和结果。 研究与个人项目 最近在研究美股统计套利、动量策略和因子投资，也在开发自动交易 Agent plumber。研究笔记会记录收益假设、风险、回测条件，以及信号和仓位的实现方式。 P.S 在交易上尝试了很多方法，price action、ICT、etc。最终还是回归了数学和概率本身 工作之外 我会在这里整理旅行照片、阅读笔记和日常记录。 写作 主要是研究与学习笔记， 旅行 记录一些看过的风景。 邮箱： wendaoliu40@gmail.com 。"
   },
   "blog": {
     "title": "写作",
@@ -73,7 +73,7 @@ window.PAGES = {
   "work": {
     "title": "项目",
     "eyebrow": "SELECTED WORK",
-    "lead": "三段产品开发经历，以及一个进行中的个人项目。各页记录我的职责、技术方案和可公开的结果。",
+    "lead": "从面向用户的客户端，到支撑交付的 AI 工程工具。四个项目，记录产品体验、系统设计与工程质量上的实践。",
     "closingTitle": "关于我",
     "closingText": "更多工作背景、最近的研究和个人记录。",
     "body": "",
@@ -1780,77 +1780,595 @@ window.WORKS = [
     ]
   },
   {
-    "slug": "plumber",
-    "title": "plumber",
+    "slug": "visual-agent",
+    "title": "Visual Agent",
     "order": 4,
-    "company": "个人项目",
-    "period": "开发中",
-    "role": "策略研究与系统构建",
-    "category": "AI 与交易",
-    "headline": "自动交易 Agent 的研究与实现",
-    "summary": "开发中的个人项目，包含策略研究、回测、IBKR 交易执行、独立账本和本机监控。",
+    "company": "Doku · 视觉回归工具",
+    "period": "2026 · MVP",
+    "role": "整体设计与开发",
+    "category": "AI 与工程工具",
+    "headline": "从产品知识到可复核的 iOS 视觉回归",
+    "summary": "面向 Doku 的视觉测试系统：把业务资料整理为可审核、可版本化的知识，再驱动 iOS 模拟器执行用例，保存判定理由、截图与录屏。",
     "tags": [
       "Python",
-      "IBKR",
-      "策略研究",
-      "执行与监控"
+      "FastAPI",
+      "SQLite",
+      "Appium / XCUITest",
+      "MCP"
     ],
     "focus": [
-      "策略研究与回测",
-      "交易执行与对账",
-      "本机监控"
+      "知识生产与版本化",
+      "iOS 设备执行",
+      "视觉判定与证据报告"
     ],
     "highlights": [
       {
-        "value": "IBKR",
-        "label": "交易执行适配"
+        "value": "69",
+        "label": "版本内稳定用例"
       },
       {
-        "value": "独立账本",
-        "label": "策略与环境隔离"
+        "value": "32",
+        "label": "已接入 iOS 执行"
       },
       {
-        "value": "本机监控",
-        "label": "状态、成交与日志"
+        "value": "23",
+        "label": "已审核页面变体"
       }
     ],
     "visual": {
       "type": "agent",
-      "caption": "交易系统流程示意",
-      "label": "RESEARCH / EXECUTION",
-      "title": "plumber",
-      "subtitle": "自动交易 Agent",
+      "title": "Visual Agent",
       "nodes": [
-        "研究 / 信号",
-        "风险校验",
-        "执行 / 对账"
-      ],
-      "footer": "个人项目 / 开发中"
+        "知识",
+        "执行",
+        "证据"
+      ]
     },
     "cover": "",
     "coverAlt": "",
     "coverCaption": "",
-    "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">项目范围\u003c/h2>\n\u003cp>plumber 是开发中的自动交易 AI Agent，包含策略研究、回测、交易执行、独立账本、对账与本机监控。\u003c/p>\n\u003cp>目前研究风险平价、统计套利、债券季节性与订单流。每个策略需要记录收益假设、成本、执行约束和参数选择的依据。\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">研究与执行\u003c/h2>\n\u003cp>研究 Notebook 与在线执行分层组织。运行系统包含可复用的 IBKR 适配、连接心跳、安全执行、独立账本与审计组件；按策略和交易环境隔离配置与运行状态。\u003c/p>\n\u003cp>系统记录信号计算、订单、成交回报与对账过程，用于排查执行差异。\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">监控\u003c/h2>\n\u003cp>建设本机监控面板，展示策略状态、持仓、净值、成交记录与脱敏日志。监控与交易服务分离，保留明确的环境选择和停止机制。\u003c/p>\n\u003ch2 id=\"section-4\" tabindex=\"-1\">待验证的问题\u003c/h2>\n\u003cp>继续检查交易成本、成交偏差与执行异常对策略结果的影响。工程系统仍在开发，现有实现不代表策略已被验证，也不构成收益承诺。\u003c/p>\n",
-    "text": "项目范围 plumber 是开发中的自动交易 AI Agent，包含策略研究、回测、交易执行、独立账本、对账与本机监控。 目前研究风险平价、统计套利、债券季节性与订单流。每个策略需要记录收益假设、成本、执行约束和参数选择的依据。 研究与执行 研究 Notebook 与在线执行分层组织。运行系统包含可复用的 IBKR 适配、连接心跳、安全执行、独立账本与审计组件；按策略和交易环境隔离配置与运行状态。 系统记录信号计算、订单、成交回报与对账过程，用于排查执行差异。 监控 建设本机监控面板，展示策略状态、持仓、净值、成交记录与脱敏日志。监控与交易服务分离，保留明确的环境选择和停止机制。 待验证的问题 继续检查交易成本、成交偏差与执行异常对策略结果的影响。工程系统仍在开发，现有实现不代表策略已被验证，也不构成收益承诺。",
+    "caseStudy": {
+      "kind": "qa",
+      "media": [
+        {
+          "id": "feed",
+          "type": "image",
+          "src": "/assets/content/works/visual-agent/doku-feed.webp"
+        },
+        {
+          "id": "creator",
+          "type": "image",
+          "src": "/assets/content/works/visual-agent/doku-creator.webp"
+        },
+        {
+          "id": "preview",
+          "type": "image",
+          "src": "/assets/content/works/visual-agent/doku-preview.webp"
+        }
+      ],
+      "copy": {
+        "zh": {
+          "eyebrow": "04 / KNOWLEDGE → EXECUTION → EVIDENCE",
+          "title": "让每次回归\n都有据可查。",
+          "preview": "Visual Agent · 知识驱动的视觉回归",
+          "previewDetail": "Doku 业务场景 / iOS MVP",
+          "architectureAction": "查看系统架构 ↓",
+          "previewNodes": [
+            "审核业务知识",
+            "执行设备任务",
+            "保留验证证据"
+          ],
+          "mediaTitle": "被测产品 · Doku",
+          "outcomeNote": "能力基线：2026-08-19。稳定用例不等于已执行用例；32 条播放 Case 已接入 iOS 执行，其余 37 条为 planned 或 blocked。",
+          "mediaNote": "页面使用报告提供的真实 Doku iOS 截图，采集目录版本为 2026-07-30，用于交代被测业务。不是 Visual Agent 控制台，也不代表当前线上界面。项目能力与历史数据来自 2026-10-26 整理的《Doku × Visual Agent》报告；没有在本次作品整理中重新运行设备回归。",
+          "intro": "我负责 Visual Agent 的整体设计与开发：将分散的业务资料整理为可审核、可版本化的知识，再驱动 iOS 模拟器执行测试，保存每个结论的理由与证据。Doku 是首个应用场景，覆盖短剧观看与 AI 辅助故事创作。",
+          "scenes": [
+            {
+              "title": "连续观看",
+              "caption": "For You 中的播放、选集与互动栏，是首批视觉回归的业务背景。",
+              "alt": "Doku For You 页面，展示视频、单集入口和点赞等互动目标",
+              "lens": "连续状态",
+              "insight": "黑屏、切集和互动响应需要动作前后的观察，单张截图无法表达完整的播放过程。"
+            },
+            {
+              "title": "创作入口",
+              "caption": "空会话、建议卡片、草稿提示与输入框。",
+              "alt": "Doku AI 故事创作入口，展示引导消息、建议与输入框",
+              "lens": "业务规则",
+              "insight": "创作规则已进入知识与用例版本，但当前尚未具备完整的创作模块设备执行链。"
+            },
+            {
+              "title": "故事预览",
+              "caption": "故事正文、发布入口与修改建议共同构成后续状态。",
+              "alt": "Doku 故事预览，展示正文、发布按钮与修改建议",
+              "lens": "预期时序",
+              "insight": "需要描述生成中与完成后的可用操作，也需要明确发布等动作的执行约束。"
+            }
+          ],
+          "storyTitle": "五个关键工程决策",
+          "storyLead": "工程重点是知识可信、运行可追溯，以及结论与证据相匹配。",
+          "decisions": [
+            {
+              "title": "先把预期变成可审核的知识",
+              "experience": "播放与 AI 创作的规则散落在 PRD、缺陷和走查记录里，仅让 Agent 操作界面并不能定义“正确”。",
+              "engineering": "建立概念、规则、页面、目标、断言、Fixture 与 Case 的知识模型；候选带来源、冲突与开放问题，经人审后编译发布。",
+              "tradeoff": "结构与来源范围校验无法代替事实审核。模型用于提出候选，审核决定哪些内容成为正式依据。"
+            },
+            {
+              "title": "每次任务固定自己的依据",
+              "experience": "规则、坐标和场景持续变化，历史失败需要能够解释，而不是随最新工作区一起改变。",
+              "engineering": "内容寻址生成不可变版本，保存文件摘要、Manifest 与数据库哈希。任务冻结版本、Case 依赖和执行场景。",
+              "tradeoff": "知识快照不等于完整环境快照。账号、网络与数据仍依赖 Fixture 生命周期，当前这部分尚未统一。"
+            },
+            {
+              "title": "让测试内核独立于业务源码",
+              "experience": "跨端与混合 UI 会增加元素树、业务埋钩和源码依赖的维护面。",
+              "engineering": "通过外部 App 产物、DeviceDriver、归一化坐标和项目 Atlas 操作 iOS，并在每条 Case 中保存录屏。",
+              "tradeoff": "归一化坐标降低分辨率耦合，仍不能自动消除布局变化、坐标漂移和未知页面问题。"
+            },
+            {
+              "title": "把点赞做成一条完整验证闭环",
+              "experience": "目标未出现、初始已点赞和动画过渡都可能让一次点击得到错误结论。",
+              "engineering": "等待目标稳定，归一化初始状态，执行点击，通过连续帧验证颜色，再尝试恢复初始状态并保存测量值。",
+              "tradeoff": "当前阈值只适用于指定区域与视觉风格；视觉激活也不能单独证明服务端状态和持久化。"
+            },
+            {
+              "title": "允许系统明确说“无法判定”",
+              "experience": "画面变化可能来自错误内容或其他状态；把“动作发出了”当作“业务正确”会制造错误通过。",
+              "engineering": "将动作与验证职责分开，保存理由和证据，并使用五种结论区分产品失败、证据不足、基础设施问题与未执行。",
+              "tradeoff": "复杂语义需要独立的 Verifier，服务端副作用还需要日志或查询证据。当前不让本地视觉规则越过自己的证明范围。"
+            }
+          ],
+          "lab": {
+            "title": "同一画面，不同的证明范围",
+            "lead": "两种断言都观察到心形变红。比较为什么视觉激活可以通过，而持久化仍然无法判定。",
+            "modes": [
+              "视觉状态断言",
+              "持久化断言"
+            ],
+            "start": "运行判定示意",
+            "running": "演示中…",
+            "resume": "继续",
+            "idle": "选择要证明的断言，再运行演示。",
+            "complete": "演示完成。",
+            "stalled": "证据不足。",
+            "sample": "BEFORE → AFTER / 示意状态",
+            "output": "等待运行",
+            "outputRunning": "采集动作前后与连续帧证据",
+            "outputComplete": "已保存判定理由",
+            "verdicts": [
+              "PASSED · 视觉状态成立",
+              "INCONCLUSIVE · 缺少持久化证据"
+            ],
+            "completions": [
+              "连续帧支持心形由未激活变为红色激活，当前视觉断言通过。",
+              "相同的红色心形不能证明跨页面或服务端持久化。保留视觉证据，等待独立查询或日志。"
+            ],
+            "footnote": "本地说明性演示，不连接 Doku、设备或模型，不产生真实回归结果。第二种断言用于解释证据边界，不表示持久化验证器已实现。",
+            "stages": [
+              {
+                "title": "固定依据",
+                "detail": "绑定知识版本与视觉激活断言。",
+                "prepared": "绑定知识版本，将断言改为“状态能够持久化”。"
+              },
+              {
+                "title": "归一化状态",
+                "detail": "确认目标可见，恢复为未点赞状态。",
+                "prepared": "使用相同的可见目标与未点赞初始状态。"
+              },
+              {
+                "title": "执行与取证",
+                "detail": "点击一次，保存前后帧与稳定红色状态。",
+                "prepared": "同样观察到红色心形；目前只有视觉证据。"
+              },
+              {
+                "title": "独立判定",
+                "detail": "连续帧证明当前视觉状态改变，输出 PASSED。",
+                "prepared": "缺少跨页面或服务端证据，输出 INCONCLUSIVE。"
+              }
+            ]
+          },
+          "architecture": {
+            "kicker": "SYSTEM DESIGN / TWO CONNECTED LOOPS",
+            "title": "知识定义预期，设备生成证据",
+            "lead": "从业务资料到正式知识，再到绑定版本的执行任务。点击节点，查看每层的职责与实现。",
+            "selectionLabel": "模块与实现",
+            "defaultNode": "release",
+            "diagramLabel": "Visual Agent 的资料准备、知识发布、设备执行与证据判定链路",
+            "note": "按报告中的已实现主流程整理。执行阶段模型、自主规划、Android Worker 与统一 Fixture Runtime 尚未接入。",
+            "layers": [
+              {
+                "id": "preparation",
+                "title": "资料准备",
+                "nodes": [
+                  {
+                    "id": "sources",
+                    "title": "Git / 文档来源",
+                    "detail": "固定 Source Commit，或将上传资料标准化为带行号文本，冻结可追溯的输入。"
+                  },
+                  {
+                    "id": "candidates",
+                    "title": "候选与人审",
+                    "detail": "外部 Agent 或千问提交带 SourceRef 的结构化候选，审核人接受、编辑、合并、拒绝或暂缓。"
+                  }
+                ]
+              },
+              {
+                "id": "knowledge",
+                "title": "知识发布",
+                "nodes": [
+                  {
+                    "id": "compile",
+                    "title": "规则关系与检索",
+                    "detail": "业务规则、页面、目标、断言与 Case 通过明确引用关联；Pydantic 校验结构，SQLite FTS5 与别名用于检索。"
+                  },
+                  {
+                    "id": "release",
+                    "title": "不可变知识版本",
+                    "detail": "统一编译冻结知识、Case 和场景；内容摘要生成版本 ID，Manifest 与哈希校验保证任务消费同一份依据。"
+                  }
+                ]
+              },
+              {
+                "id": "execution",
+                "title": "设备任务",
+                "nodes": [
+                  {
+                    "id": "task",
+                    "title": "版本绑定与任务快照",
+                    "detail": "创建任务时选择模块与 Case，保存指定知识版本、逐 Case 依赖和执行场景，然后异步顺序执行。"
+                  },
+                  {
+                    "id": "driver",
+                    "title": "iOS Worker",
+                    "detail": "DeviceDriver 隔离设备能力。Appium XCUITest / WDA 执行动作与截图，simctl 管理 App 与录屏。"
+                  }
+                ]
+              },
+              {
+                "id": "verification",
+                "title": "独立验证",
+                "nodes": [
+                  {
+                    "id": "verdict",
+                    "title": "视觉规则与结论",
+                    "detail": "重新观察黑屏、区域变化、运动或颜色稳定性；区分通过、失败、无法判定、基础设施错误与未执行。"
+                  },
+                  {
+                    "id": "artifacts",
+                    "title": "报告与证据",
+                    "detail": "保存逐 Case 的动作、理由、测量值、截图和独立录屏，通过 Web、CLI 与 MCP 查询任务与结果。"
+                  }
+                ]
+              }
+            ]
+          },
+          "evidence": {
+            "kicker": "RECORDED RUN / 2026.08.11",
+            "title": "一次真实运行，三种有区别的结论",
+            "lead": "32 条播放用例全部实际执行。点击结果，查看各类结论所代表的证据范围。",
+            "note": "历史运行早于 2026-08-19 的最新知识基线，当前数据库没有归档该任务。69 条稳定用例尚未完成对应的新一轮完整回归；以上数据不代表当前全业务覆盖率或人力收益。",
+            "environmentLabel": "运行环境",
+            "executedLabel": "实际执行",
+            "recordingsLabel": "独立录屏",
+            "durationLabel": "约耗时",
+            "infraLabel": "基础设施错误",
+            "modelLabel": "执行阶段模型调用",
+            "data": "evidence.json",
+            "run": {
+              "date": "2026-08-11",
+              "device": "iPhone 16 Pro Simulator",
+              "os": "iOS 18.2",
+              "appVersion": "1.2.0+2026080402",
+              "durationSeconds": 310,
+              "executed": 32,
+              "recordings": 32,
+              "infrastructureErrors": 0,
+              "modelCalls": 0,
+              "outcomes": [
+                {
+                  "id": "passed",
+                  "count": 18,
+                  "title": "通过",
+                  "description": "18 条用例的证据足以支持各自的本地视觉断言，不能扩展为整个业务链路均正确。"
+                },
+                {
+                  "id": "failed",
+                  "count": 1,
+                  "title": "失败",
+                  "description": "1 条关注按钮用例点击后没有产生足够视觉响应，保留失败结论供复核。"
+                },
+                {
+                  "id": "inconclusive",
+                  "count": 13,
+                  "title": "无法判定",
+                  "description": "13 条用例需要内容身份、精确状态、布局或边界数据等语义证据。本地视觉变化不足以裁决，结果保留为无法判定。"
+                }
+              ],
+              "appName": "Doku"
+            }
+          }
+        },
+        "en": {
+          "eyebrow": "04 / KNOWLEDGE → EXECUTION → EVIDENCE",
+          "title": "Every regression,\nbacked by evidence.",
+          "preview": "Visual Agent · Knowledge-driven regression",
+          "previewDetail": "Doku application context / iOS MVP",
+          "architectureAction": "Explore the architecture ↓",
+          "previewNodes": [
+            "Review product knowledge",
+            "Run device tasks",
+            "Retain verification evidence"
+          ],
+          "mediaTitle": "APPLICATION CONTEXT · DOKU",
+          "outcomeNote": "Capability baseline: 2026-08-19. Stable does not mean executed: 32 playback cases are connected to iOS execution; the other 37 are planned or blocked.",
+          "mediaNote": "These actual Doku iOS screenshots come from the report’s 2026-07-30 screen catalog and illustrate the application under test. They are not the Visual Agent console or a claim about the current live app. Capabilities and historical figures come from the Doku × Visual Agent report compiled on 2026-10-26. No device regression was rerun for this portfolio update.",
+          "intro": "I designed and built Visual Agent end to end: turn scattered product documents into reviewed, versioned knowledge, run tests on an iOS simulator, and retain the reasoning and evidence behind each verdict. Doku, a short-drama and AI-assisted storytelling app, is its first application context.",
+          "scenes": [
+            {
+              "title": "Continuous playback",
+              "caption": "For You playback, episode navigation and interactions provide the context for the first regression scenarios.",
+              "alt": "Doku For You screen with video, episode navigation and interaction targets",
+              "lens": "CONTINUOUS STATE",
+              "insight": "Black screens, episode changes and interaction responses require observations over time, beyond a single screenshot."
+            },
+            {
+              "title": "Creator entry",
+              "caption": "An empty conversation, suggestions, draft prompt and input field.",
+              "alt": "Doku AI story creator with introductory messages, suggestions and an input field",
+              "lens": "PRODUCT RULES",
+              "insight": "Creator rules and cases are versioned, but the full creator-module device execution flow is not yet implemented."
+            },
+            {
+              "title": "Story preview",
+              "caption": "Story text, the publish action and revision suggestions form the next product state.",
+              "alt": "Doku story preview with story text, publish action and revision suggestions",
+              "lens": "STATE TIMING",
+              "insight": "Rules must describe which actions are available during and after generation, including constraints around publishing."
+            }
+          ],
+          "storyTitle": "Five engineering decisions",
+          "storyLead": "The core work is trustworthy knowledge, traceable execution and verdicts that match their evidence.",
+          "decisions": [
+            {
+              "title": "Make expectations reviewable",
+              "experience": "Playback and creator rules are scattered across requirements, defects and walkthrough notes. UI actions alone do not define correctness.",
+              "engineering": "Model concepts, rules, screens, targets, assertions, fixtures and cases. Candidates carry provenance, conflicts and open questions, then pass human review before compilation.",
+              "tradeoff": "Schema and reference checks cannot establish factual accuracy. Models propose candidates; review determines the formal test basis."
+            },
+            {
+              "title": "Pin the basis of every task",
+              "experience": "Rules, coordinates and scenarios evolve. A historical failure must remain explainable when the workspace changes.",
+              "engineering": "Content-addressed immutable releases preserve hashes and manifests. Tasks freeze their release, case dependencies and execution scenarios.",
+              "tradeoff": "A knowledge snapshot is not an environment snapshot. Accounts, networks and data still need a unified fixture lifecycle."
+            },
+            {
+              "title": "Separate the test kernel from app source",
+              "experience": "Cross-platform and mixed UI create maintenance costs around element trees, instrumentation and business-source dependencies.",
+              "engineering": "Use external app artifacts, DeviceDriver, normalized coordinates and a project atlas to operate iOS and record each case.",
+              "tradeoff": "Normalized coordinates reduce resolution coupling, but do not solve layout changes, target drift or unknown screens."
+            },
+            {
+              "title": "Close the like-state loop",
+              "experience": "Missing targets, an already-active initial state and transition frames can all make a single click misleading.",
+              "engineering": "Wait for a stable target, normalize state, click, verify color across consecutive frames, then attempt restoration while saving measurements.",
+              "tradeoff": "Thresholds apply to the specified region and visual style. Visual activation alone cannot establish server state or persistence."
+            },
+            {
+              "title": "Make inconclusive a first-class outcome",
+              "experience": "A changed image can still show the wrong content. Treating an emitted action as business success creates false passes.",
+              "engineering": "Separate action and verification responsibilities. Preserve reasons and artifacts, with five verdicts distinguishing product failure, insufficient evidence, infrastructure failure and no execution.",
+              "tradeoff": "Complex semantics need an independent verifier; server effects require logs or query evidence. Current local rules stay within what their observations can prove."
+            }
+          ],
+          "lab": {
+            "title": "The same image can support different conclusions.",
+            "lead": "Both assertions observe a red heart. Compare why visual activation can pass while persistence remains inconclusive.",
+            "modes": [
+              "Visual activation",
+              "Persistence assertion"
+            ],
+            "start": "Run verification example",
+            "running": "Running…",
+            "resume": "Continue",
+            "idle": "Choose an assertion, then run the example.",
+            "complete": "Example complete.",
+            "stalled": "Insufficient evidence.",
+            "sample": "BEFORE → AFTER / ILLUSTRATIVE",
+            "output": "Ready to run",
+            "outputRunning": "Collecting before, after and consecutive-frame evidence",
+            "outputComplete": "Verdict reasoning retained",
+            "verdicts": [
+              "PASSED · Visual activation verified",
+              "INCONCLUSIVE · Persistence evidence missing"
+            ],
+            "completions": [
+              "Consecutive frames support the transition from inactive to red. The visual assertion passes.",
+              "The same red heart does not prove persistence across pages or on the server. Keep the visual evidence and require an independent query or log."
+            ],
+            "footnote": "A local explanatory example with no Doku, device or model connection. It produces no real regression results. The persistence assertion illustrates an evidence boundary, not an implemented persistence verifier.",
+            "stages": [
+              {
+                "title": "Pin the basis",
+                "detail": "Bind a knowledge release and a visual activation assertion.",
+                "prepared": "Use the same release, but assert that the state persists."
+              },
+              {
+                "title": "Normalize state",
+                "detail": "Confirm the target is visible and restore its inactive state.",
+                "prepared": "Use the same visible target and inactive initial state."
+              },
+              {
+                "title": "Act & observe",
+                "detail": "Click once and retain before / after frames with a stable red state.",
+                "prepared": "Observe the same red heart; only visual evidence is available."
+              },
+              {
+                "title": "Verify independently",
+                "detail": "Consecutive frames support the visual transition: PASSED.",
+                "prepared": "Cross-page or server evidence is missing: INCONCLUSIVE."
+              }
+            ]
+          },
+          "architecture": {
+            "kicker": "SYSTEM DESIGN / TWO CONNECTED LOOPS",
+            "title": "Knowledge defines expectations. Devices produce evidence.",
+            "lead": "From source documents to a knowledge release, then to execution bound to that release. Select a node to inspect its responsibility.",
+            "selectionLabel": "MODULE & IMPLEMENTATION",
+            "defaultNode": "release",
+            "diagramLabel": "Visual Agent document preparation, knowledge release, device execution and evidence verification pipeline",
+            "note": "Based on the implemented flow documented in the report. Runtime models, autonomous planning, an Android worker and a unified fixture runtime remain unfinished.",
+            "layers": [
+              {
+                "id": "preparation",
+                "title": "Prepare sources",
+                "nodes": [
+                  {
+                    "id": "sources",
+                    "title": "Git / documents",
+                    "detail": "Pin a source commit or normalize uploaded documents into line-numbered text, preserving traceable inputs."
+                  },
+                  {
+                    "id": "candidates",
+                    "title": "Candidates & review",
+                    "detail": "External agents or Qwen submit structured candidates with source references. Reviewers accept, edit, merge, reject or defer them."
+                  }
+                ]
+              },
+              {
+                "id": "knowledge",
+                "title": "Publish knowledge",
+                "nodes": [
+                  {
+                    "id": "compile",
+                    "title": "Rules & retrieval",
+                    "detail": "Explicit references connect rules, screens, targets, assertions and cases. Pydantic validates structure; aliases and SQLite FTS5 support retrieval."
+                  },
+                  {
+                    "id": "release",
+                    "title": "Immutable releases",
+                    "detail": "Compilation freezes knowledge, cases and scenarios. Content hashes identify releases; manifests and integrity checks keep the task’s basis consistent."
+                  }
+                ]
+              },
+              {
+                "id": "execution",
+                "title": "Run device tasks",
+                "nodes": [
+                  {
+                    "id": "task",
+                    "title": "Release-bound snapshots",
+                    "detail": "Task creation selects cases and records the release, per-case dependencies and scenarios before asynchronous sequential execution."
+                  },
+                  {
+                    "id": "driver",
+                    "title": "iOS worker",
+                    "detail": "DeviceDriver isolates device capabilities. Appium XCUITest / WDA provides actions and screenshots; simctl manages apps and recordings."
+                  }
+                ]
+              },
+              {
+                "id": "verification",
+                "title": "Verify independently",
+                "nodes": [
+                  {
+                    "id": "verdict",
+                    "title": "Rules & verdicts",
+                    "detail": "Reobserve black screens, regional changes, motion or stable colors. Keep passed, failed, inconclusive, infrastructure error and not-run outcomes separate."
+                  },
+                  {
+                    "id": "artifacts",
+                    "title": "Reports & evidence",
+                    "detail": "Store per-case actions, reasons, measurements, screenshots and recordings. Web, CLI and MCP expose task status and results."
+                  }
+                ]
+              }
+            ]
+          },
+          "evidence": {
+            "kicker": "RECORDED RUN / 2026.08.11",
+            "title": "One recorded run. Three distinct outcomes.",
+            "lead": "All 32 selected playback cases ran. Select an outcome to inspect what the evidence supports.",
+            "note": "This historical run predates the 2026-08-19 knowledge baseline and is not archived in the current database. The 69 stable cases have not had a corresponding new full regression. These figures do not establish current total coverage or labor savings.",
+            "environmentLabel": "ENVIRONMENT",
+            "executedLabel": "Cases executed",
+            "recordingsLabel": "Recordings",
+            "durationLabel": "Approx. duration",
+            "infraLabel": "Infrastructure errors",
+            "modelLabel": "Runtime model calls",
+            "data": "../../../case-studies/visual-agent/evidence.json",
+            "run": {
+              "date": "2026-08-11",
+              "device": "iPhone 16 Pro Simulator",
+              "os": "iOS 18.2",
+              "appVersion": "1.2.0+2026080402",
+              "durationSeconds": 310,
+              "executed": 32,
+              "recordings": 32,
+              "infrastructureErrors": 0,
+              "modelCalls": 0,
+              "outcomes": [
+                {
+                  "id": "passed",
+                  "count": 18,
+                  "title": "Passed",
+                  "description": "Evidence supported the local visual assertions for 18 cases; that does not establish correctness of the entire business flow."
+                },
+                {
+                  "id": "failed",
+                  "count": 1,
+                  "title": "Failed",
+                  "description": "One follow-button case produced insufficient visual response after the click and was retained as a failure for review."
+                },
+                {
+                  "id": "inconclusive",
+                  "count": 13,
+                  "title": "Inconclusive",
+                  "description": "Thirteen cases needed semantic evidence about identity, exact state, layout or boundary data. Local visual changes were insufficient for a definitive verdict."
+                }
+              ],
+              "appName": "Doku"
+            }
+          }
+        }
+      }
+    },
+    "body": "\u003ch2 id=\"section-1\" tabindex=\"-1\">工作范围\u003c/h2>\n\u003cp>我负责 Visual Agent 的整体设计与开发，覆盖知识模型、资料准备与审核、检索编译、不可变版本、任务编排、iOS Worker、视觉判定、Web 控制台、CLI / MCP 与报告链路。\u003c/p>\n\u003cp>Doku 是这套系统的首个业务场景：它将短剧观看、内容互动与 AI 辅助故事创作放在同一款产品中。播放器的连续状态、动态 Feed 和异步生成流程，让回归检查既依赖设备操作，也依赖对业务预期的理解。\u003c/p>\n\u003ch2 id=\"section-2\" tabindex=\"-1\">从资料到正式知识\u003c/h2>\n\u003cp>将业务概念、规则、页面、操作目标、断言、Fixture 与 Case 组织为可引用的知识节点。资料可以来自指定 Git Commit，也可以由网页上传并标准化为带行号文本。外部 Agent 或千问生成候选，候选保留 SourceRef、置信度、冲突与开放问题，经人审后进入统一编译。\u003c/p>\n\u003cp>检索使用 ID / alias、SQLite FTS5 和中文双字补召回，结合模块与平台过滤。当前没有引入 Embedding；先让规则关系、来源与精确引用可检查，再根据真实召回问题增加复杂度。\u003c/p>\n\u003ch2 id=\"section-3\" tabindex=\"-1\">不可变知识版本\u003c/h2>\n\u003cp>编译冻结知识、图片、用例和场景配置，基于内容摘要生成版本 ID，并保存 Manifest、数据库哈希与 Bundle。暂存目录、编译锁和原子替换共同控制发布过程。\u003c/p>\n\u003cp>任务显式绑定版本，并冻结模块、Case 和执行场景。版本不存在、内容被修改或强依赖缺失时，拒绝消费，不静默回退到可编辑工作区。版本固定的是测试依据；账号、网络与内容数据仍需要额外的环境治理。\u003c/p>\n\u003ch2 id=\"section-4\" tabindex=\"-1\">设备执行与取证\u003c/h2>\n\u003cp>以 DeviceDriver 隔离平台实现。Appium XCUITest / WDA 负责截图与触摸，simctl 负责 App 生命周期和 MP4 录屏；通过外部 App 产物或已安装 App 运行，不读取 Doku 业务源码。\u003c/p>\n\u003cp>32 条播放用例已接入执行，其中 31 条使用声明式 visual_scenario，点赞采用 visual_toggle。每条 Case 分别记录准备、动作、验证、清理和证据；任务聚合逐 Case 的结论、理由、测量值与 Artifact。\u003c/p>\n\u003ch2 id=\"section-5\" tabindex=\"-1\">判定要匹配证据的证明范围\u003c/h2>\n\u003cp>本地规则检查黑屏、区域变化、运动和点赞颜色等视觉事实。点赞场景先等待目标稳定出现，归一化初始状态，执行点击，再做连续帧验证，并尝试恢复可逆状态。\u003c/p>\n\u003cp>将 PASSED、FAILED、INCONCLUSIVE、INFRA_ERROR 与 NOT_RUN 分开。红色心形可以支持视觉激活断言，却不能单独证明服务端计数或跨页面持久化。证据不足时返回无法判定，避免把动作成功或画面变化直接等同于业务正确。\u003c/p>\n\u003ch2 id=\"section-6\" tabindex=\"-1\">已验证范围\u003c/h2>\n\u003cp>能力基线为 2026-08-19：知识版本包含 69 条稳定用例、207 个知识节点、454 条关系，以及 23 个已审核页面变体、53 个目标。69 条用例中，32 条已接入执行，其余 33 条为 planned、4 条为 blocked。\u003c/p>\n\u003cp>2026-08-11 的历史完整运行在 iPhone 16 Pro Simulator / iOS 18.2、Doku 1.2.0+2026080402 上执行：32 条实际运行，18 条通过、1 条失败、13 条无法判定，用时约 5 分 10 秒，保存 32 份录屏，基础设施错误和执行阶段模型调用均为 0。\u003c/p>\n\u003cp>该运行早于最新知识基线，当前数据库未归档该任务。以上数据来自已有记录，不能当作最新版本回归、全业务覆盖率或节省人力的证明。文档记录的 58 条 Python 测试与 Ruff 检查属于 2026-08-19 基线，本次作品整理没有重新运行 Visual Agent 测试。\u003c/p>\n\u003ch2 id=\"section-7\" tabindex=\"-1\">下一阶段\u003c/h2>\n\u003cp>优先补齐知识强引用、Fixture 的 prepare / verify / cleanup 生命周期、污染与故障检测，并建立固定版本的多轮回归和证据回放基线。之后按真实的无法判定案例引入独立语义 Verifier，再扩展创作场景与 Android Worker。\u003c/p>\n\u003cp>千问当前用于知识候选生成；自主规划、未知页面模型定位、执行阶段视觉大模型、统一 Fixture Runtime 与 Android 执行仍未完成。\u003c/p>\n",
+    "text": "工作范围 我负责 Visual Agent 的整体设计与开发，覆盖知识模型、资料准备与审核、检索编译、不可变版本、任务编排、iOS Worker、视觉判定、Web 控制台、CLI / MCP 与报告链路。 Doku 是这套系统的首个业务场景：它将短剧观看、内容互动与 AI 辅助故事创作放在同一款产品中。播放器的连续状态、动态 Feed 和异步生成流程，让回归检查既依赖设备操作，也依赖对业务预期的理解。 从资料到正式知识 将业务概念、规则、页面、操作目标、断言、Fixture 与 Case 组织为可引用的知识节点。资料可以来自指定 Git Commit，也可以由网页上传并标准化为带行号文本。外部 Agent 或千问生成候选，候选保留 SourceRef、置信度、冲突与开放问题，经人审后进入统一编译。 检索使用 ID / alias、SQLite FTS5 和中文双字补召回，结合模块与平台过滤。当前没有引入 Embedding；先让规则关系、来源与精确引用可检查，再根据真实召回问题增加复杂度。 不可变知识版本 编译冻结知识、图片、用例和场景配置，基于内容摘要生成版本 ID，并保存 Manifest、数据库哈希与 Bundle。暂存目录、编译锁和原子替换共同控制发布过程。 任务显式绑定版本，并冻结模块、Case 和执行场景。版本不存在、内容被修改或强依赖缺失时，拒绝消费，不静默回退到可编辑工作区。版本固定的是测试依据；账号、网络与内容数据仍需要额外的环境治理。 设备执行与取证 以 DeviceDriver 隔离平台实现。Appium XCUITest / WDA 负责截图与触摸，simctl 负责 App 生命周期和 MP4 录屏；通过外部 App 产物或已安装 App 运行，不读取 Doku 业务源码。 32 条播放用例已接入执行，其中 31 条使用声明式 visual_scenario，点赞采用 visual_toggle。每条 Case 分别记录准备、动作、验证、清理和证据；任务聚合逐 Case 的结论、理由、测量值与 Artifact。 判定要匹配证据的证明范围 本地规则检查黑屏、区域变化、运动和点赞颜色等视觉事实。点赞场景先等待目标稳定出现，归一化初始状态，执行点击，再做连续帧验证，并尝试恢复可逆状态。 将 PASSED、FAILED、INCONCLUSIVE、INFRA_ERROR 与 NOT_RUN 分开。红色心形可以支持视觉激活断言，却不能单独证明服务端计数或跨页面持久化。证据不足时返回无法判定，避免把动作成功或画面变化直接等同于业务正确。 已验证范围 能力基线为 2026-08-19：知识版本包含 69 条稳定用例、207 个知识节点、454 条关系，以及 23 个已审核页面变体、53 个目标。69 条用例中，32 条已接入执行，其余 33 条为 planned、4 条为 blocked。 2026-08-11 的历史完整运行在 iPhone 16 Pro Simulator / iOS 18.2、Doku 1.2.0+2026080402 上执行：32 条实际运行，18 条通过、1 条失败、13 条无法判定，用时约 5 分 10 秒，保存 32 份录屏，基础设施错误和执行阶段模型调用均为 0。 该运行早于最新知识基线，当前数据库未归档该任务。以上数据来自已有记录，不能当作最新版本回归、全业务覆盖率或节省人力的证明。文档记录的 58 条 Python 测试与 Ruff 检查属于 2026-08-19 基线，本次作品整理没有重新运行 Visual Agent 测试。 下一阶段 优先补齐知识强引用、Fixture 的 prepare / verify / cleanup 生命周期、污染与故障检测，并建立固定版本的多轮回归和证据回放基线。之后按真实的无法判定案例引入独立语义 Verifier，再扩展创作场景与 Android Worker。 千问当前用于知识候选生成；自主规划、未知页面模型定位、执行阶段视觉大模型、统一 Fixture Runtime 与 Android 执行仍未完成。",
     "toc": [
       {
         "id": "section-1",
-        "title": "项目范围",
+        "title": "工作范围",
         "level": 2
       },
       {
         "id": "section-2",
-        "title": "研究与执行",
+        "title": "从资料到正式知识",
         "level": 2
       },
       {
         "id": "section-3",
-        "title": "监控",
+        "title": "不可变知识版本",
         "level": 2
       },
       {
         "id": "section-4",
-        "title": "待验证的问题",
+        "title": "设备执行与取证",
+        "level": 2
+      },
+      {
+        "id": "section-5",
+        "title": "判定要匹配证据的证明范围",
+        "level": 2
+      },
+      {
+        "id": "section-6",
+        "title": "已验证范围",
+        "level": 2
+      },
+      {
+        "id": "section-7",
+        "title": "下一阶段",
         "level": 2
       }
     ]

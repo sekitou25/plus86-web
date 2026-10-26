@@ -81,12 +81,12 @@ test('English post files replace the original body without changing stable artic
 test('language URLs override preferences and switching preserves the current route',async()=>{
   const local=new Map([['siyuan-language','zh']]),session=new Map();let assigned='';
   const storage=map=>({getItem:key=>map.get(key)||null,setItem:(key,value)=>map.set(key,value),removeItem:key=>map.delete(key)});
-  const context={URL,location:{href:'http://localhost:4173/?lang=en#/work/plumber',hash:'#/work/plumber',assign:url=>{assigned=url}},localStorage:storage(local),sessionStorage:storage(session),scrollY:412,document:{documentElement:{dataset:{}},querySelectorAll:()=>[],querySelector:()=>({content:''})},SITE:{name:'siyuan',metaDescription:'{name}'},PAGES:{},COPY:{},WORKS:[],POSTS:[],TRAVEL_DATA:{},ENGLISH_CONTENT:{site:{name:'siyuan',metaDescription:'Selected work by {name}'},pages:{},ui:{},works:[],posts:[],travel:{}},Copy:()=>'',requestAnimationFrame:fn=>fn(),scrollTo:()=>{}};
+  const context={URL,location:{href:'http://localhost:4173/?lang=en#/work/visual-agent',hash:'#/work/visual-agent',assign:url=>{assigned=url}},localStorage:storage(local),sessionStorage:storage(session),scrollY:412,document:{documentElement:{dataset:{}},querySelectorAll:()=>[],querySelector:()=>({content:''})},SITE:{name:'siyuan',metaDescription:'{name}'},PAGES:{},COPY:{},WORKS:[],POSTS:[],TRAVEL_DATA:{},ENGLISH_CONTENT:{site:{name:'siyuan',metaDescription:'Selected work by {name}'},pages:{},ui:{},works:[],posts:[],travel:{}},Copy:()=>'',requestAnimationFrame:fn=>fn(),scrollTo:()=>{}};
   context.window=context;
   vm.runInNewContext(await readFile(join(root,'dist/assets/i18n.js'),'utf8'),context);
   assert.equal(context.I18N.language,'en');assert.equal(context.document.documentElement.lang,'en');assert.equal(local.get('siyuan-language'),'en');
   context.I18N.setLanguage('zh');
-  assert.equal(new URL(assigned).searchParams.get('lang'),'zh');assert.equal(new URL(assigned).hash,'#/work/plumber');
+  assert.equal(new URL(assigned).searchParams.get('lang'),'zh');assert.equal(new URL(assigned).hash,'#/work/visual-agent');
   assert.equal(JSON.parse(session.get('siyuan-language-scroll')).top,412);
 });
 

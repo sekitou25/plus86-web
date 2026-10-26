@@ -1,0 +1,24 @@
+{
+  "kind": "qa",
+  "media": [
+    {
+      "id": "feed",
+      "type": "image",
+      "src": "media/works/visual-agent/doku-feed.webp"
+    },
+    {
+      "id": "creator",
+      "type": "image",
+      "src": "media/works/visual-agent/doku-creator.webp"
+    },
+    {
+      "id": "preview",
+      "type": "image",
+      "src": "media/works/visual-agent/doku-preview.webp"
+    }
+  ],
+  "copy": {
+    "zh": "../../case-studies/visual-agent",
+    "en": "../../en/case-studies/visual-agent"
+  }
+}

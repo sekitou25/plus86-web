@@ -46,7 +46,7 @@
       "language": "zh",
       "sourceLanguage": "zh",
       "title": "项目",
-      "description": "三段产品开发经历，以及一个进行中的个人项目。各页记录我的职责、技术方案和可公开的结果。",
+      "description": "从面向用户的客户端，到支撑交付的 AI 工程工具。四个项目，记录产品体验、系统设计与工程质量上的实践。",
       "date": "",
       "html": "/read/zh/work.html",
       "markdown": "/read/zh/work.md",
@@ -313,17 +313,17 @@
       "interactive": "/?lang=zh#/work/wechat-official-accounts"
     },
     {
-      "id": "project:plumber",
+      "id": "project:visual-agent",
       "kind": "project",
-      "slug": "plumber",
+      "slug": "visual-agent",
       "language": "zh",
       "sourceLanguage": "zh",
-      "title": "plumber",
-      "description": "开发中的个人项目，包含策略研究、回测、IBKR 交易执行、独立账本和本机监控。",
+      "title": "Visual Agent",
+      "description": "面向 Doku 的视觉测试系统：把业务资料整理为可审核、可版本化的知识，再驱动 iOS 模拟器执行用例，保存判定理由、截图与录屏。",
       "date": "",
-      "html": "/read/zh/work/plumber.html",
-      "markdown": "/read/zh/work/plumber.md",
-      "interactive": "/?lang=zh#/work/plumber"
+      "html": "/read/zh/work/visual-agent.html",
+      "markdown": "/read/zh/work/visual-agent.md",
+      "interactive": "/?lang=zh#/work/visual-agent"
     },
     {
       "id": "home:",
@@ -358,7 +358,7 @@
       "language": "en",
       "sourceLanguage": "en",
       "title": "Projects",
-      "description": "Three product-development roles and one personal project in progress. Each page covers my responsibilities, implementation, and results I can share.",
+      "description": "From user-facing clients to AI tools that support delivery. Four projects covering product experience, system design and engineering quality.",
       "date": "",
       "html": "/read/en/work.html",
       "markdown": "/read/en/work.md",
@@ -625,17 +625,17 @@
       "interactive": "/?lang=en#/work/wechat-official-accounts"
     },
     {
-      "id": "project:plumber",
+      "id": "project:visual-agent",
       "kind": "project",
-      "slug": "plumber",
+      "slug": "visual-agent",
       "language": "en",
       "sourceLanguage": "en",
-      "title": "plumber",
-      "description": "A personal project in development: strategy research, backtesting, IBKR execution, separate ledgers, and local monitoring.",
+      "title": "Visual Agent",
+      "description": "A visual testing system for Doku: turn product documents into reviewed, versioned knowledge, run cases on an iOS simulator, and retain verdicts, screenshots and recordings.",
       "date": "",
-      "html": "/read/en/work/plumber.html",
-      "markdown": "/read/en/work/plumber.md",
-      "interactive": "/?lang=en#/work/plumber"
+      "html": "/read/en/work/visual-agent.html",
+      "markdown": "/read/en/work/visual-agent.md",
+      "interactive": "/?lang=en#/work/visual-agent"
     }
   ]
 }

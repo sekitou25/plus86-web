@@ -59,6 +59,12 @@ test('all architecture nodes, results, media captions and demo branches are expa
           assert.ok(html.includes(String(metric.before)));assert.ok(html.includes(String(metric.after)));
         }
       }
+      if(copy.evidence){
+        const evidence=copy.evidence;
+        for(const value of [evidence.title,evidence.lead,evidence.note,evidence.run.date])includesCopy(html,value);
+        for(const outcome of evidence.run.outcomes){includesCopy(html,outcome.description);assert.ok(markdown.includes(outcome.description));}
+      }
+      if(copy.lab.verdicts)for(const value of [...copy.lab.verdicts,...copy.lab.completions]){includesCopy(html,value);assert.ok(markdown.includes(value));}
       includesCopy(html,copy.lab.footnote);
       for(const mode of copy.lab.modes)includesCopy(html,mode);
       for(const stage of copy.lab.stages)for(const value of Object.values(stage))includesCopy(html,value);

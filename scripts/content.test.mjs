@@ -92,7 +92,7 @@ test('removed now page is absent from both languages, navigation and terminal',a
 
 test('portfolio discovers, orders and removes new works without a manual index',async t=>{
   const path=await fixture(t),initial=await loadContent(path);
-  assert.deepEqual(initial.works.map(w=>w.slug),['qishui-music','talkie-xingye','wechat-official-accounts','plumber']);
+  assert.deepEqual(initial.works.map(w=>w.slug),['qishui-music','talkie-xingye','wechat-official-accounts','visual-agent']);
   await mkdir(join(path,'works/nested'));
   const file=join(path,'works/nested/new-work.md');
   await writeFile(file,'---\ntitle: 新作品\norder: 0\n---\n\n## 我的贡献\n\n一项新的实践。');
@@ -119,8 +119,30 @@ test('portfolio cover files stay within content media and require descriptive al
 test('portfolio metadata rejects duplicate routes and does not embed resume contact details',async t=>{
   const path=await fixture(t),result=await loadContent(path);
   assert.doesNotMatch(JSON.stringify(result.works),/\b\d{11}\b|@gmail\.com|Mobile Documents|\.local\.toml/);
-  await writeFile(join(path,'works/duplicate.md'),'---\ntitle: 重复作品\nslug: plumber\n---\n\n正文。');
+  await writeFile(join(path,'works/duplicate.md'),'---\ntitle: 重复作品\nslug: visual-agent\n---\n\n正文。');
   await assert.rejects(loadContent(path),/重复的作品 slug/);
+});
+
+test('Visual Agent shares dated run data and rejects inconsistent outcomes or escaped evidence',async t=>{
+  const path=await fixture(t),result=await loadContent(path);
+  const work=result.works.find(w=>w.slug==='visual-agent'),english=result.english.works.find(w=>w.slug===work.slug);
+  assert.equal(result.works.some(w=>w.slug==='plumber'),false);
+  assert.equal(work.caseStudy.kind,'qa');
+  assert.deepEqual(english.caseStudy.media,work.caseStudy.media);
+  const zh=work.caseStudy.copy.zh,en=work.caseStudy.copy.en;
+  assert.equal(zh.evidence.run.date,'2026-08-11');
+  assert.deepEqual(zh.evidence.run.outcomes.map(item=>item.count),[18,1,13]);
+  assert.deepEqual(en.evidence.run.outcomes.map(item=>item.count),zh.evidence.run.outcomes.map(item=>item.count));
+  assert.match(zh.lab.verdicts[0],/^PASSED/);assert.match(en.lab.verdicts[1],/^INCONCLUSIVE/);
+  const file=join(path,'case-studies/visual-agent/evidence.json'),original=JSON.parse(await readFile(file,'utf8'));
+  await writeFile(file,JSON.stringify({...original,executed:69}));
+  await assert.rejects(loadContent(path),/结论数量必须与实际执行总数一致/);
+  await writeFile(file,JSON.stringify({...original,recordings:99}));
+  await assert.rejects(loadContent(path),/运行数值或证据数量无效/);
+  await writeFile(file,JSON.stringify(original));
+  const copy=join(path,'case-studies/visual-agent/evidence.md'),source=await readFile(copy,'utf8');
+  await writeFile(copy,source.replace('data: "evidence.json"','data: "../../site.json"'));
+  await assert.rejects(loadContent(path),/运行数据需要使用 case-studies/);
 });
 
 test('case studies share local media in both languages and reject unsafe or incomplete media',async t=>{

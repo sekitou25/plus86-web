@@ -5,7 +5,7 @@ Body language: en
 
 [Interactive edition](/?lang=en#/work) · [HTML](/read/en/work.html)
 
-Three product-development roles and one personal project in progress. Each page covers my responsibilities, implementation, and results I can share.
+From user-facing clients to AI tools that support delivery. Four projects covering product experience, system design and engineering quality.
 
 ## Work
 
@@ -27,11 +27,11 @@ Recommendation-feed layouts and click-triggered refresh
 
 Contribute to the Official Accounts client, including waterfall layouts and click-triggered refresh in the Top Stories feed.
 
-- [plumber](/read/en/work/plumber.html)
+- [Visual Agent](/read/en/work/visual-agent.html)
 
-Research and implementation of an automated trading agent
+From product knowledge to reviewable iOS visual regression
 
-A personal project in development: strategy research, backtesting, IBKR execution, separate ledgers, and local monitoring.
+A visual testing system for Doku: turn product documents into reviewed, versioned knowledge, run cases on an iOS simulator, and retain verdicts, screenshots and recordings.
 
 Work background, current research, and personal notes.
 

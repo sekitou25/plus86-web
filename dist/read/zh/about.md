@@ -17,6 +17,8 @@
 
 - 目前在腾讯微信参与公众号相关开发，开发 iOS、Android、ohos 平台
 
+此外，我整体设计并开发了 [Visual Agent](/read/zh/work/visual-agent.html)，把业务知识、iOS 设备执行与可复核的测试证据连成一条回归链路。
+
 [项目页](/read/zh/work.html) 中记录了具体的工作范围、实现和结果。
 
 ## 研究与个人项目
@@ -34,7 +36,7 @@ P.S 在交易上尝试了很多方法，price action、ICT、etc。最终还是�
 
 - **Name**: siyuan
 
-- **Focus**: plumber - a trading agent / momentum
+- **Focus**: Visual Agent - visual regression / momentum
 
 - **Offscreen**: travel / photos / notes
 

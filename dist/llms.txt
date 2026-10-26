@@ -44,7 +44,7 @@ This is a personal portfolio, research notebook, and travel journal. The text ed
 - [汽水音乐播放器](/read/zh/work/qishui-music.md): project
 - [Talkie / 星野](/read/zh/work/talkie-xingye.md): project
 - [微信 · 公众号](/read/zh/work/wechat-official-accounts.md): project
-- [plumber](/read/zh/work/plumber.md): project
+- [Visual Agent](/read/zh/work/visual-agent.md): project
 
 ## English
 
@@ -71,4 +71,4 @@ This is a personal portfolio, research notebook, and travel journal. The text ed
 - [Qishui Music Player](/read/en/work/qishui-music.md): project
 - [Talkie / Xingye](/read/en/work/talkie-xingye.md): project
 - [WeChat · Official Accounts](/read/en/work/wechat-official-accounts.md): project
-- [plumber](/read/en/work/plumber.md): project
+- [Visual Agent](/read/en/work/visual-agent.md): project

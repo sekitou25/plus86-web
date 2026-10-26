@@ -1,7 +1,7 @@
 ---
 title: "Projects"
 eyebrow: "SELECTED WORK"
-lead: "Three product-development roles and one personal project in progress. Each page covers my responsibilities, implementation, and results I can share."
+lead: "From user-facing clients to AI tools that support delivery. Four projects covering product experience, system design and engineering quality."
 closingTitle: "About me"
 closingText: "Work background, current research, and personal notes."
 ---
