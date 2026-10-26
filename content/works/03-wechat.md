@@ -1,7 +1,7 @@
 ---
 title: 微信 · 公众号
 slug: wechat-official-accounts
-order: 3
+order: 4
 company: 腾讯 · 微信事业部
 period: 2025.04 起
 role: 客户端开发工程师

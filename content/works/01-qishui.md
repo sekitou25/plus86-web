@@ -1,7 +1,7 @@
 ---
 title: 汽水音乐播放器
 slug: qishui-music
-order: 1
+order: 3
 company: 字节跳动
 period: 2021.10 — 2023.06
 role: iOS 研发工程师

@@ -1,7 +1,7 @@
 ---
 title: "Visual Agent"
 slug: "visual-agent"
-order: 4
+order: 1
 company: "Doku · 视觉回归工具"
 period: "2026 · MVP"
 role: "整体设计与开发"

@@ -274,17 +274,17 @@
       "interactive": "/?lang=zh#/blog/2666"
     },
     {
-      "id": "project:qishui-music",
+      "id": "project:visual-agent",
       "kind": "project",
-      "slug": "qishui-music",
+      "slug": "visual-agent",
       "language": "zh",
       "sourceLanguage": "zh",
-      "title": "汽水音乐播放器",
-      "description": "参与汽水音乐早期开发，负责首页播放器、歌词和 Feed 相关业务，以及缓存治理和早期版本上架。",
+      "title": "Visual Agent",
+      "description": "面向 Doku 的视觉测试系统：把业务资料整理为可审核、可版本化的知识，再驱动 iOS 模拟器执行用例，保存判定理由、截图与录屏。",
       "date": "",
-      "html": "/read/zh/work/qishui-music.html",
-      "markdown": "/read/zh/work/qishui-music.md",
-      "interactive": "/?lang=zh#/work/qishui-music"
+      "html": "/read/zh/work/visual-agent.html",
+      "markdown": "/read/zh/work/visual-agent.md",
+      "interactive": "/?lang=zh#/work/visual-agent"
     },
     {
       "id": "project:talkie-xingye",
@@ -300,6 +300,19 @@
       "interactive": "/?lang=zh#/work/talkie-xingye"
     },
     {
+      "id": "project:qishui-music",
+      "kind": "project",
+      "slug": "qishui-music",
+      "language": "zh",
+      "sourceLanguage": "zh",
+      "title": "汽水音乐播放器",
+      "description": "参与汽水音乐早期开发，负责首页播放器、歌词和 Feed 相关业务，以及缓存治理和早期版本上架。",
+      "date": "",
+      "html": "/read/zh/work/qishui-music.html",
+      "markdown": "/read/zh/work/qishui-music.md",
+      "interactive": "/?lang=zh#/work/qishui-music"
+    },
+    {
       "id": "project:wechat-official-accounts",
       "kind": "project",
       "slug": "wechat-official-accounts",
@@ -311,19 +324,6 @@
       "html": "/read/zh/work/wechat-official-accounts.html",
       "markdown": "/read/zh/work/wechat-official-accounts.md",
       "interactive": "/?lang=zh#/work/wechat-official-accounts"
-    },
-    {
-      "id": "project:visual-agent",
-      "kind": "project",
-      "slug": "visual-agent",
-      "language": "zh",
-      "sourceLanguage": "zh",
-      "title": "Visual Agent",
-      "description": "面向 Doku 的视觉测试系统：把业务资料整理为可审核、可版本化的知识，再驱动 iOS 模拟器执行用例，保存判定理由、截图与录屏。",
-      "date": "",
-      "html": "/read/zh/work/visual-agent.html",
-      "markdown": "/read/zh/work/visual-agent.md",
-      "interactive": "/?lang=zh#/work/visual-agent"
     },
     {
       "id": "home:",
@@ -586,17 +586,17 @@
       "interactive": "/?lang=en#/blog/2666"
     },
     {
-      "id": "project:qishui-music",
+      "id": "project:visual-agent",
       "kind": "project",
-      "slug": "qishui-music",
+      "slug": "visual-agent",
       "language": "en",
       "sourceLanguage": "en",
-      "title": "Qishui Music Player",
-      "description": "Worked on Qishui's early client, covering the home player, lyrics, feed, caching, and initial App Store releases.",
+      "title": "Visual Agent",
+      "description": "A visual testing system for Doku: turn product documents into reviewed, versioned knowledge, run cases on an iOS simulator, and retain verdicts, screenshots and recordings.",
       "date": "",
-      "html": "/read/en/work/qishui-music.html",
-      "markdown": "/read/en/work/qishui-music.md",
-      "interactive": "/?lang=en#/work/qishui-music"
+      "html": "/read/en/work/visual-agent.html",
+      "markdown": "/read/en/work/visual-agent.md",
+      "interactive": "/?lang=en#/work/visual-agent"
     },
     {
       "id": "project:talkie-xingye",
@@ -612,6 +612,19 @@
       "interactive": "/?lang=en#/work/talkie-xingye"
     },
     {
+      "id": "project:qishui-music",
+      "kind": "project",
+      "slug": "qishui-music",
+      "language": "en",
+      "sourceLanguage": "en",
+      "title": "Qishui Music Player",
+      "description": "Worked on Qishui's early client, covering the home player, lyrics, feed, caching, and initial App Store releases.",
+      "date": "",
+      "html": "/read/en/work/qishui-music.html",
+      "markdown": "/read/en/work/qishui-music.md",
+      "interactive": "/?lang=en#/work/qishui-music"
+    },
+    {
       "id": "project:wechat-official-accounts",
       "kind": "project",
       "slug": "wechat-official-accounts",
@@ -623,19 +636,6 @@
       "html": "/read/en/work/wechat-official-accounts.html",
       "markdown": "/read/en/work/wechat-official-accounts.md",
       "interactive": "/?lang=en#/work/wechat-official-accounts"
-    },
-    {
-      "id": "project:visual-agent",
-      "kind": "project",
-      "slug": "visual-agent",
-      "language": "en",
-      "sourceLanguage": "en",
-      "title": "Visual Agent",
-      "description": "A visual testing system for Doku: turn product documents into reviewed, versioned knowledge, run cases on an iOS simulator, and retain verdicts, screenshots and recordings.",
-      "date": "",
-      "html": "/read/en/work/visual-agent.html",
-      "markdown": "/read/en/work/visual-agent.md",
-      "interactive": "/?lang=en#/work/visual-agent"
     }
   ]
 }

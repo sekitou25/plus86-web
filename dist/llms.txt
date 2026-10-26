@@ -41,10 +41,10 @@ This is a personal portfolio, research notebook, and travel journal. The text ed
 - [魔术师](/read/zh/blog/%E9%AD%94%E6%9C%AF%E5%B8%88.md): post
 - [有限与无限的游戏：一个哲学家眼中的竞技世界](/read/zh/blog/%E6%9C%89%E9%99%90%E4%B8%8E%E6%97%A0%E9%99%90%E7%9A%84%E6%B8%B8%E6%88%8F%EF%BC%9A%E4%B8%80%E4%B8%AA%E5%93%B2%E5%AD%A6%E5%AE%B6%E7%9C%BC%E4%B8%AD%E7%9A%84%E7%AB%9E%E6%8A%80%E4%B8%96%E7%95%8C.md): post
 - [2666](/read/zh/blog/2666.md): post
-- [汽水音乐播放器](/read/zh/work/qishui-music.md): project
-- [Talkie / 星野](/read/zh/work/talkie-xingye.md): project
-- [微信 · 公众号](/read/zh/work/wechat-official-accounts.md): project
 - [Visual Agent](/read/zh/work/visual-agent.md): project
+- [Talkie / 星野](/read/zh/work/talkie-xingye.md): project
+- [汽水音乐播放器](/read/zh/work/qishui-music.md): project
+- [微信 · 公众号](/read/zh/work/wechat-official-accounts.md): project
 
 ## English
 
@@ -68,7 +68,7 @@ This is a personal portfolio, research notebook, and travel journal. The text ed
 - [The Magician](/read/en/blog/%E9%AD%94%E6%9C%AF%E5%B8%88.md): post
 - [Finite and Infinite Games](/read/en/blog/%E6%9C%89%E9%99%90%E4%B8%8E%E6%97%A0%E9%99%90%E7%9A%84%E6%B8%B8%E6%88%8F%EF%BC%9A%E4%B8%80%E4%B8%AA%E5%93%B2%E5%AD%A6%E5%AE%B6%E7%9C%BC%E4%B8%AD%E7%9A%84%E7%AB%9E%E6%8A%80%E4%B8%96%E7%95%8C.md): post
 - [2666](/read/en/blog/2666.md): post
-- [Qishui Music Player](/read/en/work/qishui-music.md): project
-- [Talkie / Xingye](/read/en/work/talkie-xingye.md): project
-- [WeChat · Official Accounts](/read/en/work/wechat-official-accounts.md): project
 - [Visual Agent](/read/en/work/visual-agent.md): project
+- [Talkie / Xingye](/read/en/work/talkie-xingye.md): project
+- [Qishui Music Player](/read/en/work/qishui-music.md): project
+- [WeChat · Official Accounts](/read/en/work/wechat-official-accounts.md): project
