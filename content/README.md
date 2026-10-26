@@ -34,7 +34,7 @@
 
 首页现在以 Hero 开场，下滑展示作品。Hero 文案在 `pages/home.md`，作品区介绍在 `pages/work.md`。顶部支持中文 / EN 切换；英文修改方式见 `en/README.md`。
 
-首页姓名使用 `site.json` 的 `displayName`，英文姓名在 `en/site.json`。首屏的招呼语、姓名标点、专长和介绍分别在 `pages/home.md` 的 `greeting`、`heroName`、`heroSpecialty` 与正文中；交付标准在 `heroStandardLabel` 和 `heroStandard`，英文对应 `en/pages/home.md`。右侧字符「源」呼应思源和源代码，图形说明及鼠标提示在 `interface.json` 的 `home.artCaption`、`home.artLabel` 和 `home.artHint`。
+首页姓名使用 `site.json` 的 `displayName`，英文姓名在 `en/site.json`。首屏的招呼语、姓名标点、专长和介绍分别在 `pages/home.md` 的 `greeting`、`heroName`、`heroSpecialty` 与正文中；交付标准在 `heroStandardLabel` 和 `heroStandard`，英文对应 `en/pages/home.md`。右侧使用编辑插画风格的敲代码人物，素材在 `media/home/coding-editorial.webp`，`pages/home.md` 的 `heroImage` 指定图片地址。图形说明及鼠标提示在 `interface.json` 的 `home.artCaption`、`home.artLabel` 和 `home.artHint`。
 
 ## 编辑时运行预览
 

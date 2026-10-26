@@ -3,6 +3,7 @@ title: "Hi，我是{displayName}。"
 greeting: "Hi，我是"
 heroName: "{displayName}。"
 heroSpecialty: "专精于客户端工程\n与 AI 应用开发。"
+heroImage: "/assets/content/home/coding-editorial.webp"
 heroOverline: SOFTWARE ENGINEER
 heroRole: 客户端工程 · AI 应用
 heroStandardLabel: 我的交付标准

@@ -69,8 +69,8 @@ window.ENGLISH_CONTENT = {
       "dark": "Switch to dark mode"
     },
     "home": {
-      "artLabel": "Yuan, drawn with code characters: a name and a source",
-      "artCaption": "YUAN / NAME & SOURCE CODE",
+      "artLabel": "An editorial illustration of a programmer working at a wooden desk",
+      "artCaption": "AT WORK / CODE & CRAFT",
       "readAbout": "read about me ↗",
       "latest": "— Recent writing",
       "allEntries": "all entries [{count}] ↗",
@@ -333,6 +333,7 @@ window.ENGLISH_CONTENT = {
       "greeting": "Hi, I'm",
       "heroName": "Siyuan.",
       "heroSpecialty": "Specializing in client engineering\nand AI applications.",
+      "heroImage": "/assets/content/home/coding-editorial.webp",
       "heroOverline": "SOFTWARE ENGINEER",
       "heroRole": "Client engineering · AI applications",
       "heroStandardLabel": "MY STANDARD",

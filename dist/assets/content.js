@@ -55,6 +55,7 @@ window.PAGES = {
     "greeting": "Hi，我是",
     "heroName": "思源。",
     "heroSpecialty": "专精于客户端工程\n与 AI 应用开发。",
+    "heroImage": "/assets/content/home/coding-editorial.webp",
     "heroOverline": "SOFTWARE ENGINEER",
     "heroRole": "客户端工程 · AI 应用",
     "heroStandardLabel": "我的交付标准",
@@ -111,8 +112,8 @@ window.COPY = {
     "dark": "切换到深色模式"
   },
   "home": {
-    "artLabel": "由代码字符组成的「源」字，呼应思源与源代码",
-    "artCaption": "源 · 思源与源代码",
+    "artLabel": "编辑插画：一个坐在木桌前用笔记本电脑写代码的人",
+    "artCaption": "写代码，做东西。",
     "readAbout": "关于我 ↗",
     "latest": "— 最近的文章",
     "allEntries": "全部文章 [{count}] ↗",
