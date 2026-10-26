@@ -72,6 +72,8 @@ src/ 保存页面和标志模板；dist/assets/app.js、travel.js、travel-atlas
 
 把构建后的 dist/ 作为 Web 服务器的静态目录即可。线上不需要构建服务、数据库、Notion 凭据或地图 API。.openai/hosting.json 是保留的历史 Sites 配置，本地构建不会触发部署。
 
+Vercel 从 GitHub 导入此仓库时，Root Directory 保持仓库根目录、Application Preset 选择 Other。仓库中的 `vercel.json` 已指定构建命令 `node scripts/build-content.mjs` 和发布目录 `dist`，无需安装依赖或配置环境变量。生产分支使用 `main`；推送后 Vercel 会自动重新构建并发布。
+
 原始照片保存在被 Git 忽略的 travel-materials/，不属于发布目录；网站使用已有照片及缩略图衍生文件。地图来源见 sources/TRAVEL-SOURCES.md。
 
 首页为全屏 Hero 与作品集，采用顶部导航；作品随滚动逐项入场，并尊重减少动态效果的系统偏好。支持中文 / EN 切换、语言链接与选择记忆。英文文案在 content/en/；中文学习笔记保留原文，并在英文界面注明语言，支持逐篇添加英文 Markdown。

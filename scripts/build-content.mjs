@@ -275,7 +275,7 @@ export async function build({integrity=true}={}) {
 export async function refreshChecksums(){
   const names=new Set((await readFile(join(root,'SHA256SUMS.txt'),'utf8')).trim().split('\n').map(line=>line.slice(66)));
   for(const directory of ['content','dist','scripts','sources','src'])for(const path of await walk(join(root,directory)))names.add(relative(root,path));
-  names.add('README.md'); names.add('BUNDLE-README.txt'); names.add('preview.command');
+  names.add('README.md'); names.add('BUNDLE-README.txt'); names.add('preview.command'); names.add('vercel.json');
   const checksums=[];
   for(const name of [...names].sort()){
     try{checksums.push(hash(await readFile(join(root,name)))+'  '+name)}catch(error){if(error.code!=='ENOENT')throw error}
